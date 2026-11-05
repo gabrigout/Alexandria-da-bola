@@ -333,7 +333,7 @@ export default function App() {
           <p>Do panorama mundial aos detalhes<br />que fizeram o futebol ser o que é.</p>
         </div>
         <div className="collection-grid">
-          <button className="collection-card card-world" onClick={() => openArchive('clube')}>
+          <button className="collection-card card-world" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Globe2 size={20} /><span className="card-number">01 / MUNDO</span><strong>Países e continentes</strong><small>Explore a geografia do futebol</small><ArrowUpRight size={16} />
           </button>
           <button className="collection-card" onClick={() => openArchive('copa')}>
@@ -430,6 +430,16 @@ export default function App() {
             <h2>{selectedArchive.title}</h2>
             <p className="archive-detail-subtitle">{selectedArchive.subtitle}</p>
             <p>{selectedArchive.summary}</p>
+            {selectedArchive.facts?.length ? (
+              <div className="archive-facts-grid">
+                {selectedArchive.facts.map((fact) => (
+                  <div className="archive-fact" key={fact.label}>
+                    <span>{fact.label}</span>
+                    <strong>{fact.value}</strong>
+                  </div>
+                ))}
+              </div>
+            ) : null}
             <div className="archive-detail-block">
               <h3>Origem e criação</h3>
               <p>{selectedArchive.origin}</p>
@@ -456,7 +466,7 @@ export default function App() {
             <div className="archive-source">
               <span>FONTE DE PESQUISA</span>
               <a href={selectedArchive.sourceUrl} target="_blank" rel="noreferrer">{selectedArchive.sourceLabel} <ArrowUpRight size={13} /></a>
-              <small>Registro inicial pesquisado. Estatísticas, temporadas e elencos serão adicionados com referências específicas.</small>
+              <small>Dados resumidos a partir da fonte indicada. Estatísticas, temporadas e elencos sem referência específica continuam em pesquisa.</small>
             </div>
             <button className="back-button" onClick={() => setSelectedArchiveId(null)}><ArrowLeft size={15} /> Voltar ao acervo</button>
           </div>
