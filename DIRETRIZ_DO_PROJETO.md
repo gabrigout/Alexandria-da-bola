@@ -135,8 +135,12 @@ As etapas operacionais não substituem nem reiniciam as fases gerais. A numeraç
 | 1 | Auditoria documental da temporada inaugural e conferência da artilharia | Concluída e registrada na seção 25. |
 | 2 | Consolidação/conferência da artilharia e integridade dos registros | Concluída e registrada na seção 25. |
 | 3 | Cadastro de partidas históricas especiais e correção editorial sobre a expulsão de Helmut Rahn | Concluída e registrada na seção 27. |
-| 4 | Ampliação das partidas documentadas em pequenos lotes | Lote 1 concluído; duas partidas da 2ª rodada adicionadas. Registro na seção 28. |
-| 5 | Próximo lote de partidas da temporada inaugural | **Não iniciada.** Só começar após autorização explícita do usuário e diagnóstico do estado atual. |
+| 4 | Primeiro lote de ampliação das partidas documentadas | Concluído: duas partidas da 2ª rodada adicionadas; seção 28. |
+| 5 | Inventário e cadastro das 240 partidas em lotes cronológicos | **Próxima etapa.** Existem 5 registros individuais; falta conferir a matriz completa e cadastrar os 235 restantes. Execução em lotes pequenos, começando após sincronização/diagnóstico no VS Code. |
+| 6 | Reconciliação estatística e auditoria integral da temporada | Pendente: conferir 240 partidas, 16 clubes, 30 jogos por clube, 857 gols, classificação, pontuação e integridade dos eventos. |
+| 7 | Fechamento editorial do dossiê Bundesliga 1963/64 | Pendente: consolidar fontes, divergências, lacunas, fichas e critérios de completude. |
+| 8 | Revisão da interface e qualidade do módulo Bundesliga | Pendente: testar navegação, fichas, responsividade, acessibilidade, busca/filtros e inspeção visual. |
+| 9 | Aceite e encerramento formal da temporada inaugural | Pendente: checklist final, relatório de cobertura, documentação e decisão sobre merge/publicação. |
 
 **Regra de numeração:** a expressão “Fase 5” pode se referir à fase geral de conteúdo e acervo; “Etapa 5” pode se referir ao próximo lote operacional da Bundesliga. A IA deve sempre dizer qual camada está mencionando. Não renumerar etapas concluídas nem apagar seu histórico.
 
@@ -997,3 +1001,158 @@ Não dizer “está pronto” quando o trabalho estiver apenas escrito, commitad
 - **Validação:** seção 31 e prompt de continuidade conferidos no arquivo atualizado. Alteração exclusivamente documental; nenhuma aplicação, dado histórico ou configuração técnica foi modificada.
 - **Commit:** será informado após a gravação e verificação no GitHub.
 - **Deploy:** não se aplica; alteração documental.
+
+
+
+---
+
+## 33. Plano mestre — próximas fases e encerramento da Bundesliga 1963/64
+
+**Atualização de planejamento:** 5 de novembro de 2026. Esta seção transforma as pendências anteriores em uma sequência executável. Ela não declara etapas futuras como concluídas e não autoriza, por si só, mudanças de código, cadastro de partidas, merge ou publicação.
+
+### 33.1. Diagnóstico confirmado do acervo de partidas
+
+- A temporada inaugural tem **240 partidas**, distribuídas em 30 rodadas com 8 partidas por rodada.
+- O arquivo `src/data/bundesliga/matches.ts`, na branch `phase-4-bundesliga-matches-batch-1`, contém **5 registros individuais**: a partida de abertura, Borussia Dortmund 3–3 TSV 1860 München, Hamburger SV 4–2 1. FC Saarbrücken, Meidericher SV 1–3 Hertha BSC e Hertha BSC 0–3 1. FC Köln.
+- Quatro registros têm fichas históricas enriquecidas com dados de contexto/eventos; a partida de abertura permanece com cadastro mais limitado e não aparece na seção de fichas enriquecidas da interface.
+- Portanto, a cobertura nominal atual é de 5/240 partidas e faltam **235 registros** para completar a cobertura básica de jogos. A quantidade deve ser recalculada após sincronizar o ambiente local e antes de cada novo lote.
+- A classificação final, os 16 clubes e as 50 linhas nominais da artilharia até o corte de seis gols já estão documentados. As 50 linhas não devem ser apresentadas como lista comprovadamente exaustiva de todos os goleadores da temporada.
+- A etapa de cadastro das 240 partidas ainda não começou de forma sistemática: os jogos especiais e dois jogos da segunda rodada foram cadastrados em etapas anteriores, mas não existe confirmação de cobertura integral rodada a rodada.
+
+### 33.2. Definição objetiva de temporada concluída
+
+A Bundesliga 1963/64 só poderá receber o status **temporada inaugural — cobertura básica concluída** quando todos os critérios abaixo forem atendidos:
+
+1. Existem exatamente 240 partidas individuais, sem duplicatas, cada uma ligada à temporada e aos dois clubes corretos.
+2. Todas as partidas têm os campos essenciais confirmados: data, rodada, mandante, visitante, gols do mandante, gols do visitante e ao menos uma fonte rastreável que sustente o registro.
+3. Cada um dos 16 clubes aparece em 30 partidas, com 15 jogos em casa e 15 fora, salvo se uma auditoria documental demonstrar regra/registro excepcional — nesse caso, a exceção deve ser explicada, não ocultada.
+4. A soma dos gols das 240 partidas é reconciliada com os 857 gols registrados para a temporada. Qualquer diferença precisa ser investigada e documentada antes do aceite.
+5. A tabela final é reproduzida pelos resultados, respeitando a regra histórica de dois pontos por vitória e o quociente de gols usado em 1963/64; a divergência DFB/RSSSF já registrada deve continuar visível.
+6. Não há IDs duplicados, clubes inexistentes, jogos associados à rodada errada, partidas repetidas ou relações quebradas.
+7. As divergências relevantes e os dados não encontrados estão registrados. Campos como estádio, público, árbitro e cronologia de gols podem ficar ausentes quando não houver fonte suficiente; não são motivo para inventar dados nem para bloquear a cobertura básica.
+8. Os testes automatizados, a compilação e a revisão visual do módulo passam; a diretriz registra os resultados reais e as limitações restantes.
+
+**O que não será exigido para declarar a cobertura básica concluída:** biografias longas de todos os jogadores, escalações completas de todos os jogos, estatísticas completas de goleiros, história detalhada de todos os estádios ou ampliação da artilharia abaixo de seis gols sem fonte nominativa. Esses itens formam uma camada de aprofundamento editorial posterior e devem ser identificados como pendências, sem fingir que estão completos.
+
+### 33.3. Etapa 5 — inventário e cadastro das 240 partidas
+
+**Objetivo:** completar a cobertura individual dos 240 jogos da temporada com consistência, sem tentar cadastrar tudo de uma só vez.
+
+**Passo 5.1 — sincronização e auditoria inicial no VS Code**
+- Abrir o repositório correto e confirmar que a branch de trabalho é `phase-4-bundesliga-matches-batch-1`.
+- Sincronizar com o GitHub antes de editar. Se houver alterações locais não commitadas, não sobrescrever nem descartar: inspecionar e reconciliar primeiro.
+- Conferir o último commit remoto, os arquivos `matches.ts`, `sources.ts`, `types.ts`, `validate.ts`, `validate.test.ts`, `seasons/1963-64.ts` e a interface `BundesligaArchive.tsx`.
+- Recontar partidas e IDs, verificar duplicatas e criar uma matriz de cobertura com 30 rodadas × 8 jogos. Marcar cada jogo como: não pesquisado, fontes localizadas, dados conferidos, cadastrado, validado.
+- A matriz deve identificar claramente os jogos já existentes e evitar recadastrar os cinco registros atuais.
+
+**Passo 5.2 — método de pesquisa por partida**
+- Priorizar a ficha individual do DFB Datencenter para data, rodada, participantes, placar, estádio, público, árbitro e cronologia de gols.
+- Confrontar resultados e informações relevantes com fontes independentes confiáveis, como RSSSF, arquivos de clubes ou imprensa histórica quando disponíveis.
+- Cadastrar uma referência própria em `sources.ts` para cada página de partida usada, com título, publicador, URL, tipo e nota objetiva sobre quais dados ela comprova.
+- Não tratar uma página geral da temporada como prova automática de todos os detalhes de cada partida.
+- Se uma fonte não informar público, árbitro, estádio ou minuto de gol, manter o campo ausente e registrar a limitação quando ela for relevante. Não inferir o dado a partir de outra partida ou de memória.
+- Conferir que os eventos de gol, quando cadastrados, correspondem ao placar, aos jogadores e aos clubes; a soma dos eventos deve ser compatível com os gols da partida.
+
+**Passo 5.3 — organização dos lotes**
+- Trabalhar preferencialmente uma rodada por lote, até 8 partidas, respeitando a ordem cronológica da competição.
+- Como algumas rodadas já têm jogos cadastrados, o primeiro lote deve completar os jogos faltantes da rodada mais antiga, sem duplicar o que já existe. A matriz de cobertura define exatamente a seleção.
+- Cada lote deve terminar com revisão das fontes, IDs, placares, cronologia, relações e testes. Só então iniciar o próximo lote.
+- Atualizar a matriz de cobertura e o registro de andamento após cada lote. Não registrar como completa uma rodada enquanto faltar qualquer uma de suas oito partidas.
+- Se um lote exigir mais pesquisa do que o previsto, reduzi-lo. Qualidade e rastreabilidade têm prioridade sobre velocidade.
+
+**Passo 5.4 — critérios para aceitar cada lote**
+- Todas as partidas do lote têm data, rodada, mandante, visitante e placar sustentados por fonte.
+- Não há IDs repetidos nem duplicação de partidas já existentes.
+- Cada referência cadastrada abre a ficha ou documento citado e comprova os dados descritos na nota.
+- A cronologia não contradiz o placar; dados desconhecidos permanecem ausentes.
+- Os testes de integridade e o build passam; a interface mostra as novas fichas corretamente quando aplicável.
+- A diretriz registra número de jogos adicionados, rodadas cobertas, fontes, arquivos, testes, commit e estado do preview/produção.
+
+### 33.4. Etapa 6 — reconciliação estatística e auditoria final
+
+Depois de cadastrar as 240 partidas:
+- Recalcular jogos, vitórias, empates, derrotas, gols pró, gols contra, pontos e quociente de cada clube a partir dos resultados cadastrados.
+- Comparar os resultados calculados com a classificação oficial do DFB, mantendo o quociente histórico e as notas de divergência já documentadas.
+- Confirmar 30 partidas por clube, 15 como mandante e 15 como visitante, e 240 partidas no total.
+- Confirmar 857 gols no conjunto de resultados e investigar qualquer diferença.
+- Verificar datas e rodadas, incluindo partidas adiadas ou datas diferentes da sequência padrão, sempre de acordo com fontes.
+- Revisar a consistência entre `matches.ts`, `seasons/1963-64.ts`, clubes, jogadores, artilharia e fontes.
+- Criar testes automatizados para cobertura total, duplicidade, integridade referencial, total de jogos, jogos por clube, gols e reconstrução da classificação. Não codificar um teste que simplesmente repita números sem calcular a partir das partidas.
+- Preservar a divergência de posições 10/11 entre DFB e RSSSF e explicar por que o DFB é adotado; não corrigir silenciosamente a fonte independente.
+
+### 33.5. Etapa 7 — fechamento editorial do dossiê 1963/64
+
+- Consolidar a ficha da temporada: contexto de criação da Bundesliga, formato, 16 participantes, classificação, campeão, vice, rebaixados, artilharia, estatísticas e principais acontecimentos.
+- Conferir se as fichas dos 16 clubes estão claramente identificadas como fichas históricas iniciais, sem sugerir biografias completas quando não forem.
+- Consolidar a lista de fontes por assunto e as notas de divergência, com linguagem compreensível ao visitante.
+- Registrar explicitamente a cobertura da artilharia: 50 linhas nominais até o corte de seis gols na consulta documentada; jogadores abaixo desse corte não estão confirmados como cobertura integral.
+- Listar lacunas restantes: elencos e escalações, biografias, treinadores, goleiros, estádios, públicos ausentes, premiações e campanhas continentais.
+- Definir quais lacunas são prioritárias para uma futura camada de aprofundamento, sem misturá-las aos critérios mínimos da cobertura básica.
+
+### 33.6. Etapa 8 — revisão de interface e qualidade do módulo
+
+- Conferir se a página da Bundesliga mostra claramente a temporada, a tabela, os clubes, a artilharia e a lista de partidas documentadas.
+- Garantir que a interface não dê a entender que há 240 fichas quando só parte delas estiver cadastrada; exibir progresso ou estado de cobertura de forma honesta durante o desenvolvimento.
+- Revisar navegação entre temporada, clube, jogador e partida; links de fonte; estados vazios; carregamento; erros e telas estreitas.
+- Testar busca e filtros, se existentes, com o volume completo de 240 partidas.
+- Inspecionar visualmente desktop e celular, incluindo legibilidade, contraste, teclado/foco e acessibilidade básica.
+- Executar tipagem, testes e build; corrigir regressões antes do aceite.
+- Fazer revisão funcional no preview publicado. READY/build aprovado não substitui inspeção visual e navegação manual.
+
+### 33.7. Etapa 9 — aceite e encerramento formal da Bundesliga
+
+- Produzir um relatório de fechamento com os 240 jogos, cobertura por rodada, cobertura de fontes, reconciliação estatística, testes e lacunas editoriais.
+- Atualizar o status da temporada para **cobertura básica concluída** somente se todos os critérios da seção 33.2 forem satisfeitos.
+- Registrar separadamente itens de aprofundamento ainda pendentes; não declarar a enciclopédia completa em todos os aspectos se elencos, biografias e outras camadas não estiverem prontas.
+- Confirmar branch, commits, preview, produção e diferença em relação à `main`.
+- Apresentar ao usuário o resultado e obter autorização antes de merge para `main` ou publicação de uma mudança de grande impacto, conforme o protocolo Vibe Coder.
+- Após o aceite, definir a próxima competição/temporada somente com uma decisão de prioridade do produto; não expandir aleatoriamente para várias ligas.
+
+### 33.8. Próximas fases gerais da Alexandria depois da Bundesliga
+
+| Fase geral | Objetivo | Entregáveis | Condição para avançar |
+|---|---|---|---|
+| 2 — Direção do produto e experiência | Confirmar a proposta definitiva da Alexandria, público, promessa e jornada principal. | Decisões de produto registradas, mapa de navegação e prioridades aprovadas. | O usuário apresentar/aprovar a direção final; não fazer reformulação ampla por suposição. |
+| 3 — Arquitetura do produto e dados | Auditar e consolidar entidades, relações, fontes, busca, estados de completude e escalabilidade. | Modelo de dados documentado e coerente com os módulos aprovados. | Arquitetura validada contra os fluxos reais do produto. |
+| 4 — Funcionalidades centrais | Implementar a experiência de exploração e consulta definida: catálogo, páginas de entidades, relações, busca e filtros. | Fluxos principais funcionais e testados. | Critérios de aceite por funcionalidade atendidos. |
+| 5 — Conteúdo e acervo histórico | Encerrar Bundesliga 1963/64 e depois expandir por prioridades editoriais, competição e temporada. | Acervos rastreáveis, com cobertura e lacunas explícitas. | Cada lote passa por fontes, integridade e revisão. |
+| 6 — Qualidade, revisão e evolução | Testar o produto completo, acessibilidade, responsividade, desempenho, segurança e publicação. | Checklist de qualidade, correções, documentação e release controlado. | Revisão final e aprovação do usuário para mudanças de produção relevantes. |
+
+**Ordem prática recomendada:** (1) concluir o cadastro das 240 partidas; (2) reconciliar a temporada; (3) fechar editorialmente o dossiê; (4) revisar a página e a experiência Bundesliga; (5) encerrar formalmente a temporada; (6) retomar com o usuário a direção definitiva do produto; (7) priorizar arquitetura e funcionalidades gerais conforme essa direção; (8) escolher o próximo acervo histórico.
+
+### 33.9. Ponto exato de retomada no VS Code
+
+Quando o usuário voltar ao VS Code ou abrir uma IA de programação, a primeira tarefa deve ser **somente diagnóstico e preparação da Etapa 5**, não cadastrar partidas automaticamente antes de confirmar o estado local.
+
+Prompt de continuidade para o agente do VS Code:
+
+> Você está trabalhando na Alexandria da Bola. Leia integralmente `DIRETRIZ_DO_PROJETO.md`, especialmente as seções 31, 32 e 33, antes de qualquer ação. Identifique-se com nome da IA, modelo exato se disponível, função e escopo. O usuário é Vibe Coder e não programa: assuma o trabalho técnico, explique em linguagem simples e não peça para ele editar código ou executar comandos.
+>
+> Primeiro faça um diagnóstico somente leitura: confirme o repositório, branch `phase-4-bundesliga-matches-batch-1`, estado do Git, alterações locais, último commit e sincronização com o GitHub. Não descarte alterações locais nem faça reset. Se a branch local estiver atrás, sincronize com segurança; se houver alterações não commitadas, preserve-as e explique o conflito antes de prosseguir.
+>
+> Leia `matches.ts`, `sources.ts`, `types.ts`, `validate.ts`, `validate.test.ts`, `seasons/1963-64.ts` e `BundesligaArchive.tsx`. Conte os registros existentes, verifique duplicatas e monte a matriz de cobertura das 30 rodadas e 240 partidas, identificando os cinco registros já cadastrados. Não invente fixtures nem complete dados por plausibilidade.
+>
+> Ao final, apresente o diagnóstico e proponha o primeiro lote de partidas faltantes da rodada cronologicamente mais antiga, com fontes oficiais do DFB e conferência independente quando disponível, arquivos que serão alterados e testes previstos. Não comece o cadastro até o usuário aprovar o lote. Depois da aprovação, execute em lote pequeno, valide e atualize a diretriz.
+
+**Atenção ao estado remoto:** o diagnóstico desta atualização encontrou a branch `phase-4-bundesliga-matches-batch-1` 12 commits à frente da `main`, sem commits atrás. O trabalho documental e de acervo dessa branch ainda não foi incorporado à `main`. Antes de editar pelo VS Code, garantir que a cópia local esteja na branch correta e sincronizada; não trabalhar acidentalmente em `main`.
+
+### 33.10. Regras para não confundir conclusão com publicação
+
+- Cobertura histórica concluída significa que os critérios editoriais e estatísticos da temporada foram cumpridos; não significa automaticamente que o código foi integrado à `main`.
+- Commit significa que a alteração foi gravada no histórico da branch; push/sincronização significa que chegou ao GitHub; preview significa que existe uma implantação de teste; produção significa que a versão pública foi atualizada.
+- O relatório final deve informar cada estado separadamente.
+- Nenhuma IA deve prometer uma data de conclusão antes de conhecer a disponibilidade e a qualidade das fontes das partidas restantes.
+
+---
+
+## 34. Registro — planejamento de encerramento da Bundesliga e próximas fases — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, modelo GPT-6; função de planejamento do produto, pesquisa de estrutura do acervo e documentação de continuidade.
+- **Motivo:** o usuário pediu que as próximas fases gerais e os passos concretos para encerrar a Bundesliga fossem definidos e registrados para retomada pelo VS Code.
+- **Diagnóstico realizado:** diretriz integral consultada; README e arquivos `matches.ts`, `sources.ts` e `validate.test.ts` inspecionados na branch de trabalho; identificados 5 registros de partidas e a meta de 240 jogos; comparação GitHub informa branch 12 commits à frente da `main`, sem commits atrás.
+- **O que mudou:** tabela operacional atualizada com as etapas 5 a 9; adicionados critérios objetivos de conclusão da temporada, plano de pesquisa/cadastro em lotes, reconciliação estatística, fechamento editorial, revisão visual, aceite, roadmap das fases gerais e prompt de retomada no VS Code.
+- **Arquivos afetados:** `DIRETRIZ_DO_PROJETO.md`.
+- **Limitações:** diagnóstico remoto do GitHub; o estado local do VS Code, alterações não commitadas e a sincronização da máquina do usuário não foram inspecionados. A contagem de partidas deve ser reconfirmada localmente antes do primeiro lote. Nenhuma partida nova foi pesquisada ou cadastrada nesta tarefa.
+- **Validação:** conferência textual da diretriz e dos arquivos de dados; nenhuma execução de testes ou build, pois não houve mudança na aplicação.
+- **Commit:** será informado após a gravação e verificação no GitHub.
+- **Deploy:** não se aplica; atualização exclusivamente documental.
