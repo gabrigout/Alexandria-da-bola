@@ -647,4 +647,4 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Arquivos alterados:** `src/data/bundesliga/types.ts`, `matches.ts`, `clubs.ts`, `sources.ts`, `seasons/1963-64.ts`, `validate.test.ts`, `src/components/BundesligaArchive.tsx`, `src/index.css` e este documento.
 - **Limites desta etapa:** não foram cadastradas as outras 238 partidas; escalações completas e demais estatísticas seguem pendentes. Não foi feita inspeção visual manual em iPhone/desktop; build e deploy confirmam compilação e publicação, não revisão visual.
 - **Próxima etapa sugerida:** continuar o acervo de partidas da temporada inaugural em lotes pequenos, priorizando fichas com fontes oficiais, e só então ampliar para elencos e biografias.
-- **Commit de código validado:** `9b2ab5ec76376eecd13e9395189970a17a6db874`. O commit deste registro documental será acrescentado depois de sua gravação.
+- **Commit de código validado:** `9b2ab5ec76376eecd13e9395189970a17a6db874`. **Commit do registro documental:** `93ffc566790f8e7bec0052630a825b9bc9c02f4f`.
