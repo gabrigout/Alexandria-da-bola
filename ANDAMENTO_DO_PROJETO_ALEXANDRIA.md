@@ -311,12 +311,12 @@ Toda mudança incorporada ao projeto deve gerar uma nova entrada no histórico. 
 - **Responsável:** ChatGPT, seguindo a direção aprovada pelo usuário.
 - **Tipo:** design / código / documentação.
 - **Motivo:** iniciar a materialização do conceito do salão monumental com globo terrestre suspenso.
-- **O que mudou:** a esfera abstrata de partículas foi substituída por um globo 3D; foram adicionados rotação por toque/arraste, zoom por pinça/roda do mouse, identificação aproximada de continentes, painel demonstrativo de países, navegação por seções e cartões de exploração. A linha do tempo e a busca existentes foram preservadas como conteúdo complementar. A composição arquitetônica do salão foi criada em CSS e o HTML recebeu novos metadados.
+- **O que mudou:** a esfera abstrata de partículas foi substituída por um globo 3D; foram adicionados rotação por toque/arraste, zoom por pinça/roda do mouse, identificação aproximada de continentes, painel demonstrativo de países, navegação por seções e cartões de exploração. O globo recebeu mapa terrestre, relevo e camada sutil de nuvens por texturas do repositório oficial de exemplos do Three.js, além de um mapa procedural de contingência. A linha do tempo e a busca existentes foram preservadas como conteúdo complementar. A composição arquitetônica do salão foi criada em CSS e o HTML recebeu novos metadados.
 - **Arquivos afetados:** `src/App.tsx`, `src/index.css`, `index.html`, `README.md`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
 - **Decisões relacionadas:** o globo é o protagonista visual e permanece suspenso, sem pedestal. A seleção geográfica por limites aproximados e a lista de países são apenas demonstrativas; ainda não existe acervo nacional integrado.
 - **Validação:** leitura prévia dos arquivos atuais e confirmação de gravação dos commits no GitHub. Não foi executado `npm run build`, teste automatizado ou teste visual em dispositivo físico. A execução de workflows do GitHub não retornou workflows associados ao commit consultado. O site de produção não pôde ser confirmado nesta etapa.
-- **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (CSS), `44ff97c` (metadados), `99989fb` (README) e `ff2cfb9` (URL da textura terrestre).
-- **Deploy:** atualização de produção não verificada; não afirmar que o novo protótipo já está publicado.
+- **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (CSS), `44ff97c` (metadados), `99989fb` (README), `ff2cfb9` (textura terrestre), `ef10ebb` (relevo e nuvens), `db76632` (estado do README).
+- **Deploy:** a verificação de status do commit `db76632` retornou Vercel **pending** no momento da consulta. A publicação final ainda não foi confirmada; não afirmar que o novo protótipo já está publicado.
 
 
 ---
