@@ -628,3 +628,23 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Validação final:** Vercel executou `npm run build` no commit `d76150a81713b623db1b93d313b9e5e9eeaeffe2`. `tsc --noEmit` passou; Vitest 3.2.7 aprovou 6 testes (1 arquivo); Vite 7.3.7 transformou 1.593 módulos e concluiu o build em 2,54 s.
 - **Deploy de produção:** deployment `dpl_CZXenzrvEm4dtPRhZyrRnVo1J6Ka`, estado `READY`, alias `alexandria-da-bola.vercel.app`, associado ao commit `d76150a81713b623db1b93d313b9e5e9eeaeffe2`. Isso confirma build e publicação, mas não inspeção visual manual.
 - **Intercorrência registrada:** duas tentativas intermediárias de commit geraram deploys com erro devido à montagem incorreta do array de fontes em `sources.ts`. O arquivo foi corrigido, a estrutura foi conferida e o build final passou. Os commits intermediários permanecem no histórico; não foram apagados.
+
+
+---
+
+## 27. Etapa 3 — partidas históricas documentadas e correção da expulsão de Helmut Rahn — 5 de novembro de 2026
+
+- **Objetivo:** corrigir o anacronismo sobre a expulsão de Helmut Rahn e cadastrar individualmente o jogo que estabeleceu o recorde de público da temporada inaugural.
+- **Partida do recorde:** Hertha BSC 0–3 1. FC Köln, 21/09/1963, 5ª rodada, Olympiastadion, Berlim, 85.411 espectadores. O DFB Datencenter confirma público, árbitro Josef Kandlbinder e gols de Christian Müller (2' e 86') e Hans Sturm (71'). O histórico oficial do Hertha BSC também recorda a partida como recorde de público.
+- **Primeira expulsão:** Meidericher SV 1–3 Hertha BSC, 14/09/1963, 4ª rodada, Wedaustadion, Duisburg, 32.000 espectadores, árbitro Edgar Deuschel. O DFB documenta data, rodada, estádio, público, árbitro, placar, gols e o evento de Helmut Rahn aos 77'. A RSSSF identifica expressamente o evento como expulsão; SPORT1 identifica Rahn como o primeiro jogador expulso da Bundesliga.
+- **Correção editorial:** a ficha do Meidericher SV não usa mais “primeiro cartão vermelho”. A formulação adotada é “primeiro jogador expulso”; cartões amarelos e vermelhos ainda não eram utilizados em 1963/64.
+- **Modelagem de dados:** BundesligaMatch agora aceita, de forma opcional, estádio, cidade, público, árbitro e cronologia estruturada de eventos (gol/expulsão). A partida de abertura continua sem esses detalhes quando não há dados confirmados no cadastro.
+- **Relação com a temporada:** a partida Hertha BSC 0–3 Köln foi vinculada explicitamente ao contexto do recorde de público. As duas partidas foram acrescentadas aos marcos históricos de 1963/64.
+- **Interface:** criada a seção responsiva “Partidas documentadas” na página da Bundesliga, exibindo as duas fichas com placar, data, estádio, público, árbitro, cronologia e links para as fontes.
+- **Testes:** Vercel executou `npm run build`, que inclui `npm run typecheck`, `npm test` e `vite build`. TypeScript passou sem diagnósticos; Vitest 3.2.7 aprovou 8 testes (1 arquivo); Vite 7.3.7 transformou 1.593 módulos e concluiu a compilação em 2,45 segundos.
+- **Deploy de produção:** deployment `dpl_Dc46GeLXybS2GuxxdZKXYD6R8Utr`, estado `READY`, alias principal `alexandria-da-bola.vercel.app`, associado ao commit de código `9b2ab5ec76376eecd13e9395189970a17a6db874`.
+- **Intercorrência de build:** o primeiro commit de código `31f90ee239fca2a172c0b3eb861871e1fccdff5c` tinha uma vírgula ausente entre objetos da lista de fontes e a Vercel o marcou como `ERROR`. O erro foi corrigido no commit `9b2ab5ec76376eecd13e9395189970a17a6db874`; o build seguinte passou e foi publicado. Os commits intermediários permanecem no histórico.
+- **Arquivos alterados:** `src/data/bundesliga/types.ts`, `matches.ts`, `clubs.ts`, `sources.ts`, `seasons/1963-64.ts`, `validate.test.ts`, `src/components/BundesligaArchive.tsx`, `src/index.css` e este documento.
+- **Limites desta etapa:** não foram cadastradas as outras 238 partidas; escalações completas e demais estatísticas seguem pendentes. Não foi feita inspeção visual manual em iPhone/desktop; build e deploy confirmam compilação e publicação, não revisão visual.
+- **Próxima etapa sugerida:** continuar o acervo de partidas da temporada inaugural em lotes pequenos, priorizando fichas com fontes oficiais, e só então ampliar para elencos e biografias.
+- **Commit de código validado:** `9b2ab5ec76376eecd13e9395189970a17a6db874`. O commit deste registro documental será acrescentado depois de sua gravação.
