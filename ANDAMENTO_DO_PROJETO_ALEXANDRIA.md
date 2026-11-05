@@ -98,11 +98,11 @@ As fases abaixo organizam o trabalho conhecido até agora. As fases futuras são
 
 ### Foco atual
 
-**A direção criativa da nova entrada está aprovada. O foco é validar o protótipo visual implementado em `main`.**
+**A base da aplicação está restaurada para TypeScript e a expansão enciclopédica da Bundesliga está em andamento.**
 
-O novo conceito coloca um globo terrestre realista suspenso no centro de um salão clássico de biblioteca/museu. A navegação prevista começa em Mundo → Continente → País. O código inicial dessa experiência foi incorporado, mas build, testes em dispositivo e atualização do deploy ainda precisam ser confirmados.
+O foco imediato é consolidar a temporada inaugural de 1963/64 com dados documentados e criar fichas enciclopédicas dos 16 clubes participantes. O índice de temporadas futuras já está estruturado, mas a presença de uma temporada no índice não significa que seu conteúdo esteja pesquisado ou completo.
 
-Não ampliar o acervo nem tratar a seleção demonstrativa de países como conteúdo final antes de validar a experiência e definir a arquitetura dos dados.
+A entrada cartográfica e o catálogo geral permanecem parte do produto; não devem ser removidos durante a expansão histórica. A prioridade atual é qualidade factual, relações entre entidades, fontes por informação e transparência sobre lacunas.
 
 ---
 
@@ -561,3 +561,25 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commit validado:** `aa5d10c87597358fe1ef660340fcb98774f031ee`.
 - **Produção durante a validação:** permaneceu no commit `28196a2ff45d564cdb2955a180ae45673ce64f34`; nenhum deploy de produção foi feito durante os testes.
 - **Pendências remanescentes:** inspeção visual/interativa em dispositivos reais; adicionar e versionar `package-lock.json` para instalações reproduzíveis. A migração não deve ser confundida com conclusão do acervo histórico Bundesliga.
+
+
+---
+
+## 23. Geração e validação do package-lock.json — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, usando GitHub Actions no ambiente de nuvem, sem exigir terminal local do usuário.
+- **Tipo:** dependências / reprodutibilidade / infraestrutura de desenvolvimento.
+- **Motivo:** versionar as resoluções exatas das dependências npm para tornar as instalações reproduzíveis e eliminar a pendência registrada na validação da restauração do TypeScript.
+- **Arquivo criado:** `package-lock.json`, lockfileVersion 3, gerado pelo npm 10.9.9 sob Node.js 22.23.4.
+- **Conteúdo conferido:** lockfile contém a árvore de dependências correspondente ao `package.json` da aplicação (React 19, Vite 7, TypeScript, Vitest, Three.js e Lucide React), com URLs de resolução e hashes de integridade do registro npm.
+- **Commit que adicionou o lockfile:** `b248277713330d4bd4db3d61f0efad6f0510acb7` (`Adiciona package-lock.json`). Blob SHA: `d7cc70b2ff46bc1dc977b18c82c8f3b6d0ddb274`.
+- **Validação reproduzível:** `npm ci --no-audit --no-fund` concluiu com sucesso e instalou 107 pacotes.
+- **Typecheck:** `tsc --noEmit` passou sem diagnósticos.
+- **Testes:** Vitest 3.2.7; 1 arquivo e 3 testes aprovados.
+- **Build:** Vite 7.3.7 transformou 1.593 módulos e concluiu com sucesso. Artefatos: HTML 0,97 kB; CSS 39,25 kB; JavaScript 344,41 kB.
+- **Execução de CI:** GitHub Actions, execução `42113022687`, concluída com sucesso. A primeira tentativa falhou somente por configurar cache npm antes da existência do lockfile; o workflow foi corrigido e a segunda geração passou.
+- **Workflow temporário:** `.github/workflows/generate-lockfile.yml` foi criado exclusivamente para gerar/verificar o arquivo e removido após a validação. Commit de remoção: `3e49db671a7b825a9f8aa8b5154c21bcbd22bcbd`. Nenhum workflow temporário permanece por essa tarefa.
+- **Arquivos permanentes afetados:** `package-lock.json` e `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Situação do código e deploy:** nenhum código da aplicação foi alterado nesta etapa e nenhum deploy de produção foi solicitado. O build foi validado em CI; isso não equivale a uma nova publicação na Vercel.
+- **Pendência encerrada:** versionamento do `package-lock.json` para instalação reprodutível.
+- **Próxima etapa aprovada pelo usuário:** consolidar a ficha 1963/64 e desenvolver fichas enciclopédicas dos 16 clubes inaugurais, com pesquisa e fontes verificáveis.
