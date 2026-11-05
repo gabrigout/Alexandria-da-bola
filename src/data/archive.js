@@ -1,24 +1,4 @@
-export type ArchiveCategory = 'liga' | 'copa' | 'clube' | 'jogador'
-
-export type ArchiveEntry = {
-  id: string
-  title: string
-  category: ArchiveCategory
-  country: string
-  year: string
-  subtitle: string
-  summary: string
-  facts?: { label: string; value: string }[]
-  origin: string
-  history: string[]
-  legacy: string
-  relatedIds: string[]
-  sourceLabel: string
-  sourceUrl: string
-  status: 'pesquisado' | 'em expansão'
-}
-
-export const archiveEntries: ArchiveEntry[] = [
+export const archiveEntries = [
   {
     id: 'brasileirao',
     title: 'Campeonato Brasileiro',
@@ -98,8 +78,8 @@ export const archiveEntries: ArchiveEntry[] = [
     ],
     legacy: 'A Bundesliga tornou-se uma referência de organização de clubes, formação de talentos e identidade de torcidas. Seu arquivo reúne figuras como Franz Beckenbauer, Gerd Müller, Uwe Seeler e gerações posteriores.',
     relatedIds: ['bayern-munique', 'champions-league'],
-    sourceLabel: 'Bundesliga — História oficial',
-    sourceUrl: 'https://www.bundesliga.com/en/history',
+    sourceLabel: 'DFB — Temporada 1963/1964: como tudo começou',
+    sourceUrl: 'https://www.dfb.de/news/detail/saison-19631964-wie-alles-begann-35097',
     status: 'pesquisado'
   },
   {
@@ -1268,7 +1248,7 @@ export const archiveEntries: ArchiveEntry[] = [
   }
 ]
 
-export const categoryLabels: Record<ArchiveCategory | 'todas', string> = {
+export const categoryLabels = {
   todas: 'Tudo',
   liga: 'Ligas',
   copa: 'Copas',

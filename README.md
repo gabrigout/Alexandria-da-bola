@@ -15,15 +15,15 @@ A Alexandria é uma biblioteca digital dedicada à história do futebol. O proje
 
 ## Acervo inicial
 
-O módulo de dados está em `src/data/archive.ts`. Cada registro possui identificador estável, categoria, país, ano de referência, resumo, origem, cronologia, legado, fontes e conexões. Quando há informações essenciais verificadas, elas aparecem em uma ficha de dados rápidos.
+O catálogo geral está em `src/data/archive.js`. A Bundesliga possui módulo próprio em `src/data/bundesliga/`, com índice permanente de temporadas, entidades conectadas, referências individualizadas e validação estrutural em JavaScript.
 
 A primeira coleção contém **49 registros**: 7 ligas, 5 copas, 25 clubes e 12 jogadores. É um núcleo inicial pesquisado, não uma enciclopédia completa. Elencos, temporadas, estatísticas e títulos serão acrescentados progressivamente e sempre com referência própria.
 
 ## Tecnologias
 
-- React 19 + TypeScript
+- React 19 + JavaScript (JSX)
 - Vite
-- CSS responsivo
+- HTML e CSS responsivo
 - Lucide React
 - Dados cartográficos Natural Earth em GeoJSON
 - Bandeiras servidas pelo FlagCDN
@@ -50,9 +50,13 @@ O acervo prioriza federações, confederações, ligas, clubes, arquivos e publi
 
 Conteúdo não confirmado deve permanecer marcado como pendente. Não inventar números, elencos, estatísticas, títulos ou relações entre jogadores e clubes.
 
+## Bundesliga
+
+O módulo indexa temporadas de 1963/64 a 2026/27. A temporada inaugural possui classificação completa, 15 artilheiros, marcos históricos e conexão com a final da DFB-Pokal de 1963/64. Temporadas ainda não pesquisadas permanecem sinalizadas como pendentes. Futebol feminino e seleções nacionais possuem catálogos separados.
+
 ## Estado do projeto
 
-A navegação inicial do acervo e as fichas históricas já estão incorporadas ao código. A base está sendo ampliada por etapas. Ainda é necessário executar build e testes formais, validar o comportamento em iPhone e desktop e revisar cada ficha antes de considerar o conteúdo completo.
+A aplicação utiliza JavaScript/JSX, HTML e CSS com React e Vite. O módulo inicial da Bundesliga foi incorporado. Build, testes no navegador/iPhone e confirmação do deploy devem ser verificados após a publicação.
 
 ---
 Projeto de portfólio em desenvolvimento.

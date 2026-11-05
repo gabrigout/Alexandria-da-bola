@@ -478,3 +478,23 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commits desta expansão:** `cb8ddeb` (novos registros e conexões), `c761599` (atalhos no menu e busca ampliada), `824ca32` (README atualizado na expansão anterior; contagem refeita nesta etapa).
 - **Validação:** conteúdo confirmado no GitHub e IDs/relações cruzadas auditados. Não foi executado `npm run build`, teste TypeScript, teste automatizado ou inspeção visual em iPhone/desktop. A publicação deve ser confirmada pelo estado da Vercel do commit documental final.
 - **Próximas expansões:** incluir mais clubes por liga e suas principais eras; criar páginas de temporadas com campeões, vice-campeões e artilheiros; aprofundar Copas nacionais e continentais; adicionar elencos históricos e trajetórias de técnicos; expandir futebol feminino e competições de seleções.
+
+
+---
+
+## 20. Migração para JavaScript e fundação enciclopédica da Bundesliga — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, com autorização expressa do usuário.
+- **Tipo:** arquitetura / código / dados / documentação.
+- **Motivo:** abandonar TypeScript e preparar a expansão permanente da Bundesliga, preservando interface e acervo geral.
+- **Decisões aplicadas:** JavaScript/JSX com React 19 e Vite; dados modulares por entidade; temporadas conectadas por IDs; estatísticas com fontes e limitações; lacunas marcadas como pendentes; atualização ao fim de cada temporada; futebol feminino separado; seleções nacionais em catálogo próprio; português brasileiro.
+- **Migração técnica:** App.tsx → App.jsx; main.tsx → main.jsx; archive.ts → archive.js; vite.config.ts → vite.config.js; index.html atualizado; build usa vite build; removidos typescript, @types/* e tsconfig.json.
+- **Bundesliga:** criada seção própria com seletor de temporadas, tabela inaugural, artilharia, contexto histórico, estatísticas e fontes. Índice de 64 temporadas, de 1963/64 a 2026/27: 1 ficha detalhada inicial, 62 temporadas históricas pendentes e 1 atual em andamento. Indexação não significa que todas as fichas estejam pesquisadas.
+- **Temporada 1963/64:** 16 clubes, 30 rodadas, 240 partidas, 857 gols, média 3,57, público total 6.057.335, campeão 1. FC Köln, rebaixados Preußen Münster e Saarbrücken. A classificação DFB, 15 artilheiros e o primeiro gol por Timo Konietzka foram cadastrados. A final DFB-Pokal de 13/06/1964 (TSV 1860 München 2–0 Eintracht Frankfurt) está conectada.
+- **Divergência documental:** DFB Datencenter coloca Werder Bremen em 10º e Eintracht Braunschweig em 11º; RSSSF inverte a ordem. A Alexandria adota a tabela oficial do DFB e registra a divergência em sources.js.
+- **Arquivos novos:** BundesligaArchive.jsx; competition.js; clubs.js; players.js; coaches.js; awards.js; matches.js; catalogs.js; sources.js; validate.js; index.js; seasons/index.js; seasons/1963-64.js.
+- **Arquivos alterados:** App.jsx; main.jsx; archive.js; index.css; package.json; vite.config.js; index.html; README.md e este documento.
+- **Arquivos removidos:** App.tsx; main.tsx; archive.ts; vite.config.ts; tsconfig.json.
+- **Validação estrutural preparada:** validateBundesligaData() verifica IDs, consistência de jogos, saldo, pontuação histórica e referências. Execução real do build e testes visuais deve ser registrada separadamente.
+- **Deploy:** verificar o estado efetivo da Vercel/GitHub após o commit; não presumir sucesso.
+- **Pendências:** pesquisar as 63 temporadas restantes; completar clubes históricos, jogadores, treinadores, partidas, estádios, premiações, campanhas europeias, seleções e futebol feminino; validar em iPhone e desktop.

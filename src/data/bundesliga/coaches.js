@@ -1,0 +1,1 @@
+export const bundesligaCoaches=[{id:'georg-knopfle',name:'Georg Knöpfle',clubId:'fc-koln',seasonIds:['1963-64'],role:'treinador-do-campeao',profileStatus:'ficha-individual-pendente',sourceIds:['dfb-inaugural-season']}];

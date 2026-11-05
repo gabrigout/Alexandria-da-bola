@@ -1,18 +1,12 @@
-import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type WheelEvent as ReactWheelEvent } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
   Compass, Globe2, Search, Trophy, Users, X, ZoomIn, ZoomOut, RotateCcw,
 } from 'lucide-react'
-import { archiveEntries, categoryLabels, type ArchiveCategory, type ArchiveEntry } from './data/archive'
+import { archiveEntries, categoryLabels } from './data/archive'
+import BundesligaArchive from './components/BundesligaArchive'
 
-type Continent = {
-  id: string
-  name: string
-  subtitle: string
-  countries: string[]
-}
-
-const continents: Continent[] = [
+const continents = [
   { id: 'south-america', name: 'América do Sul', subtitle: 'A paixão que atravessa gerações', countries: ['Argentina', 'Brasil', 'Chile', 'Colômbia', 'Peru', 'Uruguai'] },
   { id: 'north-america', name: 'América do Norte', subtitle: 'O jogo em transformação', countries: ['Canadá', 'Estados Unidos', 'México'] },
   { id: 'europe', name: 'Europa', subtitle: 'Raízes, escolas e rivalidades', countries: ['Alemanha', 'Espanha', 'França', 'Inglaterra', 'Itália', 'Portugal'] },
@@ -34,19 +28,13 @@ const milestones = [
   { year: 2022, label: 'Uma final para a história', note: 'A Argentina conquista a Copa do Mundo do Catar em uma final memorável.' },
 ]
 
-type GeoPosition = [number, number, ...number[]]
-type GeoGeometry = { type: 'Polygon' | 'MultiPolygon'; coordinates: GeoPosition[][] | GeoPosition[][][] }
-type GeoFeature = { type: 'Feature'; properties: Record<string, string | number | null>; geometry: GeoGeometry }
-type GeoData = { type: 'FeatureCollection'; features: GeoFeature[] }
-type MapCountry = { name: string; continent: string; code: string; flagCode: string; d: string; bounds: [number, number, number, number]; center: [number, number] }
-
 const MAP_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson'
 const MAP_W = 1200
 const MAP_H = 600
 const mapContinents = ['América do Norte', 'América do Sul', 'Europa', 'África', 'Ásia', 'Oceania']
 
 function continentName(raw: string) {
-  const names: Record<string, string> = {
+  const names = {
     'North America': 'América do Norte', 'South America': 'América do Sul',
     'Europe': 'Europa', 'Africa': 'África', 'Asia': 'Ásia', 'Oceania': 'Oceania',
     'Seven seas (open ocean)': 'Oceanos',
@@ -55,17 +43,17 @@ function continentName(raw: string) {
 }
 
 const regionNames = new Intl.DisplayNames(['pt-BR'], { type: 'region' })
-const countryNamesByCode: Record<string, string> = {
+const countryNamesByCode = {
   XK: 'Kosovo', TW: 'Taiwan', PS: 'Palestina', EH: 'Saara Ocidental',
   '00': 'Território não identificado',
 }
 
-function countryFlagCode(properties: Record<string, string | number | null>) {
+function countryFlagCode(properties) {
   const candidates = [properties.ISO_A2, properties.ISO_A2_EH]
   const code = candidates.find((value) => typeof value === 'string' && /^[A-Za-z]{2}$/.test(value))
   return String(code ?? '').toLowerCase()
 }
-function countryNameInPortuguese(properties: Record<string, string | number | null>) {
+function countryNameInPortuguese(properties) {
   const code = String(properties.ISO_A2 ?? '')
   if (code && code !== '-99' && /^[A-Z]{2}$/.test(code)) {
     const localized = regionNames.of(code)
@@ -76,18 +64,18 @@ function countryNameInPortuguese(properties: Record<string, string | number | nu
   return String(properties.NAME_PT ?? properties.NAME ?? properties.ADMIN ?? 'País')
 }
 
-function makeCountryPath(geometry: GeoGeometry) {
+function makeCountryPath(geometry) {
   const polygons = geometry.type === 'Polygon'
-    ? [geometry.coordinates as GeoPosition[][]]
-    : geometry.coordinates as GeoPosition[][][]
+    ? [geometry.coordinates]
+    : geometry.coordinates[]
   let d = ''
   let minX = MAP_W, minY = MAP_H, maxX = 0, maxY = 0
-  const project = (point: GeoPosition) => {
+  const project = (point) => {
     const x = ((point[0] + 180) / 360) * MAP_W
     const y = ((90 - point[1]) / 180) * MAP_H
     minX = Math.min(minX, x); maxX = Math.max(maxX, x)
     minY = Math.min(minY, y); maxY = Math.max(maxY, y)
-    return [x, y] as const
+    return [x, y]
   }
   for (const polygon of polygons) {
     for (const ring of polygon) {
@@ -99,21 +87,21 @@ function makeCountryPath(geometry: GeoGeometry) {
       d += 'Z'
     }
   }
-  return { d, bounds: [minX, minY, maxX, maxY] as [number, number, number, number], center: [(minX + maxX) / 2, (minY + maxY) / 2] as [number, number] }
+  return { d, bounds: [minX, minY, maxX, maxY], center: [(minX + maxX) / 2, (minY + maxY) / 2] }
 }
 
-function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void }) {
-  const [countries, setCountries] = useState<MapCountry[]>([])
+function FlatWorldMap({ onSelect }) {
+  const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [view, setView] = useState({ x: 0, y: 0, w: MAP_W, h: MAP_H })
-  const [activeContinent, setActiveContinent] = useState<string | null>(null)
+  const [activeContinent, setActiveContinent] = useState(null)
   const dragRef = useRef<{ x: number; y: number; viewX: number; viewY: number } | null>(null)
 
   useEffect(() => {
     let cancelled = false
     fetch(MAP_URL)
-      .then((response) => { if (!response.ok) throw new Error('Map unavailable'); return response.json() as Promise<GeoData> })
+      .then((response) => { if (!response.ok) throw new Error('Map unavailable'); return response.json() })
       .then((data) => {
         if (cancelled) return
         const mapped = data.features.map((feature) => {
@@ -157,14 +145,14 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
       Math.max(...matching.map((item) => item.bounds[3])),
     ])
   }
-  const chooseCountry = (country: MapCountry) => { zoomTo(country.bounds); onSelect(country) }
-  const onWheel = (event: ReactWheelEvent<SVGSVGElement>) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
-  const onPointerDown = (event: ReactPointerEvent<SVGSVGElement>) => {
-    if ((event.target as Element).closest('.country-shape')) return
+  const chooseCountry = (country) => { zoomTo(country.bounds); onSelect(country) }
+  const onWheel = (event) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
+  const onPointerDown = (event) => {
+    if (event.target.closest('.country-shape')) return
     dragRef.current = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y }
     event.currentTarget.setPointerCapture(event.pointerId)
   }
-  const onPointerMove = (event: React.PointerEvent<SVGSVGElement>) => {
+  const onPointerMove = (event) => {
     const drag = dragRef.current
     if (!drag) return
     const rect = event.currentTarget.getBoundingClientRect()
@@ -211,13 +199,13 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
 }
 
 export default function App() {
-  const [selectedContinent, setSelectedContinent] = useState<Continent | null>(null)
-  const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
-  const [selectedYear, setSelectedYear] = useState<number | null>(null)
+  const [selectedContinent, setSelectedContinent] = useState(null)
+  const [selectedCountry, setSelectedCountry] = useState(null)
+  const [selectedYear, setSelectedYear] = useState(null)
   const [query, setQuery] = useState('')
-  const [archiveCategory, setArchiveCategory] = useState<ArchiveCategory | 'todas'>('todas')
+  const [archiveCategory, setArchiveCategory] = useState('todas')
   const [archiveSearch, setArchiveSearch] = useState('')
-  const [selectedArchiveId, setSelectedArchiveId] = useState<string | null>(null)
+  const [selectedArchiveId, setSelectedArchiveId] = useState(null)
   const selectedArchive = archiveEntries.find((entry) => entry.id === selectedArchiveId)
   const filteredArchive = archiveEntries.filter((entry) => {
     const matchesCategory = archiveCategory === 'todas' || entry.category === archiveCategory
@@ -228,19 +216,20 @@ export default function App() {
   const selectedMilestone = milestones.find((item) => item.year === selectedYear)
   const filtered = milestones.filter((item) => String(item.year).includes(query) || item.label.toLowerCase().includes(query.toLowerCase()))
 
-  const handleCountrySelect = useCallback((country: MapCountry) => {
+  const handleCountrySelect = useCallback((country) => {
     const continent = continents.find((item) => item.name === country.continent) ?? { id: country.continent, name: country.continent, subtitle: 'Explore a história do futebol neste continente', countries: [] }
     setSelectedContinent(continent)
     setSelectedCountry(country.name)
   }, [])
 
+  const openBundesliga = () => document.getElementById('bundesliga-archive')?.scrollIntoView({ behavior: 'smooth' })
   const openTimeline = () => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })
   const openCollection = () => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })
-  const openArchive = (category: ArchiveCategory | 'todas' = 'todas') => {
+  const openArchive = (category = 'todas') => {
     setArchiveCategory(category)
     document.getElementById('archive-catalog')?.scrollIntoView({ behavior: 'smooth' })
   }
-  const relatedEntries = (entry: ArchiveEntry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
+  const relatedEntries = (entry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
 
   return (
     <main className="site-shell">
@@ -254,6 +243,7 @@ export default function App() {
           <button onClick={() => openArchive('liga')}>Ligas</button>
           <button onClick={() => openArchive('copa')}>Copas</button>
           <button onClick={() => openArchive('clube')}>Clubes</button>
+          <button onClick={openBundesliga}>Bundesliga</button>
           <button onClick={() => openArchive('jogador')}>Lendas</button>
           <button onClick={openTimeline}>Linha do tempo</button>
         </nav>
@@ -349,6 +339,8 @@ export default function App() {
         </div>
       </section>
 
+      <BundesligaArchive />
+
       <section className="archive-catalog-section" id="archive-catalog">
         <div className="section-heading">
           <div>
@@ -363,7 +355,7 @@ export default function App() {
         </div>
         <div className="archive-catalog-tools">
           <div className="archive-category-tabs" aria-label="Filtrar acervo por categoria">
-            {(['todas', 'liga', 'copa', 'clube', 'jogador'] as const).map((category) => (
+            {(['todas', 'liga', 'copa', 'clube', 'jogador']).map((category) => (
               <button key={category} className={archiveCategory === category ? 'active' : ''} onClick={() => setArchiveCategory(category)}>
                 {categoryLabels[category]}
                 <span>{category === 'todas' ? archiveEntries.length : archiveEntries.filter((entry) => entry.category === category).length}</span>

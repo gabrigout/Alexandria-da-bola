@@ -1,0 +1,1 @@
+export const bundesligaStadiums=[];export const bundesligaNationalTeams=[];export const bundesligaWomensFootballRecords=[];
