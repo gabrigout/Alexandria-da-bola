@@ -1,4 +1,6 @@
-export const archiveEntries = [
+import type { ArchiveEntry, ArchiveFilter } from './types'
+
+export const archiveEntries: ArchiveEntry[] = [
   {
     id: 'brasileirao',
     title: 'Campeonato Brasileiro',
@@ -1248,7 +1250,7 @@ export const archiveEntries = [
   }
 ]
 
-export const categoryLabels = {
+export const categoryLabels: Record<ArchiveFilter, string> = {
   todas: 'Tudo',
   liga: 'Ligas',
   copa: 'Copas',

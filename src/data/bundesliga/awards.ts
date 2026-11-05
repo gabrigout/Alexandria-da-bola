@@ -1,0 +1,2 @@
+import type { BundesligaAward[] } from './types'
+export const bundesligaAwards: BundesligaAward[] = [{id:'bundesliga-top-scorer-1963-64',seasonId:'1963-64',name:'Artilheiro da Bundesliga',recipientId:'uwe-seeler',recipient:'Uwe Seeler',clubId:'hamburger-sv',value:'30 gols',sourceIds:['dfb-top-scorers-1963-64','dfb-inaugural-season']},{id:'german-footballer-of-the-year-1963-64',seasonId:'1963-64',name:'Futebolista do Ano da Alemanha',recipientId:'uwe-seeler',recipient:'Uwe Seeler',sourceIds:['dfb-uwe-seeler-profile','dfb-inaugural-season']}];

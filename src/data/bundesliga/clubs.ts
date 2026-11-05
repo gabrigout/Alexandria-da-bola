@@ -1,3 +1,4 @@
+import type { BundesligaClub[] } from './types'
 export const bundesligaClubs=[
   {
     "id": "fc-koln",

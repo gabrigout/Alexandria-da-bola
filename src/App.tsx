@@ -1,12 +1,34 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import type { PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from 'react'
 import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
   Compass, Globe2, Search, Trophy, Users, X, ZoomIn, ZoomOut, RotateCcw,
 } from 'lucide-react'
 import { archiveEntries, categoryLabels } from './data/archive'
+import type { ArchiveEntry, ArchiveFilter } from './data/types'
 import BundesligaArchive from './components/BundesligaArchive'
 
-const continents = [
+
+type Continent = { id: string; name: string; subtitle: string; countries: string[] }
+type Milestone = { year: number; label: string; note: string }
+type CountryProperties = {
+  ISO_A2?: string; ISO_A2_EH?: string; NAME_PT?: string; NAME?: string;
+  ADMIN?: string; CONTINENT?: string; ADM0_A3?: string; ISO_A3?: string;
+}
+type Position = [number, number, ...number[]]
+type CountryGeometry =
+  | { type: 'Polygon'; coordinates: Position[][] }
+  | { type: 'MultiPolygon'; coordinates: Position[][][] }
+type CountryFeature = { geometry: CountryGeometry; properties: CountryProperties }
+type CountryFeatureCollection = { features: CountryFeature[] }
+type CountryMapItem = {
+  name: string; continent: string; code: string; flagCode: string; d: string;
+  bounds: [number, number, number, number]; center: [number, number];
+}
+type MapView = { x: number; y: number; w: number; h: number }
+type DragState = { x: number; y: number; viewX: number; viewY: number }
+
+const continents: Continent[] = [
   { id: 'south-america', name: 'América do Sul', subtitle: 'A paixão que atravessa gerações', countries: ['Argentina', 'Brasil', 'Chile', 'Colômbia', 'Peru', 'Uruguai'] },
   { id: 'north-america', name: 'América do Norte', subtitle: 'O jogo em transformação', countries: ['Canadá', 'Estados Unidos', 'México'] },
   { id: 'europe', name: 'Europa', subtitle: 'Raízes, escolas e rivalidades', countries: ['Alemanha', 'Espanha', 'França', 'Inglaterra', 'Itália', 'Portugal'] },
@@ -16,7 +38,7 @@ const continents = [
   { id: 'antarctica', name: 'Antártida', subtitle: 'Um território sem acervo futebolístico', countries: [] },
 ]
 
-const milestones = [
+const milestones: Milestone[] = [
   { year: 1863, label: 'As regras do jogo', note: 'A Football Association é fundada em Londres e estabelece um código comum para o futebol.' },
   { year: 1872, label: 'O primeiro encontro', note: 'Escócia e Inglaterra disputam em Glasgow aquele que é reconhecido como o primeiro jogo internacional.' },
   { year: 1904, label: 'Uma federação mundial', note: 'Nasce a FIFA, organização que passaria a coordenar o futebol internacional.' },
@@ -33,8 +55,8 @@ const MAP_W = 1200
 const MAP_H = 600
 const mapContinents = ['América do Norte', 'América do Sul', 'Europa', 'África', 'Ásia', 'Oceania']
 
-function continentName(raw) {
-  const names = {
+function continentName(raw: string): string {
+  const names: Record<string, string> = {
     'North America': 'América do Norte', 'South America': 'América do Sul',
     'Europe': 'Europa', 'Africa': 'África', 'Asia': 'Ásia', 'Oceania': 'Oceania',
     'Seven seas (open ocean)': 'Oceanos',
@@ -43,17 +65,17 @@ function continentName(raw) {
 }
 
 const regionNames = new Intl.DisplayNames(['pt-BR'], { type: 'region' })
-const countryNamesByCode = {
+const countryNamesByCode: Record<string, string> = {
   XK: 'Kosovo', TW: 'Taiwan', PS: 'Palestina', EH: 'Saara Ocidental',
   '00': 'Território não identificado',
 }
 
-function countryFlagCode(properties) {
-  const candidates = [properties.ISO_A2, properties.ISO_A2_EH]
+function countryFlagCode(properties: CountryProperties): string {
+  const candidates: Array<string | undefined> = [properties.ISO_A2, properties.ISO_A2_EH]
   const code = candidates.find((value) => typeof value === 'string' && /^[A-Za-z]{2}$/.test(value))
   return String(code ?? '').toLowerCase()
 }
-function countryNameInPortuguese(properties) {
+function countryNameInPortuguese(properties: CountryProperties): string {
   const code = String(properties.ISO_A2 ?? '')
   if (code && code !== '-99' && /^[A-Z]{2}$/.test(code)) {
     const localized = regionNames.of(code)
@@ -64,7 +86,7 @@ function countryNameInPortuguese(properties) {
   return String(properties.NAME_PT ?? properties.NAME ?? properties.ADMIN ?? 'País')
 }
 
-function makeCountryPath(geometry) {
+function makeCountryPath(geometry: CountryGeometry): { d: string; bounds: [number, number, number, number]; center: [number, number] } {
   const polygons = geometry.type === 'Polygon'
     ? [geometry.coordinates]
     : geometry.coordinates
@@ -90,19 +112,19 @@ function makeCountryPath(geometry) {
   return { d, bounds: [minX, minY, maxX, maxY], center: [(minX + maxX) / 2, (minY + maxY) / 2] }
 }
 
-function FlatWorldMap({ onSelect }) {
-  const [countries, setCountries] = useState([])
+function FlatWorldMap({ onSelect }: { onSelect: (country: CountryMapItem) => void }) {
+  const [countries, setCountries] = useState<CountryMapItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
-  const [view, setView] = useState({ x: 0, y: 0, w: MAP_W, h: MAP_H })
-  const [activeContinent, setActiveContinent] = useState(null)
-  const dragRef = useRef(null)
+  const [view, setView] = useState<MapView>({ x: 0, y: 0, w: MAP_W, h: MAP_H })
+  const [activeContinent, setActiveContinent] = useState<string | null>(null)
+  const dragRef = useRef<DragState | null>(null)
 
   useEffect(() => {
     let cancelled = false
     fetch(MAP_URL)
       .then((response) => { if (!response.ok) throw new Error('Map unavailable'); return response.json() })
-      .then((data) => {
+      .then((data: CountryFeatureCollection) => {
         if (cancelled) return
         const mapped = data.features.map((feature) => {
           const result = makeCountryPath(feature.geometry)
@@ -121,7 +143,7 @@ function FlatWorldMap({ onSelect }) {
     return () => { cancelled = true }
   }, [])
 
-  const zoomTo = (bounds) => {
+  const zoomTo = (bounds: [number, number, number, number]) => {
     const [x1, y1, x2, y2] = bounds
     const width = Math.max(x2 - x1, 12) * 2.5
     const height = Math.max(y2 - y1, 12) * 2.5
@@ -129,13 +151,13 @@ function FlatWorldMap({ onSelect }) {
     const h = w / 2
     setView({ x: Math.max(0, Math.min(MAP_W - w, (x1 + x2) / 2 - w / 2)), y: Math.max(0, Math.min(MAP_H - h, (y1 + y2) / 2 - h / 2)), w, h })
   }
-  const zoomBy = (factor) => setView((old) => {
+  const zoomBy = (factor: number) => setView((old) => {
     const w = Math.max(75, Math.min(MAP_W, old.w * factor))
     const h = w / 2
     return { x: Math.max(0, Math.min(MAP_W - w, old.x + (old.w - w) / 2)), y: Math.max(0, Math.min(MAP_H - h, old.y + (old.h - h) / 2)), w, h }
   })
   const reset = () => { setView({ x: 0, y: 0, w: MAP_W, h: MAP_H }); setActiveContinent(null) }
-  const selectContinent = (name) => {
+  const selectContinent = (name: string) => {
     setActiveContinent(name)
     const matching = countries.filter((country) => country.continent === name)
     if (matching.length) zoomTo([
@@ -145,14 +167,14 @@ function FlatWorldMap({ onSelect }) {
       Math.max(...matching.map((item) => item.bounds[3])),
     ])
   }
-  const chooseCountry = (country) => { zoomTo(country.bounds); onSelect(country) }
-  const onWheel = (event) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
-  const onPointerDown = (event) => {
-    if (event.target.closest('.country-shape')) return
+  const chooseCountry = (country: CountryMapItem) => { zoomTo(country.bounds); onSelect(country) }
+  const onWheel = (event: ReactWheelEvent<SVGSVGElement>) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
+  const onPointerDown = (event: ReactPointerEvent<SVGSVGElement>) => {
+    if (event.target instanceof Element && event.target.closest('.country-shape')) return
     dragRef.current = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y }
     event.currentTarget.setPointerCapture(event.pointerId)
   }
-  const onPointerMove = (event) => {
+  const onPointerMove = (event: ReactPointerEvent<SVGSVGElement>) => {
     const drag = dragRef.current
     if (!drag) return
     const rect = event.currentTarget.getBoundingClientRect()
@@ -166,8 +188,6 @@ function FlatWorldMap({ onSelect }) {
       <div className="atlas-topline"><span><i /> ATLAS INTERATIVO · FRONTEIRAS NACIONAIS</span><span>{loading ? 'CARREGANDO CARTOGRAFIA' : countries.length + ' TERRITÓRIOS MAPEADOS'}</span></div>
       <div className="atlas-map-frame">
         <svg className="atlas-map" viewBox={view.x + ' ' + view.y + ' ' + view.w + ' ' + view.h} role="group" aria-label="Mapa-múndi interativo. Selecione qualquer país ou aproxime para explorar." onWheel={onWheel} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={() => { dragRef.current = null }} onPointerCancel={() => { dragRef.current = null }}>
-          <defs><pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern></defs>
-          <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
           <defs>
             <pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern>
             {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country) => <clipPath key={'clip-' + country.code} id={'flag-clip-' + country.code.toLowerCase()} clipPathUnits="userSpaceOnUse"><path d={country.d} /></clipPath>)}
@@ -199,13 +219,13 @@ function FlatWorldMap({ onSelect }) {
 }
 
 export default function App() {
-  const [selectedContinent, setSelectedContinent] = useState(null)
-  const [selectedCountry, setSelectedCountry] = useState(null)
-  const [selectedYear, setSelectedYear] = useState(null)
+  const [selectedContinent, setSelectedContinent] = useState<Continent | null>(null)
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
+  const [selectedYear, setSelectedYear] = useState<number | null>(null)
   const [query, setQuery] = useState('')
-  const [archiveCategory, setArchiveCategory] = useState('todas')
+  const [archiveCategory, setArchiveCategory] = useState<ArchiveFilter>('todas')
   const [archiveSearch, setArchiveSearch] = useState('')
-  const [selectedArchiveId, setSelectedArchiveId] = useState(null)
+  const [selectedArchiveId, setSelectedArchiveId] = useState<string | null>(null)
   const selectedArchive = archiveEntries.find((entry) => entry.id === selectedArchiveId)
   const filteredArchive = archiveEntries.filter((entry) => {
     const matchesCategory = archiveCategory === 'todas' || entry.category === archiveCategory
@@ -216,7 +236,7 @@ export default function App() {
   const selectedMilestone = milestones.find((item) => item.year === selectedYear)
   const filtered = milestones.filter((item) => String(item.year).includes(query) || item.label.toLowerCase().includes(query.toLowerCase()))
 
-  const handleCountrySelect = useCallback((country) => {
+  const handleCountrySelect = useCallback((country: CountryMapItem) => {
     const continent = continents.find((item) => item.name === country.continent) ?? { id: country.continent, name: country.continent, subtitle: 'Explore a história do futebol neste continente', countries: [] }
     setSelectedContinent(continent)
     setSelectedCountry(country.name)
@@ -225,11 +245,11 @@ export default function App() {
   const openBundesliga = () => document.getElementById('bundesliga-archive')?.scrollIntoView({ behavior: 'smooth' })
   const openTimeline = () => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })
   const openCollection = () => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })
-  const openArchive = (category = 'todas') => {
+  const openArchive = (category: ArchiveFilter = 'todas') => {
     setArchiveCategory(category)
     document.getElementById('archive-catalog')?.scrollIntoView({ behavior: 'smooth' })
   }
-  const relatedEntries = (entry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
+  const relatedEntries = (entry: ArchiveEntry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
 
   return (
     <main className="site-shell">

@@ -527,3 +527,24 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **O que não foi executado:** não foi realizado build local por terminal, nem teste visual manual em iPhone ou desktop. A confirmação de Vercel não substitui esses testes de interface.
 - **Deploy:** sucesso reportado pela Vercel para o commit acima. Site: https://alexandria-da-bola.vercel.app
 - **Pendência de qualidade:** abrir o site no iPhone, percorrer o atlas, conferir o seletor de temporadas, a tabela horizontal em telas estreitas e o catálogo geral preservado.
+
+
+---
+
+## 22. Restauração controlada do TypeScript no núcleo — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, com autorização expressa do usuário.
+- **Tipo:** arquitetura / migração / qualidade / testes.
+- **Motivo:** retomar tipagem estática na aplicação principal para reduzir inconsistências à medida que o acervo, as entidades relacionadas e os componentes crescem.
+- **Estratégia:** migração isolada em `chore/restore-typescript-core`, baseada no commit de produção `28196a2ff45d564cdb2955a180ae45673ce64f34`. A branch principal e o deploy de produção permanecem preservados durante a validação.
+- **Arquitetura:** React, componentes e dados do acervo passam para TypeScript (`.tsx`/`.ts`). JavaScript permanece nas configurações auxiliares, como `vite.config.js`; não será introduzida a linguagem Java.
+- **Proteções adicionadas:** TypeScript em modo estrito; comando `typecheck`; testes automatizados com Vitest; build configurado para executar tipagem e testes antes de gerar os arquivos de produção.
+- **Validação de dados:** ampliada a função `validateBundesligaData` para conferir IDs duplicados, relações de clubes/jogadores, fontes, tabelas, pontuação histórica, treinadores, premiações e partidas.
+- **Ajustes de qualidade incluídos nesta migração:** a seção da temporada inaugural passa a exibir os 15 artilheiros cadastrados (antes mostrava somente oito); removida a duplicação da definição e da camada de grade SVG do atlas.
+- **Arquivos convertidos:** `src/App.tsx`, `src/main.tsx`, `src/data/archive.ts`, `src/components/BundesligaArchive.tsx` e os módulos da Bundesliga em `src/data/bundesliga/**/*.ts`.
+- **Novos arquivos:** `src/data/types.ts`, `src/data/bundesliga/types.ts`, `src/data/bundesliga/validate.test.ts`, `src/vite-env.d.ts` e `tsconfig.json`.
+- **Configuração alterada:** `package.json` (scripts de typecheck/test/build e dependências de desenvolvimento), `index.html` (entrada `main.tsx`) e `README.md`.
+- **Arquivos JavaScript removidos:** versões `.jsx`/`.js` da aplicação e dos módulos de dados que foram convertidos. `vite.config.js` permanece como JavaScript.
+- **Validação local:** não executada nesta sessão; a validação decisiva será o build de preview na Vercel, incluindo `tsc`, Vitest e Vite.
+- **Situação de publicação:** branch de migração criada; produção não foi alterada. Aguardar resultado do preview antes de incorporar em `main`.
+- **Pendências:** corrigir todos os diagnósticos de tipos/testes que o preview apontar; verificar interface em iPhone e desktop; atualizar este registro com o SHA e o resultado real do preview.

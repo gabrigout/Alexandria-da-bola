@@ -60,3 +60,13 @@ A aplicação utiliza JavaScript/JSX, HTML e CSS com React e Vite. O módulo ini
 
 ---
 Projeto de portfólio em desenvolvimento.
+
+
+## Base técnica
+
+- React + TypeScript para a aplicação, componentes e modelos do acervo.
+- Vite para desenvolvimento e build.
+- JavaScript permanece nas configurações auxiliares, como `vite.config.js`.
+- `npm run typecheck` verifica os tipos.
+- `npm test` executa os testes automatizados de validação da Bundesliga.
+- `npm run build` executa tipagem, testes e build de produção.
