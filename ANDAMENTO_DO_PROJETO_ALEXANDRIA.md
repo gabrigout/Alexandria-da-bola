@@ -498,3 +498,13 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Validação estrutural preparada:** validateBundesligaData() verifica IDs, consistência de jogos, saldo, pontuação histórica e referências. Execução real do build e testes visuais deve ser registrada separadamente.
 - **Deploy:** verificar o estado efetivo da Vercel/GitHub após o commit; não presumir sucesso.
 - **Pendências:** pesquisar as 63 temporadas restantes; completar clubes históricos, jogadores, treinadores, partidas, estádios, premiações, campanhas europeias, seleções e futebol feminino; validar em iPhone e desktop.
+
+
+---
+
+## 21. Correção do último resíduo TypeScript após a migração — 5 de novembro de 2026
+
+- **Diagnóstico:** a primeira versão migrada manteve quatro anotações de tipos TypeScript em `src/App.jsx` (parâmetros de função e genérico de `useRef`). O Vercel marcou o deploy do commit `70887b328b124b4113ca3a1264826cf185a8608c` como falha. A configuração de build já estava sem o compilador TypeScript.
+- **Correção:** removidas as quatro anotações em `src/App.jsx`, mantendo o comportamento e os estados da interface.
+- **Validação estática:** busca textual no arquivo confirmou ausência de anotações de tipo, genéricos de hooks, declarações `type` e casts TypeScript conhecidos. Build e inspeção em navegador ainda dependem do novo deploy.
+- **Deploy:** um novo commit foi enviado para disparar uma tentativa de build limpa na Vercel. Registrar o resultado do novo status antes de considerar publicado.

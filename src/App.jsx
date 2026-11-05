@@ -33,7 +33,7 @@ const MAP_W = 1200
 const MAP_H = 600
 const mapContinents = ['América do Norte', 'América do Sul', 'Europa', 'África', 'Ásia', 'Oceania']
 
-function continentName(raw: string) {
+function continentName(raw) {
   const names = {
     'North America': 'América do Norte', 'South America': 'América do Sul',
     'Europe': 'Europa', 'Africa': 'África', 'Asia': 'Ásia', 'Oceania': 'Oceania',
@@ -96,7 +96,7 @@ function FlatWorldMap({ onSelect }) {
   const [error, setError] = useState(false)
   const [view, setView] = useState({ x: 0, y: 0, w: MAP_W, h: MAP_H })
   const [activeContinent, setActiveContinent] = useState(null)
-  const dragRef = useRef<{ x: number; y: number; viewX: number; viewY: number } | null>(null)
+  const dragRef = useRef(null)
 
   useEffect(() => {
     let cancelled = false
@@ -129,13 +129,13 @@ function FlatWorldMap({ onSelect }) {
     const h = w / 2
     setView({ x: Math.max(0, Math.min(MAP_W - w, (x1 + x2) / 2 - w / 2)), y: Math.max(0, Math.min(MAP_H - h, (y1 + y2) / 2 - h / 2)), w, h })
   }
-  const zoomBy = (factor: number) => setView((old) => {
+  const zoomBy = (factor) => setView((old) => {
     const w = Math.max(75, Math.min(MAP_W, old.w * factor))
     const h = w / 2
     return { x: Math.max(0, Math.min(MAP_W - w, old.x + (old.w - w) / 2)), y: Math.max(0, Math.min(MAP_H - h, old.y + (old.h - h) / 2)), w, h }
   })
   const reset = () => { setView({ x: 0, y: 0, w: MAP_W, h: MAP_H }); setActiveContinent(null) }
-  const selectContinent = (name: string) => {
+  const selectContinent = (name) => {
     setActiveContinent(name)
     const matching = countries.filter((country) => country.continent === name)
     if (matching.length) zoomTo([
