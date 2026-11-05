@@ -508,3 +508,22 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Correção:** removidas as quatro anotações em `src/App.jsx`, mantendo o comportamento e os estados da interface.
 - **Validação estática:** busca textual no arquivo confirmou ausência de anotações de tipo, genéricos de hooks, declarações `type` e casts TypeScript conhecidos. Build e inspeção em navegador ainda dependem do novo deploy.
 - **Deploy:** um novo commit foi enviado para disparar uma tentativa de build limpa na Vercel. Registrar o resultado do novo status antes de considerar publicado.
+
+
+---
+
+## 21. Correção da migração e confirmação da publicação — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT.
+- **Tipo:** correção de código / validação / publicação.
+- **Motivo:** o primeiro deploy da migração foi reprovado pela Vercel porque a conversão automática deixou anotações TypeScript residuais e uma expressão incompleta na função que transforma a geometria do atlas.
+- **Correções em `src/App.jsx`:**
+  - Removidas as anotações residuais de `continentName`, `zoomTo`, `zoomBy` e `selectContinent`.
+  - Removido o parâmetro genérico de `useRef`, mantendo `useRef(null)`.
+  - Corrigida a ramificação de geometrias multipoligonais para usar `geometry.coordinates`, sem o sufixo inválido que havia restado após a conversão de tipos.
+- **Commit da correção:** `887387a237463e203baef9c8402098ca0e1be7ee`.
+- **Inspeção após correção:** árvore do repositório consultada; nenhum arquivo `.ts` ou `.tsx` permaneceu. As verificações textuais para anotações e construções TypeScript residuais no `App.jsx` não encontraram ocorrências.
+- **Build/publicação:** o status check da Vercel para o commit `887387a237463e203baef9c8402098ca0e1be7ee` retornou `success`. A pipeline da Vercel foi aprovada e a publicação foi concluída segundo o status do provedor.
+- **O que não foi executado:** não foi realizado build local por terminal, nem teste visual manual em iPhone ou desktop. A confirmação de Vercel não substitui esses testes de interface.
+- **Deploy:** sucesso reportado pela Vercel para o commit acima. Site: https://alexandria-da-bola.vercel.app
+- **Pendência de qualidade:** abrir o site no iPhone, percorrer o atlas, conferir o seletor de temporadas, a tabela horizontal em telas estreitas e o catálogo geral preservado.
