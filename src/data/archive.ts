@@ -57,7 +57,7 @@ export const archiveEntries: ArchiveEntry[] = [
       '1995 — A competição chega ao formato de 20 clubes, após quatro rebaixamentos e duas promoções.'
     ],
     legacy: 'A Premier League transformou a relação entre futebol, televisão e mercado global. Sua história esportiva, porém, continua ligada aos clubes tradicionais, às cidades industriais e às rivalidades que formam a pirâmide do futebol inglês.',
-    relatedIds: ['liverpool', 'champions-league', 'messi'],
+    relatedIds: ['liverpool', 'champions-league'],
     sourceLabel: 'Premier League — Origens e criação',
     sourceUrl: 'https://www.premierleague.com/en/history',
     status: 'pesquisado'
@@ -122,7 +122,7 @@ export const archiveEntries: ArchiveEntry[] = [
       '2022 — A Argentina conquista o título no Catar, em uma final contra a França.'
     ],
     legacy: 'A Copa do Mundo é uma vitrine de estilos nacionais, mudanças táticas, disputas políticas e trajetórias individuais. Cada edição registra também transformações no tamanho do torneio, na cobertura da mídia e no alcance global do futebol.',
-    relatedIds: ['pele', 'garrincha', 'libertadores'],
+    relatedIds: ['pele', 'garrincha', 'copa-mundo', 'copa-mundo-feminina'],
     sourceLabel: 'FIFA — Campeões e primeiras edições',
     sourceUrl: 'https://www.fifa.com/pt/tournaments/mens/worldcup/articles/veja-todos-campeoes-copa-do-mundo-de-1930-1978-uruguai-italia-brasil-alemanha-argentina',
     status: 'pesquisado'
@@ -620,6 +620,271 @@ export const archiveEntries: ArchiveEntry[] = [
     relatedIds: ['laliga', 'champions-league', 'di-stefano'],
     sourceLabel: 'Real Madrid — Fundação e primeiros anos',
     sourceUrl: 'https://www.realmadrid.com/static/pt/sobre-o-real-madrid/historia/futebol/1902-1910/',
+    status: 'pesquisado'
+  }
+  ,
+  {
+    id: 'serie-a',
+    title: 'Serie A',
+    category: 'liga',
+    country: 'Itália',
+    year: '1929',
+    subtitle: 'A primeira divisão nacional do futebol italiano',
+    summary: 'O campeonato italiano tem raízes em 1898, quando a FIGC foi fundada e o primeiro torneio nacional foi disputado em um único dia, vencido pelo Genoa. A liga em grupo único que deu origem à Serie A moderna começou em 1929.',
+    origin: 'A FIGC foi fundada em Turim em 26 de março de 1898. Naquele mesmo ano, o primeiro campeonato foi decidido em um torneio de um dia. Em 1913 ocorreu o primeiro campeonato nacional com equipes de diferentes regiões, dividido em grupos. Em 1929, o principal nível nacional passou a ser disputado em uma liga única e recebeu o nome Serie A.',
+    history: [
+      '1898 — Fundação da FIGC e primeiro campeonato italiano, vencido pelo Genoa.',
+      '1913 — O campeonato passa a reunir equipes de diferentes regiões em grupos nacionais.',
+      '1922 — É disputada a primeira edição da Coppa Italia.',
+      '1929 — Começa o formato de liga única e a primeira divisão passa a ser denominada Serie A.',
+      '1934 e 1938 — A seleção italiana conquista duas Copas do Mundo durante a consolidação do futebol nacional.'
+    ],
+    legacy: 'A Serie A atravessou diferentes épocas táticas e institucionais, da escola defensiva italiana às grandes equipes internacionais das décadas de 1980 e 1990. Sua história está conectada a cidades, regiões e clubes como Juventus, Milan, Inter, Roma, Napoli e Genoa.',
+    relatedIds: ['champions-league'],
+    sourceLabel: 'FIGC — História da Federação Italiana',
+    sourceUrl: 'https://figc.it/en/figc/history/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'ligue-1',
+    title: 'Ligue 1',
+    category: 'liga',
+    country: 'França',
+    year: '1932',
+    subtitle: 'O campeonato nacional que abriu a era profissional francesa',
+    summary: 'A primeira divisão profissional francesa começou em 1932–33, sob o nome Division Nationale. O Olympique Lillois conquistou o primeiro título.',
+    origin: 'A liga foi criada no processo de adoção do profissionalismo no futebol francês. A primeira edição reuniu clubes divididos em grupos, com uma fase final para definir o campeão. O nome e o formato da competição mudaram ao longo das décadas; Ligue 1 é a denominação contemporânea da primeira divisão.',
+    history: [
+      '1932 — Começa o primeiro campeonato profissional nacional francês.',
+      '1932–33 — Olympique Lillois conquista o título inaugural.',
+      'Até 1972 — O principal torneio é registrado como Division Nationale nos palmarés da Federação Francesa.',
+      'Décadas seguintes — A competição atravessa mudanças de nome, formato, número de clubes e modelo comercial.'
+    ],
+    legacy: 'A liga francesa tornou-se um espaço importante de formação e projeção de jogadores. Clubes como Saint-Étienne, Marseille, Lyon, Paris Saint-Germain e Monaco representam diferentes fases de sua história.',
+    relatedIds: ['ronaldinho'],
+    sourceLabel: 'Federação Francesa de Futebol — Palmarés da Ligue 1',
+    sourceUrl: 'https://www.fff.fr/475-palmares-ligue-1.html',
+    status: 'pesquisado'
+  },
+  {
+    id: 'eredivisie',
+    title: 'Eredivisie',
+    category: 'liga',
+    country: 'Países Baixos',
+    year: '1956',
+    subtitle: 'A liga que ajudou a projetar a escola neerlandesa',
+    summary: 'A Eredivisie foi criada em 1956 para reunir os principais clubes neerlandeses em uma única divisão. A disputa pelo título nacional, porém, existe desde 1898, quando os campeões regionais se enfrentavam em uma fase decisiva.',
+    origin: 'Antes da Eredivisie, o futebol neerlandês era organizado em distritos regionais. O primeiro campeão nacional foi o Concordia, de Roterdã, em 1898. A partir da temporada 1956/57, a divisão geográfica foi substituída por uma competição nacional de liga.',
+    history: [
+      '1898 — Começa a disputa pelo título nacional neerlandês; Concordia é o primeiro campeão.',
+      '1954 — O futebol profissional é introduzido nos Países Baixos.',
+      '2 de setembro de 1956 — A Eredivisie começa com Ajax 1 a 0 NAC; Loek den Edel marca o primeiro gol da competição.',
+      '1956/57 — Dezoito clubes participam da temporada inaugural.',
+      'Década de 1970 — Ajax e Feyenoord conquistam títulos europeus, ampliando a projeção internacional do futebol neerlandês.'
+    ],
+    legacy: 'A Eredivisie tornou-se reconhecida pela formação e desenvolvimento de jogadores. A história da liga está ligada a Ajax, PSV e Feyenoord, além de treinadores e atletas que influenciaram o futebol europeu.',
+    relatedIds: ['ajax', 'psv', 'feyenoord', 'champions-league'],
+    sourceLabel: 'KNVB — História da Eredivisie',
+    sourceUrl: 'https://www.knvb.nl/competities/eredivisie/historie',
+    status: 'pesquisado'
+  },
+  {
+    id: 'copa-mundo-feminina',
+    title: 'Copa do Mundo Feminina da FIFA',
+    category: 'copa',
+    country: 'Mundial',
+    year: '1991',
+    subtitle: 'O torneio que deu palco mundial às seleções femininas',
+    summary: 'A primeira Copa do Mundo Feminina foi disputada na China em 1991. Doze seleções participaram, e os Estados Unidos venceram a Noruega por 2 a 1 na final.',
+    origin: 'A FIFA organizou a primeira edição oficial do campeonato mundial feminino em 1991, após décadas de expansão do futebol praticado por mulheres e de torneios internacionais não organizados pela entidade. A competição inaugural foi disputada em cidades chinesas e estabeleceu uma referência para as edições seguintes.',
+    history: [
+      '1991 — A China recebe a primeira edição, com 12 seleções.',
+      'Final de 1991 — Estados Unidos vencem a Noruega por 2 a 1 e conquistam o primeiro título.',
+      '1995 — A Suécia recebe a segunda edição.',
+      '1999 — A edição nos Estados Unidos amplia a visibilidade do futebol feminino, com final decidida nos pênaltis.',
+      '2023 — Austrália e Nova Zelândia organizam a primeira edição com 32 seleções.'
+    ],
+    legacy: 'A Copa do Mundo Feminina tornou-se a principal vitrine internacional da modalidade. Sua história registra a profissionalização, a expansão geográfica e a luta por melhores condições de competição e reconhecimento para atletas e seleções.',
+    relatedIds: ['marta', 'copa-mundo'],
+    sourceLabel: 'FIFA — Todas as campeãs da Copa do Mundo Feminina',
+    sourceUrl: 'https://www.fifa.com/pt/articles/todas-as-campeas-copa-mundo-feminina-fifa',
+    status: 'pesquisado'
+  },
+  {
+    id: 'corinthians',
+    title: 'Sport Club Corinthians Paulista',
+    category: 'clube',
+    country: 'Brasil · São Paulo, SP',
+    year: '1910',
+    subtitle: 'O clube dos trabalhadores que nasceu no Bom Retiro',
+    summary: 'O Corinthians foi fundado em 1º de setembro de 1910 por cinco jovens trabalhadores reunidos no bairro paulistano do Bom Retiro. O nome foi inspirado no clube inglês Corinthian FC, que excursionava pelo Brasil.',
+    origin: 'Joaquim Ambrósio, Antônio Pereira, Carlos Silva, Anselmo Corrêa e Raphael Perrone participaram da fundação. A narrativa da CBF registra o encontro sob a luz de um lampião, em um momento em que o futebol brasileiro ainda era fortemente associado a clubes de grupos sociais mais restritos.',
+    history: [
+      '1º de setembro de 1910 — Fundação do Sport Club Corinthians Paulista no Bom Retiro.',
+      '1914 — Conquista o primeiro Campeonato Paulista, em campanha invicta.',
+      'Décadas seguintes — Consolida sua presença no futebol paulista e nacional.',
+      '1977 — Encerra jejum de títulos paulistas com a conquista do campeonato estadual.',
+      '2012 — Conquista a Libertadores e o Mundial de Clubes da FIFA.'
+    ],
+    legacy: 'A identidade corinthiana está ligada à origem popular, à expansão de sua torcida e a episódios políticos e culturais do futebol brasileiro, como a Democracia Corinthiana dos anos 1980. O clube tornou-se uma das instituições centrais da história esportiva de São Paulo.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores', 'ronaldo-fenomeno'],
+    sourceLabel: 'CBF — Corinthians festeja 115 anos de fundação',
+    sourceUrl: 'https://www.cbf.com.br/futebol-brasileiro/noticias/noticias-selecao-base-masculina/a/corinthians-festeja-115-anos-de-fundacao',
+    status: 'pesquisado'
+  },
+  {
+    id: 'ajax',
+    title: 'AFC Ajax',
+    category: 'clube',
+    country: 'Países Baixos · Amsterdã',
+    year: '1900',
+    subtitle: 'O clube de Amsterdã associado ao futebol total',
+    summary: 'O Ajax foi fundado em 18 de março de 1900 e tornou-se uma das instituições mais influentes do futebol neerlandês, com papel central na história da Eredivisie e nas conquistas europeias do início dos anos 1970.',
+    origin: 'O clube surgiu em Amsterdã a partir de um grupo de jovens que retomou uma iniciativa anterior de formar uma equipe com o nome Ajax. A instituição cresceu junto com o futebol organizado da cidade e passou a integrar a elite nacional.',
+    history: [
+      '18 de março de 1900 — Fundação do Ajax em Amsterdã.',
+      '1956/57 — Participa da temporada inaugural da Eredivisie.',
+      '1971–1973 — Conquista três edições consecutivas da Taça dos Campeões Europeus.',
+      '1995 — Vence a Liga dos Campeões com uma geração formada em grande parte em sua academia.'
+    ],
+    legacy: 'O Ajax é associado à formação de talentos, ao futebol total e à influência de Johan Cruyff. Sua academia tornou-se uma referência internacional de desenvolvimento de jogadores.',
+    relatedIds: ['eredivisie', 'champions-league'],
+    sourceLabel: 'KNVB — História da Eredivisie',
+    sourceUrl: 'https://www.knvb.nl/competities/eredivisie/historie',
+    status: 'em expansão'
+  },
+  {
+    id: 'psv',
+    title: 'PSV',
+    category: 'clube',
+    country: 'Países Baixos · Eindhoven',
+    year: '1913',
+    subtitle: 'Uma instituição criada no ambiente industrial de Eindhoven',
+    summary: 'O PSV foi fundado em 31 de agosto de 1913, em Eindhoven, como associação esportiva ligada aos trabalhadores da empresa Philips. O clube tornou-se um dos principais protagonistas do futebol neerlandês.',
+    origin: 'A fundação do Philips Sport Vereniging ocorreu no contexto das comemorações de cem anos da independência neerlandesa. O projeto começou como associação esportiva de trabalhadores e ganhou progressivamente estrutura para competir no futebol nacional.',
+    history: [
+      '31 de agosto de 1913 — Fundação do Philips Sport Vereniging.',
+      '1956/57 — Integra a primeira temporada da Eredivisie.',
+      '1988 — Conquista a Copa dos Campeões Europeus.',
+      'Décadas seguintes — Consolida rivalidades com Ajax e Feyenoord na disputa nacional.'
+    ],
+    legacy: 'O PSV representa a ligação entre esporte e indústria na cidade de Eindhoven. O clube também se tornou conhecido por revelar e desenvolver jogadores que seguiram para grandes ligas europeias.',
+    relatedIds: ['eredivisie', 'champions-league'],
+    sourceLabel: 'KNVB — História da Eredivisie',
+    sourceUrl: 'https://www.knvb.nl/competities/eredivisie/historie',
+    status: 'em expansão'
+  },
+  {
+    id: 'feyenoord',
+    title: 'Feyenoord Rotterdam',
+    category: 'clube',
+    country: 'Países Baixos · Roterdã',
+    year: '1908',
+    subtitle: 'O clube de Roterdã que conquistou a Europa em 1970',
+    summary: 'O Feyenoord foi fundado em 19 de julho de 1908, no bairro de Feijenoord, em Roterdã. A equipe construiu uma identidade ligada à cidade portuária e à cultura popular local.',
+    origin: 'O clube começou como Wilhelmina, mudou de nome nos primeiros anos e adotou a denominação Feijenoord em 1912. A grafia internacional Feyenoord foi adotada em 1974.',
+    history: [
+      '19 de julho de 1908 — Fundação do clube, inicialmente chamado Wilhelmina.',
+      '1912 — A instituição adota o nome Feijenoord.',
+      '1956/57 — Integra a temporada inaugural da Eredivisie.',
+      '1970 — Torna-se o primeiro clube neerlandês a conquistar a Copa dos Campeões Europeus.'
+    ],
+    legacy: 'O Feyenoord é uma das três grandes forças históricas do futebol neerlandês, ao lado de Ajax e PSV. Sua torcida e o estádio De Kuip ocupam lugar central na identidade esportiva de Roterdã.',
+    relatedIds: ['eredivisie', 'champions-league'],
+    sourceLabel: 'KNVB — História da Eredivisie',
+    sourceUrl: 'https://www.knvb.nl/competities/eredivisie/historie',
+    status: 'em expansão'
+  },
+  {
+    id: 'marta',
+    title: 'Marta',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1986–',
+    subtitle: 'A camisa 10 que redefiniu a história do futebol feminino brasileiro',
+    summary: 'Marta Vieira da Silva é uma das maiores referências da história do futebol feminino. Até a Copa do Mundo de 2023, somava 17 gols em seis edições do torneio, recorde de gols na história da competição entre mulheres e homens.',
+    origin: 'Nascida em Dois Riachos, Alagoas, Marta iniciou sua trajetória em equipes brasileiras antes de construir carreira internacional. Sua presença constante em Copas do Mundo ajudou a ampliar a visibilidade do futebol feminino brasileiro.',
+    history: [
+      '2003 — Disputa sua primeira Copa do Mundo Feminina.',
+      '2007 — Marca sete gols no torneio e ajuda o Brasil a chegar à final.',
+      '2007 — Recebe o prêmio de melhor jogadora do mundo da FIFA.',
+      '2019 — Torna-se a maior artilheira da história das Copas do Mundo, considerando os torneios masculino e feminino.',
+      '2023 — Chega a 17 gols em seis edições do Mundial feminino.'
+    ],
+    legacy: 'Marta tornou-se referência esportiva e símbolo da luta por reconhecimento e condições profissionais no futebol feminino. Seus recordes precisam ser lidos junto ao contexto histórico de desigualdade de investimento e visibilidade da modalidade.',
+    relatedIds: ['copa-mundo-feminina'],
+    sourceLabel: 'FIFA — Marta e o recorde de gols em Copas',
+    sourceUrl: 'https://www.fifa.com/fifaplus/pt/tournaments/womens/womensworldcup/australia-new-zealand2023/articles/quantos-gols-marta-copa-do-mundo-fifa-feminina',
+    status: 'pesquisado'
+  },
+  {
+    id: 'ronaldinho',
+    title: 'Ronaldinho Gaúcho',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1980–',
+    subtitle: 'O sorriso que marcou a reconstrução do Barcelona',
+    summary: 'Ronaldinho chegou ao Barcelona em 2003, aos 23 anos. Em cinco temporadas conquistou duas edições da liga espanhola e a Liga dos Campeões de 2006, tornando-se um dos protagonistas da retomada esportiva do clube.',
+    origin: 'Nascido em Porto Alegre, Ronaldinho ganhou projeção no Grêmio e na Seleção Brasileira antes de jogar na França pelo Paris Saint-Germain. Sua chegada ao Barcelona em 2003 marcou o início de uma fase de reconstrução que culminou em títulos nacionais e europeus.',
+    history: [
+      '1998 — Estreia profissional pelo Grêmio.',
+      '2001 — Transfere-se para o Paris Saint-Germain.',
+      '2002 — Conquista a Copa do Mundo com a Seleção Brasileira.',
+      '2003 — Chega ao Barcelona.',
+      '2005 e 2006 — Conquista dois títulos da liga espanhola.',
+      '2006 — Vence a Liga dos Campeões com o Barcelona.',
+      '2008 — Deixa o Barcelona e segue para o Milan.'
+    ],
+    legacy: 'Ronaldinho combinou criatividade, improviso e técnica em uma fase que devolveu protagonismo ao Barcelona. Sua passagem conectou o futebol brasileiro, a Ligue 1, a LaLiga e a principal competição europeia.',
+    relatedIds: ['barcelona', 'laliga', 'champions-league', 'ligue-1', 'copa-mundo'],
+    sourceLabel: 'FC Barcelona — Ronaldinho',
+    sourceUrl: 'https://www.fcbarcelona.com/en/football/barca-legends/players/1493844/ronaldinho',
+    status: 'pesquisado'
+  },
+  {
+    id: 'ronaldo-fenomeno',
+    title: 'Ronaldo Fenômeno',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1976–',
+    subtitle: 'O atacante que atravessou gerações e voltou ao topo em 2002',
+    summary: 'Ronaldo Luís Nazário de Lima construiu carreira em clubes de diferentes países e conquistou duas Copas do Mundo com o Brasil, em 1994 e 2002. Na final de 2002 marcou os dois gols da vitória sobre a Alemanha.',
+    origin: 'Revelado pelo Cruzeiro, Ronaldo ganhou projeção internacional ainda jovem. Passou por PSV, Barcelona, Internazionale, Real Madrid, Milan e Corinthians, entre outros clubes. Lesões graves marcaram parte de sua trajetória, especialmente antes do retorno que culminou no Mundial de 2002.',
+    history: [
+      '1993 — Ganha projeção nacional no Cruzeiro.',
+      '1994 — Integra o elenco brasileiro campeão da Copa do Mundo.',
+      '1996 — Atua pelo Barcelona e conquista a Copa do Rei e a Recopa Europeia.',
+      '1997 — Transfere-se para a Internazionale e recebe o apelido de Fenômeno.',
+      '2002 — Retorna ao topo, marca dois gols na final da Copa e conquista o pentacampeonato brasileiro.',
+      '2009 — Chega ao Corinthians e conquista o Campeonato Paulista e a Copa do Brasil.'
+    ],
+    legacy: 'Ronaldo foi um dos atacantes mais influentes de sua geração. Sua carreira atravessou diferentes escolas do futebol europeu e brasileiro, além de representar uma das histórias mais conhecidas de retorno após lesões graves.',
+    relatedIds: ['copa-mundo', 'corinthians'],
+    sourceLabel: 'CBF — Ronaldo Fenômeno',
+    sourceUrl: 'https://www.cbf.com.br/selecao-brasileira/torcedor/torcedor-jogadores-imortais/a/ronaldo-o-fenomeno-comemora-49-anos-nesta-segunda-feira',
+    status: 'pesquisado'
+  },
+  {
+    id: 'maradona',
+    title: 'Diego Maradona',
+    category: 'jogador',
+    country: 'Argentina',
+    year: '1960–2020',
+    subtitle: 'O capitão que conduziu a Argentina ao título de 1986',
+    summary: 'Maradona foi a principal figura da seleção argentina campeã da Copa do Mundo de 1986. Nas quartas de final contra a Inglaterra, marcou dois gols históricos: o conhecido como “Mão de Deus” e o chamado “Gol do Século”.',
+    origin: 'Nascido em Lanús e criado em Villa Fiorito, na região metropolitana de Buenos Aires, Maradona surgiu no Argentinos Juniors e ganhou projeção internacional no Boca Juniors, Barcelona e Napoli. Sua carreira combinou genialidade técnica, liderança esportiva e controvérsias pessoais.',
+    history: [
+      '1976 — Estreia profissional pelo Argentinos Juniors.',
+      '1981 — Conquista o Campeonato Metropolitano com o Boca Juniors.',
+      '1982 — Transfere-se para o Barcelona.',
+      '1984 — Chega ao Napoli e transforma a história esportiva do clube.',
+      '22 de junho de 1986 — Marca dois gols contra a Inglaterra nas quartas de final da Copa do Mundo.',
+      '29 de junho de 1986 — Capitaneia a Argentina na conquista do título mundial.'
+    ],
+    legacy: 'Maradona tornou-se símbolo da seleção argentina campeã em 1986 e figura central da história do Napoli. A memória de sua carreira inclui tanto feitos esportivos extraordinários quanto episódios controversos, que devem ser tratados sem apagar nenhum dos lados.',
+    relatedIds: ['copa-mundo'],
+    sourceLabel: 'FIFA — Argentina x Inglaterra, México 1986',
+    sourceUrl: 'https://www.fifa.com/pt/tournaments/mens/worldcup/articles/argentina-inglaterra-copa-mundo-1986-maradona',
     status: 'pesquisado'
   }
 ]
