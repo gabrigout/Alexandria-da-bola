@@ -53,6 +53,22 @@ function continentName(raw: string) {
   return names[raw] ?? raw
 }
 
+const regionNames = new Intl.DisplayNames(['pt-BR'], { type: 'region' })
+const countryNamesByCode: Record<string, string> = {
+  XK: 'Kosovo', TW: 'Taiwan', PS: 'Palestina', EH: 'Saara Ocidental',
+  '00': 'Território não identificado',
+}
+function countryNameInPortuguese(properties: Record<string, string | number | null>) {
+  const code = String(properties.ISO_A2 ?? '')
+  if (code && code !== '-99' && /^[A-Z]{2}$/.test(code)) {
+    const localized = regionNames.of(code)
+    if (localized && localized !== code) return localized
+  }
+  const known = countryNamesByCode[code]
+  if (known) return known
+  return String(properties.NAME_PT ?? properties.NAME ?? properties.ADMIN ?? 'País')
+}
+
 function makeCountryPath(geometry: GeoGeometry) {
   const polygons = geometry.type === 'Polygon'
     ? [geometry.coordinates as GeoPosition[][]]
@@ -96,7 +112,7 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
         const mapped = data.features.map((feature) => {
           const result = makeCountryPath(feature.geometry)
           return {
-            name: String(feature.properties.ADMIN ?? feature.properties.NAME ?? 'País'),
+            name: countryNameInPortuguese(feature.properties),
             continent: continentName(String(feature.properties.CONTINENT ?? '')),
             code: String(feature.properties.ADM0_A3 ?? feature.properties.ISO_A3 ?? ''),
             d: result.d, bounds: result.bounds,
@@ -347,7 +363,7 @@ export default function App() {
       <footer className="footer">
         <div className="footer-brand">ALEXANDRIA<span>.</span></div>
         <p>A memória do futebol, preservada em movimento.</p>
-        <span className="footer-copy">© 2026 · THE FOOTBALL MEMORY ARCHIVE</span>
+        <span className="footer-copy">© 2026 · A MEMÓRIA DO FUTEBOL</span>
       </footer>
     </main>
   )
