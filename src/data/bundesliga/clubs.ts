@@ -42,7 +42,7 @@ export const bundesligaClubs: BundesligaClub[] = [
     "city": "Duisburg (bairro de Meiderich)",
     "colors": "Azul e branco",
     "foundationNote": "Fundado em Meiderich como Meidericher Spiel-Verein. O nome histórico foi mantido na temporada inaugural e só em 1967 a denominação foi alterada para MSV Duisburg.",
-    "identity": "Apelidado de Zebras pelas listras azuis e brancas, o clube surpreendeu ao terminar como vice-campeão. Helmut Rahn recebeu o primeiro cartão vermelho da história da Bundesliga na quarta rodada.",
+    "identity": "Apelidado de Zebras pelas listras azuis e brancas, o clube surpreendeu ao terminar como vice-campeão. Na quarta rodada, em 14 de setembro de 1963, Helmut Rahn foi expulso aos 77 minutos contra o Hertha BSC, tornando-se o primeiro jogador expulso na história da Bundesliga. Cartões amarelos e vermelhos ainda não eram utilizados.",
     "inauguralSeason": {
       "position": 2,
       "points": 39,
@@ -58,7 +58,9 @@ export const bundesligaClubs: BundesligaClub[] = [
       "dfb-inaugural-season",
       "dfb-season-table-1963-64",
       "dfb-founders-list-1963-64",
-      "msv-duisburg-dfb-profile"
+      "msv-duisburg-dfb-profile",
+      "dfb-match-meidericher-hertha-1963-09-14",
+      "sport1-first-sending-off"
     ]
   },
   {

@@ -58,6 +58,50 @@ describe('validação do acervo Bundesliga', () => {
     }
   })
 
+  it('documenta a partida que estabeleceu o recorde de público da temporada', () => {
+    const match = bundesligaMatches.find((entry) => entry.id === '1963-09-21-hertha-koeln')
+    expect(match).toMatchObject({
+      date: '1963-09-21',
+      round: 5,
+      homeClubId: 'hertha-bsc',
+      awayClubId: 'fc-koln',
+      homeGoals: 0,
+      awayGoals: 3,
+      stadium: 'Olympiastadion',
+      city: 'Berlim, Alemanha',
+      attendance: 85411,
+      referee: 'Josef Kandlbinder',
+    })
+    expect(match?.events?.map((event) => [event.minute, event.player])).toEqual([
+      [2, 'Christian Müller'],
+      [71, 'Hans Sturm'],
+      [86, 'Christian Müller'],
+    ])
+    expect(inauguralSeason.statistics.recordAttendanceContext).toContain('21/09/1963')
+    expect(inauguralSeason.statistics.recordAttendanceContext).toContain('85.411')
+  })
+
+  it('registra a expulsão de Helmut Rahn sem anacronismo de cartões', () => {
+    const match = bundesligaMatches.find((entry) => entry.id === '1963-09-14-meidericher-hertha')
+    expect(match).toMatchObject({
+      date: '1963-09-14',
+      round: 4,
+      homeGoals: 1,
+      awayGoals: 3,
+      stadium: 'Wedaustadion',
+      attendance: 32000,
+    })
+    expect(match?.events).toContainEqual({
+      minute: 77,
+      type: 'sending-off',
+      player: 'Helmut Rahn',
+      clubId: 'meidericher-sv',
+    })
+    const msv = bundesligaClubs.find((club) => club.id === 'meidericher-sv')
+    expect(msv?.identity).toContain('foi expulso aos 77 minutos')
+    expect(msv?.identity).not.toContain('cartão vermelho')
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,

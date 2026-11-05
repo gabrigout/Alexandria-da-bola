@@ -946,3 +946,20 @@ button { cursor: pointer; }
 .club-profile-status{display:block;margin-top:14px;color:#82796d;font-size:8px;line-height:1.7}
 .bundesliga-scorers{max-height:440px;overflow-y:auto;padding-right:5px}
 @media(max-width:640px){.bundesliga-club-grid{grid-template-columns:1fr}.bundesliga-club-tile{padding:11px 10px}.bundesliga-club-profile{padding:16px}.bundesliga-club-profile header{gap:8px}.bundesliga-club-profile h4{font-size:23px}.club-season-strip{gap:9px 14px}}
+
+
+.bundesliga-match-spotlights{margin:10px 0 32px}
+.bundesliga-match-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bundesliga-match-card{min-width:0;padding:19px;border:1px solid rgba(199,161,106,.2);background:linear-gradient(145deg,rgba(199,161,106,.06),rgba(255,255,255,.012))}
+.bundesliga-match-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.bundesliga-match-meta span{color:#938675;font-size:8px;letter-spacing:.12em}
+.bundesliga-match-meta b{color:#d6b77f;font-size:7px;letter-spacing:.13em;font-weight:500}
+.bundesliga-match-card h4{margin:14px 0 8px;color:#e5dccd;font:500 22px/1.25 'Cormorant Garamond',serif}
+.bundesliga-match-card h4 em{padding:0 5px;color:var(--gold-light);font-style:normal;white-space:nowrap}
+.bundesliga-match-card>p{margin:5px 0;color:#918879;font-size:9px;line-height:1.7}
+.bundesliga-match-card ul{margin:13px 0 0;padding:11px 0 0;list-style:none;border-top:1px solid rgba(199,161,106,.12)}
+.bundesliga-match-card li{padding:4px 0;color:#b9afa0;font-size:9px;line-height:1.5}
+.bundesliga-match-card li strong{display:inline-block;min-width:28px;color:#d6b77f;font-weight:500}
+.bundesliga-match-sources{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:13px;padding-top:11px;border-top:1px solid rgba(199,161,106,.12)}
+.bundesliga-match-sources a{display:inline-flex;align-items:center;gap:4px;color:#d0b17e;font-size:8px;text-decoration:none}
+@media(max-width:640px){.bundesliga-match-grid{grid-template-columns:1fr}.bundesliga-match-card{padding:15px}.bundesliga-match-card h4{font-size:20px}}

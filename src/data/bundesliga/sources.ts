@@ -201,6 +201,39 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "estatistica-independente",
     "notes": "Confere os principais números da artilharia, incluindo 20 gols para Timo Konietzka; consultada em 05/11/2026."
   }
+  {
+    "id": "dfb-match-meidericher-hertha-1963-09-14",
+    "title": "Meidericher SV — Hertha BSC, 1:3, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/msv-duisburg-hertha-bsc-188003",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, estádio, público, árbitro, placar, autores dos gols e minuto do evento de Helmut Rahn."
+  },
+  {
+    "id": "dfb-match-hertha-koeln-1963-09-21",
+    "title": "Hertha BSC — 1. FC Köln, 0:3, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/5-spieltag/hertha-bsc-1-fc-koeln-188007",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Olympiastadion, público de 85.411, árbitro, placar e autores/minutos dos gols."
+  },
+  {
+    "id": "hertha-attendance-record-1963",
+    "title": "Damals wars: Zuschauerrekord gegen Köln",
+    "publisher": "Hertha BSC",
+    "url": "https://www.herthabsc.com/de/nachrichten/2015/09/2574-damals-wars_x003a_-zuschauerrekord-gegen-koln",
+    "type": "historia-oficial-de-clube",
+    "notes": "O clube recorda o jogo contra o 1. FC Köln em 21/09/1963 e o público recorde de 85.411 pessoas."
+  },
+  {
+    "id": "sport1-first-sending-off",
+    "title": "Bundesliga-Wissen zum Angeben",
+    "publisher": "SPORT1",
+    "url": "https://www.sport1.de/news/fussball/bundesliga/2022/04/bundesliga-am-wochende-fert-die-bundesliga-den-2000-spieltag-ihrer-geschichte-sport1-liefert-angeberwissen",
+    "type": "historia-independente",
+    "notes": "Identifica Helmut Rahn como o primeiro jogador expulso da Bundesliga, na quarta rodada de 14/09/1963."
+  },
+
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
