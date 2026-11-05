@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type WheelEvent as ReactWheelEvent } from 'react'
 import * as THREE from 'three'
 import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
@@ -134,8 +134,9 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
       Math.max(...matching.map((item) => item.bounds[3])),
     ])
   }
-  const onWheel = (event: React.WheelEvent<SVGSVGElement>) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
-  const onPointerDown = (event: React.PointerEvent<SVGSVGElement>) => {
+  const chooseCountry = (country: MapCountry) => { zoomTo(country.bounds); onSelect(country) }
+  const onWheel = (event: ReactWheelEvent<SVGSVGElement>) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
+  const onPointerDown = (event: ReactPointerEvent<SVGSVGElement>) => {
     if ((event.target as Element).closest('.country-shape')) return
     dragRef.current = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y }
     event.currentTarget.setPointerCapture(event.pointerId)
@@ -156,7 +157,7 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
         <svg className="atlas-map" viewBox={view.x + ' ' + view.y + ' ' + view.w + ' ' + view.h} role="group" aria-label="Mapa-múndi interativo. Selecione qualquer país ou aproxime para explorar." onWheel={onWheel} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={() => { dragRef.current = null }} onPointerCancel={() => { dragRef.current = null }}>
           <defs><pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern></defs>
           <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
-          {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => onSelect(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') onSelect(country) }} />)}
+          {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => chooseCountry(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') chooseCountry(country) }} />)}
         </svg>
         {loading && <div className="atlas-message">Preparando o atlas...</div>}
         {error && <div className="atlas-message atlas-error">Não foi possível carregar a cartografia. Verifique a conexão e tente novamente.</div>}
