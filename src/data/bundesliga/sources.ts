@@ -176,6 +176,22 @@ export const bundesligaSources: BundesligaSource[] = [
     "url": "https://www.fc-saarbruecken.de/verein/chronik/",
     "type": "historia-clube",
     "notes": "Fundação em 18/04/1903 como departamento de futebol do TV Malstatt."
+  },
+  {
+    "id": "dfb-uwe-seeler-profile",
+    "title": "Uwe Seeler — perfil de jogador",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/personen/uwe-seeler/spieler",
+    "type": "perfil-oficial",
+    "notes": "Perfil institucional, carreira, títulos e reconhecimentos."
+  },
+  {
+    "id": "ksc-statutes",
+    "title": "Satzung des Karlsruher SC",
+    "publisher": "Karlsruher SC",
+    "url": "https://www.ksc.de/fileadmin/ev.ksc.de/KSC_eV_Satzung_Stand_12_11_2025.pdf",
+    "type": "documento-oficial",
+    "notes": "O estatuto registra a origem no KFC Phönix e reconhece 6 de junho de 1894 como data histórica de fundação."
   }
 ]
 

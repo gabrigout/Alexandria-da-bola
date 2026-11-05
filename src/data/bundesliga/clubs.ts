@@ -388,7 +388,8 @@ export const bundesligaClubs: BundesligaClub[] = [
       "dfb-inaugural-season",
       "dfb-season-table-1963-64",
       "dfb-founders-list-1963-64",
-      "ksc-history"
+      "ksc-history",
+      "ksc-statutes"
     ]
   },
   {
