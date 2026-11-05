@@ -67,7 +67,7 @@ function countryNameInPortuguese(properties) {
 function makeCountryPath(geometry) {
   const polygons = geometry.type === 'Polygon'
     ? [geometry.coordinates]
-    : geometry.coordinates[]
+    : geometry.coordinates
   let d = ''
   let minX = MAP_W, minY = MAP_H, maxX = 0, maxY = 0
   const project = (point) => {
@@ -121,7 +121,7 @@ function FlatWorldMap({ onSelect }) {
     return () => { cancelled = true }
   }, [])
 
-  const zoomTo = (bounds: [number, number, number, number]) => {
+  const zoomTo = (bounds) => {
     const [x1, y1, x2, y2] = bounds
     const width = Math.max(x2 - x1, 12) * 2.5
     const height = Math.max(y2 - y1, 12) * 2.5
