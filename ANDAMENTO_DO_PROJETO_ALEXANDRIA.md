@@ -425,3 +425,19 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Limitações conhecidas:** a imagem da bandeira é esticada para preencher a caixa delimitadora do país antes do recorte, portanto a proporção dos símbolos pode variar e territórios multipartes muito dispersos podem apresentar textura esticada. Países pequenos podem ter baixa definição no panorama mundial. Países sem código ISO válido não são preenchidos.
 - **Validação:** gravações confirmadas na branch `main`. Não foi executado build, checagem TypeScript ou teste visual real em navegador/iPhone nesta etapa. É necessário conferir carregamento das imagens, recortes em países multipartes e desempenho com muitas imagens SVG.
 - **Deploy:** verificar a Vercel para o commit documental após este registro. Não declarar publicação concluída enquanto o estado não for `success`.
+
+
+---
+
+## 17. Correção de bandeiras ausentes no mapa — 5 de novembro de 2026
+
+- **Relato do usuário:** na versão publicada no iPhone, muitos países apareciam apenas com o contorno, sem a bandeira preenchendo o território.
+- **Diagnóstico no código:** os identificadores SVG dos recortes (`clipPath`) eram numerados com base na lista filtrada de países com bandeira, mas cada imagem consultava o índice do país na lista original. Quando havia países sem código ISO válido antes de outro país, o índice divergia e a imagem era recortada pelo contorno errado ou por um recorte inexistente.
+- **Correção em `src/App.tsx`:**
+  - Os recortes agora usam identificadores estáveis derivados do código geográfico do país, tanto na definição quanto na imagem.
+  - A identificação da bandeira tenta primeiro `ISO_A2` e, quando não for válido, utiliza `ISO_A2_EH` do Natural Earth.
+  - As bandeiras continuam sendo preenchimentos recortados pelos contornos dos países; não voltaram a ser marcadores sobrepostos.
+- **Arquivo afetado nesta correção:** `src/App.tsx`.
+- **Commit:** `82b65b3`.
+- **Validação:** alteração gravada na branch `main`. Não foi possível executar o build nem fazer teste visual direto no iPhone nesta sessão. A confirmação final depende de observar o novo deploy e verificar especialmente Europa, África, América Central e Caribe.
+- **Deploy:** consultar o estado da Vercel para este commit antes de afirmar que a correção está publicada.
