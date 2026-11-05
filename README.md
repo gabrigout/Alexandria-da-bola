@@ -1,22 +1,23 @@
 # Alexandria — A Biblioteca do Futebol
 
-Uma biblioteca digital interativa dedicada à memória e à história do futebol. A experiência parte de um grande salão de biblioteca/museu, com um globo terrestre 3D suspenso que conduz a exploração do mundo para continentes e países.
+A Alexandria é uma biblioteca digital dedicada à história do futebol. O projeto combina um salão de museu, um atlas-múndi interativo e um acervo pesquisável que conecta competições, ligas, copas, clubes e jogadores.
 
 > O futebol tem um mundo de histórias. Explore cada uma delas.
 
-## Conceito e experiência
+## Experiência
 
-A página de entrada apresenta:
+- Atlas-múndi plano com países selecionáveis e territórios preenchidos por suas bandeiras nacionais quando há código de bandeira disponível.
+- Navegação por país e continentes, com aproximação, deslocamento e seleção.
+- Acervo histórico com filtros para **Ligas**, **Copas**, **Clubes** e **Jogadores**.
+- Busca textual nos registros.
+- Fichas com origem, marcos históricos, legado, fatos essenciais, fonte de pesquisa e ligações para entidades relacionadas.
+- Interface responsiva, incluindo telas de celular, em português brasileiro.
 
-- Um ambiente inspirado em um salão clássico de biblioteca e museu, com arquitetura monumental, estantes, colunas e piso de mármore escuro.
-- Um globo terrestre 3D realista como elemento central, suspenso no espaço e sem pedestal.
-- Interação por arrasto/toque para girar, gesto de pinça para zoom em dispositivos móveis e roda do mouse para zoom em desktop.
-- Seleção aproximada de continentes no globo, com navegação demonstrativa para países.
-- Caminho de navegação conceitual: Mundo → Continente → País → acervo nacional.
-- Áreas de entrada para competições, personagens e linha do tempo.
-- Linha do tempo histórica e busca preservadas como conteúdo complementar do protótipo.
+## Acervo inicial
 
-A identidade visual combina preto, grafite, mármore, bronze e ouro envelhecido. A arquitetura do salão foi criada com CSS e o atlas é desenhado em SVG a partir de geometrias GeoJSON do Natural Earth.
+O módulo de dados está em `src/data/archive.ts`. Cada registro possui identificador estável, categoria, país, ano de referência, resumo, origem, cronologia, legado, fontes e conexões. Quando há informações essenciais verificadas, elas aparecem em uma ficha de dados rápidos.
+
+A primeira coleção contém **40 registros**: 7 ligas, 5 copas, 18 clubes e 10 jogadores. É um núcleo inicial pesquisado, não uma enciclopédia completa. Elencos, temporadas, estatísticas e títulos serão acrescentados progressivamente e sempre com referência própria.
 
 ## Tecnologias
 
@@ -24,6 +25,8 @@ A identidade visual combina preto, grafite, mármore, bronze e ouro envelhecido.
 - Vite
 - CSS responsivo
 - Lucide React
+- Dados cartográficos Natural Earth em GeoJSON
+- Bandeiras servidas pelo FlagCDN
 
 ## Executar localmente
 
@@ -41,21 +44,15 @@ npm run build
 npm run preview
 ```
 
-## Estado atual
+## Fontes e critérios editoriais
 
-**Protótipo visual do atlas plano interativo incorporado ao código; validação pendente.** O atlas carrega geometrias de países em GeoJSON do Natural Earth por uma URL externa. A interação de zoom, arrasto e seleção de países está implementada; a validação visual e o teste de carregamento ainda estão pendentes. A fronteiras vêm da base cartográfica Natural Earth em escala mundial; países muito pequenos e áreas de alta latitude têm limitações de representação. A lista de países e a navegação do acervo ainda são demonstrativas.
+O acervo prioriza federações, confederações, ligas, clubes, arquivos e publicações reconhecidas. Cada ficha indica uma fonte-base; novos dados estatísticos ou de temporadas devem receber referências específicas. Ano de fundação, ano de criação de uma liga e primeira temporada não são necessariamente a mesma coisa e devem ser distinguidos. Também se deve separar ano civil de temporada (por exemplo, 2002 e 2001/02).
 
-Os registros históricos na linha do tempo continuam sendo uma amostra inicial, não um catálogo completo. A expansão do acervo deverá usar fontes verificáveis e diferenciar ano civil de temporada esportiva (por exemplo, 2002 e 2001/02). Dados não confirmados ou indisponíveis não devem ser inventados.
+Conteúdo não confirmado deve permanecer marcado como pendente. Não inventar números, elencos, estatísticas, títulos ou relações entre jogadores e clubes.
 
-## Próximas etapas
+## Estado do projeto
 
-1. Validar visualmente a sala, o globo e os gestos em desktop e iPhone.
-2. Refinar a seleção de continentes com dados cartográficos reais, em vez de limites aproximados.
-3. Definir a estrutura de dados e a navegação Mundo → Continente → País.
-4. Desenvolver o acervo nacional e as páginas de competições, clubes, seleções e jogadores.
-5. Pesquisar e referenciar cada conteúdo histórico.
-6. Testar acessibilidade, desempenho, responsividade e publicação.
+A navegação inicial do acervo e as fichas históricas já estão incorporadas ao código. A base está sendo ampliada por etapas. Ainda é necessário executar build e testes formais, validar o comportamento em iPhone e desktop e revisar cada ficha antes de considerar o conteúdo completo.
 
 ---
-
 Projeto de portfólio em desenvolvimento.
