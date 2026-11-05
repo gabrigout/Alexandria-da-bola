@@ -528,9 +528,98 @@ export const archiveEntries: ArchiveEntry[] = [
       '1956 — Recebe a primeira Bola de Ouro da revista France Football.'
     ],
     legacy: 'Sua versatilidade, capacidade de participar da construção e da finalização e influência sobre o jogo coletivo marcaram a identidade do Real Madrid dos anos 1950.',
-    relatedIds: ['champions-league', 'laliga'],
+    relatedIds: ['real-madrid', 'champions-league', 'laliga'],
     sourceLabel: 'UEFA — Primeira edição da Taça dos Campeões',
     sourceUrl: 'https://www.uefa.com/uefachampionsleague/history/seasons/1955/clubs/',
+    status: 'pesquisado'
+  }
+  ,
+  {
+    id: 'flamengo',
+    title: 'Clube de Regatas do Flamengo',
+    category: 'clube',
+    country: 'Brasil · Rio de Janeiro, RJ',
+    year: '1895',
+    subtitle: 'Do remo na Baía de Guanabara à paixão de uma nação',
+    summary: 'O Flamengo nasceu como grupo de regatas, fundado em 1895 por jovens remadores do bairro que lhe deu nome. O futebol só entrou na história do clube em 1911, quando atletas dissidentes do Fluminense organizaram uma seção da modalidade.',
+    origin: 'A fundação oficial é celebrada em 15 de novembro de 1895. O clube surgiu para disputar provas de remo na Baía de Guanabara. Em 1902, o Grupo de Regatas passou a se chamar Clube de Regatas do Flamengo. A seção de futebol foi organizada em 1911 e a primeira partida ocorreu em 3 de maio de 1912.',
+    history: [
+      '15 de novembro de 1895 — Fundação do Grupo de Regatas do Flamengo.',
+      '1902 — O grupo passa a se chamar Clube de Regatas do Flamengo.',
+      '1911 — É criada a seção de futebol com jogadores que deixam o Fluminense.',
+      '3 de maio de 1912 — O Flamengo disputa seu primeiro jogo de futebol e vence a Mangueira por 15 a 2.',
+      'Década de 1980 — A geração liderada por Zico conquista títulos nacionais e internacionais.'
+    ],
+    legacy: 'A história rubro-negra é uma transição do remo para o futebol, sem apagar a origem náutica do clube. A geração de Zico e os títulos do início dos anos 1980 transformaram o Flamengo em uma das instituições mais conhecidas do futebol sul-americano.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores', 'zico'],
+    sourceLabel: 'Museu Flamengo — O Flamengo nasceu no remo',
+    sourceUrl: 'https://www.museuflamengo.com.br/historia-do-remo',
+    status: 'pesquisado'
+  },
+  {
+    id: 'zico',
+    title: 'Zico',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1953–',
+    subtitle: 'O camisa 10 que simboliza a geração histórica do Flamengo',
+    summary: 'Arthur Antunes Coimbra, o Zico, chegou às categorias de base do Flamengo ainda jovem, subiu ao profissional no início dos anos 1970 e tornou-se o principal símbolo de uma geração que conquistou o Brasil e o mundo.',
+    origin: 'Formado no Flamengo, Zico integrou uma geração de atletas que subiu em conjunto das categorias juvenis. Depois de estrear no profissional, evoluiu até se tornar o principal articulador e goleador da equipe rubro-negra.',
+    history: [
+      '1971 — Passa a integrar o processo de formação do time principal.',
+      '1973 — Sobe ao elenco profissional, após conquistar títulos nas categorias de base.',
+      '1974 — Participa da conquista do Campeonato Carioca.',
+      'Início dos anos 1980 — Lidera a equipe que conquista títulos brasileiros e a Libertadores.',
+      '13 de dezembro de 1981 — O Flamengo vence o Liverpool por 3 a 0 e conquista a Copa Intercontinental.'
+    ],
+    legacy: 'Zico tornou-se sinônimo da geração mais emblemática do Flamengo. Sua técnica, visão de jogo e liderança fizeram dele uma referência histórica do clube e um dos grandes camisas 10 do futebol brasileiro.',
+    relatedIds: ['flamengo', 'brasileirao', 'libertadores'],
+    sourceLabel: 'FIFA — Zico relembra a história do Flamengo',
+    sourceUrl: 'https://www.fifa.com/pt/tournaments/mens/club-world-cup/usa-2025/articles/zico-flamengo-entrevista',
+    status: 'pesquisado'
+  },
+  {
+    id: 'bayern-munique',
+    title: 'FC Bayern München',
+    category: 'clube',
+    country: 'Alemanha · Munique',
+    year: '1900',
+    subtitle: 'Da fundação no Café Gisela à potência do futebol alemão',
+    summary: 'O Bayern foi fundado em 27 de fevereiro de 1900 por um grupo de jovens liderado por Franz John, durante uma reunião no Café Gisela, em Munique.',
+    origin: 'A fundação ocorreu após divergências entre jovens praticantes de futebol e a estrutura esportiva existente na cidade. O novo clube organizou sua própria equipe e, nos primeiros anos, precisou negociar campos e recursos para continuar crescendo.',
+    history: [
+      '27 de fevereiro de 1900 — Fundação do FC Bayern no Café Gisela.',
+      '1906 — O clube se associa ao Münchner Sport-Club por razões financeiras e de disponibilidade de campo, preservando sua independência.',
+      '1932 — Conquista seu primeiro campeonato alemão.',
+      '1963 — A Bundesliga é criada; o Bayern só passa a integrá-la em 1965.',
+      'Décadas seguintes — O clube torna-se uma das principais forças do futebol alemão e europeu.'
+    ],
+    legacy: 'A história do Bayern conecta o desenvolvimento do futebol de Munique à formação da Bundesliga e às grandes gerações alemãs, de Franz Beckenbauer e Gerd Müller a jogadores de épocas recentes.',
+    relatedIds: ['bundesliga', 'champions-league'],
+    sourceLabel: 'Bayern — Marcos históricos',
+    sourceUrl: 'https://fcbayern.com/en/club/history/mile-stones/milestones-in-bayern-s-history',
+    status: 'pesquisado'
+  },
+  {
+    id: 'real-madrid',
+    title: 'Real Madrid Club de Fútbol',
+    category: 'clube',
+    country: 'Espanha · Madri',
+    year: '1902',
+    subtitle: 'O Madrid Foot Ball Club que se tornou referência europeia',
+    summary: 'O Real Madrid foi constituído oficialmente em 6 de março de 1902, com Juan Padrós como primeiro presidente. A instituição nasceu como Madrid Foot Ball Club, antes de receber o título Real.',
+    origin: 'O futebol ganhou espaço na Espanha no fim do século XIX. Julián Palacios ajudou a organizar os primeiros grupos de jogadores, enquanto Juan Padrós formalizou a criação da instituição em 1902. O clube também esteve ligado ao nascimento das primeiras competições nacionais espanholas.',
+    history: [
+      '1900 — Julián Palacios convoca uma reunião para organizar os primeiros jogadores do Madrid.',
+      '6 de março de 1902 — O Madrid Foot Ball Club é formalmente constituído.',
+      '1903 — O clube conquista seu primeiro título regional.',
+      '1955/56 — Vence a primeira edição da Taça dos Campeões Europeus.',
+      '1956–1960 — Conquista as cinco primeiras edições da competição europeia.'
+    ],
+    legacy: 'O Real Madrid tornou-se um protagonista da história da Liga espanhola e da principal competição europeia de clubes. A sequência de cinco títulos continentais nos anos 1950 marcou a identidade internacional do clube.',
+    relatedIds: ['laliga', 'champions-league', 'di-stefano'],
+    sourceLabel: 'Real Madrid — Fundação e primeiros anos',
+    sourceUrl: 'https://www.realmadrid.com/static/pt/sobre-o-real-madrid/historia/futebol/1902-1910/',
     status: 'pesquisado'
   }
 ]
