@@ -29,6 +29,19 @@ describe('validação do acervo Bundesliga', () => {
     expect(result.totals.seasons).toBe(1)
   })
 
+  it('mantém fichas históricas iniciais para os 16 clubes fundadores', () => {
+    expect(bundesligaClubs).toHaveLength(16)
+    expect(bundesligaClubs.every((club) => club.foundedOn && club.city && club.foundationNote && club.identity)).toBe(true)
+    expect(bundesligaClubs.every((club) => club.inauguralSeason.played === 30)).toBe(true)
+  })
+
+  it('registra as 50 posições nominais da tabela de artilharia DFB consultada', () => {
+    expect(inauguralSeason.topScorers).toHaveLength(50)
+    expect(bundesligaPlayers).toHaveLength(50)
+    expect(inauguralSeason.topScorers[0]).toMatchObject({ playerName: 'Uwe Seeler', goals: 30 })
+    expect(inauguralSeason.topScorers[49]).toMatchObject({ playerName: 'Alfred Heiß', goals: 6 })
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,

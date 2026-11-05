@@ -583,3 +583,23 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Situação do código e deploy:** nenhum código da aplicação foi alterado nesta etapa e nenhum deploy de produção foi solicitado. O build foi validado em CI; isso não equivale a uma nova publicação na Vercel.
 - **Pendência encerrada:** versionamento do `package-lock.json` para instalação reprodutível.
 - **Próxima etapa aprovada pelo usuário:** consolidar a ficha 1963/64 e desenvolver fichas enciclopédicas dos 16 clubes inaugurais, com pesquisa e fontes verificáveis.
+
+
+---
+
+## 24. Auditoria ampliada da temporada inaugural e fichas dos 16 fundadores — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, com pesquisa documental e conferência em fontes oficiais e independentes.
+- **Tipo:** conteúdo histórico / modelagem de dados / interface / validação.
+- **Temporada 1963/64:** a classificação final foi mantida conforme o DFB Datencenter: 16 clubes, 30 jogos por clube, 240 partidas e 857 gols. A tabela preserva o quociente de gols como critério histórico e a divergência de posições 10 e 11 entre DFB e RSSSF.
+- **Artilharia:** a base foi ampliada de 15 para 50 linhas nominais da tabela pública do DFB, com gols e gols de pênalti, preservando posições empatadas. A tabela consultada termina na marca de seis gols. Portanto, os 50 registros representam a captura disponível, não uma afirmação de que todos os jogadores que marcaram na temporada estejam listados; atletas abaixo do corte ainda dependem de pesquisa.
+- **Média de público:** preservado o número publicado pelo DFB (25.134 por jogo), junto ao total de 6.057.335 espectadores. A divisão desse total pelos 240 jogos resulta em aproximadamente 25.239; a diferença foi registrada em nota de fonte, sem substituir o valor oficial publicado.
+- **16 clubes fundadores:** os registros agora contêm data/ano de origem, cidade, cores, contexto de fundação, identidade histórica e desempenho de 1963/64 (posição, pontos, vitórias, empates, derrotas e gols). As fichas foram marcadas como **fichas históricas iniciais documentadas**, não como biografias enciclopédicas concluídas.
+- **Nuances preservadas:** a fundação do HSV é associada ao predecessor SC Germania de 1887 e à consolidação por fusões em 1919; o TSV 1860 separa a origem da associação (1860) da seção de futebol (1899); o KSC registra a origem no Phönix de 1894 e a criação da entidade atual pela fusão de 1952; Eintracht Frankfurt remonta à Victoria de 1899 e a fusões posteriores.
+- **Interface:** adicionada uma grade interativa dos 16 clubes na página Bundesliga. A seleção exibe a ficha inicial, o desempenho na edição inaugural e links às fontes correspondentes. A artilharia apresenta as 50 linhas consultadas em uma área rolável, adaptada para telas estreitas.
+- **Validação de dados:** o validador exige os campos essenciais da ficha inicial, 30 jogos na temporada inaugural, pontuação compatível com dois pontos por vitória e referências cadastradas.
+- **Arquivos alterados:** `src/data/bundesliga/types.ts`, `clubs.ts`, `players.ts`, `sources.ts`, `seasons/1963-64.ts`, `validate.ts`, `validate.test.ts`, `src/components/BundesligaArchive.tsx`, `src/index.css` e este documento.
+- **Fontes-base:** DFB história da temporada, DFB Datencenter (classificação, lista dos 16 participantes e artilharia), RSSSF (resultados e conferência independente), páginas oficiais de clubes e arquivos/museus institucionais.
+- **Lacunas que continuam abertas:** biografias completas de jogadores e treinadores; elencos; todas as 240 partidas como registros individuais; estatísticas de goleiros; estádios e mudanças de nome; público por partida; premiações e campanhas europeias; conferência independente adicional das fichas; e a extensão da artilharia abaixo do corte de seis gols.
+- **Validação de execução:** TypeScript, testes e build ainda precisam ser executados após a incorporação deste conjunto. Nenhum resultado de teste é declarado como aprovado antes da execução.
+- **Deploy:** pendente da confirmação do build de preview da Vercel após o commit.

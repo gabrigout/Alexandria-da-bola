@@ -56,6 +56,15 @@ export function validateBundesligaData({
 
   clubs.forEach((club: BundesligaClub) => {
     if (!club.name) errors.push(`Clube sem nome: ${club.id}`)
+    if (!club.foundedOn || !club.city || !club.colors || !club.foundationNote || !club.identity) {
+      errors.push(`Ficha inicial incompleta para o clube: ${club.id}`)
+    }
+    if (!club.inauguralSeason || club.inauguralSeason.played !== 30) {
+      errors.push(`Dados inaugurais ausentes ou incompletos para o clube: ${club.id}`)
+    }
+    if (club.inauguralSeason && club.inauguralSeason.points !== club.inauguralSeason.wins * 2 + club.inauguralSeason.draws) {
+      errors.push(`Pontuação de 1963/64 incompatível no perfil: ${club.id}`)
+    }
     clubIds.add(club.id)
     checkSources(`clube ${club.id}`, club.sourceIds)
   })

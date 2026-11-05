@@ -1,33 +1,14 @@
 export interface BundesligaSource { id: string; title: string; publisher: string; url: string; type: string; notes: string }
 export interface BundesligaSourceNote { id: string; severity: string; subject: string; adoptedSourceId: string; note: string }
-export interface BundesligaClub { id: string; name: string; country: string; firstSeasonId: string; participationStatus: string; profileStatus: string; sourceIds: string[] }
-export interface BundesligaPlayer {
- id: string; name: string; notableSeasonIds: string[];
- clubs: Array<{clubId:string;clubName:string}>;
- seasonStats: Array<{seasonId:string;competitionId:string;goals:number;penalties?:number}>;
- profileStatus:string; sourceIds:string[];
-}
+export interface BundesligaClub { id:string;name:string;country:string;firstSeasonId:string;participationStatus:string;profileStatus:string;foundedOn:string;city:string;colors:string;foundationNote:string;identity:string;inauguralSeason:{position:number;points:number;wins:number;draws:number;losses:number;played:number;goalsFor:number;goalsAgainst:number;note:string};sourceIds:string[] }
+export interface BundesligaPlayer { id:string; name:string; notableSeasonIds:string[]; clubs:Array<{clubId:string;clubName:string}>; seasonStats:Array<{seasonId:string;competitionId:string;goals:number;penalties?:number}>; profileStatus:string; sourceIds:string[] }
 export interface BundesligaCoach { id:string;name:string;clubId:string;seasonIds:string[];role:string;profileStatus:string;sourceIds:string[] }
 export interface BundesligaAward { id:string;seasonId:string;name:string;recipientId:string;recipient:string;clubId?:string;value?:string;sourceIds:string[] }
 export interface BundesligaMatch { id:string;seasonId:string;round:number;date:string;homeClubId:string;home:string;awayClubId:string;away:string;homeGoals:number;awayGoals:number;competitionId:string;keyEvent:string;sourceIds:string[];editorialStatus?:string }
 export interface BundesligaStanding { position:number;clubId:string;clubName:string;played:number;wins:number;draws:number;losses:number;goalsFor:number;goalsAgainst:number;goalDifference:number;points:number;historicalGoalQuotient:number }
 export interface BundesligaTopScorer { position:number;playerId:string;playerName:string;clubName:string;clubId:string;goals:number;penalties:number;sourceIds:string[];profileStatus:string }
-export interface BundesligaSeason {
- id:string;competitionId:string;name:string;startYear:number;endYear:number;status:string;editorialStatus:string;completeness:string;
- championClubId:string;champion:string;runnerUpClubId:string;runnerUp:string;relegatedClubIds:string[];relegated:string[];
- rules:{clubs:number;matchdays:number;matches:number;pointsForWin:number;pointsForDraw:number;pointsForLoss:number;tieBreak:string;notes:string[];sourceIds:string[]};
- statistics:{totalGoals:number;goalsPerMatch:number;totalAttendance:number;averageAttendance:number;recordAttendance:number;recordAttendanceContext:string;sourceIds:string[]};
- standings:BundesligaStanding[];topScorers:BundesligaTopScorer[];
- notableMatches:Array<{id:string;date:string;round:number;homeClubId:string;home:string;awayClubId:string;away:string;score:string;historicalNote:string;sourceIds:string[]}>;
- historicalNotes:Array<{title:string;text:string;sourceIds:string[]}>;
- relatedCompetitionIds:string[];sourceIds:string[];
-}
+export interface BundesligaSeason { id:string;competitionId:string;name:string;startYear:number;endYear:number;status:string;editorialStatus:string;completeness:string;championClubId:string;champion:string;runnerUpClubId:string;runnerUp:string;relegatedClubIds:string[];relegated:string[];rules:{clubs:number;matchdays:number;matches:number;pointsForWin:number;pointsForDraw:number;pointsForLoss:number;tieBreak:string;notes:string[];sourceIds:string[]};statistics:{totalGoals:number;goalsPerMatch:number;totalAttendance:number;averageAttendance:number;calculatedAverageAttendance?:number;averageAttendanceNote?:string;recordAttendance:number;recordAttendanceContext:string;sourceIds:string[]};standings:BundesligaStanding[];topScorers:BundesligaTopScorer[];notableMatches:Array<{id:string;date:string;round:number;homeClubId:string;home:string;awayClubId:string;away:string;score:string;historicalNote:string;sourceIds:string[]}>;historicalNotes:Array<{title:string;text:string;sourceIds:string[]}>;relatedCompetitionIds:string[];sourceIds:string[] }
 export interface BundesligaSeasonIndexEntry {id:string;label:string;startYear:number;endYear:number;status:'documentada'|'em-andamento'|'pendente';hasDetailedRecord:boolean;updatePolicy:string;note:string}
-export interface BundesligaCompetition {
- id:string;name:string;country:string;foundedYear:number;firstSeasonId:string;currentSeasonId:string;
- scope:{historicalStart:number;continuity:string;updateCadence:string;seasons:string;womensFootball:string;nationalTeams:string};
- editorialPolicy:{language:string;preserveGermanNames:boolean;statistics:string;missingInformation:string;sourceGranularity:string;disputes:string};
- relatedCompetitions:Array<{id:string;name:string;type:string;finalDate:string;venue:string;attendance:number;home:string;away:string;score:string;goals:Array<{minute:number;player:string}>;winnerClubId:string;sourceIds:string[]}>;
-}
-export interface BundesligaCatalogRecord { id:string;name:string;[key:string]:unknown }
+export interface BundesligaCompetition {id:string;name:string;country:string;foundedYear:number;firstSeasonId:string;currentSeasonId:string;scope:{historicalStart:number;continuity:string;updateCadence:string;seasons:string;womensFootball:string;nationalTeams:string};editorialPolicy:{language:string;preserveGermanNames:boolean;statistics:string;missingInformation:string;sourceGranularity:string;disputes:string};relatedCompetitions:Array<{id:string;name:string;type:string;finalDate:string;venue:string;attendance:number;home:string;away:string;score:string;goals:Array<{minute:number;player:string}>;winnerClubId:string;sourceIds:string[]}> }
+export interface BundesligaCatalogRecord {id:string;name:string;[key:string]:unknown}
 export interface BundesligaValidationInput {clubs?:BundesligaClub[];seasons?:BundesligaSeason[];sources?:BundesligaSource[];players?:BundesligaPlayer[];coaches?:BundesligaCoach[];awards?:BundesligaAward[];matches?:BundesligaMatch[]}

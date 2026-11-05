@@ -919,3 +919,30 @@ button { cursor: pointer; }
 .bundesliga-pending{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:210px;justify-content:center;margin:25px 0;padding:27px;border:1px dashed rgba(199,161,106,.25);color:var(--gold)}.bundesliga-pending p{max-width:650px;margin:0;color:#9d968a;font-size:10px;line-height:1.9}.bundesliga-pending>span{color:#c9ac75;font-size:9px}.bundesliga-sources{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:27px;padding-top:17px;border-top:1px solid var(--line)}.bundesliga-sources>span{width:100%;color:#81786c;font-size:8px;letter-spacing:.15em}
 @media(max-width:900px){.bundesliga-section{padding-left:5%;padding-right:5%}.bundesliga-related{grid-template-columns:1fr 1fr}.bundesliga-related>a{grid-column:1/-1}}
 @media(max-width:640px){.bundesliga-section{padding:70px 5%}.bundesliga-heading,.bundesliga-season-intro{align-items:flex-start;flex-direction:column}.bundesliga-heading>p{max-width:100%}.bundesliga-summary{grid-template-columns:1fr 1fr}.bundesliga-summary>div:last-child{grid-column:1/-1}.bundesliga-season-toolbar{align-items:flex-start;flex-direction:column}.bundesliga-season-toolbar label{align-items:flex-start;flex-wrap:wrap}.bundesliga-select-wrap,.bundesliga-select-wrap select{width:100%}.bundesliga-facts-grid{grid-template-columns:repeat(2,1fr)}.bundesliga-lower-grid,.bundesliga-related{grid-template-columns:1fr}.bundesliga-scorers li{grid-template-columns:20px 1fr auto}.bundesliga-scorers small{grid-column:2;grid-row:2}.bundesliga-scorers b{grid-column:3;grid-row:1/3}}
+
+.bundesliga-club-archive{margin-top:30px;padding-top:25px;border-top:1px solid rgba(199,161,106,.18)}
+.bundesliga-club-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.bundesliga-club-tile{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:12px 13px;border:1px solid rgba(199,161,106,.14);background:rgba(255,255,255,.018);color:#cfc5b5;cursor:pointer;transition:border-color .2s,background .2s}
+.bundesliga-club-tile:hover,.bundesliga-club-tile.is-selected{border-color:rgba(210,174,119,.65);background:rgba(199,161,106,.08)}
+.bundesliga-club-tile .club-rank{color:#a88c65;font:500 13px 'Cormorant Garamond',serif}
+.bundesliga-club-tile .club-tile-text{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bundesliga-club-tile strong{overflow:hidden;color:#e3d9ca;font-size:10px;font-weight:500;text-overflow:ellipsis;white-space:nowrap}
+.bundesliga-club-tile small{overflow:hidden;color:#8b8377;font-size:8px;text-overflow:ellipsis;white-space:nowrap}
+.bundesliga-club-tile>b{color:#c5a16f;font-size:9px;font-weight:500;white-space:nowrap}
+.bundesliga-club-profile{margin-top:15px;padding:22px;border:1px solid rgba(199,161,106,.25);background:linear-gradient(140deg,rgba(199,161,106,.075),rgba(255,255,255,.012))}
+.bundesliga-club-profile header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.bundesliga-club-profile header>div:first-child>span{color:#b69b73;font-size:8px;letter-spacing:.14em}
+.bundesliga-club-profile h4{margin:7px 0 3px;color:#e7ddcf;font:500 27px 'Cormorant Garamond',serif}
+.bundesliga-club-profile header small{color:#918779;font-size:9px}
+.club-season-rank{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.club-season-rank strong{color:#d7b67d;font:500 26px 'Cormorant Garamond',serif}
+.club-season-rank span{color:#827767;font-size:7px;letter-spacing:.1em}
+.bundesliga-club-profile>p{max-width:850px;margin:16px 0 0;color:#b5ad9f;font-size:10px;line-height:1.9}
+.club-season-strip{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:18px;padding:13px 0;border-top:1px solid rgba(199,161,106,.14);border-bottom:1px solid rgba(199,161,106,.14)}
+.club-season-strip span{color:#93897b;font-size:8px}
+.club-season-strip b{color:#e0c18a;font-size:11px;font-weight:500}
+.club-profile-sources{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:14px}
+.club-profile-sources a{display:inline-flex;align-items:center;gap:5px;color:#d0b17e;font-size:8px;text-decoration:none}
+.club-profile-status{display:block;margin-top:14px;color:#82796d;font-size:8px;line-height:1.7}
+.bundesliga-scorers{max-height:440px;overflow-y:auto;padding-right:5px}
+@media(max-width:640px){.bundesliga-club-grid{grid-template-columns:1fr}.bundesliga-club-tile{padding:11px 10px}.bundesliga-club-profile{padding:16px}.bundesliga-club-profile header{gap:8px}.bundesliga-club-profile h4{font-size:23px}.club-season-strip{gap:9px 14px}}
