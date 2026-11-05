@@ -58,6 +58,12 @@ const countryNamesByCode: Record<string, string> = {
   XK: 'Kosovo', TW: 'Taiwan', PS: 'Palestina', EH: 'Saara Ocidental',
   '00': 'Território não identificado',
 }
+
+function countryFlagCode(properties: Record<string, string | number | null>) {
+  const candidates = [properties.ISO_A2, properties.ISO_A2_EH]
+  const code = candidates.find((value) => typeof value === 'string' && /^[A-Za-z]{2}$/.test(value))
+  return String(code ?? '').toLowerCase()
+}
 function countryNameInPortuguese(properties: Record<string, string | number | null>) {
   const code = String(properties.ISO_A2 ?? '')
   if (code && code !== '-99' && /^[A-Z]{2}$/.test(code)) {
@@ -115,7 +121,7 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
             name: countryNameInPortuguese(feature.properties),
             continent: continentName(String(feature.properties.CONTINENT ?? '')),
             code: String(feature.properties.ADM0_A3 ?? feature.properties.ISO_A3 ?? ''),
-            flagCode: String(feature.properties.ISO_A2 ?? '').toLowerCase(),
+            flagCode: countryFlagCode(feature.properties),
             d: result.d, bounds: result.bounds, center: result.center,
           }
         }).filter((country) => country.d && country.continent !== 'Oceanos')
@@ -175,13 +181,13 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
           <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
           <defs>
             <pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern>
-            {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country, index) => <clipPath key={'clip-' + country.code + '-' + index} id={'flag-clip-' + index} clipPathUnits="userSpaceOnUse"><path d={country.d} /></clipPath>)}
+            {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country) => <clipPath key={'clip-' + country.code} id={'flag-clip-' + country.code.toLowerCase()} clipPathUnits="userSpaceOnUse"><path d={country.d} /></clipPath>)}
           </defs>
           <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
           {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country) => {
-            const index = countries.indexOf(country)
             const [x1, y1, x2, y2] = country.bounds
-            return <image key={'country-flag-' + country.code + '-' + index} className="country-flag-fill" href={'https://flagcdn.com/w320/' + country.flagCode + '.png'} x={x1} y={y1} width={Math.max(1, x2 - x1)} height={Math.max(1, y2 - y1)} preserveAspectRatio="none" clipPath={'url(#flag-clip-' + index + ')'} />
+            const clipId = 'flag-clip-' + country.code.toLowerCase()
+            return <image key={'country-flag-' + country.code} className="country-flag-fill" href={'https://flagcdn.com/w320/' + country.flagCode + '.png'} x={x1} y={y1} width={Math.max(1, x2 - x1)} height={Math.max(1, y2 - y1)} preserveAspectRatio="none" clipPath={'url(#' + clipId + ')'} />
           })}
           {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => chooseCountry(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') chooseCountry(country) }} />)}
         </svg>
