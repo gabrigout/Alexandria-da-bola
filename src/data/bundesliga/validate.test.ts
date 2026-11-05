@@ -102,6 +102,53 @@ describe('validação do acervo Bundesliga', () => {
     expect(msv?.identity).not.toContain('cartão vermelho')
   })
 
+
+  it('documenta Borussia Dortmund 3–3 TSV 1860 München com a ficha oficial do DFB', () => {
+    const match = bundesligaMatches.find((entry) => entry.id === '1963-08-31-dortmund-1860')
+    expect(match).toMatchObject({
+      date: '1963-08-31',
+      round: 2,
+      homeClubId: 'borussia-dortmund',
+      awayClubId: 'tsv-1860-munich',
+      homeGoals: 3,
+      awayGoals: 3,
+      stadium: 'Stadion Rote Erde',
+      attendance: 23000,
+      referee: 'Edgar Deuschel',
+    })
+    expect(match?.events?.map((event) => [event.minute, event.player])).toEqual([
+      [8, 'Hans Küppers'],
+      [16, 'Willi Sturm'],
+      [27, 'Gerd Cyliax'],
+      [49, 'Peter Grosser'],
+      [63, 'Peter Grosser'],
+      [80, 'Willi Sturm'],
+    ])
+  })
+
+  it('documenta Hamburger SV 4–2 1. FC Saarbrücken com a ficha oficial do DFB', () => {
+    const match = bundesligaMatches.find((entry) => entry.id === '1963-08-31-hamburg-saarbruecken')
+    expect(match).toMatchObject({
+      date: '1963-08-31',
+      round: 2,
+      homeClubId: 'hamburger-sv',
+      awayClubId: 'fc-saarbrucken',
+      homeGoals: 4,
+      awayGoals: 2,
+      stadium: 'Volksparkstadion',
+      attendance: 32000,
+      referee: 'Günther Baumgärtel',
+    })
+    expect(match?.events?.map((event) => [event.minute, event.player])).toEqual([
+      [29, 'Dieter Krafczyk'],
+      [37, 'Dieter Krafczyk'],
+      [45, 'Charly Dörfel'],
+      [55, 'Charly Dörfel'],
+      [70, 'Uwe Seeler'],
+      [78, 'Charly Dörfel'],
+    ])
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
