@@ -624,4 +624,5 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Validação adicionada:** teste automatizado que exige correspondência entre cada linha da artilharia e o cadastro individual do jogador (nome, clube, gols e pênaltis), além da quantidade de 50 registros.
 - **O que esta etapa não fez:** não ampliou a lista abaixo de seis gols; não criou biografias; não cadastrou partidas; não alterou a classificação nem números de público; não fez inspeção visual nem deploy.
 - **Próxima etapa sugerida:** corrigir os textos anacrônicos e consolidar a ficha da partida do recorde de público, sempre com fontes e testes. Em seguida, iniciar o cadastro das partidas em lotes pequenos.
-- **Commit desta atualização:** será preenchido após a gravação no GitHub. O estado de testes e deploy também deve ser atualizado somente após execução/consulta real.
+- **Commits de código desta etapa:** `e0f379964b92ded2542769abe8c1525295741b49` (primeira gravação) e `3e349f20c0d4d53f5158613772b5f5f22b2de200` / `bd8fdec217bce8962d8727a8d214af9a9b5741a8` (correções na organização das fontes). O registro documental foi gravado em commit subsequente.
+- **Testes e deploy:** ainda não executados/confirmados após estes commits. Não declarar a Etapa 2 como validada em build até verificar CI/Vercel.
