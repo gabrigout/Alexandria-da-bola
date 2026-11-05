@@ -321,3 +321,19 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - [ ] Informar ao usuário o que foi alterado, o que foi verificado e o que ainda falta.
 
 **Ponto de retomada atual:** aguardar o usuário apresentar a nova ideia para a Alexandria. Não iniciar uma reformulação de código antes disso.
+
+
+---
+
+## 12. Protótipo da nova entrada — 5 de novembro de 2026
+
+- **Direção aprovada:** transformar a página inicial em um museu/biblioteca monumental da história do futebol, com um globo terrestre realista suspenso no centro do salão.
+- **Arquivos alterados:**
+  - \`src/App.tsx\`: substituída a esfera abstrata por um globo 3D em Three.js; adicionados rotação por arraste/toque, zoom por pinça/roda do mouse, seleção aproximada de continentes por clique/toque, painel de países demonstrativo, navegação por seções, cartões de exploração e registros da linha do tempo.
+  - \`src/index.css\`: criada a ambientação visual do salão clássico com arcos, colunas, estantes, piso geométrico, iluminação dourada, tipografia editorial e layout responsivo para telas móveis.
+- **Experiência do globo:** textura terrestre externa carregada por URL com mapa procedural de contingência caso a textura não esteja disponível; atmosfera sutil, rotação lenta e controles por ponteiro. O mapa procedural é ilustrativo e a identificação de continentes é aproximada, não uma fronteira geográfica precisa.
+- **Hierarquia demonstrativa:** Mundo → Continente → País. A seleção de país mostra categorias previstas para o acervo, mas ainda não abre páginas nacionais nem contém base de dados histórica completa.
+- **Conteúdo preservado/adaptado:** linha do tempo de marcos históricos mantida e reorganizada como seção secundária, com painel de registro.
+- **Decisões de escopo:** este é um primeiro protótipo navegável da entrada; não representa a conclusão do acervo, da pesquisa histórica, das páginas de competições, clubes, seleções ou jogadores.
+- **Validação:** alterações gravadas na branch \`main\` por commits GitHub. Não foi executado build, teste automatizado, teste visual em dispositivo físico ou verificação do deploy nesta etapa. Não afirmar que o deploy de produção já foi atualizado até conferir a Vercel.
+- **Próxima etapa:** validar a tela em iPhone e desktop; ajustar escala/posição do globo e composição do salão; conferir o carregamento da textura e consumo de GPU; depois desenhar a experiência completa de continente e país com dados históricos verificados.
