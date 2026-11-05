@@ -548,3 +548,16 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Validação local:** não executada nesta sessão; a validação decisiva será o build de preview na Vercel, incluindo `tsc`, Vitest e Vite.
 - **Situação de publicação:** branch de migração criada; produção não foi alterada. Aguardar resultado do preview antes de incorporar em `main`.
 - **Pendências:** corrigir todos os diagnósticos de tipos/testes que o preview apontar; verificar interface em iPhone e desktop; atualizar este registro com o SHA e o resultado real do preview.
+
+
+### Resultado da validação do preview — 5 de novembro de 2026
+
+- **Correções durante a migração:** o primeiro preview identificou erros nas declarações de importação de tipos dos módulos Bundesliga; o segundo identificou parâmetros implícitos e a nulabilidade do elemento raiz. Esses pontos foram corrigidos nos commits `f016296` e `aa5d10c`.
+- **Typecheck:** `tsc --noEmit` executado pela Vercel sem diagnósticos. O build prosseguiu para os testes.
+- **Testes:** Vitest executou 1 arquivo de teste; 3 testes passaram.
+- **Build de produção:** Vite 7.3.7 transformou 1.593 módulos e concluiu a compilação em 2,52 segundos. Deploy de preview marcado como `READY`.
+- **Smoke test HTTP:** HTML, bundle JavaScript e folha CSS do preview responderam com HTTP 200. Isso confirma entrega dos artefatos, mas não substitui inspeção visual e interação manual no iPhone/desktop.
+- **Preview validado:** https://alexandria-da-bola-avc3kapab-gabriel3-1b9a.vercel.app
+- **Commit validado:** `aa5d10c87597358fe1ef660340fcb98774f031ee`.
+- **Produção durante a validação:** permaneceu no commit `28196a2ff45d564cdb2955a180ae45673ce64f34`; nenhum deploy de produção foi feito durante os testes.
+- **Pendências remanescentes:** inspeção visual/interativa em dispositivos reais; adicionar e versionar `package-lock.json` para instalações reproduzíveis. A migração não deve ser confundida com conclusão do acervo histórico Bundesliga.
