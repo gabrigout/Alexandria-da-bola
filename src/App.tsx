@@ -153,6 +153,7 @@ function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) 
     globeGroup.add(earth)
 
     const textureLoader = new THREE.TextureLoader()
+    let cloudsMesh: THREE.Mesh<THREE.SphereGeometry, THREE.MeshPhongMaterial> | null = null
     textureLoader.load(
       'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg',
       (texture) => {
@@ -166,6 +167,30 @@ function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) 
       () => {
         // A procedural map remains visible when the external texture is unavailable.
       },
+    )
+    textureLoader.load(
+      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg',
+      (texture) => {
+        earthMaterial.normalMap = texture
+        earthMaterial.normalScale.set(0.48, -0.48)
+        earthMaterial.needsUpdate = true
+      },
+      undefined,
+      () => {},
+    )
+    textureLoader.load(
+      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png',
+      (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace
+        const cloudGeometry = new THREE.SphereGeometry(1.505, 64, 48)
+        const cloudMaterial = new THREE.MeshPhongMaterial({
+          map: texture, transparent: true, opacity: 0.17, depthWrite: false,
+        })
+        cloudsMesh = new THREE.Mesh(cloudGeometry, cloudMaterial)
+        globeGroup.add(cloudsMesh)
+      },
+      undefined,
+      () => {},
     )
 
     scene.add(new THREE.AmbientLight(0xe4efff, 1.75))
@@ -285,6 +310,7 @@ function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) 
     const animate = () => {
       frame = requestAnimationFrame(animate)
       if (activePointers.size === 0) globeGroup.rotation.y += 0.00055
+      if (cloudsMesh) cloudsMesh.rotation.y += 0.00072
       renderer.render(scene, camera)
     }
     animate()
@@ -299,7 +325,13 @@ function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) 
       renderer.domElement.removeEventListener('wheel', onWheel)
       earthGeometry.dispose()
       earthMaterial.map?.dispose()
+      earthMaterial.normalMap?.dispose()
       earthMaterial.dispose()
+      if (cloudsMesh) {
+        cloudsMesh.geometry.dispose()
+        cloudsMesh.material.map?.dispose()
+        cloudsMesh.material.dispose()
+      }
       atmosphereGeometry.dispose()
       atmosphereMaterial.dispose()
       haloGeometry.dispose()
