@@ -17,7 +17,7 @@ A Alexandria é uma biblioteca digital dedicada à história do futebol. O proje
 
 O módulo de dados está em `src/data/archive.ts`. Cada registro possui identificador estável, categoria, país, ano de referência, resumo, origem, cronologia, legado, fontes e conexões. Quando há informações essenciais verificadas, elas aparecem em uma ficha de dados rápidos.
 
-A primeira coleção contém **40 registros**: 7 ligas, 5 copas, 18 clubes e 10 jogadores. É um núcleo inicial pesquisado, não uma enciclopédia completa. Elencos, temporadas, estatísticas e títulos serão acrescentados progressivamente e sempre com referência própria.
+A primeira coleção contém **49 registros**: 7 ligas, 5 copas, 25 clubes e 12 jogadores. É um núcleo inicial pesquisado, não uma enciclopédia completa. Elencos, temporadas, estatísticas e títulos serão acrescentados progressivamente e sempre com referência própria.
 
 ## Tecnologias
 
