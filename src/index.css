@@ -458,3 +458,81 @@ button { cursor: pointer; }
   .continent-tabs button { padding: 6px 7px; font-size: 7px; }
   .atlas-footnote { font-size: 6px; line-height: 1.6; }
 }
+
+
+/* Atlas tecnológico suspenso: camadas luminosas e bandeiras nacionais. */
+.atlas-stage .globe-aura {
+  width: 112%; height: 92%;
+  background: radial-gradient(ellipse at 50% 52%, rgba(72,139,157,.24), rgba(43,84,103,.12) 42%, rgba(181,139,79,.08) 61%, transparent 76%);
+  filter: blur(27px);
+}
+.atlas-stage .globe-halo {
+  width: 105%; height: 82%;
+  border: 1px solid rgba(116,176,190,.2);
+  box-shadow: 0 0 55px rgba(67,145,165,.13), inset 0 0 55px rgba(83,145,157,.08);
+}
+.atlas-shell {
+  animation: atlas-hover 7s ease-in-out infinite;
+  border-color: rgba(125,174,181,.34);
+  background: linear-gradient(145deg, rgba(15,25,28,.97), rgba(7,13,17,.97));
+  box-shadow: 0 42px 85px rgba(0,0,0,.62), 0 18px 35px rgba(31,105,126,.16), inset 0 0 55px rgba(97,166,177,.08);
+}
+.atlas-map-frame {
+  border-color: rgba(113,174,184,.28);
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(58,126,145,.23), transparent 68%),
+    linear-gradient(180deg, rgba(13,31,39,.9), rgba(5,13,19,.96));
+  box-shadow: inset 0 0 38px rgba(76,157,177,.12), 0 13px 26px rgba(0,0,0,.32);
+}
+.atlas-map-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 15%, rgba(138,204,211,.055) 48%, transparent 72%);
+  mix-blend-mode: screen;
+}
+.atlas-map { filter: drop-shadow(0 7px 5px rgba(0,0,0,.35)); }
+.country-shape {
+  fill: #456b70;
+  fill-opacity: .9;
+  stroke: #9ac2bd;
+  stroke-opacity: .62;
+  stroke-width: 1.15;
+}
+.country-shape:nth-of-type(3n) { fill: #557c78; }
+.country-shape:nth-of-type(4n) { fill: #78836c; }
+.country-shape:nth-of-type(5n) { fill: #496b7b; }
+.country-shape:hover, .country-shape:focus {
+  fill: #c6a36d;
+  stroke: #f1d6a0;
+  filter: drop-shadow(0 0 5px rgba(122,205,211,.65));
+}
+.atlas-country-flag rect {
+  fill: rgba(5,12,16,.92);
+  stroke: rgba(220,205,172,.82);
+  stroke-width: 1.15;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.8)) drop-shadow(0 0 4px rgba(110,190,198,.28));
+}
+.atlas-country-flag image { filter: saturate(.94) contrast(1.04); }
+.atlas-topline i { background: #8dd1d0; box-shadow: 0 0 10px #72c6ca; }
+.atlas-controls button { border-color: rgba(119,184,190,.42); color: #a8d8d4; }
+.continent-tabs button:hover, .continent-tabs button.active {
+  border-color: rgba(125,192,192,.65);
+  background: rgba(82,157,164,.15);
+  color: #c1e3dc;
+}
+@keyframes atlas-hover {
+  0%, 100% { transform: perspective(1200px) rotateX(2deg) translateY(0); }
+  50% { transform: perspective(1200px) rotateX(2deg) translateY(-9px); }
+}
+@media (max-width: 640px) {
+  .atlas-shell { animation: atlas-hover-mobile 7s ease-in-out infinite; }
+  @keyframes atlas-hover-mobile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-shell { animation: none !important; }
+}
