@@ -71,7 +71,7 @@ export const archiveEntries: ArchiveEntry[] = [
       '1995 — A competição chega ao formato de 20 clubes, após quatro rebaixamentos e duas promoções.'
     ],
     legacy: 'A Premier League transformou a relação entre futebol, televisão e mercado global. Sua história esportiva, porém, continua ligada aos clubes tradicionais, às cidades industriais e às rivalidades que formam a pirâmide do futebol inglês.',
-    relatedIds: ['liverpool', 'champions-league'],
+    relatedIds: ['liverpool', 'manchester-united', 'arsenal', 'champions-league'],
     sourceLabel: 'Premier League — Origens e criação',
     sourceUrl: 'https://www.premierleague.com/en/history',
     status: 'pesquisado'
@@ -722,7 +722,7 @@ export const archiveEntries: ArchiveEntry[] = [
       '1934 e 1938 — A seleção italiana conquista duas Copas do Mundo durante a consolidação do futebol nacional.'
     ],
     legacy: 'A Serie A atravessou diferentes épocas táticas e institucionais, da escola defensiva italiana às grandes equipes internacionais das décadas de 1980 e 1990. Sua história está conectada a cidades, regiões e clubes como Juventus, Milan, Inter, Roma, Napoli e Genoa.',
-    relatedIds: ['champions-league'],
+    relatedIds: ['juventus', 'milan', 'inter-milao', 'napoli', 'champions-league'],
     sourceLabel: 'FIGC — História da Federação Italiana',
     sourceUrl: 'https://figc.it/en/figc/history/',
     status: 'pesquisado'
@@ -749,7 +749,7 @@ export const archiveEntries: ArchiveEntry[] = [
       'Décadas seguintes — A competição atravessa mudanças de nome, formato, número de clubes e modelo comercial.'
     ],
     legacy: 'A liga francesa tornou-se um espaço importante de formação e projeção de jogadores. Clubes como Saint-Étienne, Marseille, Lyon, Paris Saint-Germain e Monaco representam diferentes fases de sua história.',
-    relatedIds: ['ronaldinho'],
+    relatedIds: ['ronaldinho', 'paris-saint-germain'],
     sourceLabel: 'Federação Francesa de Futebol — Palmarés da Ligue 1',
     sourceUrl: 'https://www.fff.fr/475-palmares-ligue-1.html',
     status: 'pesquisado'
@@ -777,7 +777,7 @@ export const archiveEntries: ArchiveEntry[] = [
       'Década de 1970 — Ajax e Feyenoord conquistam títulos europeus, ampliando a projeção internacional do futebol neerlandês.'
     ],
     legacy: 'A Eredivisie tornou-se reconhecida pela formação e desenvolvimento de jogadores. A história da liga está ligada a Ajax, PSV e Feyenoord, além de treinadores e atletas que influenciaram o futebol europeu.',
-    relatedIds: ['ajax', 'psv', 'feyenoord', 'champions-league'],
+    relatedIds: ['ajax', 'psv', 'feyenoord', 'johan-cruyff', 'champions-league'],
     sourceLabel: 'KNVB — História da Eredivisie',
     sourceUrl: 'https://www.knvb.nl/competities/eredivisie/historie',
     status: 'pesquisado'
@@ -1008,6 +1008,262 @@ export const archiveEntries: ArchiveEntry[] = [
     relatedIds: ['copa-mundo'],
     sourceLabel: 'FIFA — Argentina x Inglaterra, México 1986',
     sourceUrl: 'https://www.fifa.com/pt/tournaments/mens/worldcup/articles/argentina-inglaterra-copa-mundo-1986-maradona',
+    status: 'pesquisado'
+  }
+  ,
+  {
+    id: 'juventus',
+    title: 'Juventus Football Club',
+    category: 'clube',
+    country: 'Itália · Turim',
+    year: '1897',
+    subtitle: 'A equipe criada por estudantes que se tornou uma potência italiana',
+    facts: [
+      { label: 'Fundação', value: '1º de novembro de 1897' },
+      { label: 'Primeiro título italiano', value: '1905' },
+      { label: 'Primeiro uniforme', value: 'Rosa' },
+      { label: 'Estádio atual', value: 'Allianz Stadium, Turim' }
+    ],
+    summary: 'A Juventus foi fundada em 1º de novembro de 1897 por estudantes do Liceu Massimo d’Azeglio, em Turim. O nome em latim significa juventude. O clube começou com uniforme rosa e adotou as listras alvinegras em 1903.',
+    origin: 'Um grupo de estudantes se reunia em um banco da Corso Re Umberto, em Turim, e decidiu criar uma associação esportiva. Enrico Canfari foi o primeiro presidente, e o primeiro campo utilizado foi a Piazza d’Armi.',
+    history: [
+      '1º de novembro de 1897 — Fundação da Juventus por estudantes de Turim.',
+      '1900 — Estreia no campeonato nacional italiano.',
+      '1903 — A equipe passa a utilizar o uniforme alvinegro inspirado no Nottingham County.',
+      '1905 — Conquista seu primeiro campeonato italiano.',
+      '1985 — Torna-se o primeiro clube a conquistar todas as principais competições internacionais então disponíveis.'
+    ],
+    legacy: 'A Juventus tornou-se uma das instituições mais vitoriosas da Itália e um protagonista constante da Serie A. Sua história está ligada a jogadores como Giampiero Boniperti, Roberto Baggio, Alessandro Del Piero, Gianluigi Buffon e a diferentes gerações de futebol italiano.',
+    relatedIds: ['serie-a', 'champions-league', 'cristiano-ronaldo'],
+    sourceLabel: 'Juventus — A história de uma lenda',
+    sourceUrl: 'https://www.juventus.com/en/club/history/the-story-of-a-legend',
+    status: 'pesquisado'
+  },
+  {
+    id: 'milan',
+    title: 'Associazione Calcio Milan',
+    category: 'clube',
+    country: 'Itália · Milão',
+    year: '1899',
+    subtitle: 'O clube dos rossoneri fundado por Herbert Kilpin',
+    facts: [
+      { label: 'Fundação', value: '16 de dezembro de 1899' },
+      { label: 'Fundador de referência', value: 'Herbert Kilpin' },
+      { label: 'Primeiro título italiano', value: '1901' },
+      { label: 'Cores tradicionais', value: 'Vermelho e preto' }
+    ],
+    summary: 'O Milan foi fundado em 16 de dezembro de 1899 por Herbert Kilpin e outros entusiastas do futebol em Milão. As cores vermelha e preta foram escolhidas para representar o fogo e o temor que o clube desejava inspirar nos adversários.',
+    origin: 'O clube nasceu em um ambiente de expansão do futebol italiano e internacional. A primeira sede foi a Fiaschetteria Toscana, na Via Berchet, em Milão. Em pouco tempo, o Milan conquistou espaço no campeonato nacional.',
+    history: [
+      '16 de dezembro de 1899 — Fundação do Milan por Herbert Kilpin e seus associados.',
+      '1901 — Conquista o primeiro título italiano, vencendo o Genoa por 3 a 0.',
+      '1963 — Torna-se o primeiro clube italiano a vencer a Taça dos Campeões Europeus.',
+      '1989 e 1990 — Conquista duas edições consecutivas da principal competição europeia.',
+      'Década de 2000 — Volta a vencer a Liga dos Campeões em 2003 e 2007.'
+    ],
+    legacy: 'O Milan construiu uma identidade internacional ligada às grandes equipes europeias, com figuras como Paolo Maldini, Franco Baresi, Marco van Basten, Ruud Gullit, Kaká e treinadores que marcaram diferentes períodos do futebol italiano.',
+    relatedIds: ['serie-a', 'champions-league'],
+    sourceLabel: 'AC Milan — História oficial',
+    sourceUrl: 'https://www.acmilan.com/en/history',
+    status: 'pesquisado'
+  },
+  {
+    id: 'inter-milao',
+    title: 'FC Internazionale Milano',
+    category: 'clube',
+    country: 'Itália · Milão',
+    year: '1908',
+    subtitle: 'O clube fundado com uma vocação internacional',
+    facts: [
+      { label: 'Fundação', value: '9 de março de 1908' },
+      { label: 'Cidade', value: 'Milão' },
+      { label: 'Identidade de origem', value: 'Abertura a jogadores estrangeiros' },
+      { label: 'Estádio', value: 'San Siro / Giuseppe Meazza' }
+    ],
+    summary: 'A Internazionale foi fundada em 9 de março de 1908 por integrantes que defendiam uma identidade aberta a jogadores de diferentes países. O próprio nome Internazionale expressava essa intenção.',
+    origin: 'A fundação ocorreu no restaurante Orologio, no centro de Milão. O grupo fundador rompeu com dirigentes do Milan Cricket and Football Club em uma discussão sobre a participação de jogadores estrangeiros. As cores escolhidas foram azul e preto.',
+    history: [
+      '9 de março de 1908 — Fundação da Internazionale em Milão.',
+      '1910 — Conquista seu primeiro campeonato italiano.',
+      '1964 e 1965 — Vence duas Taças dos Campeões Europeus consecutivas.',
+      '2010 — Conquista Serie A, Coppa Italia e Liga dos Campeões na mesma temporada.'
+    ],
+    legacy: 'A Inter representa uma das grandes rivalidades esportivas de Milão e da Itália. Sua história reúne diferentes gerações, de Giuseppe Meazza e Giacinto Facchetti a Javier Zanetti e às equipes campeãs de 2010.',
+    relatedIds: ['serie-a', 'champions-league'],
+    sourceLabel: 'Inter — 115 anos de história',
+    sourceUrl: 'https://www.inter.it/en/news/inter-115',
+    status: 'pesquisado'
+  },
+  {
+    id: 'napoli',
+    title: 'Società Sportiva Calcio Napoli',
+    category: 'clube',
+    country: 'Itália · Nápoles',
+    year: '1926',
+    subtitle: 'O clube que transformou o sul italiano em palco de uma era histórica',
+    facts: [
+      { label: 'Data simbólica de fundação', value: '1º de agosto de 1926' },
+      { label: 'Nome inicial', value: 'Associazione Calcio Napoli' },
+      { label: 'Cidade', value: 'Nápoles' },
+      { label: 'Ícone da história do clube', value: 'Diego Maradona' }
+    ],
+    summary: 'O Napoli reconhece 1º de agosto de 1926 como sua data simbólica de fundação. Sua origem, porém, está ligada a clubes anteriores da cidade, como Naples Cricket & Football Club e Unione Sportiva Internazionale Napoli.',
+    origin: 'O futebol já era praticado em Nápoles desde o fim do século XIX. Em 1922, a fusão de clubes locais deu origem ao Foot-Ball Club Internazionale-Naples. Em 25 de agosto de 1926, a instituição alterou seu nome para Associazione Calcio Napoli; em 1964 adotou a denominação Società Sportiva Calcio Napoli.',
+    history: [
+      '1906 — O Naples Cricket & Football Club integra os primeiros anos do futebol organizado na cidade.',
+      '1911 — Surge a Unione Sportiva Internazionale Napoli.',
+      '1922 — A fusão de instituições locais forma o Foot-Ball Club Internazionale-Naples.',
+      '1926 — A instituição passa a ser conhecida como Associazione Calcio Napoli.',
+      'Década de 1980 — A equipe liderada por Diego Maradona conquista os primeiros grandes títulos nacionais da era moderna do clube.'
+    ],
+    legacy: 'O Napoli tornou-se símbolo esportivo de uma cidade e de uma região que historicamente enfrentaram desigualdades em relação ao norte italiano. A passagem de Maradona transformou a relação entre clube, torcida e identidade local.',
+    relatedIds: ['serie-a', 'maradona'],
+    sourceLabel: 'SSC Napoli — A origem do clube',
+    sourceUrl: 'https://sscnapoli.it/en/ssc-napoli-opens-its-100th-anniversary-season/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'manchester-united',
+    title: 'Manchester United',
+    category: 'clube',
+    country: 'Inglaterra · Manchester',
+    year: '1878',
+    subtitle: 'Dos pátios ferroviários de Newton Heath a Old Trafford',
+    facts: [
+      { label: 'Fundação', value: '1878 — Newton Heath LYR' },
+      { label: 'Mudança de nome', value: '1902' },
+      { label: 'Primeiro título da liga', value: '1908' },
+      { label: 'Estádio atual', value: 'Old Trafford desde 1910' }
+    ],
+    summary: 'O Manchester United nasceu em 1878 como Newton Heath LYR, equipe ligada aos trabalhadores da ferrovia Lancashire and Yorkshire Railway. O nome Manchester United foi adotado em 1902, após uma crise financeira e um processo de reorganização.',
+    origin: 'Os trabalhadores ferroviários disputavam partidas contra equipes de outros departamentos e companhias. O clube entrou na Football League em 1892, enfrentou dificuldades financeiras e foi salvo por investimento local no começo do século XX.',
+    history: [
+      '1878 — Fundação do Newton Heath LYR por trabalhadores ferroviários.',
+      '1892 — Entrada na Football League, na primeira divisão da época.',
+      '1902 — O clube adota o nome Manchester United.',
+      '1908 — Conquista o primeiro título da liga inglesa.',
+      '1910 — Muda-se para Old Trafford.',
+      '1958 — O desastre aéreo de Munique mata oito jogadores da equipe principal e marca profundamente a história do clube.'
+    ],
+    legacy: 'A trajetória do Manchester United reúne transformação institucional, tragédia, reconstrução e períodos de domínio nacional e europeu. As equipes de Matt Busby e Alex Ferguson, além de jogadores como George Best, Bobby Charlton, Eric Cantona, Ryan Giggs e Cristiano Ronaldo, formam capítulos centrais dessa memória.',
+    relatedIds: ['premier-league', 'champions-league', 'cristiano-ronaldo'],
+    sourceLabel: 'Manchester United — História por décadas',
+    sourceUrl: 'https://www.manutd.com/en/club/history/history-by-decade/1878-1909',
+    status: 'pesquisado'
+  },
+  {
+    id: 'arsenal',
+    title: 'Arsenal Football Club',
+    category: 'clube',
+    country: 'Inglaterra · Londres',
+    year: '1886',
+    subtitle: 'Dos trabalhadores do arsenal de Woolwich ao norte de Londres',
+    facts: [
+      { label: 'Fundação', value: '1886' },
+      { label: 'Nome inicial', value: 'Dial Square' },
+      { label: 'Origem', value: 'Trabalhadores do arsenal de Woolwich' },
+      { label: 'Mudança para o norte de Londres', value: '1913' }
+    ],
+    summary: 'O Arsenal foi fundado em 1886 por trabalhadores da fábrica de armamentos de Woolwich, no sudeste de Londres. O grupo criou o Dial Square, nome inicial da equipe, que mais tarde se tornaria Royal Arsenal e, depois, Woolwich Arsenal.',
+    origin: 'A iniciativa partiu de trabalhadores que buscavam criar uma comunidade esportiva fora das duras rotinas da fábrica. O clube iniciou sua história no sudeste de Londres e só se mudou para o norte da cidade em 1913, quando passou a jogar em Highbury.',
+    history: [
+      '1886 — Fundação do Dial Square por trabalhadores de Woolwich.',
+      '1891 — O clube adota o profissionalismo.',
+      '1893 — Passa a integrar a Football League como Woolwich Arsenal.',
+      '1913 — Muda-se para Highbury, no norte de Londres.',
+      'Década de 1930 — Conquista títulos nacionais sob a influência de Herbert Chapman.',
+      '2003/04 — Completa uma temporada invicta na Premier League, campanha conhecida como The Invincibles.'
+    ],
+    legacy: 'O Arsenal é um dos clubes históricos de Londres e da Inglaterra. Sua memória combina a origem operária, a mudança de bairro, a inovação tática de Herbert Chapman e gerações de jogadores como Tony Adams, Thierry Henry, Dennis Bergkamp e Patrick Vieira.',
+    relatedIds: ['premier-league', 'champions-league'],
+    sourceLabel: 'Arsenal — História oficial',
+    sourceUrl: 'https://www.arsenal.com/history',
+    status: 'pesquisado'
+  },
+  {
+    id: 'paris-saint-germain',
+    title: 'Paris Saint-Germain',
+    category: 'clube',
+    country: 'França · Paris',
+    year: '1970',
+    subtitle: 'Um projeto para devolver o futebol profissional à capital francesa',
+    facts: [
+      { label: 'Fundação oficial', value: '12 de agosto de 1970' },
+      { label: 'Origem', value: 'Fusão de Paris FC e Stade Saint-Germain' },
+      { label: 'Cidade', value: 'Paris' },
+      { label: 'Primeiro título europeu masculino', value: 'Liga dos Campeões 2025' }
+    ],
+    summary: 'O Paris Saint-Germain foi criado em 1970 a partir da fusão entre Paris FC e Stade Saint-Germain. O projeto buscava estabelecer um clube de grande porte na capital francesa, que naquele momento tinha pouca presença na primeira divisão profissional.',
+    origin: 'A ideia de um grande clube parisiense ganhou forma em 1969, com apoio da Federação Francesa e de uma campanha pública. O Paris FC foi criado, mas precisou se unir ao Stade Saint-Germain para competir no nível nacional. A fusão foi formalizada em junho de 1970 e o nome PSG tornou-se oficial em agosto daquele ano.',
+    history: [
+      '1969 — Começa a mobilização para criar um grande clube profissional em Paris.',
+      'Maio e junho de 1970 — Paris FC e Stade Saint-Germain aprovam a fusão.',
+      '12 de agosto de 1970 — A denominação Paris Saint-Germain é aprovada oficialmente.',
+      '1991 — A estrutura profissional é separada da associação original.',
+      '2025 — O clube conquista sua primeira Liga dos Campeões masculina.'
+    ],
+    legacy: 'O PSG passou de projeto de reconstrução do futebol parisiense a uma marca esportiva internacional. Sua história recente é marcada pelo investimento de grande escala, pela formação de talentos e pela presença de equipes masculinas e femininas em competições nacionais e continentais.',
+    relatedIds: ['ligue-1', 'champions-league'],
+    sourceLabel: 'Paris Saint-Germain — Identidade e história',
+    sourceUrl: 'https://www.psg.fr/pt/o-clube/sobre/identidade',
+    status: 'pesquisado'
+  },
+  {
+    id: 'johan-cruyff',
+    title: 'Johan Cruyff',
+    category: 'jogador',
+    country: 'Países Baixos',
+    year: '1947–2016',
+    subtitle: 'O jogador que ajudou a transformar Ajax, Barcelona e a linguagem do futebol',
+    facts: [
+      { label: 'Ajax', value: 'Estreia em 1964' },
+      { label: 'Taça dos Campeões Europeus', value: '1971, 1972 e 1973' },
+      { label: 'Barcelona', value: '48 gols em 143 jogos' },
+      { label: 'Bola de Ouro', value: '1971, 1973 e 1974' }
+    ],
+    summary: 'Johan Cruyff foi o principal rosto da geração do Ajax que conquistou três Taças dos Campeões Europeus consecutivas. Depois, levou sua influência ao Barcelona como jogador e treinador, tornando-se uma das figuras mais influentes da história do futebol.',
+    origin: 'Nascido em Amsterdã, Cruyff ingressou ainda criança no Ajax. Estreou na equipe principal em 15 de novembro de 1964 e passou a representar uma nova forma de compreender o espaço, a movimentação e a função dos jogadores dentro de campo.',
+    history: [
+      '15 de novembro de 1964 — Estreia pelo Ajax e marca um gol, apesar da derrota por 3 a 1 para o GVAV.',
+      '1971, 1972 e 1973 — Conquista três Taças dos Campeões Europeus consecutivas com o Ajax.',
+      '1973 — Transfere-se para o Barcelona.',
+      '1974 — Ajuda o Barcelona a conquistar o campeonato espanhol após 14 anos sem título.',
+      '1981–1984 — Encerra a carreira como jogador após passagens pelos Estados Unidos, Ajax e Feyenoord.'
+    ],
+    legacy: 'Cruyff é associado ao futebol total, à inteligência posicional e a uma influência que ultrapassou sua carreira como jogador. Sua passagem pelo Ajax e pelo Barcelona ajudou a formar ideias que continuaram presentes nas escolas de formação e nos treinadores dessas instituições.',
+    relatedIds: ['ajax', 'feyenoord', 'barcelona', 'eredivisie', 'laliga', 'champions-league'],
+    sourceLabel: 'UEFA — Johan Cruyff e a sua carreira',
+    sourceUrl: 'https://www.uefa.com/news-media/news/0212-0e88b8e9929d-76b9e81a86f4-1000--cruyff-to-receive-2013-uefa-president-s-award/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'cristiano-ronaldo',
+    title: 'Cristiano Ronaldo',
+    category: 'jogador',
+    country: 'Portugal',
+    year: '1985–',
+    subtitle: 'O avançado português que redefiniu recordes na era da Liga dos Campeões',
+    facts: [
+      { label: 'Jogos na Liga dos Campeões', value: '183 até maio de 2026' },
+      { label: 'Gols na Liga dos Campeões', value: '140 até maio de 2026' },
+      { label: 'Títulos da Liga dos Campeões', value: '5' },
+      { label: 'Clubes na competição', value: 'Manchester United, Real Madrid e Juventus' }
+    ],
+    summary: 'Cristiano Ronaldo passou por Sporting, Manchester United, Real Madrid, Juventus e clubes de outras ligas. Na Liga dos Campeões, construiu recordes de jogos e gols e conquistou cinco títulos: um pelo Manchester United e quatro pelo Real Madrid.',
+    origin: 'Nascido na Ilha da Madeira, Cristiano Ronaldo começou a se destacar no Sporting e chegou ao Manchester United em 2003. Sua evolução de ponta habilidoso para atacante de grande produção goleadora acompanhou passagens marcantes pela Inglaterra, Espanha, Itália e futebol internacional.',
+    history: [
+      '2002 — Estreia na equipe principal do Sporting.',
+      '2003 — Transfere-se para o Manchester United.',
+      '2008 — Conquista sua primeira Liga dos Campeões e a Bola de Ouro.',
+      '2009 — Chega ao Real Madrid.',
+      '2014–2018 — Conquista quatro Ligas dos Campeões pelo Real Madrid.',
+      '2018 — Transfere-se para a Juventus.',
+      '2021 — Retorna ao Manchester United.'
+    ],
+    legacy: 'Cristiano Ronaldo tornou-se uma das figuras centrais do futebol do século XXI, com impacto esportivo e comercial em diferentes ligas. Sua trajetória permite conectar a Premier League, LaLiga, Serie A e Liga dos Campeões.',
+    relatedIds: ['manchester-united', 'real-madrid', 'juventus', 'premier-league', 'laliga', 'serie-a', 'champions-league'],
+    sourceLabel: 'UEFA — Cristiano Ronaldo na Liga dos Campeões',
+    sourceUrl: 'https://www.uefa.com/uefachampionsleague/news/02a7-2136b8f054ea-76a61b3f9d24-1000--cristiano-ronaldo-in-the-champions-league-records-stats-wh/',
     status: 'pesquisado'
   }
 ]
