@@ -193,6 +193,13 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "documento-oficial",
     "notes": "O estatuto registra a origem no KFC Phönix e reconhece 6 de junho de 1894 como data histórica de fundação."
   },
+  {
+    "id": "sportschau-top-scorers-1963-64",
+    "title": "Übersicht über die Torjäger — 30. Spieltag 1963/1964",
+    "publisher": "Sportschau (ARD)",
+    "url": "https://www.sportschau.de/live-und-ergebnisse/fussball/deutschland-bundesliga/se2585/1963-1964/statistik-torjaeger-uebersicht",
+    "type": "estatistica-independente",
+    "notes": "Confere os principais números da artilharia, incluindo 20 gols para Timo Konietzka; consultada em 05/11/2026."
   }
 ]
 
