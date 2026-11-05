@@ -16,13 +16,12 @@ A página de entrada apresenta:
 - Áreas de entrada para competições, personagens e linha do tempo.
 - Linha do tempo histórica e busca preservadas como conteúdo complementar do protótipo.
 
-A identidade visual combina preto, grafite, mármore, bronze e ouro envelhecido. A arquitetura foi criada com CSS e o globo é renderizado com Three.js.
+A identidade visual combina preto, grafite, mármore, bronze e ouro envelhecido. A arquitetura do salão foi criada com CSS e o atlas é desenhado em SVG a partir de geometrias GeoJSON do Natural Earth.
 
 ## Tecnologias
 
 - React 19 + TypeScript
 - Vite
-- Three.js
 - CSS responsivo
 - Lucide React
 
@@ -44,7 +43,7 @@ npm run preview
 
 ## Estado atual
 
-**Primeiro protótipo visual da nova entrada incorporado ao código; validação pendente.** O globo usa uma textura terrestre carregada do catálogo de exemplos do Three.js; caso a textura externa não carregue, é exibido um mapa procedural de contingência. A identificação de continentes é aproximada e serve para demonstrar a interação, não como fronteira cartográfica precisa. A lista de países e a navegação do acervo ainda são demonstrativas.
+**Protótipo visual do atlas plano interativo incorporado ao código; validação pendente.** O atlas carrega geometrias de países em GeoJSON do Natural Earth por uma URL externa. A interação de zoom, arrasto e seleção de países está implementada; a validação visual e o teste de carregamento ainda estão pendentes. A fronteiras vêm da base cartográfica Natural Earth em escala mundial; países muito pequenos e áreas de alta latitude têm limitações de representação. A lista de países e a navegação do acervo ainda são demonstrativas.
 
 Os registros históricos na linha do tempo continuam sendo uma amostra inicial, não um catálogo completo. A expansão do acervo deverá usar fontes verificáveis e diferenciar ano civil de temporada esportiva (por exemplo, 2002 e 2001/02). Dados não confirmados ou indisponíveis não devem ser inventados.
 
