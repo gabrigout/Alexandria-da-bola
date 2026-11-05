@@ -1,0 +1,544 @@
+export type ArchiveCategory = 'liga' | 'copa' | 'clube' | 'jogador'
+
+export type ArchiveEntry = {
+  id: string
+  title: string
+  category: ArchiveCategory
+  country: string
+  year: string
+  subtitle: string
+  summary: string
+  origin: string
+  history: string[]
+  legacy: string
+  relatedIds: string[]
+  sourceLabel: string
+  sourceUrl: string
+  status: 'pesquisado' | 'em expansão'
+}
+
+export const archiveEntries: ArchiveEntry[] = [
+  {
+    id: 'brasileirao',
+    title: 'Campeonato Brasileiro',
+    category: 'liga',
+    country: 'Brasil',
+    year: '1959',
+    subtitle: 'A disputa nacional que atravessa gerações',
+    summary: 'A principal competição entre clubes do país nasceu de um processo de integração nacional. Sua história passa pela Taça Brasil, pelo Robertão e pela estrutura do campeonato nacional consolidada a partir de 1971.',
+    origin: 'A Taça Brasil começou em 1959 como torneio nacional eliminatório, ligado também à classificação brasileira para a recém-criada Libertadores. Em 1967 surgiu o Torneio Roberto Gomes Pedrosa, conhecido como Robertão. A partir de 1971, o Campeonato Nacional de Clubes estabeleceu outra etapa da competição. Em 2010, a CBF reconheceu Taça Brasil e Robertão como títulos brasileiros.',
+    history: [
+      '1959 — A Taça Brasil inaugura a sequência de torneios nacionais reconhecidos como campeonato brasileiro.',
+      '1967–1970 — O Torneio Roberto Gomes Pedrosa amplia o modelo de disputa e reúne clubes de diferentes regiões.',
+      '1971 — Começa o Campeonato Nacional de Clubes, marco da organização moderna do Brasileirão.',
+      '2003 — O sistema de pontos corridos passa a ser utilizado na principal divisão nacional.',
+      '2010 — A CBF oficializa o reconhecimento dos títulos da Taça Brasil e do Robertão como conquistas brasileiras.'
+    ],
+    legacy: 'O Brasileirão reúne escolas regionais, rivalidades e gerações de jogadores. Sua trajetória também conta a transformação do futebol brasileiro: de torneios concentrados em poucos estados para uma disputa nacional longa, com acesso, descenso e calendário de pontos corridos.',
+    relatedIds: ['copa-brasil', 'libertadores', 'santos', 'palmeiras', 'atletico-mg', 'sao-paulo', 'gremio', 'internacional', 'pele', 'rogerio-ceni'],
+    sourceLabel: 'CNN Brasil — História do Campeonato Brasileiro',
+    sourceUrl: 'https://www.cnnbrasil.com.br/esportes/futebol/a-historia-do-campeonato-brasileiro-formatos-e-campeoes/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'premier-league',
+    title: 'Premier League',
+    category: 'liga',
+    country: 'Inglaterra',
+    year: '1992',
+    subtitle: 'A ruptura que redesenhou o futebol inglês',
+    summary: 'A liga foi criada como competição independente da Football League, com autonomia comercial e um novo acordo de televisão. A temporada inaugural começou em 15 de agosto de 1992 com 22 clubes.',
+    origin: 'Em 17 de julho de 1991, clubes da primeira divisão assinaram o acordo fundador. Em 20 de fevereiro de 1992, os 22 integrantes da First Division deixaram a Football League em bloco. A Premier League foi formalizada como empresa em 27 de maio daquele ano.',
+    history: [
+      '1991 — O acordo fundador estabelece a independência comercial da nova liga.',
+      'Fevereiro de 1992 — Os 22 clubes da First Division deixam a Football League.',
+      '27 de maio de 1992 — A Premier League é formalizada.',
+      '15 de agosto de 1992 — A bola rola na primeira temporada, com 22 equipes.',
+      '1995 — A competição chega ao formato de 20 clubes, após quatro rebaixamentos e duas promoções.'
+    ],
+    legacy: 'A Premier League transformou a relação entre futebol, televisão e mercado global. Sua história esportiva, porém, continua ligada aos clubes tradicionais, às cidades industriais e às rivalidades que formam a pirâmide do futebol inglês.',
+    relatedIds: ['liverpool', 'champions-league', 'messi'],
+    sourceLabel: 'Premier League — Origens e criação',
+    sourceUrl: 'https://www.premierleague.com/en/history',
+    status: 'pesquisado'
+  },
+  {
+    id: 'bundesliga',
+    title: 'Bundesliga',
+    category: 'liga',
+    country: 'Alemanha',
+    year: '1963',
+    subtitle: 'A criação de uma liga nacional profissional',
+    summary: 'A Bundesliga começou em 24 de agosto de 1963. A criação de uma divisão nacional profissional substituiu um cenário anterior em que o futebol alemão era organizado em ligas regionais.',
+    origin: 'Após a Segunda Guerra Mundial, o futebol alemão continuou estruturado em competições regionais. A profissionalização e a busca por uma liga nacional levaram à escolha de 16 clubes entre 46 candidatos para a temporada inaugural de 1963/64.',
+    history: [
+      '1949 — Ligas semiprofissionais começam a surgir na Alemanha Ocidental.',
+      '1962 — A decisão de criar uma liga nacional é aprovada.',
+      '1963 — Dezesseis clubes são selecionados para a primeira temporada.',
+      '24 de agosto de 1963 — Começa a Bundesliga.'
+    ],
+    legacy: 'A Bundesliga tornou-se uma referência de organização de clubes, formação de talentos e identidade de torcidas. Seu arquivo reúne figuras como Franz Beckenbauer, Gerd Müller, Uwe Seeler e gerações posteriores.',
+    relatedIds: ['bayern-munique', 'champions-league'],
+    sourceLabel: 'Bundesliga — História oficial',
+    sourceUrl: 'https://www.bundesliga.com/en/history',
+    status: 'pesquisado'
+  },
+  {
+    id: 'laliga',
+    title: 'LaLiga',
+    category: 'liga',
+    country: 'Espanha',
+    year: '1929',
+    subtitle: 'O campeonato que reuniu os clubes espanhóis',
+    summary: 'O campeonato nacional de liga nasceu em 1929, reunindo dez clubes. O Barcelona foi o primeiro campeão, em uma competição organizada após a aproximação de dois projetos de torneio.',
+    origin: 'Em 1928, os clubes espanhóis chegaram a um acordo para fundir duas propostas: uma união de campeões e uma liga de clubes. Dez equipes participaram da primeira edição, disputada em 1929.',
+    history: [
+      '1928 — É construído o acordo entre os clubes para criar uma liga nacional.',
+      '1929 — A primeira edição é disputada por dez equipes.',
+      '1929 — O Barcelona conquista o título inaugural.',
+      '1936 — A competição é interrompida com o início da Guerra Civil Espanhola.'
+    ],
+    legacy: 'A liga tornou-se palco de rivalidades locais e nacionais, além de acompanhar mudanças políticas e sociais da Espanha. Barcelona, Real Madrid, Athletic Club e outros pioneiros ajudaram a definir sua identidade.',
+    relatedIds: ['barcelona', 'messi', 'champions-league'],
+    sourceLabel: 'Real Federação Espanhola de Futebol — Primeiros anos da Liga',
+    sourceUrl: 'https://rfef.es/es/noticias/historia-de-la-liga-espanola-los-primeros-anos-1929-1936',
+    status: 'pesquisado'
+  },
+  {
+    id: 'copa-mundo',
+    title: 'Copa do Mundo da FIFA',
+    category: 'copa',
+    country: 'Mundial',
+    year: '1930',
+    subtitle: 'A competição entre seleções que se tornou um fenômeno global',
+    summary: 'A edição inaugural aconteceu no Uruguai, em 1930, com 13 seleções. A final foi vencida pelos anfitriões: Uruguai 4 a 2 Argentina, em Montevidéu.',
+    origin: 'A FIFA organizou um torneio próprio de seleções após décadas em que o futebol internacional se desenvolvia principalmente por amistosos e torneios regionais. O Uruguai foi escolhido como sede da primeira edição, em um contexto de prestígio esportivo e celebração do centenário de sua independência.',
+    history: [
+      '1930 — Treze seleções disputam a primeira edição, concentrada em Montevidéu.',
+      '1934 e 1938 — A Itália conquista dois títulos consecutivos.',
+      '1958 — O Brasil vence pela primeira vez, na Suécia, com Pelé aos 17 anos.',
+      '1970 — O Brasil conquista o tricampeonato no México.',
+      '1991 — A primeira Copa do Mundo Feminina é disputada na China.',
+      '2022 — A Argentina conquista o título no Catar, em uma final contra a França.'
+    ],
+    legacy: 'A Copa do Mundo é uma vitrine de estilos nacionais, mudanças táticas, disputas políticas e trajetórias individuais. Cada edição registra também transformações no tamanho do torneio, na cobertura da mídia e no alcance global do futebol.',
+    relatedIds: ['pele', 'garrincha', 'libertadores'],
+    sourceLabel: 'FIFA — Campeões e primeiras edições',
+    sourceUrl: 'https://www.fifa.com/pt/tournaments/mens/worldcup/articles/veja-todos-campeoes-copa-do-mundo-de-1930-1978-uruguai-italia-brasil-alemanha-argentina',
+    status: 'pesquisado'
+  },
+  {
+    id: 'copa-brasil',
+    title: 'Copa do Brasil',
+    category: 'copa',
+    country: 'Brasil',
+    year: '1989',
+    subtitle: 'O mata-mata que conecta o futebol de todo o país',
+    summary: 'Criada em 1989, a Copa do Brasil nasceu com 32 participantes e cresceu até se tornar uma competição de alcance nacional, reunindo clubes de diferentes divisões e estados.',
+    origin: 'A competição foi criada para oferecer uma copa nacional em formato eliminatório e ampliar a representação de clubes de todo o território brasileiro. Seu regulamento, número de participantes e distribuição de vagas mudaram diversas vezes.',
+    history: [
+      '1989 — A primeira edição reúne 32 clubes.',
+      '1999–2000 — O número de participantes cresce e ultrapassa 60 equipes.',
+      '2001–2012 — O torneio mantém 64 participantes na maior parte das edições.',
+      '2013 — A competição amplia o número de vagas e passa a receber clubes que disputam torneios continentais em condições específicas.',
+      '2026 — A CBF anuncia edição com 126 clubes, recorde de participantes até então.'
+    ],
+    legacy: 'O mata-mata permite que clubes de diferentes regiões encontrem adversários de maior tradição e orçamento. Por isso, a Copa do Brasil guarda histórias de zebras, campanhas improváveis e títulos que mudaram o tamanho de clubes.',
+    relatedIds: ['brasileirao', 'palmeiras', 'gremio', 'santos', 'atletico-mg'],
+    sourceLabel: 'CBF — História e expansão da Copa do Brasil',
+    sourceUrl: 'https://www.cbf.com.br/futebol-brasileiro/noticias/copa-verde/profissional/copa-do-brasil-de-2026-tera-recorde-de-participantes-e-17-estreantes',
+    status: 'pesquisado'
+  },
+  {
+    id: 'libertadores',
+    title: 'CONMEBOL Libertadores',
+    category: 'copa',
+    country: 'América do Sul',
+    year: '1960',
+    subtitle: 'A principal disputa entre clubes sul-americanos',
+    summary: 'O torneio começou em 1960 como Copa dos Campeões da América. A primeira partida foi Peñarol 7 a 1 Jorge Wilstermann, em 19 de abril. O Peñarol também foi o primeiro campeão.',
+    origin: 'A ideia de uma competição continental entre campeões nacionais ganhou forma após torneios sul-americanos anteriores. A edição inaugural reuniu campeões de associações do continente e recebeu o nome de Copa dos Campeões da América. Em 1965, o torneio passou a homenagear os libertadores da América em seu nome.',
+    history: [
+      '1960 — Começa a Copa dos Campeões da América.',
+      '19 de abril de 1960 — Peñarol e Jorge Wilstermann disputam a primeira partida, vencida pelos uruguaios por 7 a 1.',
+      '1960 — O Peñarol supera o Olimpia na decisão e conquista o título inaugural.',
+      '1965 — A competição passa a se chamar Copa Libertadores da América.'
+    ],
+    legacy: 'A Libertadores representa a diversidade do futebol sul-americano: viagens longas, estádios intensos, rivalidades nacionais e confrontos entre escolas distintas. Sua memória está ligada a clubes, torcidas e campanhas que atravessam gerações.',
+    relatedIds: ['brasileirao', 'santos', 'palmeiras', 'gremio', 'internacional', 'atletico-mg', 'copa-mundo', 'pele'],
+    sourceLabel: 'CONMEBOL — Resenha histórica da Libertadores',
+    sourceUrl: 'https://cdn.conmebol.com/wp-content/uploads/documents/LIBERTADORES-2020-port.pdf',
+    status: 'pesquisado'
+  },
+  {
+    id: 'champions-league',
+    title: 'Liga dos Campeões da UEFA',
+    category: 'copa',
+    country: 'Europa',
+    year: '1955',
+    subtitle: 'Da Taça dos Clubes Campeões Europeus à era global',
+    summary: 'A competição começou em 1955/56 como Taça dos Clubes Campeões Europeus. O Real Madrid venceu a primeira edição e conquistou as cinco primeiras temporadas consecutivas.',
+    origin: 'A UEFA lançou uma competição continental para clubes europeus, inicialmente em formato eliminatório e com 16 equipes convidadas. A partir de 1992/93, a marca Liga dos Campeões acompanhou uma mudança de formato que introduziu a fase de grupos.',
+    history: [
+      '4 de setembro de 1955 — A primeira edição tem seu jogo inaugural entre Sporting CP e Partizan.',
+      '1955/56 — O Real Madrid vence o Reims na final e se torna o primeiro campeão.',
+      '1956–1960 — O Real Madrid conquista cinco títulos consecutivos.',
+      '1991/92 — Uma fase de grupos experimental prepara a transição de formato.',
+      '1992/93 — A competição passa a ser conhecida como Liga dos Campeões.'
+    ],
+    legacy: 'A Liga dos Campeões tornou-se uma das competições de clubes mais acompanhadas do mundo. Seu arquivo reúne dinastias, grandes finais, mudanças táticas e trajetórias de jogadores que marcaram diferentes épocas.',
+    relatedIds: ['barcelona', 'liverpool', 'messi', 'laliga', 'premier-league', 'bundesliga'],
+    sourceLabel: 'UEFA — História da Taça dos Campeões',
+    sourceUrl: 'https://www.uefa.com/news/0268-121578ca9f2b-3ebc8c09202b-1000--setting-the-standard-for-club-football/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'santos',
+    title: 'Santos Futebol Clube',
+    category: 'clube',
+    country: 'Brasil · Santos, SP',
+    year: '1912',
+    subtitle: 'A camisa alvinegra que projetou Pelé para o mundo',
+    summary: 'O Santos foi fundado em 14 de abril de 1912 por esportistas da cidade. Nasceu como Santos Foot-Ball Club, inicialmente com uniforme branco e azul com detalhes dourados.',
+    origin: 'A iniciativa partiu de Francisco Raymundo Marques, Mário Ferraz de Campos e Argemiro de Souza Júnior. A reunião de fundação ocorreu na sede do Clube Concórdia, com 39 participantes. O clube surgiu para preencher a falta de uma equipe dedicada ao futebol em Santos.',
+    history: [
+      '14 de abril de 1912 — Fundação do Santos Foot-Ball Club.',
+      '1913 — O uniforme passa a adotar a combinação de camisa listrada em branco e preto e calção branco.',
+      'Anos 1950–1970 — A geração de Pelé transforma o clube em referência mundial.',
+      '1962 e 1963 — O Santos conquista a Libertadores e a Copa Intercontinental em duas temporadas consecutivas.'
+    ],
+    legacy: 'A geração de Pelé, Pepe, Coutinho, Zito e companhia associou o Santos a um futebol ofensivo e de alcance internacional. A Vila Belmiro tornou-se cenário de uma das histórias mais reconhecidas do esporte.',
+    relatedIds: ['pele', 'brasileirao', 'libertadores', 'copa-brasil'],
+    sourceLabel: 'Santos FC — Fundação e Centro de Memória',
+    sourceUrl: 'https://www.santosfc.com.br/quando-o-santos-nasceu/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'palmeiras',
+    title: 'Sociedade Esportiva Palmeiras',
+    category: 'clube',
+    country: 'Brasil · São Paulo, SP',
+    year: '1914',
+    subtitle: 'Da comunidade italiana de São Paulo à Academia de Futebol',
+    summary: 'Fundado em 26 de agosto de 1914 como Palestra Italia, o clube nasceu com o objetivo de reunir e fortalecer a numerosa comunidade italiana da cidade de São Paulo.',
+    origin: 'O Palestra Italia foi criado por imigrantes e descendentes italianos em um período em que o futebol paulistano ainda era associado a círculos sociais mais restritos. O clube rapidamente ampliou sua presença e passou a disputar competições importantes.',
+    history: [
+      '26 de agosto de 1914 — Fundação como Palestra Italia.',
+      '1942 — Em meio à Segunda Guerra Mundial, o clube deixa o nome Palestra Italia e passa a se chamar Sociedade Esportiva Palmeiras.',
+      'Década de 1960 — A Primeira Academia reúne nomes como Ademir da Guia e Dudu.',
+      '2016–2018 — O clube conquista dois títulos brasileiros em três temporadas.'
+    ],
+    legacy: 'A trajetória do Palmeiras combina a história da imigração em São Paulo, a mudança de nome durante a Segunda Guerra e equipes que marcaram diferentes períodos do futebol brasileiro.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores'],
+    sourceLabel: 'Palmeiras — Instituição e história',
+    sourceUrl: 'https://www.palmeiras.com.br/instituicao/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'sao-paulo',
+    title: 'São Paulo Futebol Clube',
+    category: 'clube',
+    country: 'Brasil · São Paulo, SP',
+    year: '1930',
+    subtitle: 'Um clube reconstruído e reconhecido por sua história internacional',
+    summary: 'O São Paulo Futebol Clube foi fundado em 25 de janeiro de 1930, a partir da união de integrantes da Associação Athletica das Palmeiras e dissidentes do Club Athletico Paulistano.',
+    origin: 'A instituição atravessou uma interrupção de atividades e foi refundada em 1935. A trajetória de reconstrução passou a fazer parte da identidade do clube, que cresceu junto com a cidade de São Paulo.',
+    history: [
+      '25 de janeiro de 1930 — Fundação do São Paulo Futebol Clube.',
+      '1935 — O clube retoma suas atividades após um período de interrupção.',
+      'Décadas seguintes — O São Paulo estrutura sua presença nacional e internacional.',
+      '2005 — Conquista a Libertadores e o Mundial de Clubes da FIFA.'
+    ],
+    legacy: 'O São Paulo construiu parte importante de sua identidade em torno da superação institucional, da formação de atletas e de conquistas internacionais. O Morumbi tornou-se um dos símbolos físicos de sua história.',
+    relatedIds: ['brasileirao', 'rogerio-ceni', 'libertadores', 'champions-league'],
+    sourceLabel: 'São Paulo FC — História oficial',
+    sourceUrl: 'https://www.saopaulofc.net/o-clube/historia/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'fluminense',
+    title: 'Fluminense Football Club',
+    category: 'clube',
+    country: 'Brasil · Rio de Janeiro, RJ',
+    year: '1902',
+    subtitle: 'Um dos pioneiros do futebol organizado no Rio de Janeiro',
+    summary: 'Fundado em 21 de julho de 1902 por Oscar Cox, o Fluminense nasceu com uniformes cinza e branco. Em 1904, a dificuldade de encontrar o tecido cinza levou à mudança para o verde, branco e grená.',
+    origin: 'Oscar Cox ajudou a introduzir e organizar o futebol no Rio de Janeiro após experiências na Inglaterra. O Fluminense tornou-se um dos primeiros clubes da cidade dedicados à prática regular do esporte e ajudou a consolidar a cultura do futebol nas Laranjeiras.',
+    history: [
+      '21 de julho de 1902 — Fundação do Fluminense Football Club.',
+      '1904 — Aprovada a mudança das cores para verde, branco e grená.',
+      '1919 — O estádio de Laranjeiras recebe partidas importantes do futebol sul-americano.',
+      '1949 — O clube recebe a Taça Olímpica, distinção concedida pelo Comitê Olímpico Internacional.'
+    ],
+    legacy: 'O Fluminense está ligado à formação do futebol carioca, à história do estádio de Laranjeiras e a gerações de jogadores que levaram o clube ao cenário nacional e continental.',
+    relatedIds: ['brasileirao', 'copa-brasil'],
+    sourceLabel: 'Fluminense — A História',
+    sourceUrl: 'https://www.fluminense.com.br/sobre/a-historia',
+    status: 'pesquisado'
+  },
+  {
+    id: 'gremio',
+    title: 'Grêmio Foot-Ball Porto Alegrense',
+    category: 'clube',
+    country: 'Brasil · Porto Alegre, RS',
+    year: '1903',
+    subtitle: 'A bola emprestada que ajudou a iniciar uma história centenária',
+    summary: 'O Grêmio foi fundado em 15 de setembro de 1903. A narrativa oficial destaca Cândido Dias da Silva, que emprestou sua bola durante uma exibição de futebol em Porto Alegre e, depois, recebeu orientações para fundar um clube.',
+    origin: 'A exibição de um time de Rio Grande despertou o interesse de moradores de Porto Alegre. Quando a bola utilizada pelos visitantes esvaziou, Cândido Dias emprestou a sua. O episódio aproximou os participantes e ajudou a desencadear a reunião de fundação no Salão Grau.',
+    history: [
+      '7 de setembro de 1903 — A exibição de futebol em Porto Alegre aproxima Cândido Dias dos jogadores visitantes.',
+      '15 de setembro de 1903 — Trinta e dois rapazes fundam o Grêmio no Salão Grau.',
+      'Carlos Luiz Böhrer é escolhido como primeiro presidente.',
+      'Décadas posteriores — O clube consolida rivalidades regionais e conquistas nacionais e continentais.'
+    ],
+    legacy: 'A história do Grêmio está profundamente conectada a Porto Alegre e ao futebol do Rio Grande do Sul. O clube construiu uma identidade competitiva marcada por títulos nacionais e internacionais.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores'],
+    sourceLabel: 'Grêmio — Fundação e história',
+    sourceUrl: 'https://gremio.net/conteudo/index/44',
+    status: 'pesquisado'
+  },
+  {
+    id: 'internacional',
+    title: 'Sport Club Internacional',
+    category: 'clube',
+    country: 'Brasil · Porto Alegre, RS',
+    year: '1909',
+    subtitle: 'O clube que nasceu com uma ideia de integração',
+    summary: 'O Internacional foi fundado em 1909 por iniciativa dos irmãos Henrique, José Eduardo e Luiz Madeira Poppe. Sua história institucional destaca a abertura a pessoas de diferentes nacionalidades e origens.',
+    origin: 'Os irmãos Poppe chegaram a Porto Alegre em meio ao crescimento do futebol na cidade. O clube surgiu como alternativa a associações que, naquele período, eram mais restritas a determinados grupos de descendentes de imigrantes. A região da Ilhota aparece como berço de sua primeira prática esportiva.',
+    history: [
+      '1909 — Fundação do Sport Club Internacional.',
+      '1910 — A equipe muda seus primeiros espaços de treino e jogo.',
+      '1912 — O clube passa a utilizar a Chácara dos Eucaliptos como local exclusivo de jogos.',
+      '1913–1917 — Conquista uma sequência de campeonatos citadinos.'
+    ],
+    legacy: 'A identidade colorada é ligada à ideia de inclusão e ao pertencimento popular. A história do Internacional também se conecta a Porto Alegre, à região da Ilhota e ao desenvolvimento do futebol gaúcho.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores'],
+    sourceLabel: 'Internacional — Fundação',
+    sourceUrl: 'https://sc.internacional.com.br/clube/historia/1909',
+    status: 'pesquisado'
+  },
+  {
+    id: 'atletico-mg',
+    title: 'Clube Atlético Mineiro',
+    category: 'clube',
+    country: 'Brasil · Belo Horizonte, MG',
+    year: '1908',
+    subtitle: 'O Galo que cresceu junto com Belo Horizonte',
+    summary: 'O Atlético Mineiro foi criado em 25 de março de 1908 por estudantes reunidos no coreto do Parque Municipal, em Belo Horizonte. Seu primeiro jogo ocorreu em 1909, com vitória por 3 a 0 sobre o Sport.',
+    origin: 'O grupo fundador se reuniu em uma cidade ainda jovem, então capital de Minas Gerais. O clube nasceu como espaço de prática esportiva e se estabeleceu rapidamente no cenário local.',
+    history: [
+      '25 de março de 1908 — Fundação do clube no Parque Municipal.',
+      '21 de março de 1909 — Primeiro jogo: Atlético 3 a 0 Sport.',
+      '1915 — Campeão do primeiro Campeonato Mineiro.',
+      '1937 — Conquista o Campeonato dos Campeões, torneio nacional posteriormente reconhecido como título brasileiro pela CBF.',
+      '1945 — O cartunista Mangabeira cria a figura do Galo como mascote.'
+    ],
+    legacy: 'A história atleticana está ligada à construção da identidade esportiva de Belo Horizonte. O apelido Galo e a força de sua torcida se tornaram marcas centrais do clube.',
+    relatedIds: ['brasileirao', 'copa-brasil', 'libertadores'],
+    sourceLabel: 'Atlético Mineiro — História oficial',
+    sourceUrl: 'https://atletico.com.br/identidade/historia/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'botafogo',
+    title: 'Botafogo de Futebol e Regatas',
+    category: 'clube',
+    country: 'Brasil · Rio de Janeiro, RJ',
+    year: '1894',
+    subtitle: 'Uma origem ligada ao remo e uma história de craques',
+    summary: 'A origem institucional do Botafogo remonta ao Club de Regatas Botafogo, fundado em 1º de julho de 1894 na praia de Botafogo. Uma década depois surgiu o clube de futebol do bairro.',
+    origin: 'O primeiro Botafogo foi criado para competições de remo na Baía de Guanabara. Em 1904 apareceu o Electro Club, que adotou o nome Botafogo Football Club. As duas instituições se uniram em 1942, formando o Botafogo de Futebol e Regatas.',
+    history: [
+      '1º de julho de 1894 — Fundação do Club de Regatas Botafogo.',
+      '1904 — Surge o Electro Club, futuro Botafogo Football Club.',
+      '1942 — A fusão das instituições forma o Botafogo de Futebol e Regatas.',
+      'Décadas de 1950 e 1960 — Garrincha, Nilton Santos e outros craques marcam uma era histórica.'
+    ],
+    legacy: 'O Botafogo é associado a algumas das figuras mais influentes do futebol brasileiro, especialmente Garrincha e Nilton Santos. Sua trajetória une a história esportiva do Rio de Janeiro e as origens náuticas do clube.',
+    relatedIds: ['brasileirao', 'garrincha', 'copa-mundo'],
+    sourceLabel: 'Botafogo — História oficial',
+    sourceUrl: 'https://www.botafogo.com.br/historia',
+    status: 'pesquisado'
+  },
+  {
+    id: 'vasco',
+    title: 'Club de Regatas Vasco da Gama',
+    category: 'clube',
+    country: 'Brasil · Rio de Janeiro, RJ',
+    year: '1898',
+    subtitle: 'Da tradição do remo à luta contra a exclusão no futebol',
+    summary: 'O Vasco foi fundado em 21 de agosto de 1898 como clube de remo. O futebol passou a ser praticado na instituição em 1915. Em 1923, sua equipe conhecida como Camisas Negras conquistou o Campeonato Carioca.',
+    origin: 'A fundação homenageou o navegador português Vasco da Gama. O clube ampliou suas atividades e formou um time que reuniu jogadores negros, operários, comerciários e imigrantes, rompendo padrões sociais predominantes em parte do futebol carioca da época.',
+    history: [
+      '21 de agosto de 1898 — Fundação do Club de Regatas Vasco da Gama.',
+      '1915 — O futebol passa a ser praticado no clube.',
+      '1923 — Os Camisas Negras conquistam o Campeonato Carioca.',
+      '7 de abril de 1924 — A diretoria responde à tentativa de excluir jogadores negros e operários do campeonato, em carta que ficou conhecida como Resposta Histórica.'
+    ],
+    legacy: 'A Resposta Histórica transformou o Vasco em referência na memória da luta contra o racismo e a exclusão social no futebol brasileiro. Sua história institucional começa no remo, mas sua identidade futebolística foi moldada também por esse posicionamento.',
+    relatedIds: ['brasileirao', 'copa-brasil'],
+    sourceLabel: 'Vasco — Origens e Resposta Histórica',
+    sourceUrl: 'https://media.vasco.com.br/media/2023/08/PRESS-KIT-Apresentacao-Dimitri-Payet.pdf',
+    status: 'pesquisado'
+  },
+  {
+    id: 'liverpool',
+    title: 'Liverpool Football Club',
+    category: 'clube',
+    country: 'Inglaterra · Liverpool',
+    year: '1892',
+    subtitle: 'Um clube nascido de uma ruptura em Anfield',
+    summary: 'O Liverpool surgiu oficialmente em 3 de junho de 1892, depois de uma disputa envolvendo John Houlding e dirigentes do Everton. Com a saída do Everton de Anfield, Houlding e seus aliados criaram uma nova equipe para ocupar o estádio.',
+    origin: 'John Houlding havia arrendado e depois comprado o terreno de Anfield. A divergência sobre custos e administração levou o Everton a deixar o estádio em março de 1892. Houlding decidiu fundar o Liverpool Football Club, formalizado em junho daquele ano.',
+    history: [
+      '15 de março de 1892 — A ruptura com o Everton abre caminho para a criação de uma nova equipe.',
+      '3 de junho de 1892 — O Liverpool é formalmente reconhecido.',
+      '1º de setembro de 1892 — A equipe disputa sua primeira partida, vencendo o Rotherham Town por 7 a 1 em Anfield.',
+      '1892/93 — O clube conquista a Lancashire League em sua temporada inaugural.'
+    ],
+    legacy: 'A origem do Liverpool está inseparavelmente ligada a Anfield e à história do Everton. A partir de uma disputa administrativa local nasceu um dos clubes de maior projeção internacional do futebol inglês.',
+    relatedIds: ['premier-league', 'champions-league'],
+    sourceLabel: 'Liverpool FC — Como o clube foi fundado',
+    sourceUrl: 'https://www.liverpoolfc.com/pt/news/liverpool-fc-celebrates-132nd-birthday',
+    status: 'pesquisado'
+  },
+  {
+    id: 'barcelona',
+    title: 'Futbol Club Barcelona',
+    category: 'clube',
+    country: 'Espanha · Barcelona',
+    year: '1899',
+    subtitle: 'O projeto esportivo criado por Joan Gamper',
+    summary: 'O Barcelona foi fundado em 29 de novembro de 1899. Joan Gamper e outros onze homens participaram da reunião que criou a associação Foot-ball Club Barcelona.',
+    origin: 'O suíço Joan Gamper publicou um anúncio convidando interessados em formar uma equipe de futebol. A reunião aconteceu em Barcelona e reuniu pessoas de diferentes origens, refletindo o ambiente cosmopolita da cidade no fim do século XIX.',
+    history: [
+      '29 de novembro de 1899 — Fundação do Foot-ball Club Barcelona.',
+      '1929 — O clube conquista a primeira edição do campeonato nacional espanhol.',
+      'Anos 2000 — Uma geração liderada por jogadores formados no clube conquista títulos nacionais e europeus.',
+      '2009, 2011 e 2015 — Lionel Messi participa das finais vitoriosas da Liga dos Campeões.'
+    ],
+    legacy: 'O Barcelona tornou-se uma instituição esportiva e cultural de grande alcance, associada à identidade catalã, à formação de jogadores e a períodos de influência tática no futebol europeu.',
+    relatedIds: ['laliga', 'champions-league', 'messi'],
+    sourceLabel: 'FC Barcelona — 114 anos de história',
+    sourceUrl: 'https://www.fcbarcelona.com/en/club/news/1132934/114-anys-dhistoria',
+    status: 'pesquisado'
+  },
+  {
+    id: 'pele',
+    title: 'Pelé',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1940–2022',
+    subtitle: 'O Rei do Futebol e a ligação entre Santos e Seleção',
+    summary: 'Edson Arantes do Nascimento chegou ao Santos aos 15 anos e construiu ali a parte central de sua carreira. Pela Seleção Brasileira, conquistou as Copas do Mundo de 1958, 1962 e 1970.',
+    origin: 'Nascido em Três Corações, Minas Gerais, Pelé foi levado ao Santos por Waldemar de Brito em 1956. O atacante estreou profissionalmente ainda adolescente e rapidamente se tornou protagonista do clube e da Seleção.',
+    history: [
+      '1956 — Chega ao Santos, aos 15 anos.',
+      '1958 — Conquista sua primeira Copa do Mundo, na Suécia, aos 17 anos.',
+      '1962 e 1963 — Conquista duas Libertadores e duas Copas Intercontinentais consecutivas com o Santos.',
+      '1970 — Lidera a Seleção Brasileira na conquista do tricampeonato mundial no México.',
+      '1975–1977 — Atua pelo New York Cosmos, nos Estados Unidos.'
+    ],
+    legacy: 'Pelé ajudou a transformar o Santos em uma referência internacional e tornou-se símbolo do futebol brasileiro. Os registros da CBF apontam 1.116 partidas e 1.091 gols pelo clube santista.',
+    relatedIds: ['santos', 'copa-mundo', 'brasileirao', 'libertadores'],
+    sourceLabel: 'CBF — Pelé eterno',
+    sourceUrl: 'https://www.cbf.com.br/selecao-brasileira/noticias/se/a/pele-eterno-tres-anos-sem-o-rei-do-futebol',
+    status: 'pesquisado'
+  },
+  {
+    id: 'garrincha',
+    title: 'Garrincha',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1933–1983',
+    subtitle: 'O drible que virou símbolo do Botafogo e do Brasil',
+    summary: 'Manuel Francisco dos Santos, o Garrincha, jogou no Botafogo entre 1953 e 1965. Pelo clube, disputou 612 partidas e marcou 245 gols, segundo o registro oficial alvinegro.',
+    origin: 'Nascido em Pau Grande, no estado do Rio de Janeiro, Garrincha chegou ao Botafogo após chamar atenção em um teste. Sua habilidade no um contra um e a capacidade de desequilibrar defesas fizeram dele um dos jogadores mais marcantes de sua geração.',
+    history: [
+      '1953 — Estreia pelo Botafogo no Campeonato Carioca.',
+      '1958 — Integra a Seleção Brasileira campeã do mundo na Suécia.',
+      '1962 — É protagonista do bicampeonato mundial do Brasil no Chile.',
+      '1953–1965 — Constrói sua trajetória mais emblemática com a camisa do Botafogo.'
+    ],
+    legacy: 'Garrincha tornou-se parte central da memória do Botafogo e da Seleção Brasileira. Sua trajetória é lembrada pela criatividade, pelo drible e pelo impacto decisivo na Copa do Mundo de 1962.',
+    relatedIds: ['botafogo', 'copa-mundo'],
+    sourceLabel: 'Botafogo — Ídolos: Garrincha',
+    sourceUrl: 'https://www.botafogo.com.br/idolos/garrincha',
+    status: 'pesquisado'
+  },
+  {
+    id: 'rogerio-ceni',
+    title: 'Rogério Ceni',
+    category: 'jogador',
+    country: 'Brasil',
+    year: '1973–',
+    subtitle: 'O goleiro-artilheiro que fez história no São Paulo',
+    summary: 'Rogério Ceni defendeu o São Paulo por 25 anos, entre sua chegada em 1990 e a aposentadoria em 2015. O clube registra 1.237 partidas e 131 gols marcados pelo goleiro.',
+    origin: 'Depois de iniciar a carreira no Sinop, Ceni chegou ao São Paulo ainda jovem. Tornou-se titular em 1997 e passou a cobrar faltas e pênaltis, algo incomum para um goleiro, construindo uma carreira de recordes e títulos.',
+    history: [
+      '1990 — Chega ao São Paulo após ser aprovado em uma avaliação.',
+      '1993 — Faz sua estreia oficial pela equipe principal.',
+      '1997 — Marca seu primeiro gol como profissional.',
+      '2005 — Conquista a Libertadores e o Mundial de Clubes com o São Paulo.',
+      '2006–2008 — Conquista três Campeonatos Brasileiros consecutivos.',
+      '2015 — Encerra a carreira com 1.237 partidas e 131 gols pelo clube.'
+    ],
+    legacy: 'Rogério Ceni redefiniu a imagem do goleiro no imaginário de parte do público brasileiro: além de defender, tornou-se cobrador de faltas e pênaltis, capitão e personagem central de uma das eras mais vitoriosas do São Paulo.',
+    relatedIds: ['sao-paulo', 'brasileirao', 'libertadores'],
+    sourceLabel: 'São Paulo FC — A história do M1TO',
+    sourceUrl: 'https://www.saopaulofc.net/sao-paulo-e-rogerio-ceni-a-historia-do-m1to/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'messi',
+    title: 'Lionel Messi',
+    category: 'jogador',
+    country: 'Argentina',
+    year: '1987–',
+    subtitle: 'A trajetória de Barcelona à história da Liga dos Campeões',
+    summary: 'Messi chegou às categorias de base do Barcelona em 2000, aos 13 anos. Na equipe principal, participou das campanhas que conquistaram a Liga dos Campeões em 2009, 2011 e 2015.',
+    origin: 'Nascido em Rosário, na Argentina, Messi mudou-se para a Espanha ainda adolescente para integrar a formação do Barcelona. Sua estreia pela equipe principal ocorreu em amistoso em 2003, e sua estreia na liga espanhola veio em 2004.',
+    history: [
+      '2000 — Chega ao Barcelona aos 13 anos.',
+      '2003 — Faz sua estreia pela equipe principal em amistoso.',
+      '2004 — Disputa sua primeira partida na liga espanhola.',
+      '2009, 2011 e 2015 — Conquista a Liga dos Campeões com o Barcelona.',
+      '2023 — Deixa o futebol europeu e segue para o Inter Miami.'
+    ],
+    legacy: 'Messi tornou-se o maior artilheiro da história do Barcelona e um dos protagonistas de sua geração. Sua passagem pelo clube conectou a LaLiga à Liga dos Campeões e a uma era de domínio europeu.',
+    relatedIds: ['barcelona', 'laliga', 'champions-league'],
+    sourceLabel: 'UEFA — A despedida de Messi do Barcelona',
+    sourceUrl: 'https://pt.uefa.com/uefachampionsleague/news/026c-12f38f7104ae-5ef9b07a5665-1000--lionel-messi-deixa-barcelona-a-despedida-de-um-jogador-sem-/',
+    status: 'pesquisado'
+  },
+  {
+    id: 'di-stefano',
+    title: 'Alfredo Di Stéfano',
+    category: 'jogador',
+    country: 'Argentina · Espanha',
+    year: '1926–2014',
+    subtitle: 'O protagonista do Real Madrid nas primeiras Copas Europeias',
+    summary: 'Di Stéfano foi uma das figuras centrais do Real Madrid que dominou o início da Taça dos Campeões Europeus. Na edição inaugural de 1955/56, marcou cinco gols pelo campeão.',
+    origin: 'Atacante argentino que também representou a Espanha, Di Stéfano chegou ao Real Madrid em 1953 e se tornou referência de uma equipe que venceu as cinco primeiras edições da competição europeia.',
+    history: [
+      '1953 — Chega ao Real Madrid.',
+      '1955/56 — Ajuda o clube a conquistar a primeira Taça dos Campeões Europeus.',
+      '1956–1960 — Participa da sequência de cinco títulos europeus do Real Madrid.',
+      '1956 — Recebe a primeira Bola de Ouro da revista France Football.'
+    ],
+    legacy: 'Sua versatilidade, capacidade de participar da construção e da finalização e influência sobre o jogo coletivo marcaram a identidade do Real Madrid dos anos 1950.',
+    relatedIds: ['champions-league', 'laliga'],
+    sourceLabel: 'UEFA — Primeira edição da Taça dos Campeões',
+    sourceUrl: 'https://www.uefa.com/uefachampionsleague/history/seasons/1955/clubs/',
+    status: 'pesquisado'
+  }
+]
+
+export const categoryLabels: Record<ArchiveCategory | 'todas', string> = {
+  todas: 'Tudo',
+  liga: 'Ligas',
+  copa: 'Copas',
+  clube: 'Clubes',
+  jogador: 'Jogadores'
+}
