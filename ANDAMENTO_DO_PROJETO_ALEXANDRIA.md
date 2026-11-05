@@ -315,8 +315,8 @@ Toda mudança incorporada ao projeto deve gerar uma nova entrada no histórico. 
 - **Arquivos afetados:** `src/App.tsx`, `src/index.css`, `index.html`, `README.md`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
 - **Decisões relacionadas:** o globo é o protagonista visual e permanece suspenso, sem pedestal. A seleção geográfica por limites aproximados e a lista de países são apenas demonstrativas; ainda não existe acervo nacional integrado.
 - **Validação:** leitura prévia dos arquivos atuais e confirmação de gravação dos commits no GitHub. Não foi executado `npm run build`, teste automatizado ou teste visual em dispositivo físico. A execução de workflows do GitHub não retornou workflows associados ao commit consultado. O site de produção não pôde ser confirmado nesta etapa.
-- **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (CSS), `44ff97c` (metadados), `99989fb` (README), `ff2cfb9` (textura terrestre), `ef10ebb` (relevo e nuvens), `db76632` (estado do README).
-- **Deploy:** Vercel retornou status **success** para o commit `b006210` na branch `main`. A etapa de deploy reportada pela Vercel concluiu; a inspeção visual final do site publicado ainda não foi feita.
+- **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (primeira versão do CSS), `72cdf07` (refinamento adicional do CSS do salão, commit atribuído à conta GitHub `gabrigout` e preservado), `44ff97c` (metadados), `99989fb` (README), `ff2cfb9` (textura terrestre), `ef10ebb` (relevo e nuvens), `db76632` (estado do README).
+- **Deploy:** Vercel retornou status **success** para o commit `b006210` na branch `main`, que já incluía o código do globo e o refinamento de CSS `72cdf07`. O último commit consultado (`f72b90d`, apenas documentação) ainda estava **pending** na Vercel no momento da checagem. A inspeção visual final do site publicado ainda não foi feita.
 
 
 ---
