@@ -857,10 +857,9 @@ Este quadro é uma fotografia do estado documentado em 05/11/2026. Antes de cada
 - Validar no navegador real as mudanças de interface; build aprovado não equivale a inspeção visual.
 
 **Próxima tarefa recomendada**
-- Não iniciar uma etapa maior automaticamente. Primeiro conferir a branch e o estado atual do repositório, comparar com o último commit documentado e verificar alterações não registradas.
-- Após essa conferência, propor ao usuário o próximo lote cronológico de partidas da Bundesliga 1963/64, com seleção de jogos, fontes oficiais e independentes adequadas, arquivos que serão afetados e testes previstos.
-- A próxima etapa operacional sugerida é o **Lote 2 de partidas**, não uma nova auditoria geral nem a expansão para outra temporada.
-- Só executar após o usuário autorizar o escopo.
+- Seguir o ponto de retomada e o plano detalhado da seção 33.9: diagnóstico somente leitura no VS Code, sincronização segura da branch e matriz de cobertura das 240 partidas.
+- Depois do diagnóstico, propor o primeiro lote cronológico de jogos ainda não cadastrados, com fontes, arquivos e testes previstos.
+- Não iniciar cadastro de partidas até o usuário aprovar o lote. As etapas seguintes são as etapas 6 a 9 da seção 33.
 
 ### 30.4. Checklist obrigatório antes de encerrar qualquer tarefa
 
@@ -1154,5 +1153,5 @@ Prompt de continuidade para o agente do VS Code:
 - **Arquivos afetados:** `DIRETRIZ_DO_PROJETO.md`.
 - **Limitações:** diagnóstico remoto do GitHub; o estado local do VS Code, alterações não commitadas e a sincronização da máquina do usuário não foram inspecionados. A contagem de partidas deve ser reconfirmada localmente antes do primeiro lote. Nenhuma partida nova foi pesquisada ou cadastrada nesta tarefa.
 - **Validação:** conferência textual da diretriz e dos arquivos de dados; nenhuma execução de testes ou build, pois não houve mudança na aplicação.
-- **Commit:** será informado após a gravação e verificação no GitHub.
+- **Commit de inclusão do plano:** `5cefc07948023de48567aa15263f8fcd153e3246`.
 - **Deploy:** não se aplica; atualização exclusivamente documental.
