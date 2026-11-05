@@ -441,3 +441,21 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commit:** `82b65b3`.
 - **Validação:** alteração gravada na branch `main`. Não foi possível executar o build nem fazer teste visual direto no iPhone nesta sessão. A confirmação final depende de observar o novo deploy e verificar especialmente Europa, África, América Central e Caribe.
 - **Deploy:** consultar o estado da Vercel para este commit antes de afirmar que a correção está publicada.
+
+
+---
+
+## 18. Primeiro catálogo pesquisável de ligas, copas, clubes e jogadores — 5 de novembro de 2026
+
+- **Pedido do usuário:** começar a incorporar informações históricas abrangentes sobre criação e trajetória de ligas, copas, clubes e jogadores, relacionando os registros.
+- **Arquitetura de dados:** criado `src/data/archive.ts` com um modelo tipado para cada registro: identificador, categoria, país, ano de referência, subtítulo, resumo, origem, cronologia, legado, fatos essenciais, fonte-base, estado editorial e IDs relacionados.
+- **Conteúdo inicial:** 40 registros no total, distribuídos em 7 ligas, 5 copas, 18 clubes e 10 jogadores. Os registros incluem, entre outros, Campeonato Brasileiro, Premier League, Bundesliga, LaLiga, Serie A, Ligue 1, Eredivisie, Copa do Mundo masculina e feminina, Copa do Brasil, Libertadores, Liga dos Campeões, clubes do Brasil e de ligas europeias, além de Pelé, Garrincha, Rogério Ceni, Messi, Di Stéfano, Zico, Marta, Ronaldinho, Ronaldo Fenômeno e Maradona.
+- **Navegação em `src/App.tsx`:** filtros por categoria, busca textual, cartões de acervo e fichas detalhadas em painel; cada ficha apresenta origem/criação, marcos históricos, legado, fatos essenciais e conexões clicáveis com outros registros.
+- **Estilo em `src/index.css`:** catálogo responsivo, fichas e cartões em continuidade com a identidade escura/editorial da Alexandria.
+- **Fontes de pesquisa usadas como ponto de partida:** FIFA, CBF, CONMEBOL, UEFA, FIGC, Premier League, Bundesliga, RFEF, FFF, KNVB e páginas institucionais dos clubes. As URLs-base estão registradas nas próprias fichas em `src/data/archive.ts`.
+- **Auditoria estrutural realizada:** 40 identificadores de registro únicos; todas as referências em `relatedIds` apontam para registros existentes. Os dados rápidos foram estruturados em 21 fichas. Algumas relações de jogadores, clubes e competições continuam deliberadamente incompletas.
+- **Critérios editoriais:** distinguir ano de fundação, primeira temporada e mudança de formato; separar ano civil de temporada; não incluir estatísticas sem referência específica; tratar a coleção como primeiro núcleo de pesquisa, não como acervo exaustivo.
+- **Arquivos afetados:** `src/data/archive.ts`, `src/App.tsx`, `src/index.css`, `README.md`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Commits desta etapa:** `7641221` (estrutura inicial de dados), `f507e93` (expansão de registros), `df2d401` (novos registros internacionais e futebol feminino), `4fd8a4a` (fatos essenciais), `263a102` (navegação/fichas), `44877d1` (exibição dos fatos), `2c3de46` e `a1ef61f` (estilos), `2c3de46` (estilo do catálogo), `a1ef61f` (fatos rápidos), além dos commits de README e documentação.
+- **Validação:** arquivos confirmados na branch `main`; IDs e referências cruzadas auditados. Não foi executado `npm run build`, teste TypeScript, teste automatizado ou inspeção visual após a implementação. O deploy depende da confirmação da Vercel para o commit documental final.
+- **Próximas expansões:** temporadas e campeões por edição; tabelas de títulos e artilheiros com fonte por temporada; elencos históricos e trajetórias completas; clubes de cada liga; copas nacionais e continentais; futebol feminino; torneios regionais e seleções.
