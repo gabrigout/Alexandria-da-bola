@@ -37,7 +37,7 @@ type GeoPosition = [number, number, ...number[]]
 type GeoGeometry = { type: 'Polygon' | 'MultiPolygon'; coordinates: GeoPosition[][] | GeoPosition[][][] }
 type GeoFeature = { type: 'Feature'; properties: Record<string, string | number | null>; geometry: GeoGeometry }
 type GeoData = { type: 'FeatureCollection'; features: GeoFeature[] }
-type MapCountry = { name: string; continent: string; code: string; d: string; bounds: [number, number, number, number] }
+type MapCountry = { name: string; continent: string; code: string; flagCode: string; d: string; bounds: [number, number, number, number]; center: [number, number] }
 
 const MAP_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson'
 const MAP_W = 1200
@@ -92,7 +92,7 @@ function makeCountryPath(geometry: GeoGeometry) {
       d += 'Z'
     }
   }
-  return { d, bounds: [minX, minY, maxX, maxY] as [number, number, number, number] }
+  return { d, bounds: [minX, minY, maxX, maxY] as [number, number, number, number], center: [(minX + maxX) / 2, (minY + maxY) / 2] as [number, number] }
 }
 
 function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void }) {
@@ -115,7 +115,8 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
             name: countryNameInPortuguese(feature.properties),
             continent: continentName(String(feature.properties.CONTINENT ?? '')),
             code: String(feature.properties.ADM0_A3 ?? feature.properties.ISO_A3 ?? ''),
-            d: result.d, bounds: result.bounds,
+            flagCode: String(feature.properties.ISO_A2 ?? '').toLowerCase(),
+            d: result.d, bounds: result.bounds, center: result.center,
           }
         }).filter((country) => country.d && country.continent !== 'Oceanos')
         setCountries(mapped)
@@ -173,6 +174,7 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
           <defs><pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern></defs>
           <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
           {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => chooseCountry(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') chooseCountry(country) }} />)}
+          {countries.filter((country) => country.flagCode && Math.max(country.bounds[2] - country.bounds[0], country.bounds[3] - country.bounds[1]) >= view.w * .009).map((country) => <g key={'flag-' + country.code} className="atlas-country-flag" aria-hidden="true" pointerEvents="none"><rect x={country.center[0] - 13} y={country.center[1] - 9} width="26" height="18" rx="2.5" /><image href={'https://flagcdn.com/w40/' + country.flagCode + '.png'} x={country.center[0] - 11} y={country.center[1] - 7} width="22" height="14" preserveAspectRatio="xMidYMid meet" /></g>)}
         </svg>
         {loading && <div className="atlas-message">Preparando o atlas...</div>}
         {error && <div className="atlas-message atlas-error">Não foi possível carregar a cartografia. Verifique a conexão e tente novamente.</div>}
@@ -244,7 +246,7 @@ export default function App() {
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-line" /> A BIBLIOTECA DO FUTEBOL</div>
           <h1 id="hero-title">O futebol tem<br />um mundo de<br /><em>histórias.</em></h1>
-          <p className="hero-description">Cada continente guarda partidas, personagens e conquistas que ajudaram a construir o jogo. Explore o globo e descubra onde cada história começa.</p>
+          <p className="hero-description">Cada continente guarda partidas, personagens e conquistas que ajudaram a construir o jogo. Explore o mapa e descubra onde cada história começa.</p>
           <button className="discover-button" onClick={openCollection}>
             <span>Começar a explorar</span><ArrowDown size={16} />
           </button>
