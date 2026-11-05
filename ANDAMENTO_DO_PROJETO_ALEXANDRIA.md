@@ -90,7 +90,7 @@ As fases abaixo organizam o trabalho conhecido até agora. As fases futuras são
 |---|---|---|---|
 | 0 | Fundação técnica e repositório | **Concluída** | Criar o projeto React/Vite, estruturar os arquivos iniciais e conectar o GitHub. |
 | 1 | Primeiro protótipo visual | **Concluída como protótipo** | Criar a identidade visual inicial, a tela de entrada, a representação de partículas, a linha do tempo e o primeiro painel de registro. Não significa que a experiência final esteja pronta. |
-| 2 | Redefinição do conceito e da experiência | **Em andamento — decisão pendente do usuário** | Ouvir a nova ideia do usuário, rever a proposta inicial e definir o que a Alexandria será, para quem e como será explorada. |
+| 2 | Redefinição do conceito e da experiência | **Concluída na direção da entrada** | Conceito do museu/biblioteca monumental com globo terrestre suspenso aprovado e documentado na seção 12. |
 | 3 | Arquitetura do produto e dos dados | **Planejada** | Definir navegação, entidades, relações, estrutura de conteúdo, fontes e arquitetura técnica de acordo com o conceito aprovado. |
 | 4 | Desenvolvimento das funcionalidades centrais | **Planejada** | Construir os fluxos principais de navegação, consulta, pesquisa e interação definidos para o produto. |
 | 5 | Conteúdo e acervo | **Planejada** | Pesquisar, cadastrar, revisar e referenciar os conteúdos que fizerem parte do escopo aprovado. |
@@ -98,11 +98,11 @@ As fases abaixo organizam o trabalho conhecido até agora. As fases futuras são
 
 ### Foco atual
 
-**Estamos na Fase 2: redefinição do conceito.**
+**A direção criativa da nova entrada está aprovada. O foco é validar o protótipo visual implementado em `main`.**
 
-O usuário percebeu que os registros por ano do protótipo eram simples e rasos. Antes de aprofundar esse modelo ou ampliar o acervo, ele sinalizou que deseja mudar um pouco a proposta. A próxima decisão importante é ouvir e documentar essa nova ideia.
+O novo conceito coloca um globo terrestre realista suspenso no centro de um salão clássico de biblioteca/museu. A navegação prevista começa em Mundo → Continente → País. O código inicial dessa experiência foi incorporado, mas build, testes em dispositivo e atualização do deploy ainda precisam ser confirmados.
 
-Não começar a cadastrar centenas de registros, criar páginas históricas extensas ou expandir funcionalidades antes de definir a nova direção.
+Não ampliar o acervo nem tratar a seleção demonstrativa de países como conteúdo final antes de validar a experiência e definir a arquitetura dos dados.
 
 ---
 
@@ -156,7 +156,7 @@ Scripts existentes em `package.json`:
 
 A lista deve ser conferida no repositório antes de futuras alterações, pois pode mudar.
 
-### Interface atualmente publicada
+### Interface do protótipo inicial (antes da nova entrada)
 
 O protótipo observado contém:
 
@@ -187,9 +187,11 @@ Esses são apenas marcos demonstrativos do protótipo, não um acervo completo o
 
 ---
 
-## 6. Onde paramos exatamente
+## 6. Histórico do ponto de parada anterior
 
-Na última versão publicada, o usuário abriu o site pelo celular e selecionou o registro de 1863.
+**Nota:** esta seção registra a experiência do protótipo original, antes da redefinição aprovada na seção 12. Ela não descreve a versão atual do código.
+
+Na versão inicial publicada, o usuário abriu o site pelo celular e selecionou o registro de 1863.
 
 O painel exibiu:
 
@@ -246,15 +248,14 @@ Esses pontos descrevem o estado do primeiro protótipo. Algumas limitações pod
 
 ### Decisões ainda abertas
 
-- Qual será a nova proposta central da Alexandria.
-- Se a metáfora da biblioteca/arquivo histórico continuará.
-- Se a navegação continuará organizada por anos ou adotará outro modelo.
-- Qual será o papel da representação 3D de partículas.
-- Quais tipos de conteúdo serão prioritários.
-- Se o projeto permanecerá sem backend ou precisará de uma estrutura de dados mais robusta.
-- Qual será o nível de profundidade do acervo e quais fontes serão adotadas.
+- Estrutura definitiva da arquitetura de dados e necessidade (ou não) de backend.
+- Fonte cartográfica e método preciso para identificar/realçar continentes e países no globo.
+- Profundidade e prioridade dos módulos nacionais: história, ligas, clubes, seleções, jogadores, títulos, rivalidades, épocas, partidas e documentos.
+- Fontes históricas e padrão editorial para cada tipo de registro.
+- Comportamento final de zoom, seleção, painéis e transições após os testes em dispositivos reais.
+- Inclusão e posicionamento de estátuas/esculturas de grandes nomes no ambiente.
 
-Nenhuma dessas questões deve ser considerada decidida sem a confirmação do usuário.
+As decisões aprovadas sobre a composição central e a direção visual do salão estão registradas na seção 12; os pontos acima continuam pendentes.
 
 ---
 
@@ -305,6 +306,19 @@ Toda mudança incorporada ao projeto deve gerar uma nova entrada no histórico. 
 - **Commit/PR:** registrado no commit de criação deste arquivo no GitHub.
 - **Deploy:** não se aplica; mudança apenas documental.
 
+#### 2026-11-05 — Implementação do protótipo visual da nova entrada
+
+- **Responsável:** ChatGPT, seguindo a direção aprovada pelo usuário.
+- **Tipo:** design / código / documentação.
+- **Motivo:** iniciar a materialização do conceito do salão monumental com globo terrestre suspenso.
+- **O que mudou:** a esfera abstrata de partículas foi substituída por um globo 3D; foram adicionados rotação por toque/arraste, zoom por pinça/roda do mouse, identificação aproximada de continentes, painel demonstrativo de países, navegação por seções e cartões de exploração. A linha do tempo e a busca existentes foram preservadas como conteúdo complementar. A composição arquitetônica do salão foi criada em CSS e o HTML recebeu novos metadados.
+- **Arquivos afetados:** `src/App.tsx`, `src/index.css`, `index.html`, `README.md`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Decisões relacionadas:** o globo é o protagonista visual e permanece suspenso, sem pedestal. A seleção geográfica por limites aproximados e a lista de países são apenas demonstrativas; ainda não existe acervo nacional integrado.
+- **Validação:** leitura prévia dos arquivos atuais e confirmação de gravação dos commits no GitHub. Não foi executado `npm run build`, teste automatizado ou teste visual em dispositivo físico. A execução de workflows do GitHub não retornou workflows associados ao commit consultado. O site de produção não pôde ser confirmado nesta etapa.
+- **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (CSS), `44ff97c` (metadados), `99989fb` (README) e `ff2cfb9` (URL da textura terrestre).
+- **Deploy:** atualização de produção não verificada; não afirmar que o novo protótipo já está publicado.
+
+
 ---
 
 ## 11. Checklist para retomar o projeto
@@ -314,13 +328,13 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - [ ] Ler este documento integralmente.
 - [ ] Conferir o estado atual do repositório e da branch principal.
 - [ ] Ler o README e os arquivos relacionados à tarefa.
-- [ ] Perguntar/entender a nova direção que o usuário deseja para a Alexandria, caso ainda não esteja registrada.
+- [ ] Conferir as decisões aprovadas nas seções 12 e 13 antes de propor novas mudanças de conceito.
 - [ ] Registrar as decisões aprovadas neste documento.
 - [ ] Só então planejar e executar mudanças de código.
 - [ ] Atualizar este documento em toda mudança incorporada.
 - [ ] Informar ao usuário o que foi alterado, o que foi verificado e o que ainda falta.
 
-**Ponto de retomada atual:** aguardar o usuário apresentar a nova ideia para a Alexandria. Não iniciar uma reformulação de código antes disso.
+**Ponto de retomada atual:** validar o protótipo visual da nova entrada em desktop e iPhone; verificar o carregamento da textura e o desempenho do globo; depois planejar a arquitetura de continentes e países.
 
 
 ---
