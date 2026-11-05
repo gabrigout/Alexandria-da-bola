@@ -1,4 +1,4 @@
-name: Gerar package-lock temporário
+name: Validar package-lock temporário
 
 on:
   push:
@@ -8,10 +8,10 @@ on:
       - .github/workflows/generate-lockfile.yml
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  lockfile:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar repositório
@@ -20,16 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Gerar package-lock.json
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Salvar lockfile no repositório
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
-          if git diff --cached --quiet; then
-            echo "Nenhuma alteração no lockfile."
-          else
-            git commit -m "Adiciona package-lock.json"
-            git push
-          fi
+      - name: Instalação reproduzível
+        run: npm ci --no-audit --no-fund
+      - name: Typecheck, testes e build
+        run: npm run build
