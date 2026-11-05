@@ -648,3 +648,22 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Limites desta etapa:** não foram cadastradas as outras 238 partidas; escalações completas e demais estatísticas seguem pendentes. Não foi feita inspeção visual manual em iPhone/desktop; build e deploy confirmam compilação e publicação, não revisão visual.
 - **Próxima etapa sugerida:** continuar o acervo de partidas da temporada inaugural em lotes pequenos, priorizando fichas com fontes oficiais, e só então ampliar para elencos e biografias.
 - **Commit de código validado:** `9b2ab5ec76376eecd13e9395189970a17a6db874`. **Commit do registro documental:** `93ffc566790f8e7bec0052630a825b9bc9c02f4f`.
+
+
+---
+
+## 28. Etapa 4 — ampliação das partidas documentadas da temporada inaugural — 5 de novembro de 2026
+
+- **Objetivo:** continuar o cadastro individual das partidas da Bundesliga 1963/64 em lotes pequenos, priorizando fichas oficiais do DFB Datencenter. Esta etapa dá sequência à recomendação registrada na Etapa 3.
+- **Escopo executado:** foram acrescentadas duas partidas da 2ª rodada, ambas disputadas em 31/08/1963:
+  - **Borussia Dortmund 3–3 TSV 1860 München:** Stadion Rote Erde, Dortmund; 23.000 espectadores; árbitro Edgar Deuschel. Cronologia do DFB: Hans Küppers (8'), Willi Sturm (16'), Gerd Cyliax (27'), Peter Grosser (49' e 63') e Willi Sturm (80'). Fonte: https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/borussia-dortmund-tsv-1860-muenchen-187981.
+  - **Hamburger SV 4–2 1. FC Saarbrücken:** Volksparkstadion, Hamburgo; 32.000 espectadores; árbitro Günther Baumgärtel. Cronologia do DFB: Dieter Krafczyk (29' e 37'), Charly Dörfel (45', 55' e 78') e Uwe Seeler (70'). Fonte: https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/hamburger-sv-1-fc-saarbruecken-187982.
+- **Fontes:** foram cadastradas duas novas referências oficiais do DFB em `src/data/bundesliga/sources.ts`, com identificadores próprios e notas sobre os dados cobertos.
+- **Modelagem:** as duas partidas foram acrescentadas a `src/data/bundesliga/matches.ts`, com IDs estáveis, clubes relacionados, rodada, data, placar, estádio, cidade, público, árbitro, cronologia dos gols e referências.
+- **Interface:** a seção “Partidas documentadas” deixou de filtrar apenas os dois registros anteriores e passou a listar dinamicamente as fichas com estádio e público cadastrados na temporada selecionada. O título apresenta quatro fichas completas; a partida de abertura continua fora dessa seção porque ainda não possui ficha individual enriquecida com estádio/público/eventos no modelo.
+- **Testes:** foram acrescentados dois testes específicos, verificando dados de contexto e cronologia dos gols das partidas. A Vercel executou `npm run build`: `tsc --noEmit` passou; Vitest 3.2.7 aprovou 10 testes (1 arquivo); Vite 7.3.7 transformou 1.593 módulos e concluiu o build em 2,08 segundos.
+- **Prévia Vercel:** deployment `dpl_CTxza63UWwQBreow5uEteG5BzsLv`, estado `READY`, URL https://alexandria-da-bola-5e3u4maxh-gabriel3-1b9a.vercel.app, branch `phase-4-bundesliga-matches-batch-1`, commit `42715d524caa6ff40146b893057b36fa17c7e019`.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts`, `src/components/BundesligaArchive.tsx` e este documento.
+- **Limites:** a etapa adiciona duas partidas, não representa o cadastro integral da 2ª rodada nem das 240 partidas da temporada. Não foram inferidos dados ausentes. A prévia foi compilada e publicada com sucesso; não houve inspeção visual manual em dispositivos reais. O deployment READY não deve ser confundido com publicação em produção.
+- **Próxima etapa sugerida:** continuar a temporada em outro lote pequeno, seguindo a ordem cronológica e consultando as fichas individuais do DFB; registrar somente partidas cujos dados e cronologia possam ser sustentados por fonte identificável.
+- **Commit de código validado:** `42715d524caa6ff40146b893057b36fa17c7e019`. O commit deste registro documental será acrescentado após sua gravação.
