@@ -62,6 +62,14 @@ A IA deve se identificar novamente quando iniciar uma nova tarefa, mesmo que já
 > **Registre obrigatoriamente neste mesmo documento toda mudança que você fizer no projeto**, inclusive alterações de código, interface, conteúdo, estrutura, tecnologia, dados ou configuração. Ao concluir, atualize o estado atual e acrescente uma entrada no Histórico de alterações, informando arquivos, motivo, resultado, testes/validações realmente executados e situação do deploy. Faça o commit do registro junto com a mudança ou imediatamente depois. Se não puder editar o documento no GitHub, entregue a atualização pronta para o usuário e deixe explícito que ela ainda não foi registrada.
 >
 > Não invente fatos, fontes nem resultados de testes. Ao terminar, informe o que mudou, o que foi verificado, o que falta e confirme se o documento de continuidade foi atualizado.
+>
+> **Perfil de colaboração do usuário — Vibe Coder:** o usuário conduz o produto por ideias, objetivos, referências e aprovação de resultados; não é responsável por programar nem por executar comandos técnicos. Assuma a execução técnica de ponta a ponta sempre que as ferramentas e permissões disponíveis permitirem. Não peça que o usuário edite código, rode terminal, resolva conflitos Git ou localize arquivos como procedimento padrão. Se uma ação realmente depender dele (por exemplo, autorização, credencial, escolha de produto ou operação local inacessível), explique exatamente o motivo e dê instruções simples, sem jargão desnecessário.
+>
+> Apresente decisões técnicas em linguagem clara: o que será feito, por que, o que pode mudar e como será verificado. Não transfira ao usuário decisões internas de implementação que a IA pode resolver com segurança. Quando houver alternativas que mudem significativamente o produto, custo, privacidade, segurança ou experiência, explique prós e contras e peça aprovação antes de escolher.
+>
+> Nunca peça ao usuário para copiar e colar código como primeira solução. Prefira editar diretamente o repositório/ambiente conectado. Se não houver acesso técnico, entregue uma instrução pronta para outra IA ou ferramenta executar, e deixe claro que a alteração ainda não foi feita.
+>
+> O usuário aprova direção e resultado; a IA responde pela qualidade da execução técnica, pela validação e pela documentação.
 
 ---
 
@@ -873,4 +881,119 @@ Este quadro é uma fotografia do estado documentado em 05/11/2026. Antes de cada
 - **Arquivos afetados:** `DIRETRIZ_DO_PROJETO.md` (novo nome do documento central), `README.md` (link para a diretriz) e remoção de `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md` após a migração do conteúdo.
 - **Validação:** conteúdo anterior preservado e referências internas ao nome antigo atualizadas. A estrutura do dicionário foi confrontada com os tipos e dados atuais do módulo Bundesliga. Esta alteração é documental; não modifica a aplicação.
 - **Commits:** criação da diretriz ampliada `e743b42129473d7147a084a796a824b75ceb6c8c`; atualização do README `fa35384d3da0e301f1d8b0aaa0c639d01f330c67`; remoção do arquivo com o nome antigo: `18e0792aaeda8c85331dc575081f0dc88788cd0b`.
+- **Deploy:** não se aplica; alteração documental.
+
+
+---
+
+## 31. Protocolo de trabalho para o usuário Vibe Coder
+
+### 31.1. Como o usuário participa do projeto
+
+O usuário atua como idealizador, diretor do produto e responsável pelas decisões de negócio e experiência. Ele trabalha no modelo **Vibe Coding / Vibe Coder**: descreve o que deseja, apresenta ideias, referências e feedback, avalia os resultados e aprova a direção.
+
+**Não presumir que o usuário programa ou que deseja programar.** A IA deve assumir as tarefas técnicas que estiver autorizada e equipada para executar. O usuário não deve ser tratado como responsável por escrever código, editar arquivos manualmente, executar comandos de terminal, corrigir erros de compilação, resolver conflitos de Git ou fazer deploy.
+
+O usuário continua sendo a autoridade sobre:
+- O propósito e a direção do produto.
+- As funcionalidades desejadas e prioridades.
+- A identidade visual e a experiência que considera adequadas.
+- As escolhas que alterem significativamente o escopo, o orçamento, os riscos ou o comportamento do produto.
+- A aprovação de mudanças relevantes e da publicação em produção, quando aplicável.
+
+A IA é responsável por transformar as orientações aprovadas em implementação técnica, pesquisa, testes, documentação e entregas verificáveis.
+
+### 31.2. Fluxo de trabalho esperado da IA
+
+1. **Entender o pedido:** traduzir a ideia do usuário em um objetivo concreto, sem exigir que ele conheça termos técnicos.
+2. **Consultar a diretriz e o estado real:** identificar-se, ler este documento, inspecionar o repositório/ambiente conectado e verificar branch, commits, arquivos e alterações existentes.
+3. **Explicar o plano:** dizer em linguagem simples o que pretende fazer, qual resultado o usuário verá, quais áreas serão afetadas e se existe algum risco ou decisão que exige aprovação.
+4. **Executar diretamente:** quando houver acesso e autorização, fazer as alterações no ambiente/repositório. Não delegar ao usuário etapas técnicas que a própria IA pode executar.
+5. **Validar:** executar os testes pertinentes, revisar erros, verificar o build e abrir/inspecionar a versão de preview quando a mudança afetar a experiência visual ou funcional.
+6. **Corrigir antes de entregar:** se a validação encontrar falhas, investigar e corrigir dentro do escopo autorizado. Não encerrar apenas relatando um erro que poderia resolver.
+7. **Documentar:** atualizar esta diretriz com o que realmente foi feito, arquivos afetados, decisões, testes, limitações e situação do Git/deploy.
+8. **Entregar um resumo acessível:** explicar o que mudou, onde o usuário pode ver, o que foi validado e se há algo que precisa de decisão dele.
+
+### 31.3. Como explicar assuntos técnicos
+
+- Usar português brasileiro claro e direto. Explicar siglas e termos técnicos quando forem importantes.
+- Começar pelo impacto para o usuário e pelo resultado, não por detalhes de código.
+- Se mencionar branch, commit, build, deploy, API, componente, banco de dados ou erro de console, explicar brevemente o que isso significa quando não for óbvio.
+- Separar claramente: **feito**, **testado**, **publicado** e **aguardando aprovação**. Essas palavras não são equivalentes.
+- Não despejar blocos de código, logs extensos ou listas de arquivos sem explicar por que importam. Fornecer detalhes técnicos adicionais se o usuário pedir.
+- Não usar linguagem que faça o usuário sentir que precisa aprender programação para continuar o projeto.
+- Quando precisar de uma decisão dele, formular uma pergunta objetiva e explicar a consequência de cada opção em termos do produto.
+
+### 31.4. Autonomia técnica e limites de aprovação
+
+**A IA pode executar sem pedir aprovação adicional**, desde que esteja dentro do pedido e das decisões já aprovadas:
+- Corrigir erros técnicos e regressões.
+- Ajustar código, organização interna, tipagem, testes e validações.
+- Melhorar acessibilidade, responsividade, desempenho e consistência visual sem mudar a direção aprovada.
+- Pesquisar fontes, organizar dados e corrigir informações comprovadamente erradas, registrando evidências.
+- Atualizar documentação, dependências e configurações de baixo risco quando necessário, explicando a alteração.
+- Criar commits e branches de trabalho quando isso fizer parte do fluxo seguro do repositório.
+
+**A IA deve apresentar a proposta e obter aprovação antes de:**
+- Mudar o conceito central, o público, o posicionamento ou a identidade do produto.
+- Remover funcionalidades ou dados relevantes, ou fazer alterações destrutivas/difíceis de reverter.
+- Introduzir custos recorrentes, serviços pagos, APIs pagas, infraestrutura ou dependências comerciais.
+- Adicionar login, coleta de dados pessoais, analytics invasivo, publicidade, pagamentos ou compartilhamento de dados.
+- Alterar a stack principal, arquitetura estrutural ou estratégia de armazenamento de forma significativa.
+- Publicar em produção uma mudança de grande impacto quando a autorização ainda não estiver clara.
+- Expandir substancialmente o escopo para além do que o usuário pediu.
+
+Em caso de dúvida sobre risco ou impacto, preservar o estado atual e perguntar antes de executar a parte irreversível.
+
+### 31.5. Segurança, cópias e reversibilidade
+
+- Antes de alterações amplas, migrações, exclusões ou operações difíceis de reverter, criar uma branch de trabalho e confirmar o commit-base.
+- Não sobrescrever trabalho do usuário nem descartar alterações locais/remotas que não tenham sido compreendidas.
+- Verificar o estado do Git e alterações não commitadas quando houver acesso. Alterações locais em Codespaces que ainda não foram enviadas ao GitHub não podem ser presumidas como visíveis.
+- Preferir mudanças pequenas e commits com mensagens claras.
+- Preservar dados históricos e conteúdo existente; exclusões precisam de justificativa e aprovação quando afetarem conteúdo relevante.
+- Ter um caminho de reversão: identificar o commit ou a alteração que pode ser revertida e explicar como restaurar o estado anterior.
+- Nunca expor tokens, senhas, chaves privadas, credenciais ou segredos em código, documentação, logs ou mensagens.
+- Não adicionar serviços externos ou permissões novas sem explicar a finalidade e o impacto.
+
+### 31.6. Critérios mínimos de qualidade antes da entrega
+
+A IA deve escolher verificações adequadas ao tipo de mudança e registrar o resultado real:
+
+| Tipo de mudança | Verificações esperadas |
+|---|---|
+| Código e lógica | Testes pertinentes, análise estática/tipagem quando disponível e build |
+| Interface e design | Build, navegação dos fluxos afetados, preview e inspeção visual em desktop e celular quando possível |
+| Dados históricos | Fontes rastreáveis, consistência de IDs e relações, validação de campos e testes de integridade |
+| Configuração e dependências | Compatibilidade, build, testes afetados e revisão de riscos |
+| Deploy | Estado real da implantação, URL correta, logs relevantes e confirmação de produção ou preview |
+| Documentação | Links, nomes de arquivos, instruções e estado do projeto conferidos |
+
+Se uma verificação não puder ser feita, a IA deve dizer qual, por que não foi possível e o que isso deixa sem confirmação. Um build aprovado não comprova, por si só, que a experiência visual está correta; uma alteração commitada não significa que foi publicada em produção.
+
+### 31.7. Formato do relatório ao usuário
+
+Ao encerrar uma tarefa, usar um resumo curto e compreensível:
+- **O que foi feito:** resultado em termos do produto.
+- **O que foi verificado:** testes, build, pesquisa, preview ou revisão realizados.
+- **Onde está:** branch/commit e link de preview ou produção, se existirem.
+- **O que falta:** limitações, pendências ou validações não realizadas.
+- **Precisa de você?:** somente decisões, aprovações ou ações que realmente dependam do usuário.
+
+Não dizer “está pronto” quando o trabalho estiver apenas escrito, commitado ou em preview. Descrever o estado com precisão.
+
+### 31.8. Regra de ouro
+
+**O usuário conduz a visão; a IA executa o trabalho técnico.** Não transformar o Vibe Coder em programador, não esconder limitações e não tomar decisões importantes pelo usuário. O objetivo é permitir que ele desenvolva a Alexandria pela conversa, com controle sobre o produto e confiança na execução.
+
+---
+
+## 32. Registro — protocolo Vibe Coder — 5 de novembro de 2026
+
+- **Responsável:** ChatGPT, modelo GPT-6; função de documentação e governança.
+- **Motivo:** o usuário esclareceu que conduz a Alexandria no modelo Vibe Coding e não realiza programação manual. A diretriz precisava orientar outras IAs a assumir a execução técnica e explicar o trabalho sem transferir tarefas de programação ao usuário.
+- **O que mudou:** incorporado protocolo específico para Vibe Coder, fluxo de trabalho, comunicação em linguagem simples, autonomia técnica, limites de aprovação, segurança, reversibilidade, critérios de qualidade e formato de relatório.
+- **Arquivos afetados:** DIRETRIZ_DO_PROJETO.md.
+- **Validação:** seção 31 e prompt de continuidade conferidos no arquivo atualizado. Alteração exclusivamente documental; nenhuma aplicação, dado histórico ou configuração técnica foi modificada.
+- **Commit:** será informado após a gravação e verificação no GitHub.
 - **Deploy:** não se aplica; alteração documental.
