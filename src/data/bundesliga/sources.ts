@@ -193,13 +193,6 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "documento-oficial",
     "notes": "O estatuto registra a origem no KFC Phönix e reconhece 6 de junho de 1894 como data histórica de fundação."
   },
-  {
-    "id": "rsssf-vs-dfb-konietzka-goals",
-    "severity": "divergencia",
-    "subject": "Timo Konietzka — gols na Bundesliga 1963/64",
-    "adoptedSourceId": "dfb-top-scorers-1963-64",
-    "note": "DFB Datencenter e Sportschau registram 20 gols; a linha-resumo da RSSSF registra 22. A Alexandria adota 20, com base no DFB e na confirmação da Sportschau, mantendo a divergência documentada."
-  },
   }
 ]
 
@@ -224,5 +217,12 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
     "subject": "Público total e média de público",
     "adoptedSourceId": "dfb-inaugural-season",
     "note": "O DFB publica 6.057.335 espectadores e média de 25.134 por partida. Dividindo o total por 240 jogos, obtém-se aproximadamente 25.239. A Alexandria preserva o número médio publicado pelo DFB e anota a diferença."
-  }
+  },
+  {
+    "id": "rsssf-vs-dfb-konietzka-goals",
+    "severity": "divergencia",
+    "subject": "Timo Konietzka — gols na Bundesliga 1963/64",
+    "adoptedSourceId": "dfb-top-scorers-1963-64",
+    "note": "DFB Datencenter e Sportschau registram 20 gols; a linha-resumo da RSSSF registra 22. A Alexandria adota 20, com base no DFB e na confirmação da Sportschau, mantendo a divergência documentada."
+  },
 ]
