@@ -222,7 +222,7 @@ export default function App() {
   const filteredArchive = archiveEntries.filter((entry) => {
     const matchesCategory = archiveCategory === 'todas' || entry.category === archiveCategory
     const term = archiveSearch.trim().toLocaleLowerCase('pt-BR')
-    const haystack = [entry.title, entry.country, entry.subtitle, entry.summary, entry.origin, ...entry.history].join(' ').toLocaleLowerCase('pt-BR')
+    const haystack = [entry.title, entry.country, entry.subtitle, entry.summary, entry.origin, entry.legacy, ...entry.history, ...(entry.facts ?? []).flatMap((fact) => [fact.label, fact.value])].join(' ').toLocaleLowerCase('pt-BR')
     return matchesCategory && (!term || haystack.includes(term))
   })
   const selectedMilestone = milestones.find((item) => item.year === selectedYear)
@@ -251,8 +251,9 @@ export default function App() {
           <span className="brand-name">ALEXANDRIA<span>.</span></span>
         </a>
         <nav className="main-nav" aria-label="Navegação principal">
-          <button onClick={() => openArchive('todas')}>Explorar</button>
-          <button onClick={() => openArchive('copa')}>Competições</button>
+          <button onClick={() => openArchive('liga')}>Ligas</button>
+          <button onClick={() => openArchive('copa')}>Copas</button>
+          <button onClick={() => openArchive('clube')}>Clubes</button>
           <button onClick={() => openArchive('jogador')}>Lendas</button>
           <button onClick={openTimeline}>Linha do tempo</button>
         </nav>
