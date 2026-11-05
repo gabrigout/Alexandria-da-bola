@@ -173,8 +173,17 @@ function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void })
         <svg className="atlas-map" viewBox={view.x + ' ' + view.y + ' ' + view.w + ' ' + view.h} role="group" aria-label="Mapa-múndi interativo. Selecione qualquer país ou aproxime para explorar." onWheel={onWheel} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={() => { dragRef.current = null }} onPointerCancel={() => { dragRef.current = null }}>
           <defs><pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern></defs>
           <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
+          <defs>
+            <pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern>
+            {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country, index) => <clipPath key={'clip-' + country.code + '-' + index} id={'flag-clip-' + index} clipPathUnits="userSpaceOnUse"><path d={country.d} /></clipPath>)}
+          </defs>
+          <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
+          {countries.filter((country) => country.flagCode && /^[a-z]{2}$/.test(country.flagCode)).map((country) => {
+            const index = countries.indexOf(country)
+            const [x1, y1, x2, y2] = country.bounds
+            return <image key={'country-flag-' + country.code + '-' + index} className="country-flag-fill" href={'https://flagcdn.com/w320/' + country.flagCode + '.png'} x={x1} y={y1} width={Math.max(1, x2 - x1)} height={Math.max(1, y2 - y1)} preserveAspectRatio="none" clipPath={'url(#flag-clip-' + index + ')'} />
+          })}
           {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => chooseCountry(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') chooseCountry(country) }} />)}
-          {countries.filter((country) => country.flagCode && Math.max(country.bounds[2] - country.bounds[0], country.bounds[3] - country.bounds[1]) >= view.w * .009).map((country) => <g key={'flag-' + country.code} className="atlas-country-flag" aria-hidden="true" pointerEvents="none"><rect x={country.center[0] - 13} y={country.center[1] - 9} width="26" height="18" rx="2.5" /><image href={'https://flagcdn.com/w40/' + country.flagCode + '.png'} x={country.center[0] - 11} y={country.center[1] - 7} width="22" height="14" preserveAspectRatio="xMidYMid meet" /></g>)}
         </svg>
         {loading && <div className="atlas-message">Preparando o atlas...</div>}
         {error && <div className="atlas-message atlas-error">Não foi possível carregar a cartografia. Verifique a conexão e tente novamente.</div>}
