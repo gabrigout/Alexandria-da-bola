@@ -200,7 +200,7 @@ export const bundesligaSources: BundesligaSource[] = [
     "url": "https://www.sportschau.de/live-und-ergebnisse/fussball/deutschland-bundesliga/se2585/1963-1964/statistik-torjaeger-uebersicht",
     "type": "estatistica-independente",
     "notes": "Confere os principais números da artilharia, incluindo 20 gols para Timo Konietzka; consultada em 05/11/2026."
-  }
+  },
   {
     "id": "dfb-match-meidericher-hertha-1963-09-14",
     "title": "Meidericher SV — Hertha BSC, 1:3, 4. Spieltag",
