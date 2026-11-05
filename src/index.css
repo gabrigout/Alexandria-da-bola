@@ -536,3 +536,32 @@ button { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   .atlas-shell { animation: none !important; }
 }
+
+
+/* Bandeiras como textura cartográfica: cada imagem é recortada pelo contorno do país. */
+.country-flag-fill {
+  opacity: .96;
+  filter: saturate(.92) contrast(1.06) brightness(.9);
+  pointer-events: none;
+}
+.country-shape {
+  fill: rgba(11,25,31,.16);
+  fill-opacity: 1;
+  stroke: rgba(188,220,215,.82);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.country-shape:nth-of-type(3n),
+.country-shape:nth-of-type(4n),
+.country-shape:nth-of-type(5n) { fill: rgba(11,25,31,.16); }
+.country-shape:hover, .country-shape:focus {
+  fill: rgba(117,204,205,.25);
+  stroke: #f2d59b;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px rgba(122,205,211,.78));
+}
+.country-shape.continent-active {
+  fill: rgba(183,145,88,.18);
+  stroke: #e7c58d;
+}
