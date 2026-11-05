@@ -192,6 +192,14 @@ export const bundesligaSources: BundesligaSource[] = [
     "url": "https://www.ksc.de/fileadmin/ev.ksc.de/KSC_eV_Satzung_Stand_12_11_2025.pdf",
     "type": "documento-oficial",
     "notes": "O estatuto registra a origem no KFC Phönix e reconhece 6 de junho de 1894 como data histórica de fundação."
+  },
+  {
+    "id": "rsssf-vs-dfb-konietzka-goals",
+    "severity": "divergencia",
+    "subject": "Timo Konietzka — gols na Bundesliga 1963/64",
+    "adoptedSourceId": "dfb-top-scorers-1963-64",
+    "note": "DFB Datencenter e Sportschau registram 20 gols; a linha-resumo da RSSSF registra 22. A Alexandria adota 20, com base no DFB e na confirmação da Sportschau, mantendo a divergência documentada."
+  },
   }
 ]
 

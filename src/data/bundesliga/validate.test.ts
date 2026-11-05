@@ -42,6 +42,22 @@ describe('validação do acervo Bundesliga', () => {
     expect(inauguralSeason.topScorers[49]).toMatchObject({ playerName: 'Alfred Heiß', goals: 6 })
   })
 
+  it('mantém a artilharia sincronizada com os cadastros individuais', () => {
+    expect(inauguralSeason.topScorers).toHaveLength(50)
+    for (const scorer of inauguralSeason.topScorers) {
+      const player = bundesligaPlayers.find((entry) => entry.id === scorer.playerId)
+      expect(player, `cadastro ausente: ${scorer.playerName}`).toBeDefined()
+      expect(player?.name).toBe(scorer.playerName)
+      expect(player?.clubs.some((club) => club.clubId === scorer.clubId)).toBe(true)
+      const stats = player?.seasonStats.find((entry) =>
+        entry.seasonId === inauguralSeason.id &&
+        entry.competitionId === inauguralSeason.competitionId,
+      )
+      expect(stats?.goals).toBe(scorer.goals)
+      expect(stats?.penalties ?? 0).toBe(scorer.penalties)
+    }
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
