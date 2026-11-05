@@ -351,3 +351,24 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Decisões de escopo:** este é um primeiro protótipo navegável da entrada; não representa a conclusão do acervo, da pesquisa histórica, das páginas de competições, clubes, seleções ou jogadores.
 - **Validação inicial:** alterações gravadas na branch \`main\` por commits GitHub. Não foi executado build local, teste automatizado ou teste visual em dispositivo físico. A verificação de status da Vercel retornou **success** para o commit `b006210`; isso confirma o pipeline associado ao commit, mas não substitui a inspeção visual da página no iPhone e no desktop.
 - **Próxima etapa:** validar a tela em iPhone e desktop; ajustar escala/posição do globo e composição do salão; conferir o carregamento da textura e consumo de GPU; depois desenhar a experiência completa de continente e país com dados históricos verificados.
+
+
+---
+
+## 13. Nova direção do mapa — 5 de novembro de 2026
+
+- **Pedido do usuário:** o globo estava realista demais e girava; substituir por um mapa-múndi aberto, plano, com continentes corretamente representados e seleção direta de países quando houver zoom.
+- **Decisão visual:** retirar a esfera 3D e apresentar um atlas plano, de aparência cartográfica/editorial, dentro do salão clássico. O mapa aberto deve ser o foco visual, sem rotação automática.
+- **Implementação em src/App.tsx:**
+  - Removido o componente Three.js do globo, inclusive texturas, relevo, nuvens, atmosfera e animação de rotação.
+  - Adicionado mapa-múndi SVG a partir de GeoJSON público do Natural Earth, com geometrias por país, fronteiras nacionais e projeção equiretangular.
+  - Cada país é uma forma SVG independente e clicável; ao selecionar, o mapa aproxima a região e abre o painel do país.
+  - Adicionados controles de aproximar, afastar, voltar ao mundo inteiro, arrasto para mover e filtros rápidos por continente.
+  - O painel lateral recebe o nome do país e a hierarquia Mundo → Continente → País.
+- **Implementação em src/index.css:** estilo de atlas antigo, cores discretas para países, contornos dourados, controles cartográficos, responsividade para celular e área de mapa com proporção 2:1.
+- **Fonte cartográfica:** https://github.com/nvkelso/natural-earth-vector (arquivo GeoJSON ne_110m_admin_0_countries.geojson). A geometria é carregada do repositório externo em tempo de execução; é necessária conexão à internet para o mapa detalhado aparecer. Não foi criada cópia local dos dados.
+- **Limitações conhecidas:** escala Natural Earth 1:110m é adequada para visão mundial e seleção geral, mas não oferece fronteiras detalhadas de municípios ou ilhas muito pequenas. A projeção equiretangular distorce áreas em latitudes elevadas. O catálogo de países/continentes é navegação cartográfica, não conteúdo histórico nacional já preenchido.
+- **Arquivos afetados:** src/App.tsx, src/index.css, ANDAMENTO_DO_PROJETO_ALEXANDRIA.md.
+- **Commits desta etapa:** 406cc61 (atlas e seleção de países), 584a171 (estilo do atlas), 1d8c583 (aproximação automática ao selecionar país).
+- **Validação:** código gravado na branch main. Não foi executado build TypeScript/Vite nem teste visual em navegador ou iPhone nesta etapa. O estado de deploy da Vercel precisa ser consultado após os commits; não declarar publicação confirmada sem esse resultado.
+- **Próximos passos:** validar o mapa em iPhone e desktop; confirmar se o endpoint GeoJSON responde com CORS; verificar nomes e classificação dos países; testar zoom/arrasto e seleção em países pequenos; se o carregamento remoto for instável, incorporar o GeoJSON ao projeto localmente e registrar a licença/atribuição da fonte.
