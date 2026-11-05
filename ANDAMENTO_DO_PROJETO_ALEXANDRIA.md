@@ -406,3 +406,22 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Validação:** gravação dos dois arquivos de código confirmada no GitHub, branch `main`. Não foi executado `npm run build`, verificação TypeScript, teste automatizado nem inspeção visual em navegador/iPhone nesta etapa. Portanto, a implementação está registrada no repositório, mas ainda não está tecnicamente validada.
 - **Deploy:** verificar o estado da Vercel para o commit de documentação após este registro; não presumir publicação até status de sucesso.
 - **Próximos testes:** conferir legibilidade e colisão de bandeiras na Europa/Caribe; validar códigos ISO especiais; confirmar carregamento FlagCDN e GeoJSON; observar a animação e desempenho em iPhone.
+
+
+---
+
+## 16. Mapa-múndi preenchido pelas bandeiras nacionais — 5 de novembro de 2026
+
+- **Ajuste de direção visual solicitado pelo usuário:** em vez de bandeiras pequenas suspensas sobre os países, cada território deve ser preenchido pela imagem de sua própria bandeira, respeitando seu contorno geográfico, conforme a referência visual enviada.
+- **Implementação em `src/App.tsx`:**
+  - Cada país com código ISO de duas letras válido recebe uma imagem de bandeira como textura.
+  - A imagem é dimensionada para a caixa geográfica do país e recortada por um `clipPath` SVG com a geometria real do território.
+  - O recorte acompanha a projeção, zoom e deslocamento do mapa; a camada de contorno permanece por cima para manter fronteiras e seleção interativa.
+  - A camada antiga de pequenos marcadores de bandeira foi removida.
+  - Países/territórios sem código ISO de duas letras válido podem continuar sem bandeira; isso inclui alguns casos especiais do conjunto cartográfico.
+- **Implementação em `src/index.css`:** textura das bandeiras com contraste e saturação ajustados; fronteiras e realce de seleção mantêm o aspecto tecnológico do atlas.
+- **Arquivos alterados nesta etapa:** `src/App.tsx`, `src/index.css`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Fonte externa das bandeiras:** FlagCDN (`https://flagcdn.com/w320/{código}.png`); carregamento depende de conexão à internet. A cartografia continua vindo do conjunto Natural Earth já utilizado.
+- **Limitações conhecidas:** a imagem da bandeira é esticada para preencher a caixa delimitadora do país antes do recorte, portanto a proporção dos símbolos pode variar e territórios multipartes muito dispersos podem apresentar textura esticada. Países pequenos podem ter baixa definição no panorama mundial. Países sem código ISO válido não são preenchidos.
+- **Validação:** gravações confirmadas na branch `main`. Não foi executado build, checagem TypeScript ou teste visual real em navegador/iPhone nesta etapa. É necessário conferir carregamento das imagens, recortes em países multipartes e desempenho com muitas imagens SVG.
+- **Deploy:** verificar a Vercel para o commit documental após este registro. Não declarar publicação concluída enquanto o estado não for `success`.
