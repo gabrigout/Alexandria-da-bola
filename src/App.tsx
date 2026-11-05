@@ -3,6 +3,7 @@ import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
   Compass, Globe2, Search, Trophy, Users, X, ZoomIn, ZoomOut, RotateCcw,
 } from 'lucide-react'
+import { archiveEntries, categoryLabels, type ArchiveCategory, type ArchiveEntry } from './data/archive'
 
 type Continent = {
   id: string
@@ -214,6 +215,16 @@ export default function App() {
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
   const [selectedYear, setSelectedYear] = useState<number | null>(null)
   const [query, setQuery] = useState('')
+  const [archiveCategory, setArchiveCategory] = useState<ArchiveCategory | 'todas'>('todas')
+  const [archiveSearch, setArchiveSearch] = useState('')
+  const [selectedArchiveId, setSelectedArchiveId] = useState<string | null>(null)
+  const selectedArchive = archiveEntries.find((entry) => entry.id === selectedArchiveId)
+  const filteredArchive = archiveEntries.filter((entry) => {
+    const matchesCategory = archiveCategory === 'todas' || entry.category === archiveCategory
+    const term = archiveSearch.trim().toLocaleLowerCase('pt-BR')
+    const haystack = [entry.title, entry.country, entry.subtitle, entry.summary, entry.origin, ...entry.history].join(' ').toLocaleLowerCase('pt-BR')
+    return matchesCategory && (!term || haystack.includes(term))
+  })
   const selectedMilestone = milestones.find((item) => item.year === selectedYear)
   const filtered = milestones.filter((item) => String(item.year).includes(query) || item.label.toLowerCase().includes(query.toLowerCase()))
 
@@ -225,6 +236,11 @@ export default function App() {
 
   const openTimeline = () => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })
   const openCollection = () => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })
+  const openArchive = (category: ArchiveCategory | 'todas' = 'todas') => {
+    setArchiveCategory(category)
+    document.getElementById('archive-catalog')?.scrollIntoView({ behavior: 'smooth' })
+  }
+  const relatedEntries = (entry: ArchiveEntry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
 
   return (
     <main className="site-shell">
@@ -235,12 +251,12 @@ export default function App() {
           <span className="brand-name">ALEXANDRIA<span>.</span></span>
         </a>
         <nav className="main-nav" aria-label="Navegação principal">
-          <button onClick={openCollection}>Explorar</button>
-          <button onClick={openCollection}>Competições</button>
-          <button onClick={openCollection}>Lendas</button>
+          <button onClick={() => openArchive('todas')}>Explorar</button>
+          <button onClick={() => openArchive('copa')}>Competições</button>
+          <button onClick={() => openArchive('jogador')}>Lendas</button>
           <button onClick={openTimeline}>Linha do tempo</button>
         </nav>
-        <button className="menu-button" onClick={openCollection}>
+        <button className="menu-button" onClick={() => openArchive('todas')}>
           <BookOpen size={15} strokeWidth={1.6} /> <span>Explorar acervo</span>
         </button>
       </header>
@@ -288,7 +304,7 @@ export default function App() {
                   <span><Users size={14} /> Clubes, seleções e lendas</span>
                   <span><BookOpen size={14} /> História e partidas</span>
                 </div>
-                <button className="panel-action" onClick={openCollection}>Ver estrutura do acervo <ArrowUpRight size={14} /></button>
+                <button className="panel-action" onClick={() => openArchive('todas')}>Ver estrutura do acervo <ArrowUpRight size={14} /></button>
               </>
             ) : (
               <>
@@ -317,18 +333,61 @@ export default function App() {
           <p>Do panorama mundial aos detalhes<br />que fizeram o futebol ser o que é.</p>
         </div>
         <div className="collection-grid">
-          <button className="collection-card card-world" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <button className="collection-card card-world" onClick={() => openArchive('clube')}>
             <Globe2 size={20} /><span className="card-number">01 / MUNDO</span><strong>Países e continentes</strong><small>Explore a geografia do futebol</small><ArrowUpRight size={16} />
           </button>
-          <button className="collection-card" onClick={openTimeline}>
+          <button className="collection-card" onClick={() => openArchive('copa')}>
             <Trophy size={20} /><span className="card-number">02 / COMPETIÇÕES</span><strong>Torneios e títulos</strong><small>As disputas que marcaram épocas</small><ArrowUpRight size={16} />
           </button>
-          <button className="collection-card" onClick={openTimeline}>
+          <button className="collection-card" onClick={() => openArchive('jogador')}>
             <Users size={20} /><span className="card-number">03 / PERSONAGENS</span><strong>Lendas do jogo</strong><small>Jogadores, técnicos e protagonistas</small><ArrowUpRight size={16} />
           </button>
           <button className="collection-card" onClick={openTimeline}>
             <CalendarDays size={20} /><span className="card-number">04 / TEMPO</span><strong>Linha do tempo</strong><small>Momentos que mudaram o futebol</small><ArrowUpRight size={16} />
           </button>
+        </div>
+      </section>
+
+      <section className="archive-catalog-section" id="archive-catalog">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow"><span className="eyebrow-line" /> ACERVO HISTÓRICO EM EXPANSÃO</div>
+            <h2>O jogo por trás<br />das <em>histórias.</em></h2>
+          </div>
+          <p>Competições, instituições e personagens<br />conectados por suas trajetórias.</p>
+        </div>
+        <div className="archive-catalog-intro">
+          <div><strong>{archiveEntries.length}</strong><span>REGISTROS INICIAIS</span></div>
+          <p>Esta primeira coleção reúne histórias pesquisadas. Abra um registro para conhecer sua origem, marcos históricos, legado e conexões com outras páginas do acervo.</p>
+        </div>
+        <div className="archive-catalog-tools">
+          <div className="archive-category-tabs" aria-label="Filtrar acervo por categoria">
+            {(['todas', 'liga', 'copa', 'clube', 'jogador'] as const).map((category) => (
+              <button key={category} className={archiveCategory === category ? 'active' : ''} onClick={() => setArchiveCategory(category)}>
+                {categoryLabels[category]}
+                <span>{category === 'todas' ? archiveEntries.length : archiveEntries.filter((entry) => entry.category === category).length}</span>
+              </button>
+            ))}
+          </div>
+          <label className="archive-catalog-search">
+            <Search size={16} />
+            <input value={archiveSearch} onChange={(event) => setArchiveSearch(event.target.value)} placeholder="Buscar liga, copa, clube ou jogador..." />
+            {archiveSearch && <button onClick={() => setArchiveSearch('')} aria-label="Limpar busca"><X size={14} /></button>}
+          </label>
+        </div>
+        <div className="archive-entry-grid">
+          {filteredArchive.map((entry) => (
+            <button key={entry.id} className="archive-entry-card" onClick={() => setSelectedArchiveId(entry.id)}>
+              <div className="archive-entry-meta">
+                <span>{categoryLabels[entry.category]}</span><span>{entry.year}</span>
+              </div>
+              <strong>{entry.title}</strong>
+              <small>{entry.country}</small>
+              <p>{entry.summary}</p>
+              <span className="archive-entry-open">ABRIR REGISTRO <ArrowUpRight size={13} /></span>
+            </button>
+          ))}
+          {!filteredArchive.length && <div className="archive-empty">Nenhum registro encontrado. Tente outro termo ou categoria.</div>}
         </div>
       </section>
 
@@ -361,6 +420,48 @@ export default function App() {
           </div>
         )}
       </section>
+
+      {selectedArchive && (
+        <div className="record-overlay archive-detail-overlay" role="dialog" aria-modal="true" aria-label={'Registro: ' + selectedArchive.title} onClick={() => setSelectedArchiveId(null)}>
+          <div className="record-panel archive-detail-panel" onClick={(event) => event.stopPropagation()}>
+            <button className="close-record" onClick={() => setSelectedArchiveId(null)} aria-label="Fechar registro"><X size={18} /></button>
+            <div className="eyebrow"><span className="eyebrow-line" /> {categoryLabels[selectedArchive.category].toUpperCase()} · {selectedArchive.country.toUpperCase()}</div>
+            <div className="record-year">{selectedArchive.year}</div>
+            <h2>{selectedArchive.title}</h2>
+            <p className="archive-detail-subtitle">{selectedArchive.subtitle}</p>
+            <p>{selectedArchive.summary}</p>
+            <div className="archive-detail-block">
+              <h3>Origem e criação</h3>
+              <p>{selectedArchive.origin}</p>
+            </div>
+            <div className="archive-detail-block">
+              <h3>Marcos da história</h3>
+              <ol>{selectedArchive.history.map((item) => <li key={item}>{item}</li>)}</ol>
+            </div>
+            <div className="archive-detail-block">
+              <h3>Legado</h3>
+              <p>{selectedArchive.legacy}</p>
+            </div>
+            <div className="archive-detail-block">
+              <h3>Conexões no acervo</h3>
+              <div className="archive-related-list">
+                {relatedEntries(selectedArchive).map((entry) => (
+                  <button key={entry.id} onClick={() => setSelectedArchiveId(entry.id)}>
+                    <span>{categoryLabels[entry.category]}</span><strong>{entry.title}</strong><ChevronRight size={14} />
+                  </button>
+                ))}
+                {!relatedEntries(selectedArchive).length && <p>As conexões deste registro serão ampliadas em novas pesquisas.</p>}
+              </div>
+            </div>
+            <div className="archive-source">
+              <span>FONTE DE PESQUISA</span>
+              <a href={selectedArchive.sourceUrl} target="_blank" rel="noreferrer">{selectedArchive.sourceLabel} <ArrowUpRight size={13} /></a>
+              <small>Registro inicial pesquisado. Estatísticas, temporadas e elencos serão adicionados com referências específicas.</small>
+            </div>
+            <button className="back-button" onClick={() => setSelectedArchiveId(null)}><ArrowLeft size={15} /> Voltar ao acervo</button>
+          </div>
+        </div>
+      )}
 
       {selectedYear !== null && (
         <div className="record-overlay" role="dialog" aria-modal="true" aria-label={`Registro de ${selectedYear}`} onClick={() => setSelectedYear(null)}>
