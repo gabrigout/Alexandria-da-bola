@@ -44,7 +44,7 @@ npm run preview
 
 ## Estado atual
 
-**Protótipo visual da nova entrada em implementação.** O globo usa uma textura terrestre carregada do catálogo de exemplos do Three.js; caso a textura externa não carregue, é exibido um mapa procedural de contingência. A identificação de continentes é aproximada e serve para demonstrar a interação, não como fronteira cartográfica precisa. A lista de países e a navegação do acervo ainda são demonstrativas.
+**Primeiro protótipo visual da nova entrada incorporado ao código; validação pendente.** O globo usa uma textura terrestre carregada do catálogo de exemplos do Three.js; caso a textura externa não carregue, é exibido um mapa procedural de contingência. A identificação de continentes é aproximada e serve para demonstrar a interação, não como fronteira cartográfica precisa. A lista de países e a navegação do acervo ainda são demonstrativas.
 
 Os registros históricos na linha do tempo continuam sendo uma amostra inicial, não um catálogo completo. A expansão do acervo deverá usar fontes verificáveis e diferenciar ano civil de temporada esportiva (por exemplo, 2002 e 2001/02). Dados não confirmados ou indisponíveis não devem ser inventados.
 
