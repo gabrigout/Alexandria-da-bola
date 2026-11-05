@@ -316,7 +316,7 @@ Toda mudança incorporada ao projeto deve gerar uma nova entrada no histórico. 
 - **Decisões relacionadas:** o globo é o protagonista visual e permanece suspenso, sem pedestal. A seleção geográfica por limites aproximados e a lista de países são apenas demonstrativas; ainda não existe acervo nacional integrado.
 - **Validação:** leitura prévia dos arquivos atuais e confirmação de gravação dos commits no GitHub. Não foi executado `npm run build`, teste automatizado ou teste visual em dispositivo físico. A execução de workflows do GitHub não retornou workflows associados ao commit consultado. O site de produção não pôde ser confirmado nesta etapa.
 - **Commits de código/documentação:** `9fb7204` (App inicial), `f4bec98` (CSS), `44ff97c` (metadados), `99989fb` (README), `ff2cfb9` (textura terrestre), `ef10ebb` (relevo e nuvens), `db76632` (estado do README).
-- **Deploy:** a verificação de status do commit `db76632` retornou Vercel **pending** no momento da consulta. A publicação final ainda não foi confirmada; não afirmar que o novo protótipo já está publicado.
+- **Deploy:** Vercel retornou status **success** para o commit `b006210` na branch `main`. A etapa de deploy reportada pela Vercel concluiu; a inspeção visual final do site publicado ainda não foi feita.
 
 
 ---
@@ -349,5 +349,5 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Hierarquia demonstrativa:** Mundo → Continente → País. A seleção de país mostra categorias previstas para o acervo, mas ainda não abre páginas nacionais nem contém base de dados histórica completa.
 - **Conteúdo preservado/adaptado:** linha do tempo de marcos históricos mantida e reorganizada como seção secundária, com painel de registro.
 - **Decisões de escopo:** este é um primeiro protótipo navegável da entrada; não representa a conclusão do acervo, da pesquisa histórica, das páginas de competições, clubes, seleções ou jogadores.
-- **Validação:** alterações gravadas na branch \`main\` por commits GitHub. Não foi executado build, teste automatizado, teste visual em dispositivo físico ou verificação do deploy nesta etapa. Não afirmar que o deploy de produção já foi atualizado até conferir a Vercel.
+- **Validação inicial:** alterações gravadas na branch \`main\` por commits GitHub. Não foi executado build local, teste automatizado ou teste visual em dispositivo físico. A verificação de status da Vercel retornou **success** para o commit `b006210`; isso confirma o pipeline associado ao commit, mas não substitui a inspeção visual da página no iPhone e no desktop.
 - **Próxima etapa:** validar a tela em iPhone e desktop; ajustar escala/posição do globo e composição do salão; conferir o carregamento da textura e consumo de GPU; depois desenhar a experiência completa de continente e país com dados históricos verificados.
