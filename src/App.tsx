@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type WheelEvent as ReactWheelEvent } from 'react'
-import * as THREE from 'three'
 import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
   Compass, Globe2, Search, Trophy, Users, X, ZoomIn, ZoomOut, RotateCcw,
