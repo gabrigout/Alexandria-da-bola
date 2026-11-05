@@ -384,3 +384,25 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commit:** `82f9533`.
 - **Validação:** alteração registrada na branch `main`. Build e teste visual ainda não executados; verificar especialmente nomes de territórios com códigos ISO ausentes ou especiais.
 - **Regra para próximas alterações:** textos, menus, botões, mensagens, nomes de países/continentes e conteúdo editorial devem ser escritos em português brasileiro. Manter nomes oficiais próprios quando não houver tradução consagrada; não deixar rótulos em inglês na interface.
+
+
+---
+
+## 15. Bandeiras nacionais e atlas tecnológico flutuante — 5 de novembro de 2026
+
+- **Pedido do usuário:** exibir a bandeira de cada país sobre sua região correspondente e transformar o mapa em uma peça mais tecnológica e visualmente flutuante.
+- **O que mudou em `src/App.tsx`:**
+  - Cada país passou a guardar o código ISO de duas letras e o centro aproximado de sua caixa geográfica.
+  - Bandeiras são sobrepostas às geometrias do mapa em coordenadas cartográficas, acompanhando zoom e deslocamento.
+  - Bandeiras são obtidas em tempo de execução pelo serviço FlagCDN (`https://flagcdn.com/w40/{código}.png`); territórios sem código ISO de duas letras válido não recebem imagem.
+  - Para evitar excesso de elementos na visão mundial, países muito pequenos só exibem a bandeira quando o usuário aproxima o mapa. O ponto de posicionamento é o centro da caixa delimitadora, não um centroide geográfico exato.
+  - Texto de apresentação atualizado para falar em mapa, não globo.
+- **O que mudou em `src/index.css`:**
+  - Superfície cartográfica com aparência de painel holográfico, brilho azul-esverdeado, contornos luminosos, sombra projetada e reflexo sutil.
+  - Movimento vertical muito discreto para transmitir suspensão, sem girar o mapa.
+  - Ajustes para telas pequenas e respeito à preferência do sistema por movimento reduzido.
+- **Arquivos afetados:** `src/App.tsx`, `src/index.css`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Fontes externas em tempo de execução:** geometrias Natural Earth já usadas anteriormente; bandeiras fornecidas pelo FlagCDN. Ambas dependem de conexão à internet. A disponibilidade/CORS das imagens de bandeiras ainda precisa ser observada no navegador real.
+- **Validação:** gravação dos dois arquivos de código confirmada no GitHub, branch `main`. Não foi executado `npm run build`, verificação TypeScript, teste automatizado nem inspeção visual em navegador/iPhone nesta etapa. Portanto, a implementação está registrada no repositório, mas ainda não está tecnicamente validada.
+- **Deploy:** verificar o estado da Vercel para o commit de documentação após este registro; não presumir publicação até status de sucesso.
+- **Próximos testes:** conferir legibilidade e colisão de bandeiras na Europa/Caribe; validar códigos ISO especiais; confirmar carregamento FlagCDN e GeoJSON; observar a animação e desempenho em iPhone.
