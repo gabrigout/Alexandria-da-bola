@@ -1,5 +1,5 @@
-import type { BundesligaPlayer[] } from './types'
-export const bundesligaPlayers=[
+import type { BundesligaPlayer } from './types'
+export const bundesligaPlayers: BundesligaPlayer[] = [
   {
     "id": "uwe-seeler",
     "name": "Uwe Seeler",
