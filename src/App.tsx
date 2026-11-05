@@ -87,12 +87,12 @@ function countryNameInPortuguese(properties: CountryProperties): string {
 }
 
 function makeCountryPath(geometry: CountryGeometry): { d: string; bounds: [number, number, number, number]; center: [number, number] } {
-  const polygons = geometry.type === 'Polygon'
+  const polygons: Position[][][] = geometry.type === 'Polygon'
     ? [geometry.coordinates]
     : geometry.coordinates
   let d = ''
   let minX = MAP_W, minY = MAP_H, maxX = 0, maxY = 0
-  const project = (point) => {
+  const project = (point: Position): [number, number] => {
     const x = ((point[0] + 180) / 360) * MAP_W
     const y = ((90 - point[1]) / 180) * MAP_H
     minX = Math.min(minX, x); maxX = Math.max(maxX, x)
@@ -375,7 +375,7 @@ export default function App() {
         </div>
         <div className="archive-catalog-tools">
           <div className="archive-category-tabs" aria-label="Filtrar acervo por categoria">
-            {(['todas', 'liga', 'copa', 'clube', 'jogador']).map((category) => (
+            {(['todas', 'liga', 'copa', 'clube', 'jogador'] as ArchiveFilter[]).map((category) => (
               <button key={category} className={archiveCategory === category ? 'active' : ''} onClick={() => setArchiveCategory(category)}>
                 {categoryLabels[category]}
                 <span>{category === 'todas' ? archiveEntries.length : archiveEntries.filter((entry) => entry.category === category).length}</span>
