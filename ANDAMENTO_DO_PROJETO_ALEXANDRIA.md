@@ -459,3 +459,22 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commits desta etapa:** `7641221` (estrutura inicial de dados), `f507e93` (expansão de registros), `df2d401` (novos registros internacionais e futebol feminino), `4fd8a4a` (fatos essenciais), `263a102` (navegação/fichas), `44877d1` (exibição dos fatos), `2c3de46` e `a1ef61f` (estilos), `2c3de46` (estilo do catálogo), `a1ef61f` (fatos rápidos), além dos commits de README e documentação.
 - **Validação:** arquivos confirmados na branch `main`; IDs e referências cruzadas auditados. Não foi executado `npm run build`, teste TypeScript, teste automatizado ou inspeção visual após a implementação. O deploy depende da confirmação da Vercel para o commit documental final.
 - **Próximas expansões:** temporadas e campeões por edição; tabelas de títulos e artilheiros com fonte por temporada; elencos históricos e trajetórias completas; clubes de cada liga; copas nacionais e continentais; futebol feminino; torneios regionais e seleções.
+
+
+---
+
+## 19. Expansão do acervo — clubes europeus e novas lendas — 5 de novembro de 2026
+
+- **Objetivo:** ampliar as ligações entre ligas nacionais, clubes históricos e jogadores que marcaram suas competições.
+- **Novos registros em `src/data/archive.ts`:**
+  - Clubes: Juventus, Milan, Internazionale, Napoli, Manchester United, Arsenal e Paris Saint-Germain.
+  - Jogadores: Johan Cruyff e Cristiano Ronaldo.
+- **Novas conexões:** Serie A agora se relaciona com Juventus, Milan, Inter e Napoli; Premier League com Liverpool, Manchester United e Arsenal; Ligue 1 com Paris Saint-Germain e Ronaldinho; Eredivisie com Ajax, PSV, Feyenoord e Johan Cruyff. As fichas dos jogadores também apontam para clubes e competições relevantes em suas carreiras.
+- **Fatos rápidos adicionados:** datas de fundação, origem institucional, primeiros títulos ou marcos de trajetória, quando sustentados pelas fontes indicadas. A ficha de Cristiano Ronaldo usa o levantamento da UEFA atualizado em maio de 2026 para partidas e gols da Liga dos Campeões; números de carreira fora desse recorte não foram extrapolados.
+- **Fontes usadas:** páginas institucionais da Juventus, AC Milan, Inter, Napoli, Manchester United, Arsenal e PSG; história e arquivo do Ajax; UEFA para Johan Cruyff e Cristiano Ronaldo. Os links estão vinculados diretamente às fichas.
+- **Total atualizado:** 49 registros únicos — 7 ligas, 5 copas, 25 clubes e 12 jogadores.
+- **Auditoria estrutural:** 49 identificadores únicos; todas as referências `relatedIds` têm destino existente.
+- **Arquivos afetados nesta expansão:** `src/data/archive.ts`, `README.md`, `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`. O painel e a busca do acervo já exibem fichas, fatos e relações por meio das alterações da seção 18.
+- **Commits desta expansão:** `cb8ddeb` (novos registros e conexões), `c761599` (atalhos no menu e busca ampliada), `824ca32` (README atualizado na expansão anterior; contagem refeita nesta etapa).
+- **Validação:** conteúdo confirmado no GitHub e IDs/relações cruzadas auditados. Não foi executado `npm run build`, teste TypeScript, teste automatizado ou inspeção visual em iPhone/desktop. A publicação deve ser confirmada pelo estado da Vercel do commit documental final.
+- **Próximas expansões:** incluir mais clubes por liga e suas principais eras; criar páginas de temporadas com campeões, vice-campeões e artilheiros; aprofundar Copas nacionais e continentais; adicionar elencos históricos e trajetórias de técnicos; expandir futebol feminino e competições de seleções.
