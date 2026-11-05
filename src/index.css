@@ -874,3 +874,36 @@ button { cursor: pointer; }
   .archive-detail-panel > p { font-size: 10px; }
   .archive-related-list { grid-template-columns: 1fr; }
 }
+
+
+.archive-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 20px 0 8px;
+}
+.archive-fact {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px 13px;
+  border: 1px solid rgba(139,179,166,.2);
+  background: linear-gradient(145deg, rgba(71,126,120,.09), rgba(255,255,255,.015));
+}
+.archive-fact span {
+  color: #9bb9ad;
+  font-size: 7px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.archive-fact strong {
+  color: #e5d9c5;
+  font: 500 16px/1.3 'Cormorant Garamond', serif;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 640px) {
+  .archive-facts-grid { grid-template-columns: 1fr 1fr; gap: 6px; margin: 16px 0 6px; }
+  .archive-fact { padding: 10px; }
+  .archive-fact strong { font-size: 14px; }
+}
