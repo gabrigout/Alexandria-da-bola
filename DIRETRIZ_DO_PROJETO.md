@@ -872,5 +872,5 @@ Este quadro é uma fotografia do estado documentado em 05/11/2026. Antes de cada
 - **O que mudou:** adicionados mapa de fontes históricas e critérios de divergência; dicionário de entidades, campos e relações; regras de modelagem; quadro de concluído/em andamento/pendente; checklist de encerramento; harmonização entre fases gerais e etapas operacionais. O nome do arquivo passa a ser DIRETRIZ_DO_PROJETO.md.
 - **Arquivos afetados:** `DIRETRIZ_DO_PROJETO.md` (novo nome do documento central), `README.md` (link para a diretriz) e remoção de `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md` após a migração do conteúdo.
 - **Validação:** conteúdo anterior preservado e referências internas ao nome antigo atualizadas. A estrutura do dicionário foi confrontada com os tipos e dados atuais do módulo Bundesliga. Esta alteração é documental; não modifica a aplicação.
-- **Commits:** criação da diretriz ampliada `e743b42129473d7147a084a796a824b75ceb6c8c`; atualização do README `fa35384d3da0e301f1d8b0aaa0c639d01f330c67`; remoção do nome antigo registrada em commit subsequente.
+- **Commits:** criação da diretriz ampliada `e743b42129473d7147a084a796a824b75ceb6c8c`; atualização do README `fa35384d3da0e301f1d8b0aaa0c639d01f330c67`; remoção do arquivo com o nome antigo: `18e0792aaeda8c85331dc575081f0dc88788cd0b`.
 - **Deploy:** não se aplica; alteração documental.
