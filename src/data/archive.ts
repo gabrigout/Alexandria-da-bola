@@ -8,6 +8,7 @@ export type ArchiveEntry = {
   year: string
   subtitle: string
   summary: string
+  facts?: { label: string; value: string }[]
   origin: string
   history: string[]
   legacy: string
@@ -25,6 +26,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1959',
     subtitle: 'A disputa nacional que atravessa gerações',
+    facts: [
+      { label: 'País', value: 'Brasil' },
+      { label: 'Primeira edição reconhecida', value: '1959 — Taça Brasil' },
+      { label: 'Marco do formato moderno', value: '1971 — Campeonato Nacional de Clubes' },
+      { label: 'Pontos corridos', value: 'Adotados desde 2003' }
+    ],
     summary: 'A principal competição entre clubes do país nasceu de um processo de integração nacional. Sua história passa pela Taça Brasil, pelo Robertão e pela estrutura do campeonato nacional consolidada a partir de 1971.',
     origin: 'A Taça Brasil começou em 1959 como torneio nacional eliminatório, ligado também à classificação brasileira para a recém-criada Libertadores. Em 1967 surgiu o Torneio Roberto Gomes Pedrosa, conhecido como Robertão. A partir de 1971, o Campeonato Nacional de Clubes estabeleceu outra etapa da competição. Em 2010, a CBF reconheceu Taça Brasil e Robertão como títulos brasileiros.',
     history: [
@@ -47,6 +54,13 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Inglaterra',
     year: '1992',
     subtitle: 'A ruptura que redesenhou o futebol inglês',
+    facts: [
+      { label: 'País', value: 'Inglaterra' },
+      { label: 'Fundação formal', value: '27 de maio de 1992' },
+      { label: 'Primeira temporada', value: '1992/93' },
+      { label: 'Clubes na edição inaugural', value: '22' },
+      { label: 'Formato de 20 clubes', value: 'A partir de 1995/96' }
+    ],
     summary: 'A liga foi criada como competição independente da Football League, com autonomia comercial e um novo acordo de televisão. A temporada inaugural começou em 15 de agosto de 1992 com 22 clubes.',
     origin: 'Em 17 de julho de 1991, clubes da primeira divisão assinaram o acordo fundador. Em 20 de fevereiro de 1992, os 22 integrantes da First Division deixaram a Football League em bloco. A Premier League foi formalizada como empresa em 27 de maio daquele ano.',
     history: [
@@ -69,6 +83,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Alemanha',
     year: '1963',
     subtitle: 'A criação de uma liga nacional profissional',
+    facts: [
+      { label: 'País', value: 'Alemanha' },
+      { label: 'Primeira temporada', value: '1963/64' },
+      { label: 'Clubes inaugurais', value: '16' }
+    ],
     summary: 'A Bundesliga começou em 24 de agosto de 1963. A criação de uma divisão nacional profissional substituiu um cenário anterior em que o futebol alemão era organizado em ligas regionais.',
     origin: 'Após a Segunda Guerra Mundial, o futebol alemão continuou estruturado em competições regionais. A profissionalização e a busca por uma liga nacional levaram à escolha de 16 clubes entre 46 candidatos para a temporada inaugural de 1963/64.',
     history: [
@@ -90,6 +109,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Espanha',
     year: '1929',
     subtitle: 'O campeonato que reuniu os clubes espanhóis',
+    facts: [
+      { label: 'País', value: 'Espanha' },
+      { label: 'Primeira edição', value: '1929' },
+      { label: 'Clubes inaugurais', value: '10' },
+      { label: 'Primeiro campeão', value: 'Barcelona' }
+    ],
     summary: 'O campeonato nacional de liga nasceu em 1929, reunindo dez clubes. O Barcelona foi o primeiro campeão, em uma competição organizada após a aproximação de dois projetos de torneio.',
     origin: 'Em 1928, os clubes espanhóis chegaram a um acordo para fundir duas propostas: uma união de campeões e uma liga de clubes. Dez equipes participaram da primeira edição, disputada em 1929.',
     history: [
@@ -111,6 +136,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Mundial',
     year: '1930',
     subtitle: 'A competição entre seleções que se tornou um fenômeno global',
+    facts: [
+      { label: 'Primeira edição', value: '1930 — Uruguai' },
+      { label: 'Seleções participantes na estreia', value: '13' },
+      { label: 'Primeiro campeão', value: 'Uruguai' },
+      { label: 'Final inaugural', value: 'Uruguai 4–2 Argentina' }
+    ],
     summary: 'A edição inaugural aconteceu no Uruguai, em 1930, com 13 seleções. A final foi vencida pelos anfitriões: Uruguai 4 a 2 Argentina, em Montevidéu.',
     origin: 'A FIFA organizou um torneio próprio de seleções após décadas em que o futebol internacional se desenvolvia principalmente por amistosos e torneios regionais. O Uruguai foi escolhido como sede da primeira edição, em um contexto de prestígio esportivo e celebração do centenário de sua independência.',
     history: [
@@ -134,6 +165,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1989',
     subtitle: 'O mata-mata que conecta o futebol de todo o país',
+    facts: [
+      { label: 'País', value: 'Brasil' },
+      { label: 'Primeira edição', value: '1989' },
+      { label: 'Participantes iniciais', value: '32 clubes' },
+      { label: 'Edição de 2026', value: '126 participantes anunciados pela CBF' }
+    ],
     summary: 'Criada em 1989, a Copa do Brasil nasceu com 32 participantes e cresceu até se tornar uma competição de alcance nacional, reunindo clubes de diferentes divisões e estados.',
     origin: 'A competição foi criada para oferecer uma copa nacional em formato eliminatório e ampliar a representação de clubes de todo o território brasileiro. Seu regulamento, número de participantes e distribuição de vagas mudaram diversas vezes.',
     history: [
@@ -156,6 +193,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'América do Sul',
     year: '1960',
     subtitle: 'A principal disputa entre clubes sul-americanos',
+    facts: [
+      { label: 'Primeira edição', value: '1960' },
+      { label: 'Nome original', value: 'Copa dos Campeões da América' },
+      { label: 'Primeiro campeão', value: 'Peñarol' },
+      { label: 'Nome Libertadores', value: 'Adotado em 1965' }
+    ],
     summary: 'O torneio começou em 1960 como Copa dos Campeões da América. A primeira partida foi Peñarol 7 a 1 Jorge Wilstermann, em 19 de abril. O Peñarol também foi o primeiro campeão.',
     origin: 'A ideia de uma competição continental entre campeões nacionais ganhou forma após torneios sul-americanos anteriores. A edição inaugural reuniu campeões de associações do continente e recebeu o nome de Copa dos Campeões da América. Em 1965, o torneio passou a homenagear os libertadores da América em seu nome.',
     history: [
@@ -177,6 +220,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Europa',
     year: '1955',
     subtitle: 'Da Taça dos Clubes Campeões Europeus à era global',
+    facts: [
+      { label: 'Primeira edição', value: '1955/56 — Taça dos Clubes Campeões Europeus' },
+      { label: 'Primeiro campeão', value: 'Real Madrid' },
+      { label: 'Primeira fase de grupos', value: '1991/92' },
+      { label: 'Nome Liga dos Campeões', value: 'A partir de 1992/93' }
+    ],
     summary: 'A competição começou em 1955/56 como Taça dos Clubes Campeões Europeus. O Real Madrid venceu a primeira edição e conquistou as cinco primeiras temporadas consecutivas.',
     origin: 'A UEFA lançou uma competição continental para clubes europeus, inicialmente em formato eliminatório e com 16 equipes convidadas. A partir de 1992/93, a marca Liga dos Campeões acompanhou uma mudança de formato que introduziu a fase de grupos.',
     history: [
@@ -431,6 +480,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1940–2022',
     subtitle: 'O Rei do Futebol e a ligação entre Santos e Seleção',
+    facts: [
+      { label: 'Santos', value: '1.116 partidas e 1.091 gols (registro CBF)' },
+      { label: 'Copas do Mundo conquistadas', value: '1958, 1962 e 1970' },
+      { label: 'Libertadores', value: '1962 e 1963' },
+      { label: 'Período no Santos', value: '1956–1974' }
+    ],
     summary: 'Edson Arantes do Nascimento chegou ao Santos aos 15 anos e construiu ali a parte central de sua carreira. Pela Seleção Brasileira, conquistou as Copas do Mundo de 1958, 1962 e 1970.',
     origin: 'Nascido em Três Corações, Minas Gerais, Pelé foi levado ao Santos por Waldemar de Brito em 1956. O atacante estreou profissionalmente ainda adolescente e rapidamente se tornou protagonista do clube e da Seleção.',
     history: [
@@ -453,6 +508,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1933–1983',
     subtitle: 'O drible que virou símbolo do Botafogo e do Brasil',
+    facts: [
+      { label: 'Botafogo', value: '612 partidas e 245 gols (registro do clube)' },
+      { label: 'Período no Botafogo', value: '1953–1965' },
+      { label: 'Copas do Mundo', value: '1958 e 1962' }
+    ],
     summary: 'Manuel Francisco dos Santos, o Garrincha, jogou no Botafogo entre 1953 e 1965. Pelo clube, disputou 612 partidas e marcou 245 gols, segundo o registro oficial alvinegro.',
     origin: 'Nascido em Pau Grande, no estado do Rio de Janeiro, Garrincha chegou ao Botafogo após chamar atenção em um teste. Sua habilidade no um contra um e a capacidade de desequilibrar defesas fizeram dele um dos jogadores mais marcantes de sua geração.',
     history: [
@@ -474,6 +534,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1973–',
     subtitle: 'O goleiro-artilheiro que fez história no São Paulo',
+    facts: [
+      { label: 'São Paulo', value: '1.237 partidas e 131 gols (registro do clube consultado)' },
+      { label: 'Período no clube', value: '1990–2015' },
+      { label: 'Libertadores', value: '2005' },
+      { label: 'Mundial de Clubes', value: '2005' }
+    ],
     summary: 'Rogério Ceni defendeu o São Paulo por 25 anos, entre sua chegada em 1990 e a aposentadoria em 2015. O clube registra 1.237 partidas e 131 gols marcados pelo goleiro.',
     origin: 'Depois de iniciar a carreira no Sinop, Ceni chegou ao São Paulo ainda jovem. Tornou-se titular em 1997 e passou a cobrar faltas e pênaltis, algo incomum para um goleiro, construindo uma carreira de recordes e títulos.',
     history: [
@@ -497,6 +563,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Argentina',
     year: '1987–',
     subtitle: 'A trajetória de Barcelona à história da Liga dos Campeões',
+    facts: [
+      { label: 'Barcelona', value: 'Chegou em 2000, aos 13 anos' },
+      { label: 'Liga dos Campeões', value: '2009, 2011 e 2015 com o Barcelona' },
+      { label: 'LaLiga', value: '10 títulos com o Barcelona' }
+    ],
     summary: 'Messi chegou às categorias de base do Barcelona em 2000, aos 13 anos. Na equipe principal, participou das campanhas que conquistaram a Liga dos Campeões em 2009, 2011 e 2015.',
     origin: 'Nascido em Rosário, na Argentina, Messi mudou-se para a Espanha ainda adolescente para integrar a formação do Barcelona. Sua estreia pela equipe principal ocorreu em amistoso em 2003, e sua estreia na liga espanhola veio em 2004.',
     history: [
@@ -519,6 +590,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Argentina · Espanha',
     year: '1926–2014',
     subtitle: 'O protagonista do Real Madrid nas primeiras Copas Europeias',
+    facts: [
+      { label: 'Real Madrid', value: '1953–1964' },
+      { label: 'Taça dos Campeões Europeus', value: 'Cinco títulos consecutivos (1956–1960)' },
+      { label: 'Bola de Ouro', value: '1957 e 1959' }
+    ],
     summary: 'Di Stéfano foi uma das figuras centrais do Real Madrid que dominou o início da Taça dos Campeões Europeus. Na edição inaugural de 1955/56, marcou cinco gols pelo campeão.',
     origin: 'Atacante argentino que também representou a Espanha, Di Stéfano chegou ao Real Madrid em 1953 e se tornou referência de uma equipe que venceu as cinco primeiras edições da competição europeia.',
     history: [
@@ -630,6 +706,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Itália',
     year: '1929',
     subtitle: 'A primeira divisão nacional do futebol italiano',
+    facts: [
+      { label: 'País', value: 'Itália' },
+      { label: 'Primeiro campeonato italiano', value: '1898 — torneio de um dia' },
+      { label: 'Liga nacional em grupo único', value: '1929' },
+      { label: 'Primeiro campeão histórico', value: 'Genoa (1898)' }
+    ],
     summary: 'O campeonato italiano tem raízes em 1898, quando a FIGC foi fundada e o primeiro torneio nacional foi disputado em um único dia, vencido pelo Genoa. A liga em grupo único que deu origem à Serie A moderna começou em 1929.',
     origin: 'A FIGC foi fundada em Turim em 26 de março de 1898. Naquele mesmo ano, o primeiro campeonato foi decidido em um torneio de um dia. Em 1913 ocorreu o primeiro campeonato nacional com equipes de diferentes regiões, dividido em grupos. Em 1929, o principal nível nacional passou a ser disputado em uma liga única e recebeu o nome Serie A.',
     history: [
@@ -652,6 +734,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'França',
     year: '1932',
     subtitle: 'O campeonato nacional que abriu a era profissional francesa',
+    facts: [
+      { label: 'País', value: 'França' },
+      { label: 'Início da era profissional', value: '1932/33' },
+      { label: 'Nome original', value: 'Division Nationale' },
+      { label: 'Primeiro campeão', value: 'Olympique Lillois' }
+    ],
     summary: 'A primeira divisão profissional francesa começou em 1932–33, sob o nome Division Nationale. O Olympique Lillois conquistou o primeiro título.',
     origin: 'A liga foi criada no processo de adoção do profissionalismo no futebol francês. A primeira edição reuniu clubes divididos em grupos, com uma fase final para definir o campeão. O nome e o formato da competição mudaram ao longo das décadas; Ligue 1 é a denominação contemporânea da primeira divisão.',
     history: [
@@ -673,6 +761,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Países Baixos',
     year: '1956',
     subtitle: 'A liga que ajudou a projetar a escola neerlandesa',
+    facts: [
+      { label: 'País', value: 'Países Baixos' },
+      { label: 'Criação da liga unificada', value: '1956/57' },
+      { label: 'Clubes inaugurais', value: '18' },
+      { label: 'Primeiro jogo', value: 'Ajax 1–0 NAC' }
+    ],
     summary: 'A Eredivisie foi criada em 1956 para reunir os principais clubes neerlandeses em uma única divisão. A disputa pelo título nacional, porém, existe desde 1898, quando os campeões regionais se enfrentavam em uma fase decisiva.',
     origin: 'Antes da Eredivisie, o futebol neerlandês era organizado em distritos regionais. O primeiro campeão nacional foi o Concordia, de Roterdã, em 1898. A partir da temporada 1956/57, a divisão geográfica foi substituída por uma competição nacional de liga.',
     history: [
@@ -695,6 +789,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Mundial',
     year: '1991',
     subtitle: 'O torneio que deu palco mundial às seleções femininas',
+    facts: [
+      { label: 'Primeira edição', value: '1991 — China' },
+      { label: 'Seleções participantes na estreia', value: '12' },
+      { label: 'Primeiro campeão', value: 'Estados Unidos' },
+      { label: 'Final inaugural', value: 'Estados Unidos 2–1 Noruega' }
+    ],
     summary: 'A primeira Copa do Mundo Feminina foi disputada na China em 1991. Doze seleções participaram, e os Estados Unidos venceram a Noruega por 2 a 1 na final.',
     origin: 'A FIFA organizou a primeira edição oficial do campeonato mundial feminino em 1991, após décadas de expansão do futebol praticado por mulheres e de torneios internacionais não organizados pela entidade. A competição inaugural foi disputada em cidades chinesas e estabeleceu uma referência para as edições seguintes.',
     history: [
@@ -802,6 +902,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1986–',
     subtitle: 'A camisa 10 que redefiniu a história do futebol feminino brasileiro',
+    facts: [
+      { label: 'Gols em Copas do Mundo', value: '17 até a edição de 2023' },
+      { label: 'Edições disputadas', value: '2003, 2007, 2011, 2015, 2019 e 2023' },
+      { label: 'Melhor campanha do Brasil', value: 'Vice-campeã em 2007' }
+    ],
     summary: 'Marta Vieira da Silva é uma das maiores referências da história do futebol feminino. Até a Copa do Mundo de 2023, somava 17 gols em seis edições do torneio, recorde de gols na história da competição entre mulheres e homens.',
     origin: 'Nascida em Dois Riachos, Alagoas, Marta iniciou sua trajetória em equipes brasileiras antes de construir carreira internacional. Sua presença constante em Copas do Mundo ajudou a ampliar a visibilidade do futebol feminino brasileiro.',
     history: [
@@ -824,6 +929,13 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1980–',
     subtitle: 'O sorriso que marcou a reconstrução do Barcelona',
+    facts: [
+      { label: 'Barcelona', value: '2003–2008' },
+      { label: 'Gols pelo Barcelona', value: '98 em 207 partidas' },
+      { label: 'LaLiga', value: '2005 e 2006' },
+      { label: 'Liga dos Campeões', value: '2006' },
+      { label: 'Copa do Mundo', value: '2002' }
+    ],
     summary: 'Ronaldinho chegou ao Barcelona em 2003, aos 23 anos. Em cinco temporadas conquistou duas edições da liga espanhola e a Liga dos Campeões de 2006, tornando-se um dos protagonistas da retomada esportiva do clube.',
     origin: 'Nascido em Porto Alegre, Ronaldinho ganhou projeção no Grêmio e na Seleção Brasileira antes de jogar na França pelo Paris Saint-Germain. Sua chegada ao Barcelona em 2003 marcou o início de uma fase de reconstrução que culminou em títulos nacionais e europeus.',
     history: [
@@ -848,6 +960,12 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Brasil',
     year: '1976–',
     subtitle: 'O atacante que atravessou gerações e voltou ao topo em 2002',
+    facts: [
+      { label: 'Copas do Mundo', value: '1994 e 2002' },
+      { label: 'Final de 2002', value: 'Dois gols contra a Alemanha' },
+      { label: 'Clubes de destaque', value: 'Cruzeiro, PSV, Barcelona, Internazionale, Real Madrid, Milan e Corinthians' },
+      { label: 'Copa do Brasil', value: 'Campeão com o Corinthians em 2009' }
+    ],
     summary: 'Ronaldo Luís Nazário de Lima construiu carreira em clubes de diferentes países e conquistou duas Copas do Mundo com o Brasil, em 1994 e 2002. Na final de 2002 marcou os dois gols da vitória sobre a Alemanha.',
     origin: 'Revelado pelo Cruzeiro, Ronaldo ganhou projeção internacional ainda jovem. Passou por PSV, Barcelona, Internazionale, Real Madrid, Milan e Corinthians, entre outros clubes. Lesões graves marcaram parte de sua trajetória, especialmente antes do retorno que culminou no Mundial de 2002.',
     history: [
@@ -871,6 +989,11 @@ export const archiveEntries: ArchiveEntry[] = [
     country: 'Argentina',
     year: '1960–2020',
     subtitle: 'O capitão que conduziu a Argentina ao título de 1986',
+    facts: [
+      { label: 'Copa do Mundo', value: 'Campeão em 1986' },
+      { label: 'Quartas de final em 1986', value: 'Dois gols contra a Inglaterra' },
+      { label: 'Clubes de destaque', value: 'Argentinos Juniors, Boca Juniors, Barcelona e Napoli' }
+    ],
     summary: 'Maradona foi a principal figura da seleção argentina campeã da Copa do Mundo de 1986. Nas quartas de final contra a Inglaterra, marcou dois gols históricos: o conhecido como “Mão de Deus” e o chamado “Gol do Século”.',
     origin: 'Nascido em Lanús e criado em Villa Fiorito, na região metropolitana de Buenos Aires, Maradona surgiu no Argentinos Juniors e ganhou projeção internacional no Boca Juniors, Barcelona e Napoli. Sua carreira combinou genialidade técnica, liderança esportiva e controvérsias pessoais.',
     history: [
