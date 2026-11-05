@@ -372,3 +372,15 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Commits desta etapa:** 406cc61 (atlas e seleção de países), 584a171 (estilo do atlas), 1d8c583 (aproximação automática ao selecionar país), 1befb19 (remoção do import Three.js obsoleto), c330461 (README atualizado).
 - **Validação:** código gravado na branch main. Não foi executado build TypeScript/Vite nem teste visual em navegador ou iPhone nesta etapa. A consulta de status do commit documental `0503ce7` retornou Vercel **pending**; a conclusão do deploy mais recente ainda não foi confirmada.
 - **Próximos passos:** validar o mapa em iPhone e desktop; confirmar se o endpoint GeoJSON responde com CORS; verificar nomes e classificação dos países; testar zoom/arrasto e seleção em países pequenos; se o carregamento remoto for instável, incorporar o GeoJSON ao projeto localmente e registrar a licença/atribuição da fonte.
+
+
+---
+
+## 14. Idioma obrigatório da interface — 5 de novembro de 2026
+
+- **Decisão do usuário:** toda a experiência visível da Alexandria deve estar em português brasileiro. Não exibir nomes de países em inglês, como “Brazil”.
+- **Implementação:** os nomes dos países vindos da cartografia agora são localizados com `Intl.DisplayNames(['pt-BR'], { type: 'region' })`, usando os códigos ISO de duas letras do GeoJSON. Há fallback para nomes alternativos quando o código não é reconhecido. O rodapé em inglês foi traduzido para “A MEMÓRIA DO FUTEBOL”.
+- **Arquivo alterado:** `src/App.tsx`.
+- **Commit:** `82f9533`.
+- **Validação:** alteração registrada na branch `main`. Build e teste visual ainda não executados; verificar especialmente nomes de territórios com códigos ISO ausentes ou especiais.
+- **Regra para próximas alterações:** textos, menus, botões, mensagens, nomes de países/continentes e conteúdo editorial devem ser escritos em português brasileiro. Manter nomes oficiais próprios quando não houver tradução consagrada; não deixar rótulos em inglês na interface.
