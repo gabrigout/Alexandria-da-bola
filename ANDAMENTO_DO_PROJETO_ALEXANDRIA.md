@@ -15,6 +15,21 @@ Este arquivo é a fonte de contexto compartilhada entre o usuário, o ChatGPT e 
 
 Antes de sugerir ou executar qualquer alteração:
 
+### Identificação obrigatória da IA
+
+**Toda IA deve se identificar explicitamente no início de cada nova tarefa ou sessão de trabalho, antes de pesquisar, planejar ou alterar o projeto.** A identificação deve aparecer também no relatório final da tarefa.
+
+Use este formato:
+
+- **IA/assistente:** nome do produto ou assistente (ex.: ChatGPT, Claude, Gemini, Copilot).
+- **Modelo:** nome exato do modelo, se estiver disponível na interface ou no ambiente. Nunca invente uma versão; se não souber, escreva "não informado".
+- **Responsabilidade nesta tarefa:** papel que vai desempenhar (ex.: pesquisador histórico, desenvolvedor frontend, revisor de dados, responsável por testes).
+- **Escopo autorizado:** o que pretende investigar ou modificar nesta tarefa.
+
+A IA deve se identificar novamente quando iniciar uma nova tarefa, mesmo que já tenha se identificado em uma tarefa anterior. Não precisa repetir a identificação em todas as mensagens da mesma tarefa, mas deve mantê-la no registro de alterações. Se estiver apenas respondendo uma dúvida sem trabalhar no projeto, a identificação não é necessária.
+
+### Leitura e diagnóstico obrigatórios
+
 1. Leia este documento inteiro.
 2. Consulte o repositório e confira os arquivos atuais. Este documento é um histórico de continuidade, não substitui a verificação do estado real do código.
 3. Leia o README e os arquivos diretamente relacionados à tarefa.
@@ -39,6 +54,8 @@ Antes de sugerir ou executar qualquer alteração:
 ### Prompt de continuidade para copiar em outra IA
 
 > Você está participando do desenvolvimento do projeto Alexandria — A Biblioteca do Futebol. Antes de fazer qualquer coisa, leia integralmente o arquivo `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md` na raiz do repositório GitHub `gabrigout/Alexandria-da-bola`. Ele é o documento central de continuidade e contém o contexto, as decisões, as fases, o estado atual e as regras de colaboração.
+>
+> **Antes de qualquer ação, identifique-se:** informe o nome do assistente/IA, o modelo exato quando disponível (sem inventar versões), a função que exercerá e o escopo da tarefa. Repita essa identificação no relatório final e no registro de alterações. Se o modelo não estiver visível, escreva "não informado".
 >
 > Confira também o código atual antes de trabalhar. Não suponha que o documento substitui a leitura dos arquivos. Respeite as decisões aprovadas e não transforme ideias provisórias em decisões sem autorização do usuário.
 >
@@ -281,7 +298,7 @@ Toda mudança incorporada ao projeto deve gerar uma nova entrada no histórico. 
 ```markdown
 ### AAAA-MM-DD — Título objetivo da mudança
 
-- **Responsável:** ChatGPT / Claude / Gemini / outra IA / usuário / colaborador
+- **Responsável:** nome da IA/assistente ou pessoa; informar também o modelo exato quando disponível (não inventar versões).
 - **Tipo:** conceito / design / código / conteúdo / dados / arquitetura / infraestrutura / publicação
 - **Motivo:** por que a mudança foi feita.
 - **O que mudou:** descrição objetiva do antes e depois.
@@ -667,3 +684,21 @@ Quando uma nova sessão ou outra IA assumir o trabalho:
 - **Limites:** a etapa adiciona duas partidas, não representa o cadastro integral da 2ª rodada nem das 240 partidas da temporada. Não foram inferidos dados ausentes. A prévia foi compilada e publicada com sucesso; não houve inspeção visual manual em dispositivos reais. O deployment READY não deve ser confundido com publicação em produção.
 - **Próxima etapa sugerida:** continuar a temporada em outro lote pequeno, seguindo a ordem cronológica e consultando as fichas individuais do DFB; registrar somente partidas cujos dados e cronologia possam ser sustentados por fonte identificável.
 - **Commit de código validado:** `42715d524caa6ff40146b893057b36fa17c7e019`. O commit deste registro documental será acrescentado após sua gravação.
+
+
+---
+
+## 29. Protocolo obrigatório de identificação e passagem de trabalho entre IAs — 5 de novembro de 2026
+
+- **Motivo:** o usuário determinou que qualquer IA que trabalhe na Alexandria da Bola deve se identificar e seguir a diretriz/documento antes de fazer qualquer intervenção, para que a continuidade não dependa de memória implícita ou de explicações repetidas.
+- **Identificação no início da tarefa:** antes de pesquisar, planejar ou modificar o projeto, a IA deve declarar o nome do assistente/produto, o modelo exato quando disponível, sua função naquela tarefa e o escopo que pretende executar. Se o modelo não estiver visível, deve escrever "não informado"; é proibido inventar nome ou versão.
+- **Identificação no encerramento:** o relatório final deve repetir quem executou o trabalho e o modelo utilizado quando conhecido. O campo Responsável do histórico deve registrar a IA/pessoa e o modelo quando disponível.
+- **Quando se aplica:** obrigatória no início de cada nova tarefa ou sessão de trabalho no projeto, inclusive pesquisa, criação, edição, remoção, correção, adição de dados, alteração de interface, configuração, testes, deploy e documentação. Não é necessário repetir em todas as mensagens da mesma tarefa nem em respostas casuais que não envolvam trabalho no projeto.
+- **Ordem obrigatória de trabalho:** (1) identificar-se; (2) ler integralmente este documento; (3) ler o README e arquivos relevantes; (4) verificar branch, estado remoto, commits e alterações atuais disponíveis; (5) apresentar diagnóstico e plano; (6) executar apenas o escopo autorizado, em lotes pequenos; (7) validar o resultado; (8) atualizar este documento; (9) informar o estado de commit, push, preview e produção sem confundir esses estados.
+- **Comando de continuidade para o usuário:** ao iniciar uma nova IA, o usuário pode enviar: "Leia integralmente a diretriz e o arquivo ANDAMENTO_DO_PROJETO_ALEXANDRIA.md antes de qualquer ação. Identifique-se com nome da IA, modelo (se disponível), função e escopo. Confira o estado atual do repositório, apresente um diagnóstico e um plano antes de alterar qualquer coisa. Toda mudança feita deve ser validada e registrada neste documento. Não invente informações nem declare como concluído o que não foi verificado."
+- **Regra de transparência:** a IA deve distinguir o que apenas leu, o que alterou, o que testou, o que foi commitado/enviado ao GitHub, o que foi publicado em preview e o que chegou à produção. Se não tiver acesso a alguma etapa, deve declarar a limitação.
+- **Validação desta atualização:** conteúdo anterior preservado; foram acrescentadas regras explícitas de identificação no início/fim da tarefa, o prompt copiável foi atualizado e o modelo de histórico passou a solicitar identificação mais precisa. Nenhum arquivo de aplicação foi alterado nesta atualização.
+- **Responsável:** ChatGPT (modelo GPT-6), atuando como responsável pela documentação e governança do projeto.
+- **Arquivos afetados:** `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`.
+- **Commit/PR:** será informado após a gravação no GitHub.
+- **Deploy:** não se aplica; atualização documental.
