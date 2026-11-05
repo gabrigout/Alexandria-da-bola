@@ -154,7 +154,7 @@ function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) 
 
     const textureLoader = new THREE.TextureLoader()
     textureLoader.load(
-      'https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg',
+      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg',
       (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace
         texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4)
