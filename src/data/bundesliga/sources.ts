@@ -234,6 +234,24 @@ export const bundesligaSources: BundesligaSource[] = [
     "notes": "Identifica Helmut Rahn como o primeiro jogador expulso da Bundesliga, na quarta rodada de 14/09/1963."
   },
 
+
+  {
+    "id": "dfb-match-dortmund-1860-1963-08-31",
+    "title": "Borussia Dortmund — TSV 1860 München, 3:3, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/borussia-dortmund-tsv-1860-muenchen-187981",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion Rote Erde, público de 23.000, árbitro Edgar Deuschel, placar e cronologia dos seis gols."
+  },
+  {
+    "id": "dfb-match-hamburg-saarbruecken-1963-08-31",
+    "title": "Hamburger SV — 1. FC Saarbrücken, 4:2, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/hamburger-sv-1-fc-saarbruecken-187982",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Volksparkstadion, público de 32.000, árbitro Günther Baumgärtel, placar e cronologia dos seis gols."
+  },
+
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
