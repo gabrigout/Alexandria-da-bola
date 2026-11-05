@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import {
   ArrowDown, ArrowLeft, ArrowUpRight, BookOpen, CalendarDays, ChevronRight,
-  Compass, Globe2, Search, Trophy, Users, X,
+  Compass, Globe2, Search, Trophy, Users, X, ZoomIn, ZoomOut, RotateCcw,
 } from 'lucide-react'
 
 type Continent = {
@@ -34,314 +34,146 @@ const milestones = [
   { year: 2022, label: 'Uma final para a história', note: 'A Argentina conquista a Copa do Mundo do Catar em uma final memorável.' },
 ]
 
-function createFallbackEarthTexture() {
-  const canvas = document.createElement('canvas')
-  canvas.width = 2048
-  canvas.height = 1024
-  const context = canvas.getContext('2d')
-  if (!context) return new THREE.Texture()
+type GeoPosition = [number, number, ...number[]]
+type GeoGeometry = { type: 'Polygon' | 'MultiPolygon'; coordinates: GeoPosition[][] | GeoPosition[][][] }
+type GeoFeature = { type: 'Feature'; properties: Record<string, string | number | null>; geometry: GeoGeometry }
+type GeoData = { type: 'FeatureCollection'; features: GeoFeature[] }
+type MapCountry = { name: string; continent: string; code: string; d: string; bounds: [number, number, number, number] }
 
-  const gradient = context.createLinearGradient(0, 0, 0, canvas.height)
-  gradient.addColorStop(0, '#153e5d')
-  gradient.addColorStop(0.5, '#0d4964')
-  gradient.addColorStop(1, '#102c49')
-  context.fillStyle = gradient
-  context.fillRect(0, 0, canvas.width, canvas.height)
+const MAP_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson'
+const MAP_W = 1200
+const MAP_H = 600
+const mapContinents = ['América do Norte', 'América do Sul', 'Europa', 'África', 'Ásia', 'Oceania']
 
-  context.strokeStyle = 'rgba(174, 207, 217, .12)'
-  context.lineWidth = 2
-  for (let latitude = 0; latitude <= 180; latitude += 15) {
-    const y = (latitude / 180) * canvas.height
-    context.beginPath()
-    context.moveTo(0, y)
-    context.lineTo(canvas.width, y)
-    context.stroke()
+function continentName(raw: string) {
+  const names: Record<string, string> = {
+    'North America': 'América do Norte', 'South America': 'América do Sul',
+    'Europe': 'Europa', 'Africa': 'África', 'Asia': 'Ásia', 'Oceania': 'Oceania',
+    'Seven seas (open ocean)': 'Oceanos',
   }
-  for (let longitude = 0; longitude <= 360; longitude += 15) {
-    const x = (longitude / 360) * canvas.width
-    context.beginPath()
-    context.moveTo(x, 0)
-    context.lineTo(x, canvas.height)
-    context.stroke()
-  }
-
-  const project = (points: [number, number][]) => {
-    context.beginPath()
-    points.forEach(([longitude, latitude], index) => {
-      const x = ((longitude + 180) / 360) * canvas.width
-      const y = ((90 - latitude) / 180) * canvas.height
-      if (index === 0) context.moveTo(x, y)
-      else context.lineTo(x, y)
-    })
-    context.closePath()
-    const land = context.createLinearGradient(0, 150, 0, 850)
-    land.addColorStop(0, '#8e9a72')
-    land.addColorStop(0.45, '#6c865d')
-    land.addColorStop(1, '#a18f68')
-    context.fillStyle = land
-    context.fill()
-    context.strokeStyle = 'rgba(218, 205, 157, .55)'
-    context.lineWidth = 3
-    context.stroke()
-  }
-
-  project([[-168, 70], [-145, 72], [-125, 55], [-110, 50], [-95, 48], [-82, 25], [-97, 15], [-111, 28], [-118, 33], [-130, 48], [-150, 58]])
-  project([[-80, 10], [-67, 8], [-51, -2], [-44, -21], [-55, -42], [-70, -55], [-78, -35], [-82, -10]])
-  project([[-11, 70], [32, 72], [55, 55], [42, 35], [25, 32], [10, 37], [-10, 48]])
-  project([[-17, 35], [12, 38], [37, 24], [49, 8], [38, -17], [25, -34], [12, -35], [-3, -20], [-16, 5]])
-  project([[40, 68], [80, 76], [120, 63], [160, 55], [178, 40], [143, 18], [121, 8], [105, 5], [78, 25], [56, 35]])
-  project([[112, -11], [133, -10], [154, -25], [145, -40], [123, -44], [113, -30]])
-  project([[-50, 82], [-25, 80], [-22, 60], [-43, 58], [-55, 70]])
-  context.fillStyle = 'rgba(231, 237, 222, .75)'
-  context.fillRect(0, 0, canvas.width, 30)
-  context.fillRect(0, canvas.height - 24, canvas.width, 24)
-
-  const texture = new THREE.CanvasTexture(canvas)
-  texture.colorSpace = THREE.SRGBColorSpace
-  return texture
+  return names[raw] ?? raw
 }
 
-function findContinent(longitude: number, latitude: number) {
-  if (latitude < -60) return continents[6]
-  if (latitude < -8 && longitude > 105 && longitude < 180) return continents[5]
-  if (latitude > 34 && latitude < 73 && longitude > -15 && longitude < 62) return continents[2]
-  if (latitude > -38 && latitude < 38 && longitude > -20 && longitude < 53) return continents[3]
-  if (latitude > 5 && latitude < 84 && longitude > -170 && longitude < -48) return continents[1]
-  if (latitude > -58 && latitude < 16 && longitude > -86 && longitude < -30) return continents[0]
-  if (latitude > -12 && latitude < 80 && longitude > 25 && longitude < 180) return continents[4]
-  return null
+function makeCountryPath(geometry: GeoGeometry) {
+  const polygons = geometry.type === 'Polygon'
+    ? [geometry.coordinates as GeoPosition[][]]
+    : geometry.coordinates as GeoPosition[][][]
+  let d = ''
+  let minX = MAP_W, minY = MAP_H, maxX = 0, maxY = 0
+  const project = (point: GeoPosition) => {
+    const x = ((point[0] + 180) / 360) * MAP_W
+    const y = ((90 - point[1]) / 180) * MAP_H
+    minX = Math.min(minX, x); maxX = Math.max(maxX, x)
+    minY = Math.min(minY, y); maxY = Math.max(maxY, y)
+    return [x, y] as const
+  }
+  for (const polygon of polygons) {
+    for (const ring of polygon) {
+      if (!ring.length) continue
+      ring.forEach((point, index) => {
+        const [x, y] = project(point)
+        d += (index === 0 ? 'M' : 'L') + x.toFixed(2) + ',' + y.toFixed(2)
+      })
+      d += 'Z'
+    }
+  }
+  return { d, bounds: [minX, minY, maxX, maxY] as [number, number, number, number] }
 }
 
-function WorldGlobe({ onSelect }: { onSelect: (continent: Continent) => void }) {
-  const mountRef = useRef<HTMLDivElement>(null)
+function FlatWorldMap({ onSelect }: { onSelect: (country: MapCountry) => void }) {
+  const [countries, setCountries] = useState<MapCountry[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+  const [view, setView] = useState({ x: 0, y: 0, w: MAP_W, h: MAP_H })
+  const [activeContinent, setActiveContinent] = useState<string | null>(null)
+  const dragRef = useRef<{ x: number; y: number; viewX: number; viewY: number } | null>(null)
 
   useEffect(() => {
-    const mount = mountRef.current
-    if (!mount) return
+    let cancelled = false
+    fetch(MAP_URL)
+      .then((response) => { if (!response.ok) throw new Error('Map unavailable'); return response.json() as Promise<GeoData> })
+      .then((data) => {
+        if (cancelled) return
+        const mapped = data.features.map((feature) => {
+          const result = makeCountryPath(feature.geometry)
+          return {
+            name: String(feature.properties.ADMIN ?? feature.properties.NAME ?? 'País'),
+            continent: continentName(String(feature.properties.CONTINENT ?? '')),
+            code: String(feature.properties.ADM0_A3 ?? feature.properties.ISO_A3 ?? ''),
+            d: result.d, bounds: result.bounds,
+          }
+        }).filter((country) => country.d && country.continent !== 'Oceanos')
+        setCountries(mapped)
+        setLoading(false)
+      })
+      .catch(() => { if (!cancelled) { setError(true); setLoading(false) } })
+    return () => { cancelled = true }
+  }, [])
 
-    let renderer: THREE.WebGLRenderer
-    try {
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' })
-    } catch {
-      mount.dataset.webgl = 'unavailable'
-      return
-    }
+  const zoomTo = (bounds: [number, number, number, number]) => {
+    const [x1, y1, x2, y2] = bounds
+    const width = Math.max(x2 - x1, 12) * 2.5
+    const height = Math.max(y2 - y1, 12) * 2.5
+    const w = Math.min(MAP_W, Math.max(width, height * 2))
+    const h = w / 2
+    setView({ x: Math.max(0, Math.min(MAP_W - w, (x1 + x2) / 2 - w / 2)), y: Math.max(0, Math.min(MAP_H - h, (y1 + y2) / 2 - h / 2)), w, h })
+  }
+  const zoomBy = (factor: number) => setView((old) => {
+    const w = Math.max(75, Math.min(MAP_W, old.w * factor))
+    const h = w / 2
+    return { x: Math.max(0, Math.min(MAP_W - w, old.x + (old.w - w) / 2)), y: Math.max(0, Math.min(MAP_H - h, old.y + (old.h - h) / 2)), w, h }
+  })
+  const reset = () => { setView({ x: 0, y: 0, w: MAP_W, h: MAP_H }); setActiveContinent(null) }
+  const selectContinent = (name: string) => {
+    setActiveContinent(name)
+    const matching = countries.filter((country) => country.continent === name)
+    if (matching.length) zoomTo([
+      Math.min(...matching.map((item) => item.bounds[0])),
+      Math.min(...matching.map((item) => item.bounds[1])),
+      Math.max(...matching.map((item) => item.bounds[2])),
+      Math.max(...matching.map((item) => item.bounds[3])),
+    ])
+  }
+  const onWheel = (event: React.WheelEvent<SVGSVGElement>) => { event.preventDefault(); zoomBy(event.deltaY > 0 ? 1.18 : .84) }
+  const onPointerDown = (event: React.PointerEvent<SVGSVGElement>) => {
+    if ((event.target as Element).closest('.country-shape')) return
+    dragRef.current = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+  const onPointerMove = (event: React.PointerEvent<SVGSVGElement>) => {
+    const drag = dragRef.current
+    if (!drag) return
+    const rect = event.currentTarget.getBoundingClientRect()
+    const dx = (event.clientX - drag.x) / rect.width * view.w
+    const dy = (event.clientY - drag.y) / rect.height * view.h
+    setView((old) => ({ ...old, x: Math.max(0, Math.min(MAP_W - old.w, drag.viewX - dx)), y: Math.max(0, Math.min(MAP_H - old.h, drag.viewY - dy)) }))
+  }
 
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100)
-    camera.position.set(0, 0, 4.7)
-
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5))
-    renderer.setClearColor(0x000000, 0)
-    renderer.outputColorSpace = THREE.SRGBColorSpace
-    renderer.toneMapping = THREE.ACESFilmicToneMapping
-    renderer.toneMappingExposure = 1.12
-    mount.appendChild(renderer.domElement)
-
-    const globeGroup = new THREE.Group()
-    scene.add(globeGroup)
-
-    const earthGeometry = new THREE.SphereGeometry(1.48, 96, 64)
-    const earthMaterial = new THREE.MeshStandardMaterial({
-      map: createFallbackEarthTexture(),
-      roughness: 0.92,
-      metalness: 0,
-      emissive: new THREE.Color('#102237'),
-      emissiveIntensity: 0.16,
-    })
-    const earth = new THREE.Mesh(earthGeometry, earthMaterial)
-    globeGroup.add(earth)
-
-    const textureLoader = new THREE.TextureLoader()
-    let cloudsMesh: THREE.Mesh<THREE.SphereGeometry, THREE.MeshPhongMaterial> | null = null
-    textureLoader.load(
-      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg',
-      (texture) => {
-        texture.colorSpace = THREE.SRGBColorSpace
-        texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4)
-        earthMaterial.map?.dispose()
-        earthMaterial.map = texture
-        earthMaterial.needsUpdate = true
-      },
-      undefined,
-      () => {
-        // A procedural map remains visible when the external texture is unavailable.
-      },
-    )
-    textureLoader.load(
-      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg',
-      (texture) => {
-        earthMaterial.normalMap = texture
-        earthMaterial.normalScale.set(0.48, -0.48)
-        earthMaterial.needsUpdate = true
-      },
-      undefined,
-      () => {},
-    )
-    textureLoader.load(
-      'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png',
-      (texture) => {
-        texture.colorSpace = THREE.SRGBColorSpace
-        const cloudGeometry = new THREE.SphereGeometry(1.505, 64, 48)
-        const cloudMaterial = new THREE.MeshPhongMaterial({
-          map: texture, transparent: true, opacity: 0.17, depthWrite: false,
-        })
-        cloudsMesh = new THREE.Mesh(cloudGeometry, cloudMaterial)
-        globeGroup.add(cloudsMesh)
-      },
-      undefined,
-      () => {},
-    )
-
-    scene.add(new THREE.AmbientLight(0xe4efff, 1.75))
-    const keyLight = new THREE.DirectionalLight(0xffe8c7, 2.6)
-    keyLight.position.set(-3.5, 2.4, 4.5)
-    scene.add(keyLight)
-    const rimLight = new THREE.DirectionalLight(0x7eaddb, 1.1)
-    rimLight.position.set(3.5, -1.5, -3)
-    scene.add(rimLight)
-
-    const atmosphereGeometry = new THREE.SphereGeometry(1.55, 64, 48)
-    const atmosphereMaterial = new THREE.ShaderMaterial({
-      transparent: true,
-      side: THREE.BackSide,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      vertexShader: 'varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
-      fragmentShader: 'varying vec3 vNormal; void main() { float intensity = pow(0.72 - max(dot(normalize(vNormal), vec3(0.0, 0.0, 1.0)), 0.0), 3.0); gl_FragColor = vec4(0.25, 0.52, 0.78, intensity * 0.34); }',
-    })
-    globeGroup.add(new THREE.Mesh(atmosphereGeometry, atmosphereMaterial))
-
-    const haloGeometry = new THREE.TorusGeometry(1.86, 0.006, 8, 180)
-    const haloMaterial = new THREE.MeshBasicMaterial({ color: '#b28a50', transparent: true, opacity: 0.24 })
-    const halo = new THREE.Mesh(haloGeometry, haloMaterial)
-    halo.rotation.x = Math.PI * 0.38
-    halo.rotation.y = -0.2
-    globeGroup.add(halo)
-
-    const raycaster = new THREE.Raycaster()
-    const pointer = new THREE.Vector2()
-    const activePointers = new Map<number, { x: number; y: number }>()
-    let previousDistance = 0
-    let moved = false
-    let startPoint = { x: 0, y: 0 }
-    let frame = 0
-
-    const getPinchDistance = () => {
-      const points = [...activePointers.values()]
-      if (points.length < 2) return 0
-      return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y)
-    }
-
-    const onPointerDown = (event: PointerEvent) => {
-      event.preventDefault()
-      renderer.domElement.setPointerCapture(event.pointerId)
-      activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY })
-      startPoint = { x: event.clientX, y: event.clientY }
-      moved = false
-      previousDistance = getPinchDistance()
-    }
-
-    const onPointerMove = (event: PointerEvent) => {
-      if (!activePointers.has(event.pointerId)) return
-      const previous = activePointers.get(event.pointerId)!
-      activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY })
-
-      if (activePointers.size === 1) {
-        const deltaX = event.clientX - previous.x
-        const deltaY = event.clientY - previous.y
-        if (Math.hypot(event.clientX - startPoint.x, event.clientY - startPoint.y) > 6) moved = true
-        globeGroup.rotation.y += deltaX * 0.005
-        globeGroup.rotation.x = THREE.MathUtils.clamp(globeGroup.rotation.x + deltaY * 0.005, -0.8, 0.8)
-      } else {
-        const distance = getPinchDistance()
-        if (previousDistance > 0 && distance > 0) {
-          camera.position.z = THREE.MathUtils.clamp(camera.position.z - (distance - previousDistance) * 0.006, 3.3, 7.2)
-          moved = true
-        }
-        previousDistance = distance
-      }
-    }
-
-    const onPointerUp = (event: PointerEvent) => {
-      if (!activePointers.has(event.pointerId)) return
-      const didMove = moved || Math.hypot(event.clientX - startPoint.x, event.clientY - startPoint.y) > 7
-      if (!didMove && activePointers.size === 1) {
-        const rect = renderer.domElement.getBoundingClientRect()
-        pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
-        pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
-        raycaster.setFromCamera(pointer, camera)
-        const hit = raycaster.intersectObject(earth, false)[0]
-        if (hit?.uv) {
-          const longitude = (hit.uv.x * 360) - 180
-          const latitude = (0.5 - hit.uv.y) * 180
-          const continent = findContinent(longitude, latitude)
-          if (continent) onSelect(continent)
-        }
-      }
-      activePointers.delete(event.pointerId)
-      previousDistance = getPinchDistance()
-      if (activePointers.size === 0) moved = false
-      if (renderer.domElement.hasPointerCapture(event.pointerId)) renderer.domElement.releasePointerCapture(event.pointerId)
-    }
-
-    const onWheel = (event: WheelEvent) => {
-      event.preventDefault()
-      camera.position.z = THREE.MathUtils.clamp(camera.position.z + event.deltaY * 0.002, 3.3, 7.2)
-    }
-
-    renderer.domElement.addEventListener('pointerdown', onPointerDown)
-    renderer.domElement.addEventListener('pointermove', onPointerMove)
-    renderer.domElement.addEventListener('pointerup', onPointerUp)
-    renderer.domElement.addEventListener('pointercancel', onPointerUp)
-    renderer.domElement.addEventListener('wheel', onWheel, { passive: false })
-
-    const resize = () => {
-      const width = Math.max(mount.clientWidth, 1)
-      const height = Math.max(mount.clientHeight, 1)
-      camera.aspect = width / height
-      camera.updateProjectionMatrix()
-      renderer.setSize(width, height, false)
-    }
-    const observer = new ResizeObserver(resize)
-    observer.observe(mount)
-    resize()
-
-    const animate = () => {
-      frame = requestAnimationFrame(animate)
-      if (activePointers.size === 0) globeGroup.rotation.y += 0.00055
-      if (cloudsMesh) cloudsMesh.rotation.y += 0.00072
-      renderer.render(scene, camera)
-    }
-    animate()
-
-    return () => {
-      cancelAnimationFrame(frame)
-      observer.disconnect()
-      renderer.domElement.removeEventListener('pointerdown', onPointerDown)
-      renderer.domElement.removeEventListener('pointermove', onPointerMove)
-      renderer.domElement.removeEventListener('pointerup', onPointerUp)
-      renderer.domElement.removeEventListener('pointercancel', onPointerUp)
-      renderer.domElement.removeEventListener('wheel', onWheel)
-      earthGeometry.dispose()
-      earthMaterial.map?.dispose()
-      earthMaterial.normalMap?.dispose()
-      earthMaterial.dispose()
-      if (cloudsMesh) {
-        cloudsMesh.geometry.dispose()
-        cloudsMesh.material.map?.dispose()
-        cloudsMesh.material.dispose()
-      }
-      atmosphereGeometry.dispose()
-      atmosphereMaterial.dispose()
-      haloGeometry.dispose()
-      haloMaterial.dispose()
-      renderer.dispose()
-      if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement)
-    }
-  }, [onSelect])
-
-  return <div className="globe-canvas" ref={mountRef} aria-label="Globo terrestre interativo. Arraste para girar e use o gesto de pinça para aproximar." />
+  return (
+    <div className="atlas-shell">
+      <div className="atlas-topline"><span><i /> ATLAS INTERATIVO · FRONTEIRAS NACIONAIS</span><span>{loading ? 'CARREGANDO CARTOGRAFIA' : countries.length + ' TERRITÓRIOS MAPEADOS'}</span></div>
+      <div className="atlas-map-frame">
+        <svg className="atlas-map" viewBox={view.x + ' ' + view.y + ' ' + view.w + ' ' + view.h} role="group" aria-label="Mapa-múndi interativo. Selecione qualquer país ou aproxime para explorar." onWheel={onWheel} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={() => { dragRef.current = null }} onPointerCancel={() => { dragRef.current = null }}>
+          <defs><pattern id="atlas-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b59a70" strokeOpacity=".09" strokeWidth=".7" /></pattern></defs>
+          <rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#atlas-grid)" />
+          {countries.map((country) => <path key={country.code + '-' + country.name} className={'country-shape ' + (activeContinent === country.continent ? 'continent-active' : '')} d={country.d} role="button" tabIndex={0} aria-label={'Abrir ' + country.name} onClick={() => onSelect(country)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') onSelect(country) }} />)}
+        </svg>
+        {loading && <div className="atlas-message">Preparando o atlas...</div>}
+        {error && <div className="atlas-message atlas-error">Não foi possível carregar a cartografia. Verifique a conexão e tente novamente.</div>}
+        <div className="atlas-controls">
+          <button onClick={() => zoomBy(.72)} aria-label="Aproximar mapa"><ZoomIn size={16} /></button>
+          <button onClick={() => zoomBy(1.38)} aria-label="Afastar mapa"><ZoomOut size={16} /></button>
+          <button onClick={reset} aria-label="Ver mundo inteiro"><RotateCcw size={15} /></button>
+        </div>
+        <div className="atlas-scale">N ↑ <span>PROJEÇÃO EQUIRETANGULAR</span></div>
+      </div>
+      <div className="continent-tabs" aria-label="Selecionar continente">
+        <button className={!activeContinent ? 'active' : ''} onClick={reset}>Mundo inteiro</button>
+        {mapContinents.map((name) => <button key={name} className={activeContinent === name ? 'active' : ''} onClick={() => selectContinent(name)}>{name}</button>)}
+      </div>
+      <div className="atlas-footnote"><Compass size={13} /> TOQUE EM QUALQUER PAÍS · USE A RODA OU OS CONTROLES PARA APROXIMAR · ARRASTE PARA MOVER</div>
+    </div>
+  )
 }
 
 export default function App() {
@@ -352,9 +184,10 @@ export default function App() {
   const selectedMilestone = milestones.find((item) => item.year === selectedYear)
   const filtered = milestones.filter((item) => String(item.year).includes(query) || item.label.toLowerCase().includes(query.toLowerCase()))
 
-  const handleContinentSelect = useCallback((continent: Continent) => {
+  const handleCountrySelect = useCallback((country: MapCountry) => {
+    const continent = continents.find((item) => item.name === country.continent) ?? { id: country.continent, name: country.continent, subtitle: 'Explore a história do futebol neste continente', countries: [] }
     setSelectedContinent(continent)
-    setSelectedCountry(null)
+    setSelectedCountry(country.name)
   }, [])
 
   const openTimeline = () => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })
@@ -402,12 +235,10 @@ export default function App() {
           <div className="hero-index"><span>01</span><i /><span>MUNDO · 7 CONTINENTES</span></div>
         </div>
 
-        <div className="globe-stage">
+        <div className="globe-stage atlas-stage">
           <div className="globe-aura" />
           <div className="globe-halo" />
-          <WorldGlobe onSelect={handleContinentSelect} />
-          <div className="globe-caption"><span className="caption-dot" /> TERRA · ACERVO GLOBAL</div>
-          <div className="globe-instruction"><Compass size={13} /> ARRASTE PARA GIRAR · PINÇA PARA APROXIMAR</div>
+          <FlatWorldMap onSelect={handleCountrySelect} />
         </div>
 
         {selectedContinent && (
