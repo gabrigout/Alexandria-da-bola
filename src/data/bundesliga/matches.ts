@@ -959,7 +959,7 @@ export const bundesligaMatches: BundesligaMatch[] = [
     events: [
       { minute: 16, type: 'goal', player: 'Karl Meng', clubId: 'fc-saarbrucken' },
       { minute: 35, type: 'goal', player: 'Dieter Krafczyk', clubId: 'fc-saarbrucken' },
-      { minute: 42, type: 'goal', player: 'Karl-Heinz Ferschl', clubId: 'fc-nurnberg' },
+      { minute: 42, type: 'goal', player: 'T. Wild', clubId: 'fc-nurnberg' },
       { minute: 43, type: 'goal', player: 'Heinz Strehl', clubId: 'fc-nurnberg' },
       { minute: 63, type: 'goal', player: 'Heinz Strehl', clubId: 'fc-nurnberg' },
       { minute: 78, type: 'goal', player: 'Werner Hesse', clubId: 'fc-saarbrucken' },
