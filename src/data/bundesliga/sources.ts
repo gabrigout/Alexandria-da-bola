@@ -590,4 +590,13 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
     "adoptedSourceId": "dfb-top-scorers-1963-64",
     "note": "DFB Datencenter e Sportschau registram 20 gols; a linha-resumo da RSSSF registra 22. A Alexandria adota 20, com base no DFB e na confirmação da Sportschau, mantendo a divergência documentada."
   },
+
+  {
+    "id": "saarbruecken-nuernberg-krafczyk-minute",
+    "severity": "divergencia",
+    "subject": "1. FC Saarbrücken 3–5 1. FC Nürnberg — minuto do gol de Dieter Krafczyk",
+    "adoptedSourceId": "rsssf-germany-1963-64",
+    "note": "A RSSSF registra o gol de Dieter Krafczyk aos 35 minutos; a página histórica do 1. FC Nürnberg na Wikipedia italiana reproduz 20 minutos. Como não foi localizada ficha individual DFB com a cronologia, a Alexandria adota provisoriamente 35' da RSSSF e mantém a divergência explícita para revisão futura."
+  },
+
 ]
