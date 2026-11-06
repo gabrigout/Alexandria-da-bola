@@ -559,6 +559,71 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "base-de-dados-historica",
     "notes": "Confere resultados da 5ª rodada e, para Saarbrücken–Nürnberg e Schalke–Hamburger SV, estádio e árbitro. Usada como fonte complementar, não como substituta das fontes oficiais."
   },
+
+  {
+    "id": "dfb-match-kaiserslautern-muenster-1963-10-05",
+    "title": "1. FC Kaiserslautern — SC Preußen Münster, 0:0, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/1-fc-kaiserslautern-preussen-muenster-188014",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Betzenbergstadion, público de 15.000, árbitro Rolf Seekamp, placar sem gols e escalações."
+  },
+  {
+    "id": "dfb-match-hamburg-hertha-1963-10-05",
+    "title": "Hamburger SV — Hertha BSC, 5:1, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/hamburger-sv-hertha-bsc-188015",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Volksparkstadion, público de 40.000, árbitro Karl Riegg, placar e gols de Ernst Kreuz (24'), Helmut Faeder (45'), Uwe Seeler (57'), Dieter Seeler (60'), Willi Giesemann (61') e Charly Dörfel (70')."
+  },
+  {
+    "id": "dfb-match-nuernberg-karlsruhe-1963-10-05",
+    "title": "1. FC Nürnberg — Karlsruher SC, 2:4, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/1-fc-nuernberg-karlsruher-sc-188016",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Städtisches Stadion, público de 22.000, árbitro Günther Sparing, placar e gols de Heinrich Müller (3'), Hartmann Madl (33'), Max Morlock (45') e Otto Geisert (55', 65' e 90')."
+  },
+  {
+    "id": "dfb-match-meidericher-tsv-1963-10-05",
+    "title": "Meidericher SV — TSV 1860 München, 3:0, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/6-matchday/msv-duisburg-tsv-1860-munich-188017",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Wedaustadion, público de 20.000, árbitro Gerhard Pooch, placar e gols de Werner Kubek (40' e 82') e Werner Krämer (64')."
+  },
+  {
+    "id": "dfb-match-braunschweig-schalke-1963-10-05",
+    "title": "Eintracht Braunschweig — FC Schalke 04, 4:3, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/eintracht-braunschweig-fc-schalke-04-188018",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Eintracht-Stadion, público de 32.000, árbitro Kurt Handwerker, placar e cronologia dos sete gols."
+  },
+  {
+    "id": "dfb-match-dortmund-frankfurt-1963-10-05",
+    "title": "Borussia Dortmund — Eintracht Frankfurt, 3:0, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6/borussia-dortmund-eintracht-frankfurt-188019",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion Rote Erde, público de 18.000, árbitro Walter Zimmermann, placar e gols de Lothar Emmerich (10'), Theo Redder (30') e Timo Konietzka (37')."
+  },
+  {
+    "id": "dfb-match-stuttgart-saarbruecken-1963-10-05",
+    "title": "VfB Stuttgart — 1. FC Saarbrücken, 3:1, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/vfb-stuttgart-1-fc-saarbruecken-188020",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Neckarstadion, público de 28.000, árbitro Hans-Joachim Weyland, placar e gols de Dieter Höller (12' e 60'), Rainer Schönwälder (71') e Friedrich Zipperer (89')."
+  },
+  {
+    "id": "dfb-match-koeln-werder-1963-10-05",
+    "title": "1. FC Köln — SV Werder Bremen, 4:3, 6. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/6-spieltag/1-fc-koeln-sv-werder-bremen-188013",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Müngersdorfer Stadion (1923–1973), público de 23.000, árbitro Edgar Deuschel, placar e cronologia dos sete gols."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
