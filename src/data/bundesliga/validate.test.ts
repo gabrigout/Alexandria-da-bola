@@ -247,6 +247,20 @@ describe('validação do acervo Bundesliga', () => {
     }
   })
 
+
+  it('completa a oitava rodada com oito partidas e cronologias coerentes', () => {
+    const roundEight = bundesligaMatches.filter((match) => match.round === 8)
+    expect(roundEight).toHaveLength(8)
+    expect(roundEight.every((match) => match.date === '1963-10-19')).toBe(true)
+    expect(new Set(roundEight.map((match) => match.id)).size).toBe(8)
+    for (const match of roundEight.filter((entry) => entry.events?.length)) {
+      const homeGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.homeClubId).length ?? 0
+      const awayGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.awayClubId).length ?? 0
+      expect(homeGoals, `gols do mandante incompatíveis: ${match.id}`).toBe(match.homeGoals)
+      expect(awayGoals, `gols do visitante incompatíveis: ${match.id}`).toBe(match.awayGoals)
+    }
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
