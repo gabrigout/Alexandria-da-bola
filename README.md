@@ -58,6 +58,8 @@ Conteúdo não confirmado deve permanecer marcado como pendente. Não inventar n
 
 O módulo indexa temporadas de 1963/64 a 2026/27. A temporada inaugural possui classificação completa, 15 artilheiros, marcos históricos e conexão com a final da DFB-Pokal de 1963/64. Temporadas ainda não pesquisadas permanecem sinalizadas como pendentes. Futebol feminino e seleções nacionais possuem catálogos separados.
 
+A cobertura básica de resultados (Fase 1) vai de 1963/64 a 2026/27, com rodada, data, mandante, visitante e placar de cada partida e fonte por temporada; a temporada 2026/27 está em andamento e cobre as rodadas já disputadas na data de corte. Autores de gols, escalações e demais detalhes dependem da Fase 2. Ver `BUNDESLIGA_TEMPORADAS_COBERTAS.md` e a seção 50 da `DIRETRIZ_DO_PROJETO.md`.
+
 ## Estado do projeto
 
 A aplicação utiliza JavaScript/JSX, HTML e CSS com React e Vite. O módulo inicial da Bundesliga foi incorporado. Build, testes no navegador/iPhone e confirmação do deploy devem ser verificados após a publicação.

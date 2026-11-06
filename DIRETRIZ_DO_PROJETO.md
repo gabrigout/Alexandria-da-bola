@@ -1,7 +1,7 @@
 # DIRETRIZ DO PROJETO — ALEXANDRIA DA BOLA
 
 > **Documento central de continuidade do projeto.**  
-> Última atualização: **05/11/2026**  
+> Última atualização: **06/11/2026**  
 > Repositório: [gabrigout/Alexandria-da-bola](https://github.com/gabrigout/Alexandria-da-bola)  
 > Site publicado: [https://alexandria-da-bola.vercel.app](https://alexandria-da-bola.vercel.app)
 
@@ -143,6 +143,10 @@ As etapas operacionais não substituem nem reiniciam as fases gerais. A numeraç
 | 9 | Aceite e encerramento formal da temporada inaugural | Pendente: checklist final, relatório de cobertura, documentação e decisão sobre merge/publicação. |
 
 **Regra de numeração:** a expressão “Fase 5” pode se referir à fase geral de conteúdo e acervo; “Etapa 5” pode se referir ao próximo lote operacional da Bundesliga. A IA deve sempre dizer qual camada está mencionando. Não renumerar etapas concluídas nem apagar seu histórico.
+
+### Atualização do estado da Fase 1 da Bundesliga (06/11/2026)
+
+A cobertura básica (Fase 1) da Bundesliga masculina agora vai de 1963/64 a 2026/27 (rodadas 1 a 8, corte em 06/11/2026): 19.292 partidas e 59.235 gols. A ordem de trabalho definida pelo usuário é concluir a Fase 1 em todas as temporadas e só depois executar a Fase 2 (enriquecimento editorial) para todo o acervo. Detalhes e limites na seção 50. As etapas operacionais 5 e 6 da tabela acima referem-se ao dossiê detalhado de 1963/64 e não foram substituídas por esta entrada.
 
 ### Foco atual
 
@@ -1643,3 +1647,31 @@ A cobertura histórica básica registrada permanece em **2.928 partidas e 9.329 
 - **Ação:** publicação direta da branch de trabalho no ambiente Production da Vercel.
 - **Resultado:** deployment `READY`; domínio principal atribuído.
 - **Próximo passo recomendado:** executar typecheck/testes e revisão visual no site; depois decidir separadamente se os 97 commits da branch devem ser integrados à `main`.
+
+---
+
+## 50. Fase 1 da Bundesliga — cobertura básica de 1973/74 a 2026/27 — 06 de novembro de 2026
+
+- **IA/assistente:** Claude.
+- **Modelo:** Claude Sonnet 5.5 (a mesma sessão começou com a leitura e o diagnóstico feitos por Claude Haiku 5.5; toda a importação, validação e edição de código desta entrada foi feita com Sonnet 5.5).
+- **Responsabilidade:** desenvolvimento e curadoria de dados da Bundesliga.
+- **Escopo autorizado pelo usuário:** cobertura básica (Fase 1) de 1973/74 até a temporada atual; a Fase 2 (enriquecimento editorial) fica para depois, para todo o acervo. Decisão do usuário registrada nesta data.
+- **Branch:** `feat/bundesliga-fase-1-1973-2027`, recriada a partir da `main` (`e10eec1`, que já continha 1963/64–1972/73). A `main` não foi alterada e não houve merge.
+- **Fontes e método:**
+  - 1973/74 a 2019/20: `footballcsv/deutschland`, commit `178324626681a9e4c42b81463f59f9c4500dbd53` (CC0 1.0 segundo o README), com a tabela final da RSSSF como conferência independente.
+  - 2020/21 a 2026/27: `openfootball/deutschland`, commit `c34532ab6950aa0089ef1c736ffdb8c818c3356f` (README descreve domínio público), conferido partida a partida contra o OpenLigaDB e, até 2025/26, com a tabela final da RSSSF.
+  - O arquivo footballcsv de 2020/21 só tem placar nas rodadas 1 a 7 e o conjunto não tem as temporadas seguintes; por isso a troca de fonte em 2020/21 (nota `footballcsv-2020-21-incomplete`).
+  - Os dados foram convertidos por um script de importação que fica fora do repositório. Ele mapeia os nomes de cada fonte para identificadores estáveis, gera um arquivo por temporada no mesmo formato das dez primeiras e valida cada temporada.
+- **Resultado:** 53 temporadas completas (1973/74–2025/26) e 2026/27 parcial: 16.364 partidas e 49.906 gols novos. Acumulado do acervo básico (1963/64–2026/27): 19.292 partidas e 59.235 gols. Lista por temporada em `BUNDESLIGA_TEMPORADAS_COBERTAS.md`.
+- **Validações automáticas por temporada completa:** número de partidas igual a n×(n−1), rodadas igual a 2×(n−1), cada clube com n−1 jogos em casa e n−1 fora, ida e volta de cada confronto, n/2 jogos por rodada, IDs únicos, classificação calculada comparada com a tabela final da RSSSF (jogos, vitórias, empates, derrotas, gols e pontos). Resultado: nenhuma divergência estrutural e nenhuma divergência de placar; as únicas diferenças de pontos são as duas deduções abaixo. A temporada 1991/92 tem 20 clubes, 38 rodadas e 380 partidas.
+- **Deduções de pontos documentadas pela RSSSF (não são placares divergentes):** Eintracht Frankfurt 1999/2000 (−2, violações das condições de licença) e 1. FC Kaiserslautern 2003/04 (−3, motivo não informado na tabela). Notas `eintracht-frankfurt-points-deduction-1999-00` e `kaiserslautern-points-deduction-2003-04`.
+- **Resultado atribuído:** Union Berlin x VfL Bochum, 14/12/2024, registrado como 0–2 atribuído (placar original 1–1; segundo a RSSSF, o goleiro do Bochum foi atingido por um isqueiro arremessado da torcida). Nota `union-berlin-bochum-awarded-2024-25`.
+- **2026/27 (parcial):** 72 partidas das rodadas 1 a 8, com 252 gols, a mais recente em 01/11/2026. As rodadas 1 a 4 coincidem entre openfootball e OpenLigaDB. As rodadas 5 a 8 (36 partidas) constam só no OpenLigaDB, porque o openfootball ainda não trazia esses placares na consulta; para elas a conferência é agregada: a classificação calculada coincide com a tabela da hessenschau.de de 05/11/2026 (18 de 18 clubes) e os nove resultados da rodada 8 coincidem com a página. Hamburger SV x Borussia Mönchengladbach (06/11/2026, 20:30) ainda não estava encerrada e não foi cadastrada. Nota `bundesliga-2026-27-partial-coverage`.
+- **Clubes novos no cadastro mínimo:** 30 (agora são 43 clubes de partidas além dos 16 fundadores), sem biografias nem estatísticas inventadas. Os nomes exibidos seguem a denominação das fontes; a denominação histórica de cada clube por período ainda não foi auditada para os clubes novos.
+- **O que a cobertura não inclui:** autores e minutos de gols, escalações, árbitros, estádios, públicos, classificação e artilharia por temporada, jogos de desempate, play-offs de promoção ou rebaixamento. Isso pertence à Fase 2 ou a etapas posteriores. A conferência foi estrutural e agregada, não uma auditoria jogo a jogo.
+- **Efeito no site (atenção):** a interface ainda mostra o detalhamento só de 1963/64; as demais temporadas aparecem como "pesquisa pendente". Porém todos os dados de partidas entram no pacote JavaScript carregado pela página. O build da `main` gera 1,87 MB (181,5 kB compactado); este estado gera 9,54 MB (470 kB compactado). Recomenda-se carregar os dados das partidas sob demanda antes de publicar este estado em produção. Essa mudança de arquitetura não foi feita e depende de aprovação.
+- **Arquivos alterados/criados:** `src/data/bundesliga/matches/1973-74.ts` a `2026-27.ts` (54 arquivos), `matches.ts`, `match-clubs.ts`, `sources.ts`, `seasons/index.ts`, `validate.test.ts`, `BUNDESLIGA_TEMPORADAS_COBERTAS.md` e esta diretriz.
+- **Testes e build executados neste ambiente (06/11/2026):** `npm run typecheck` sem diagnósticos; `npm test` com 27 testes aprovados (Vitest 3.2.7); `npm run build` concluído (Vite 7.3.7, 1.658 módulos). Não foi feita inspeção visual no navegador, iPhone ou desktop.
+- **Commit de código e dados:** `de916131603920d708262ec184abb7bbaaed2c77`. **Registro documental:** commit seguinte na mesma branch.
+- **Deploy:** não publicado em produção. A `main` não foi alterada. Preview da branch na Vercel não foi consultado.
+- **Próximos passos propostos:** (1) decidir o carregamento sob demanda dos dados de partidas; (2) revisão visual; (3) atualizar 2026/27 conforme as rodadas forem disputadas, incluindo a partida de 06/11/2026; (4) decidir o merge para a `main`; (5) iniciar a Fase 2 para todo o acervo, com fonte específica por dado.
