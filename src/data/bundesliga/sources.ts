@@ -624,6 +624,71 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Data, rodada, Müngersdorfer Stadion (1923–1973), público de 23.000, árbitro Edgar Deuschel, placar e cronologia dos sete gols."
   },
+
+  {
+    "id": "dfb-match-frankfurt-koeln-1963-10-12",
+    "title": "Eintracht Frankfurt — 1. FC Köln, 2:1, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7/eintracht-frankfurt-1-fc-koeln-188021",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Waldstadion, público de 41.000, árbitro Helmut Fritz, placar e gols de Willi Huberts (20'), Horst Trimhold (33') e Christian Müller (41')."
+  },
+  {
+    "id": "dfb-match-hertha-braunschweig-1963-10-12",
+    "title": "Hertha BSC — Eintracht Braunschweig, 1:2, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/7/hertha-bsc-eintracht-braunschweig-188022",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Olympiastadion, público de 25.000, árbitro Oswald Fritz, placar e gols de Manfred Wuttich (34' e 36') e Uwe Klimaschefski (44')."
+  },
+  {
+    "id": "dfb-match-tsv-nuernberg-1963-10-12",
+    "title": "TSV 1860 München — 1. FC Nürnberg, 5:0, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7/tsv-1860-muenchen-1-fc-nuernberg-188023",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion an der Grünwalder Straße, público de 44.000, árbitro Rudolf Kreitlein, placar e gols de Rudi Brunnenmeier (1', 27' e 55') e Wilfried Kohlars (43' e 46')."
+  },
+  {
+    "id": "dfb-match-karlsruhe-stuttgart-1963-10-12",
+    "title": "Karlsruher SC — VfB Stuttgart, 0:3, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7-spieltag/karlsruher-sc-vfb-stuttgart-188024",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, público de 55.000, árbitro Josef Kandlbinder, placar e gols de Hans Arnold (22'), Theodor Hoffmann (32') e Dieter Höller (63'). O DFB exibe a denominação comercial atual BBBank Wildpark; o nome histórico do estádio foi omitido."
+  },
+  {
+    "id": "dfb-match-schalke-meidericher-1963-10-12",
+    "title": "FC Schalke 04 — Meidericher SV, 2:2, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7-spieltag/fc-schalke-04-msv-duisburg-188025",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Glückauf-Kampfbahn, público de 30.000, árbitro Ewald Regely, placar e gols de Waldemar Gerhardt (13'), Werner Lotz (38'), Stan Libuda (42') e Heinz Versteeg (55')."
+  },
+  {
+    "id": "dfb-match-muenster-dortmund-1963-10-12",
+    "title": "SC Preußen Münster — Borussia Dortmund, 1:2, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7-spieltag/preussen-muenster-borussia-dortmund-188026",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Preußenstadion, público de 38.000, árbitro Berthold Schmidt, placar e gols de Manfred Pohlschmidt (42'), Franz Brungs (65') e Lothar Emmerich (82')."
+  },
+  {
+    "id": "dfb-match-werder-hamburg-1963-10-12",
+    "title": "SV Werder Bremen — Hamburger SV, 4:2, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7-spieltag/sv-werder-bremen-hamburger-sv-188027",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Weserstadion, público de 40.000, árbitro Erwin Sturm, placar e gols de Gerhard Zebrowski (10'), Arnold Schütz (14', 47' e 79'), Charly Dörfel (25') e Uwe Seeler (55')."
+  },
+  {
+    "id": "dfb-match-saarbruecken-kaiserslautern-1963-10-12",
+    "title": "1. FC Saarbrücken — 1. FC Kaiserslautern, 2:4, 7. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/7-spieltag/1-fc-saarbruecken-1-fc-kaiserslautern-188028",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Ludwigsparkstadion, público de 28.000, árbitro Alfred Ott, placar e gols de Werner Rinas (11'), Willy Reitgaßl (38' e 62'), Heinz Vollmar (42'), Winfried Richter (66') e Co Prins (69')."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
