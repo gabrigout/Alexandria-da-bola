@@ -252,6 +252,62 @@ export const bundesligaSources: BundesligaSource[] = [
     "notes": "Data, rodada, Volksparkstadion, público de 32.000, árbitro Günther Baumgärtel, placar e cronologia dos seis gols."
   },
 
+  {
+    "id": "dfb-match-saarbruecken-koeln-1963-08-24",
+    "title": "1. FC Saarbrücken — 1. FC Köln, 0:2, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1/1-fc-saarbruecken-1-fc-koeln-187974",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Ludwigsparkstadion, público de 35.000, árbitro Rudolf Kreitlein, placar e gols de Wolfgang Overath (22') e Christian Müller (43')."
+  },
+  {
+    "id": "dfb-match-tsv-braunschweig-1963-08-24",
+    "title": "TSV 1860 München — Eintracht Braunschweig, 1:1, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1/tsv-1860-muenchen-eintracht-braunschweig-187975",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion an der Grünwalder Straße, público de 35.000, árbitro Helmut Fritz, placar e gols de Rudi Brunnenmeier (17') e Klaus Gerwien (74')."
+  },
+  {
+    "id": "dfb-match-frankfurt-kaiserslautern-1963-08-24",
+    "title": "Eintracht Frankfurt — 1. FC Kaiserslautern, 1:1, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1/eintracht-frankfurt-1-fc-kaiserslautern-187976",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Waldstadion, público de 30.000, árbitro Johannes Malka, placar e gols de pênalti de Jürgen Neumann (38') e Lothar Schämer (40')."
+  },
+  {
+    "id": "dfb-match-schalke-stuttgart-1963-08-24",
+    "title": "FC Schalke 04 — VfB Stuttgart, 2:0, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1/fc-schalke-04-vfb-stuttgart-187977",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Glückauf-Kampfbahn, público de 30.000, árbitro Gerhard Schulenburg, placar e gols de Willi Koslowski (37') e Waldemar Gerhardt (42')."
+  },
+  {
+    "id": "dfb-match-muenster-hamburg-1963-08-24",
+    "title": "SC Preußen Münster — Hamburger SV, 1:1, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1-spieltag/preussen-muenster-hamburger-sv-187978",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Preußenstadion, público de 30.000, árbitro Kurt Tschenscher, placar e gols de Falk Dörr (70') e Charly Dörfel (86')."
+  },
+  {
+    "id": "dfb-match-karlsruhe-meidericher-1963-08-24",
+    "title": "Karlsruher SC — Meidericher SV, 1:4, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1/karlsruher-sc-msv-duisburg-187979",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, público de 40.000, árbitro Walter Zimmermann, placar e gols de Werner Krämer (29' e 88'), Johann Cichy (33'), Helmut Rahn (37') e Erwin Metzger (83'). O DFB exibe o nome atual BBBank Wildpark; o nome histórico do estádio não foi inferido."
+  },
+  {
+    "id": "dfb-match-hertha-nuernberg-1963-08-24",
+    "title": "Hertha BSC — 1. FC Nürnberg, 1:1, 1. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/1-spieltag/hertha-bsc-1-fc-nuernberg-187980",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Olympiastadion, público de 60.000, árbitro Rolf Seekamp, placar e gols de Max Morlock (40') e Hans-Günter Schimmöller (63', pênalti)."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
