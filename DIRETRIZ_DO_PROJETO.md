@@ -1302,3 +1302,28 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 48 partidas individuais cadastradas de 240; 192 pendentes. Rodadas 1 a 6 completas. A 7ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 7ª rodada (12/10/1963).
+
+
+---
+
+## 41. Registro de execução — Etapa 5, lote 7 — conclusão da 7ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas as oito partidas da 7ª rodada, disputadas em 12/10/1963.
+- **Partidas adicionadas:**
+  1. Eintracht Frankfurt 2–1 1. FC Köln.
+  2. Hertha BSC 1–2 Eintracht Braunschweig.
+  3. TSV 1860 München 5–0 1. FC Nürnberg.
+  4. Karlsruher SC 0–3 VfB Stuttgart.
+  5. FC Schalke 04 2–2 Meidericher SV.
+  6. SC Preußen Münster 1–2 Borussia Dortmund.
+  7. SV Werder Bremen 4–2 Hamburger SV.
+  8. 1. FC Saarbrücken 2–4 1. FC Kaiserslautern.
+- **Fontes:** oito fichas individuais do DFB Datencenter. Dados de placar, gols, estádio, público e árbitro transcritos das fichas. Para Karlsruher SC–VfB Stuttgart, o nome de estádio foi omitido porque o DFB exibe a denominação comercial atual BBBank Wildpark.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Organização dos dados:** o array de partidas foi reordenado cronologicamente por data, corrigindo a posição anterior dos registros da 5ª e 6ª rodadas.
+- **Validação de conteúdo:** oito partidas na 7ª rodada, IDs únicos e eventos de gols compatíveis com os placares; teste automatizado de cobertura e coerência adicionado.
+- **Testes e build:** não executados neste ambiente remoto; não declarar aprovação técnica.
+- **Contagem após o lote:** 56 partidas individuais cadastradas de 240; 184 pendentes. Rodadas 1 a 7 completas. A 8ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 8ª rodada (19/10/1963).
