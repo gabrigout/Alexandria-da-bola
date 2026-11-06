@@ -478,6 +478,87 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Data, rodada, Eintracht-Stadion, público de 22.000, árbitro Willi Thier, placar e gols de Hans-Georg Dulz (37') e Klaus Gerwien (68')."
   },
+
+  {
+    "id": "dfb-match-werder-meidericher-1963-09-21",
+    "title": "SV Werder Bremen — Meidericher SV, 1:1, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/5-spieltag/sv-werder-bremen-msv-duisburg-188012",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Weserstadion, público de 27.000, árbitro Helmut Fritz, placar e gols de Heinz Versteeg (15') e Arnold Schütz (80')."
+  },
+  {
+    "id": "dfb-match-muenster-stuttgart-1963-09-21",
+    "title": "SC Preußen Münster — VfB Stuttgart, 4:2, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/5-matchday/preussen-munster-vfb-stuttgart-188011",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Preußenstadion, público de 30.000, árbitro Werner Treichel, placar e seis gols. A cronologia completa foi conferida também na RSSSF."
+  },
+  {
+    "id": "dfb-match-tsv-kaiserslautern-1963-09-21",
+    "title": "TSV 1860 München — 1. FC Kaiserslautern, 3:0, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/5-spieltag/188009",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion an der Grünwalder Straße, público de 30.000, árbitro Fritz Leidag, placar, pênalti desperdiçado por Hans Küppers aos 43' e gols de Alfons Stemmer (50', pênalti), Rudi Brunnenmeier (63') e Hans Küppers (76')."
+  },
+  {
+    "id": "dfb-match-frankfurt-braunschweig-1963-09-21",
+    "title": "Eintracht Frankfurt — Eintracht Braunschweig, 3:0, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/5-spieltag/eintracht-frankfurt-eintracht-braunschweig-188010",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Waldstadion, público de 22.500, árbitro Alfred Ott, placar e gols de Horst Trimhold (8') e Wolfgang Solz (29' e 87')."
+  },
+  {
+    "id": "dfb-match-karlsruhe-dortmund-1963-09-21",
+    "title": "Karlsruher SC — Borussia Dortmund, 1:3, 5. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/5/karlsruher-sc-borussia-dortmund-188008",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, público de 30.000, árbitro Herbert Lutz, placar e gols de Hans-Jürgen Kurrat (3'), Burghard Rylewicz (11'), Hartmann Madl (46') e Gerd Cyliax (83'). O DFB exibe a denominação comercial atual BBBank Wildpark; o nome histórico do estádio foi omitido."
+  },
+  {
+    "id": "dfb-team-saarbruecken-1963-64",
+    "title": "1. FC Saarbrücken — calendário da Bundesliga 1963/64",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1963-1964/teams/1-fc-saarbruecken",
+    "type": "calendario-oficial-de-clube",
+    "notes": "Confirma o confronto em casa com 1. FC Nürnberg em 21/09/1963 e o resultado de 3:5; não comprova a cronologia individual dos gols."
+  },
+  {
+    "id": "dfb-team-nuernberg-1963-64",
+    "title": "1. FC Nürnberg — calendário da Bundesliga 1963/64",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1963-1964/teams/1-fc-nuernberg",
+    "type": "calendario-oficial-de-clube",
+    "notes": "Confirma o jogo fora contra 1. FC Saarbrücken em 21/09/1963 e o resultado de 3:5; não comprova a cronologia individual dos gols."
+  },
+  {
+    "id": "dfb-team-schalke-1963-64",
+    "title": "FC Schalke 04 — calendário da Bundesliga 1963/64",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1963-1964/teams/fc-schalke-04",
+    "type": "calendario-oficial-de-clube",
+    "notes": "Confirma o jogo em casa contra Hamburger SV em 21/09/1963 e o resultado de 1:0; a cronologia do gol é conferida na RSSSF."
+  },
+  {
+    "id": "dfb-team-hamburg-1963-64",
+    "title": "Hamburger SV — calendário da Bundesliga 1963/64",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1963-1964/teams/hamburger-sv-943",
+    "type": "calendario-oficial-de-clube",
+    "notes": "Confirma a partida fora contra FC Schalke 04 em 21/09/1963 e o resultado de 1:0; a cronologia do gol é conferida na RSSSF."
+  },
+  {
+    "id": "bdfutbol-bundesliga-1963-64-matchday-5",
+    "title": "Clasificación Bundesliga 1963-64 — jornada 5",
+    "publisher": "BDFutbol",
+    "url": "https://www.bdfutbol.com/es/t/tger1963-64.html?jornada=5&tab=results",
+    "type": "base-de-dados-historica",
+    "notes": "Confere resultados da 5ª rodada e, para Saarbrücken–Nürnberg e Schalke–Hamburger SV, estádio e árbitro. Usada como fonte complementar, não como substituta das fontes oficiais."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
