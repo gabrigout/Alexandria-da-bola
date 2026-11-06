@@ -1278,3 +1278,27 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 40 partidas individuais cadastradas de 240; 200 pendentes. Rodadas 1 a 5 completas. A 6ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 6ª rodada (05/10/1963).
+
+
+---
+
+## 40. Registro de execução — Etapa 5, lote 6 — conclusão da 6ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas as oito partidas da 6ª rodada, disputadas em 05/10/1963.
+- **Partidas adicionadas:**
+  1. 1. FC Kaiserslautern 0–0 SC Preußen Münster.
+  2. Hamburger SV 5–1 Hertha BSC.
+  3. 1. FC Nürnberg 2–4 Karlsruher SC.
+  4. Meidericher SV 3–0 TSV 1860 München.
+  5. Eintracht Braunschweig 4–3 FC Schalke 04.
+  6. Borussia Dortmund 3–0 Eintracht Frankfurt.
+  7. VfB Stuttgart 3–1 1. FC Saarbrücken.
+  8. 1. FC Köln 4–3 SV Werder Bremen.
+- **Fontes:** oito fichas individuais do DFB Datencenter. Foram transcritos resultados, cronologias de gols, estádios, públicos e árbitros conforme as fichas.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 6ª rodada, IDs únicos, eventos de gol compatíveis com os placares; teste automatizado de cobertura e coerência adicionado.
+- **Testes e build:** não executados neste ambiente; não há declaração de aprovação técnica.
+- **Contagem após o lote:** 48 partidas individuais cadastradas de 240; 192 pendentes. Rodadas 1 a 6 completas. A 7ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 7ª rodada (12/10/1963).
