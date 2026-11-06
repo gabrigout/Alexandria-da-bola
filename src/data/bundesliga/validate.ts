@@ -23,13 +23,15 @@ export function validateBundesligaData({
   coaches = [],
   awards = [],
   matches = [],
+  matchClubs = [],
+  seasonIndex = [],
 }: BundesligaValidationInput = {}): BundesligaValidationResult {
   const errors: string[] = []
   const warnings: string[] = []
   const clubIds = new Set<string>()
   const playerIds = new Set(players.map((item) => item.id))
   const sourceIds = new Set(sources.map((item) => item.id))
-  const seasonIds = new Set(seasons.map((item) => item.id))
+  const seasonIds = new Set([...seasons.map((item) => item.id), ...seasonIndex.map((item) => item.id)])
 
   const checkDuplicates = (items: Array<{ id: string }>, label: string) => {
     const ids = new Set<string>()
@@ -47,6 +49,8 @@ export function validateBundesligaData({
   }
 
   checkDuplicates(clubs, 'Clube')
+  checkDuplicates(matchClubs, 'Clube de partidas')
+  checkDuplicates(seasonIndex, 'Índice de temporadas')
   checkDuplicates(players, 'Jogador')
   checkDuplicates(coaches, 'Treinador')
   checkDuplicates(awards, 'Premiação')
@@ -67,6 +71,12 @@ export function validateBundesligaData({
     }
     clubIds.add(club.id)
     checkSources(`clube ${club.id}`, club.sourceIds)
+  })
+
+  matchClubs.forEach((club) => {
+    if (!club.name) errors.push(`Clube de partidas sem nome: ${club.id}`)
+    clubIds.add(club.id)
+    checkSources(`clube de partidas ${club.id}`, club.sourceIds)
   })
 
   seasons.forEach((season: BundesligaSeason) => {
@@ -125,6 +135,7 @@ export function validateBundesligaData({
     if (!clubIds.has(match.homeClubId)) errors.push(`Mandante inexistente na partida ${match.id}: ${match.homeClubId}`)
     if (!clubIds.has(match.awayClubId)) errors.push(`Visitante inexistente na partida ${match.id}: ${match.awayClubId}`)
     checkSources(`partida ${match.id}`, match.sourceIds)
+    checkSources(`partida ${match.id}`, match.sourceIds)
   })
 
   return {
@@ -132,7 +143,7 @@ export function validateBundesligaData({
     errors,
     warnings,
     totals: {
-      clubs: clubs.length,
+      clubs: clubs.length + matchClubs.length,
       seasons: seasons.length,
       sources: sources.length,
       players: players.length,

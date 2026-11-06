@@ -1,72 +1,29 @@
 import type { BundesligaMatch } from './types'
+import { matches1963_64 } from './matches-1963-64'
+import { matches1964_65 } from './matches/1964-65'
+import { matches1965_66 } from './matches/1965-66'
+import { matches1966_67 } from './matches/1966-67'
+import { matches1967_68 } from './matches/1967-68'
+import { matches1968_69 } from './matches/1968-69'
+import { matches1969_70 } from './matches/1969-70'
+import { matches1970_71 } from './matches/1970-71'
+import { matches1971_72 } from './matches/1971-72'
+import { matches1972_73 } from './matches/1972-73'
 
 export const bundesligaMatches: BundesligaMatch[] = [
-  {
-    id: '1963-08-24-werder-dortmund',
-    seasonId: '1963-64',
-    round: 1,
-    date: '1963-08-24',
-    homeClubId: 'werder-bremen',
-    home: 'SV Werder Bremen',
-    awayClubId: 'borussia-dortmund',
-    away: 'Borussia Dortmund',
-    homeGoals: 3,
-    awayGoals: 2,
-    competitionId: 'bundesliga-masculina',
-    keyEvent: 'Primeiro gol da história da Bundesliga, marcado por Timo Konietzka pelo Borussia Dortmund.',
-    sourceIds: ['dfb-inaugural-season', 'rsssf-germany-1963-64'],
-    editorialStatus: 'partida-de-abertura-documentada',
-  },
-  {
-    id: '1963-09-14-meidericher-hertha',
-    seasonId: '1963-64',
-    round: 4,
-    date: '1963-09-14',
-    homeClubId: 'meidericher-sv',
-    home: 'Meidericher SV',
-    awayClubId: 'hertha-bsc',
-    away: 'Hertha BSC',
-    homeGoals: 1,
-    awayGoals: 3,
-    competitionId: 'bundesliga-masculina',
-    stadium: 'Wedaustadion',
-    city: 'Duisburg, Alemanha',
-    attendance: 32000,
-    referee: 'Edgar Deuschel',
-    keyEvent: 'Helmut Rahn foi expulso aos 77 minutos. Foi o primeiro jogador expulso na história da Bundesliga; cartões ainda não eram utilizados.',
-    events: [
-      { minute: 15, type: 'goal', player: 'Helmut Faeder', clubId: 'hertha-bsc' },
-      { minute: 73, type: 'goal', player: 'Harald Beyer', clubId: 'hertha-bsc' },
-      { minute: 75, type: 'goal', player: 'Johann Sabath', clubId: 'meidericher-sv' },
-      { minute: 77, type: 'sending-off', player: 'Helmut Rahn', clubId: 'meidericher-sv' },
-      { minute: 83, type: 'goal', player: 'Harald Beyer', clubId: 'hertha-bsc' },
-    ],
-    sourceIds: ['dfb-match-meidericher-hertha-1963-09-14', 'rsssf-germany-1963-64', 'sport1-first-sending-off'],
-    editorialStatus: 'partida-com-primeira-expulsao-documentada',
-  },
-  {
-    id: '1963-09-21-hertha-koeln',
-    seasonId: '1963-64',
-    round: 5,
-    date: '1963-09-21',
-    homeClubId: 'hertha-bsc',
-    home: 'Hertha BSC',
-    awayClubId: 'fc-koln',
-    away: '1. FC Köln',
-    homeGoals: 0,
-    awayGoals: 3,
-    competitionId: 'bundesliga-masculina',
-    stadium: 'Olympiastadion',
-    city: 'Berlim, Alemanha',
-    attendance: 85411,
-    referee: 'Josef Kandlbinder',
-    keyEvent: 'Recorde de público da temporada inaugural: 85.411 espectadores no Olympiastadion, em Berlim.',
-    events: [
-      { minute: 2, type: 'goal', player: 'Christian Müller', clubId: 'fc-koln' },
-      { minute: 71, type: 'goal', player: 'Hans Sturm', clubId: 'fc-koln' },
-      { minute: 86, type: 'goal', player: 'Christian Müller', clubId: 'fc-koln' },
-    ],
-    sourceIds: ['dfb-match-hertha-koeln-1963-09-21', 'hertha-attendance-record-1963'],
-    editorialStatus: 'partida-recorde-de-publico-documentada',
-  },
-]
+  ...matches1963_64,
+  ...matches1964_65,
+  ...matches1965_66,
+  ...matches1966_67,
+  ...matches1967_68,
+  ...matches1968_69,
+  ...matches1969_70,
+  ...matches1970_71,
+  ...matches1971_72,
+  ...matches1972_73,
+].sort((a, b) =>
+  a.seasonId.localeCompare(b.seasonId) ||
+  a.date.localeCompare(b.date) ||
+  a.round - b.round ||
+  a.id.localeCompare(b.id),
+)

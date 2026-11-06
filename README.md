@@ -4,6 +4,10 @@ A Alexandria é uma biblioteca digital dedicada à história do futebol. O proje
 
 > O futebol tem um mundo de histórias. Explore cada uma delas.
 
+## Diretriz e continuidade
+
+O documento central de governança, contexto, decisões, fases, fontes, dicionário de dados, pendências e regras para colaboração com IAs é [DIRETRIZ_DO_PROJETO.md](./DIRETRIZ_DO_PROJETO.md). Toda IA ou pessoa que assumir uma tarefa deve lê-lo antes de trabalhar e registrar nele as mudanças realizadas.
+
 ## Experiência
 
 - Atlas-múndi plano com países selecionáveis e territórios preenchidos por suas bandeiras nacionais quando há código de bandeira disponível.
