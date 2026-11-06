@@ -1360,3 +1360,19 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 72 partidas individuais cadastradas de 240; 168 pendentes. Rodadas 1 a 9 completas. A 10ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 10ª rodada (09/11/1963).
+
+
+---
+
+## 44. Registro de execução — Etapa 5, lote 10 — conclusão da 10ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas as oito partidas da 10ª rodada, disputadas em 09/11/1963.
+- **Partidas adicionadas:** Eintracht Braunschweig 1–1 1. FC Köln; 1. FC Kaiserslautern 1–3 VfB Stuttgart; Meidericher SV 4–0 Hamburger SV; Eintracht Frankfurt 4–2 FC Schalke 04; TSV 1860 München 7–1 1. FC Saarbrücken; Karlsruher SC 4–2 SC Preußen Münster; Borussia Dortmund 3–1 1. FC Nürnberg; SV Werder Bremen 2–2 Hertha BSC.
+- **Fontes:** oito fichas individuais do DFB Datencenter. A partida Kaiserslautern–Stuttgart teve três gols contra; cada um foi creditado à equipe beneficiada, conforme a ficha oficial. Dortmund–Nürnberg e Werder–Hertha também tiveram gol contra, igualmente registrados para a equipe beneficiada.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 10ª rodada, IDs únicos e eventos compatíveis com os placares, incluindo quatro gols contra no conjunto da rodada; teste automatizado de cobertura e coerência adicionado.
+- **Testes e build:** não executados neste ambiente remoto; não declarar aprovação técnica.
+- **Contagem após o lote:** 80 partidas individuais cadastradas de 240; 160 pendentes. Rodadas 1 a 10 completas. A 11ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 11ª rodada.
