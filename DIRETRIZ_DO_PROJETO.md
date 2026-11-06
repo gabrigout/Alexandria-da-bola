@@ -1442,3 +1442,18 @@ Prompt de continuidade para o agente do VS Code:
 
 - **Bundesliga 1969/70 — gols da tabela RSSSF:** a soma dos gols pró nas 18 linhas da tabela final RSSSF é 949; a matriz da própria RSSSF totaliza 951 gols. A matriz foi conferida contra os 306 registros CSV e todos os 306 placares coincidem. A Alexandria mantém 951 gols calculados dos placares e registra a soma 949 da tabela como inconsistência interna da fonte. Nota cadastrada: `rsssf-1969-70-final-table-goals-discrepancy`.
 - **Bundesliga 1971/72 — Arminia Bielefeld:** a RSSSF registra a retirada de todos os pontos do clube por tentativa de suborno, sem concessão de W.O. aos adversários; a posição final não foi alterada. A futura tabela histórica deve aplicar a sanção separadamente dos resultados. Nota cadastrada: `arminia-bielefeld-points-sanction-1971-72`.
+
+
+## Publicação alternativa — GitHub Pages (5 de novembro de 2026)
+
+- **Objetivo:** preparar uma publicação estática alternativa para validar o projeto pelo GitHub Pages, preservando a publicação atual da Vercel.
+- **Repositório:** visibilidade confirmada como pública em 5 de novembro de 2026.
+- **Branch de preparação:** `feat/bundesliga-first-five-seasons`. A configuração foi adicionada somente nessa branch; `main` não foi alterada nem mesclada.
+- **Vite:** `vite.config.js` recebeu `base: '/Alexandria-da-bola/'`, necessário para servir os assets no endereço de projeto `https://gabrigout.github.io/Alexandria-da-bola/`.
+- **GitHub Actions:** criado `.github/workflows/deploy-pages.yml`. O workflow executa em push para a branch de preparação ou manualmente, instala dependências com `npm ci`, executa `npm run build`, envia `dist` como artefato e solicita o deploy pelo ambiente GitHub Pages.
+- **Commits desta preparação:** workflow `45688d0a54d7a6235e5976e8512ef220ff5290b0`; ajuste Vite `1318f481f8af486094d26c3f39f551ba97895388`. O registro documental será gravado em commit subsequente.
+- **Validação:** arquivos e configuração foram inspecionados no GitHub. Ainda não foi executado o workflow, portanto não há confirmação de build, artefato ou publicação no Pages.
+- **Configuração pendente na conta:** conferir em Settings → Pages se a origem de publicação está configurada como **GitHub Actions**. A integração disponível permite ler e escrever arquivos/branches, mas não expõe uma ação para alterar essa configuração administrativa de Pages.
+- **Endereço esperado após ativação e deploy bem-sucedido:** `https://gabrigout.github.io/Alexandria-da-bola/`. Não divulgar como site publicado até o primeiro workflow concluir com sucesso e o endereço responder corretamente.
+- **Vercel:** permanece preservada; nenhum domínio, alias ou deployment da Vercel foi removido ou alterado.
+- **Próximos passos:** configurar GitHub Pages com fonte GitHub Actions se necessário; disparar/acompanhar o workflow; corrigir eventuais falhas; validar HTTP e navegação; só então considerar a publicação alternativa pronta. Não mesclar a branch em `main` sem decisão explícita do usuário.
