@@ -321,10 +321,11 @@ describe('validação do acervo Bundesliga', () => {
       { seasonId: '1966-67', matches: 306, teams: 18, goals: 895, gamesPerClub: 34 },
       { seasonId: '1967-68', matches: 306, teams: 18, goals: 993, gamesPerClub: 34 },
     ]
-    expect(bundesligaMatches).toHaveLength(1398)
-    expect(new Set(bundesligaMatches.map((match) => match.id)).size).toBe(1398)
+    const firstFiveMatches = bundesligaMatches.filter((match) => Number(match.seasonId.slice(0, 4)) <= 1967)
+    expect(firstFiveMatches).toHaveLength(1398)
+    expect(new Set(firstFiveMatches.map((match) => match.id)).size).toBe(1398)
     for (const item of expected) {
-      const seasonMatches = bundesligaMatches.filter((match) => match.seasonId === item.seasonId)
+      const seasonMatches = firstFiveMatches.filter((match) => match.seasonId === item.seasonId)
       const teamIds = new Set(seasonMatches.flatMap((match) => [match.homeClubId, match.awayClubId]))
       const goals = seasonMatches.reduce((total, match) => total + match.homeGoals + match.awayGoals, 0)
       const appearances = new Map<string, { total: number; home: number; away: number }>()
@@ -345,11 +346,47 @@ describe('validação do acervo Bundesliga', () => {
   it('resolve todos os clubes e fontes das partidas importadas', () => {
     const clubIds = new Set([...bundesligaClubs, ...bundesligaMatchClubs].map((club) => club.id))
     const sourceIds = new Set(bundesligaSources.map((source) => source.id))
-    expect(bundesligaMatchClubs).toHaveLength(8)
+    expect(bundesligaMatchClubs).toHaveLength(13)
     expect(bundesligaMatches.every((match) =>
       clubIds.has(match.homeClubId) && clubIds.has(match.awayClubId) &&
       match.sourceIds.length >= 2 && match.sourceIds.every((sourceId) => sourceIds.has(sourceId)),
     )).toBe(true)
+  })
+
+  it('indexa a cobertura básica completa do segundo bloco de cinco temporadas', () => {
+    const expected = [
+      { seasonId: '1968-69', matches: 306, teams: 18, goals: 873 },
+      { seasonId: '1969-70', matches: 306, teams: 18, goals: 951 },
+      { seasonId: '1970-71', matches: 306, teams: 18, goals: 926 },
+      { seasonId: '1971-72', matches: 306, teams: 18, goals: 1006 },
+      { seasonId: '1972-73', matches: 306, teams: 18, goals: 1045 },
+    ]
+    const secondFiveMatches = bundesligaMatches.filter((match) => {
+      const startYear = Number(match.seasonId.slice(0, 4))
+      return startYear >= 1968 && startYear <= 1972
+    })
+
+    expect(secondFiveMatches).toHaveLength(1530)
+    expect(new Set(secondFiveMatches.map((match) => match.id)).size).toBe(1530)
+    expect(bundesligaMatches).toHaveLength(2928)
+    expect(new Set(bundesligaMatches.map((match) => match.id)).size).toBe(2928)
+
+    for (const item of expected) {
+      const seasonMatches = secondFiveMatches.filter((match) => match.seasonId === item.seasonId)
+      const teamIds = new Set(seasonMatches.flatMap((match) => [match.homeClubId, match.awayClubId]))
+      const roundIds = new Set(seasonMatches.map((match) => match.round))
+      const goals = seasonMatches.reduce((total, match) => total + match.homeGoals + match.awayGoals, 0)
+
+      expect(seasonMatches).toHaveLength(item.matches)
+      expect(teamIds.size).toBe(item.teams)
+      expect(roundIds.size).toBe(34)
+      expect(goals).toBe(item.goals)
+
+      for (const clubId of teamIds) {
+        expect(seasonMatches.filter((match) => match.homeClubId === clubId)).toHaveLength(17)
+        expect(seasonMatches.filter((match) => match.awayClubId === clubId)).toHaveLength(17)
+      }
+    }
   })
 
 })
