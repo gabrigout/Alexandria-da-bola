@@ -987,7 +987,88 @@ export const bundesligaSources: BundesligaSource[] = [
   url: "https://www.dsfs.de/wp-content/uploads/2024/01/BL-Chronik_1966-67.pdf",
   type: "cronica-estatistica-independente",
   notes: "A cronologia informa a alteração do nome do clube para MSV Duisburg em 09/01/1967."
-}
+},
+  {
+    id: "footballcsv-1968-69",
+    title: "Bundesliga 1968/69 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1968-69/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante. O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1968-69",
+    title: "Germany 1968/69",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit69.html",
+    type: "base-independente",
+    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1969-70",
+    title: "Bundesliga 1969/70 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1969-70/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante. O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1969-70",
+    title: "Germany 1969/70",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit70.html",
+    type: "base-independente",
+    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1970-71",
+    title: "Bundesliga 1970/71 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1970-71/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante. O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1970-71",
+    title: "Germany 1970/71",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit71.html",
+    type: "base-independente",
+    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1971-72",
+    title: "Bundesliga 1971/72 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1971-72/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante. O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1971-72",
+    title: "Germany 1971/72",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit72.html",
+    type: "base-independente",
+    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1972-73",
+    title: "Bundesliga 1972/73 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1972-73/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante. O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1972-73",
+    title: "Germany 1972/73",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit73.html",
+    type: "base-independente",
+    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  }
+
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
@@ -1064,5 +1145,13 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
   subject: "Denominação histórica do Meidericher SV / MSV Duisburg",
   adoptedSourceId: "dsfs-msv-name-change-1967",
   note: "Há divergência de um dia na data da mudança: a história oficial da Bundesliga informa que o nome MSV Duisburg apareceu em 07/01/1967; a cronologia DSFS registra a mudança em 09/01/1967. A Alexandria adota provisoriamente 09/01/1967 para exibição do nome, seguindo a cronologia DSFS, e mantém a divergência aberta."
+},
+{
+  id: "second-five-seasons-basic-coverage",
+  severity: "escopo-editorial",
+  subject: "Cobertura básica de resultados — Bundesliga 1968/69 a 1972/73",
+  adoptedSourceId: "footballcsv-1968-69",
+  note: "O segundo bloco reúne 1.530 partidas: 306 em cada uma das cinco temporadas de 1968/69 a 1972/73. Foram importados rodada, data, mandante, visitante e placar. A base footballcsv/deutschland declara espelhamento 1:1 de openfootball/deutschland e licença CC0 1.0; RSSSF foi cadastrado como referência independente para resultados e tabelas finais. As partidas não receberam autores de gols, escalações, árbitros, estádios ou públicos sem documentação específica. A cobertura estrutural não significa auditoria individual dos 1.530 resultados."
 }
+
 ]
