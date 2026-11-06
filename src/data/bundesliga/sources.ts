@@ -1002,7 +1002,7 @@ export const bundesligaSources: BundesligaSource[] = [
     publisher: "RSSSF",
     url: "https://www.rsssf.org/tablesd/duit69.html",
     type: "base-independente",
-    notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+    notes: "Tabela final e matriz de resultados da temporada. A matriz coincide com os 306 resultados da base footballcsv e soma 951 gols; a soma dos gols pró publicados nas linhas da tabela final é 949. A divergência interna está registrada em nota de fonte."
   },
   {
     id: "footballcsv-1969-70",
@@ -1152,6 +1152,20 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
   subject: "Cobertura básica de resultados — Bundesliga 1968/69 a 1972/73",
   adoptedSourceId: "footballcsv-1968-69",
   note: "O segundo bloco reúne 1.530 partidas: 306 em cada uma das cinco temporadas de 1968/69 a 1972/73. Foram importados rodada, data, mandante, visitante e placar. A base footballcsv/deutschland declara espelhamento 1:1 de openfootball/deutschland e licença CC0 1.0; RSSSF foi cadastrado como referência independente para resultados e tabelas finais. As partidas não receberam autores de gols, escalações, árbitros, estádios ou públicos sem documentação específica. A cobertura estrutural não significa auditoria individual dos 1.530 resultados."
+},
+  {
+  id: "rsssf-1969-70-final-table-goals-discrepancy",
+  severity: "divergencia",
+  subject: "RSSSF 1969/70 — gols pró da tabela final versus matriz de resultados",
+  adoptedSourceId: "footballcsv-1969-70",
+  note: "A soma dos gols pró nas 18 linhas da tabela final RSSSF resulta em 949. Já a matriz de resultados da própria RSSSF contém 306 placares que coincidem partida por partida com o CSV footballcsv e totalizam 951 gols. A Alexandria mantém 951, calculados a partir dos placares, e registra 949 como divergência interna da tabela final RSSSF. Não ajustar placares individuais para forçar a soma da tabela."
+},
+  {
+  id: "arminia-bielefeld-points-sanction-1971-72",
+  severity: "nota-historica",
+  subject: "Arminia Bielefeld — sanção de pontos na Bundesliga 1971/72",
+  adoptedSourceId: "rsssf-germany-1971-72",
+  note: "A RSSSF registra que o Arminia Bielefeld perdeu todos os pontos por tentativa de suborno; os adversários não receberam vitórias por W.O. A posição final não mudou. Na futura reconstrução da classificação 1971/72, a sanção deve ser representada separadamente dos resultados em campo, sem criar W.O. fictício."
 }
 
 ]
