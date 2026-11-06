@@ -1574,3 +1574,27 @@ A meta é um índice contínuo da Bundesliga masculina desde 1963/64 até 2026/2
 - **Arquivos alterados por esta atualização:** somente `DIRETRIZ_DO_PROJETO.md`.
 - **Validação:** atualização documental; não executa nem valida código ou dados históricos novos.
 - **Deploy:** não se aplica; nenhuma publicação foi solicitada.
+
+---
+
+## 48. Localização dos dados já cobertos — leitura obrigatória para Claude
+
+**Não confundir o handoff documental com a disponibilização do acervo.** As partidas das dez temporadas de 1963/64 a 1972/73 já estão versionadas na branch `feat/bundesliga-fase-1-1973-2027`. Para facilitar a localização e evitar que outra IA veja apenas a temporada inaugural ao consultar a branch errada, foi criado o inventário `BUNDESLIGA_TEMPORADAS_COBERTAS.md`, com tabela de cobertura, caminhos e links diretos para cada arquivo.
+
+- **Branch que contém o acervo:** `feat/bundesliga-fase-1-1973-2027`.
+- **Inventário:** `BUNDESLIGA_TEMPORADAS_COBERTAS.md`.
+- **Diretório dos dados:** `src/data/bundesliga/`.
+- **Cobertura básica registrada:** 2.928 partidas e 9.329 gols em dez temporadas (1963/64–1972/73).
+- **Próxima temporada faltante:** 1973/74.
+
+Claude deve abrir explicitamente a branch indicada antes de concluir que os arquivos não existem. Se a integração do Claude estiver fixada em `main`, trocar a branch/repositório de trabalho para `feat/bundesliga-fase-1-1973-2027` ou abrir os links diretos do inventário. **Não copiar manualmente os dados para outra branch, não duplicar arquivos e não sobrescrever o acervo existente.** Primeiro confirmar o HEAD e os arquivos no checkout correto.
+
+Esta atualização apenas melhora a localização/documentação do acervo; não altera os dados das partidas, não faz merge para `main`, não executa testes e não publica o site.
+
+### Registro da atualização
+
+- **Data:** 06/11/2026.
+- **Responsável:** ChatGPT, GPT-6.
+- **Arquivos:** criado `BUNDESLIGA_TEMPORADAS_COBERTAS.md`; atualizado este documento.
+- **Commit do inventário:** `a396ad21af1b618ef4cb42b76868656dffd810bb`.
+- **Validação:** links e arquivos das dez temporadas conferidos na branch de trabalho; sem validação de build/testes.
