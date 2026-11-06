@@ -1457,3 +1457,12 @@ Prompt de continuidade para o agente do VS Code:
 - **Endereço esperado após ativação e deploy bem-sucedido:** `https://gabrigout.github.io/Alexandria-da-bola/`. Não divulgar como site publicado até o primeiro workflow concluir com sucesso e o endereço responder corretamente.
 - **Vercel:** permanece preservada; nenhum domínio, alias ou deployment da Vercel foi removido ou alterado.
 - **Próximos passos:** configurar GitHub Pages com fonte GitHub Actions se necessário; disparar/acompanhar o workflow; corrigir eventuais falhas; validar HTTP e navegação; só então considerar a publicação alternativa pronta. Não mesclar a branch em `main` sem decisão explícita do usuário.
+
+
+### Primeira execução do GitHub Actions — resultado
+
+- **Execução:** [GitHub Actions #42147378165](https://github.com/gabrigout/Alexandria-da-bola/actions/runs/42147378165), commit `b8ff3d413c563899a31397fea34acf479ceb59e2`.
+- **Build:** aprovado. `npm ci`, `npm run build` (inclui `tsc --noEmit`, Vitest e Vite) e upload do artefato `dist` concluíram com sucesso.
+- **Deploy:** falhou ao criar a implantação Pages com HTTP 404. A mensagem do próprio `actions/deploy-pages@v4` informa: “Ensure GitHub Pages has been enabled”.
+- **Diagnóstico:** a compilação e o artefato estão prontos; o Pages ainda precisa ser habilitado em Settings → Pages. Configurar a origem como **GitHub Actions** e então executar novamente o workflow.
+- **Situação:** ainda não há site publicado no GitHub Pages. A URL prevista não deve ser tratada como ativa até uma execução posterior concluir com sucesso.
