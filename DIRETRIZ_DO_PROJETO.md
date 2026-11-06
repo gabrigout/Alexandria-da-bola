@@ -1327,3 +1327,20 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 56 partidas individuais cadastradas de 240; 184 pendentes. Rodadas 1 a 7 completas. A 8ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 8ª rodada (19/10/1963).
+
+
+---
+
+## 42. Registro de execução — Etapa 5, lote 8 — conclusão da 8ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas as oito partidas da 8ª rodada, disputadas em 19/10/1963.
+- **Partidas adicionadas:** Hamburger SV 5–0 TSV 1860; 1. FC Köln 3–0 Preußen Münster; Nürnberg 0–2 Schalke; Stuttgart 0–0 Frankfurt; Borussia Dortmund 7–2 Hertha; Meidericher SV 3–1 Saarbrücken; Kaiserslautern 1–0 Karlsruher SC; Braunschweig 1–1 Werder Bremen.
+- **Fontes:** oito fichas individuais do DFB Datencenter. Foram transcritos placares, eventos, estádios, públicos e árbitros.
+- **Divergências registradas:** em Köln–Münster, o DFB identifica gol contra de Dagmar Drewes aos 22', enquanto a RSSSF atribui o gol a Wolfgang Overath; em Meidericher–Saarbrücken, o DFB identifica gol contra de Hartmut Heidemann aos 21', enquanto a RSSSF atribui o gol contra a Rainer Schönwälder. O cadastro adota provisoriamente as fichas individuais do DFB e registra ambas as divergências nas notas de fonte.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 8ª rodada, sem duplicatas; eventos de gols coerentes com os placares, inclusive gols contra creditados às equipes beneficiadas. Teste automatizado de cobertura e coerência adicionado.
+- **Testes e build:** não executados neste ambiente; não declarar aprovação técnica.
+- **Contagem após o lote:** 64 partidas individuais cadastradas de 240; 176 pendentes. Rodadas 1 a 8 completas. A 9ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 9ª rodada (26/10/1963).
