@@ -308,6 +308,119 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Data, rodada, Olympiastadion, público de 60.000, árbitro Rolf Seekamp, placar e gols de Max Morlock (40') e Hans-Günter Schimmöller (63', pênalti)."
   },
+
+  {
+    "id": "dfb-match-nuernberg-werder-1963-08-31",
+    "title": "1. FC Nürnberg — SV Werder Bremen, 3:0, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/1-fc-nuernberg-sv-werder-bremen-187983",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Städtisches Stadion, público de 33.000, árbitro Horst Mathieu, placar e gols de Heinrich Müller (41'), Max Morlock (45') e Heinz Strehl (74')."
+  },
+  {
+    "id": "dfb-match-koeln-karlsruhe-1963-08-31",
+    "title": "1. FC Köln — Karlsruher SC, 4:0, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/1-fc-koeln-karlsruher-sc-187984",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Müngersdorfer Stadion (1923–1973), público de 21.000, árbitro Werner Treichel, placar e gols de Wolfgang Overath (10'), Hans Sturm (16' e 77') e Heinz Hornig (68')."
+  },
+  {
+    "id": "dfb-match-kaiserslautern-schalke-1963-08-31",
+    "title": "1. FC Kaiserslautern — FC Schalke 04, 2:3, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/1-fc-kaiserslautern-fc-schalke-04-187985",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Betzenbergstadion, público de 34.000, árbitro Karl Riegg, placar e cronologia dos gols, incluindo gol contra de Willi Schulz (28')."
+  },
+  {
+    "id": "dfb-match-stuttgart-hertha-1963-08-31",
+    "title": "VfB Stuttgart — Hertha BSC, 2:0, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/vfb-stuttgart-hertha-bsc-187986",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Neckarstadion, público de 40.000, árbitro Fritz Schörnich, placar e gols de Rolf Geiger (8') e Erwin Waldner (30')."
+  },
+  {
+    "id": "dfb-match-meidericher-frankfurt-1963-08-31",
+    "title": "Meidericher SV — Eintracht Frankfurt, 3:1, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/msv-duisburg-eintracht-frankfurt-187987",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Wedaustadion, público de 36.000, árbitro Werner Spiewak, placar e gols de Helmut Rahn (6'), Hartmut Heidemann (43'), Werner Krämer (57') e Horst Trimhold (62')."
+  },
+  {
+    "id": "dfb-match-braunschweig-muenster-1963-08-31",
+    "title": "Eintracht Braunschweig — SC Preußen Münster, 1:0, 2. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/2-spieltag/eintracht-braunschweig-preussen-muenster-187988",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Eintracht-Stadion, público de 28.000, árbitro Günther Sparing, placar e gol de Jürgen Moll (15')."
+  },
+  {
+    "id": "dfb-match-tsv-koeln-1963-09-07",
+    "title": "TSV 1860 München — 1. FC Köln, 1:3, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/tsv-1860-muenchen-1-fc-koeln-187989",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion an der Grünwalder Straße, público de 45.000, árbitro Herbert Lutz, placar e gols de Wolfgang Overath (48'), Hans Auernhammer (55', pênalti), Hans Sturm (66', pênalti) e Hans Schäfer (77')."
+  },
+  {
+    "id": "dfb-match-karlsruhe-hamburg-1963-09-07",
+    "title": "Karlsruher SC — Hamburger SV, 0:4, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/karlsruher-sc-hamburger-sv-187990",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, público de 55.000, árbitro Johannes Malka, placar e gols de Charly Dörfel (12' e 44'), Uwe Seeler (17') e Willi Giesemann (53'). O DFB mostra a denominação comercial atual BBBank Wildpark; o nome histórico do estádio foi omitido."
+  },
+  {
+    "id": "dfb-match-frankfurt-nuernberg-1963-09-07",
+    "title": "Eintracht Frankfurt — 1. FC Nürnberg, 2:3, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/eintracht-frankfurt-1-fc-nuernberg-187991",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Waldstadion, público de 55.000, árbitro Kurt Handwerker, placar e cronologia dos cinco gols, incluindo o pênalti de Willi Huberts (82')."
+  },
+  {
+    "id": "dfb-match-schalke-dortmund-1963-09-07",
+    "title": "FC Schalke 04 — Borussia Dortmund, 3:1, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/fc-schalke-04-borussia-dortmund-187992",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Glückauf-Kampfbahn, público de 38.000, árbitro Helmut Fritz, placar e gols de Reinhold Wosab (6'), Manfred Berz (44'), Waldemar Gerhardt (51') e gol contra de Lothar Geisler (55')."
+  },
+  {
+    "id": "dfb-match-werder-stuttgart-1963-09-07",
+    "title": "SV Werder Bremen — VfB Stuttgart, 2:2, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/sv-werder-bremen-vfb-stuttgart-187993",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Weserstadion, público de 30.000, árbitro Günther Baumgärtel, placar e gols de Dieter Meyer (2'), Gerhard Wanner (10'), Dieter Höller (11') e Gerhard Zebrowski (63')."
+  },
+  {
+    "id": "dfb-match-hertha-kaiserslautern-1963-09-07",
+    "title": "Hertha BSC — 1. FC Kaiserslautern, 2:2, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/hertha-bsc-1-fc-kaiserslautern-187994",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Olympiastadion, público de 40.000, árbitro Walter Zimmermann, placar e gols de Winfried Richter (13'), Co Prins (36'), Carl-Heinz Rühl (73') e Helmut Faeder (79')."
+  },
+  {
+    "id": "dfb-match-muenster-meidericher-1963-09-07",
+    "title": "SC Preußen Münster — Meidericher SV, 4:2, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/preussen-muenster-msv-duisburg-187995",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Preußenstadion, público de 38.000, árbitro Karl Niemeyer, placar e gols de Hermann Lulka (17', 30' e 52'), Helmut Tybussek (72'), Helmut Rahn (85') e Heinz Versteeg (89')."
+  },
+  {
+    "id": "dfb-match-saarbruecken-braunschweig-1963-09-07",
+    "title": "1. FC Saarbrücken — Eintracht Braunschweig, 2:2, 3. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/3-spieltag/1-fc-saarbruecken-eintracht-braunschweig-187996",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Ludwigsparkstadion, público de 17.000, árbitro Josef Kandlbinder, placar e gols de Klaus Gerwien (43'), Rainer Schönwälder (48' e 57') e Jürgen Moll (72', pênalti)."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
