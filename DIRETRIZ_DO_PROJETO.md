@@ -1198,7 +1198,7 @@ Prompt de continuidade para o agente do VS Code:
   4. Meidericher SV 3–1 Eintracht Frankfurt.
   5. Eintracht Braunschweig 1–0 SC Preußen Münster.
   6. VfB Stuttgart 2–0 Hertha BSC.
-- **Fontes:** seis fichas individuais oficiais do DFB Datencenter. A cronologia e os dados contextuais foram transcritos das fichas individuais. O gol contra de Willi Schulz aos 28 minutos foi preservado como gol atribuído ao Schalke, identificado editorialmente como gol contra; não foi tratado como gol do Kaiserslautern.
+- **Fontes:** seis fichas individuais oficiais do DFB Datencenter. A cronologia e os dados contextuais foram transcritos das fichas individuais. O gol contra de Willi Schulz aos 28 minutos foi registrado como gol creditado ao Kaiserslautern, com o jogador identificado como autor do gol contra; isso mantém a cronologia coerente com o placar de 2–3.
 - **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
 - **Validação de conteúdo:** a 2ª rodada contém oito partidas; placares, datas, participantes, estádios, públicos, árbitros e cronologias dos seis novos jogos conferidos nas fichas do DFB. O teste de cobertura da segunda rodada foi adicionado.
 - **Testes e build:** não executados neste ambiente; aguardam execução no ambiente de desenvolvimento.
