@@ -1466,3 +1466,111 @@ Prompt de continuidade para o agente do VS Code:
 - **Deploy:** falhou ao criar a implantação Pages com HTTP 404. A mensagem do próprio `actions/deploy-pages@v4` informa: “Ensure GitHub Pages has been enabled”.
 - **Diagnóstico:** a compilação e o artefato estão prontos; o Pages ainda precisa ser habilitado em Settings → Pages. Configurar a origem como **GitHub Actions** e então executar novamente o workflow.
 - **Situação:** ainda não há site publicado no GitHub Pages. A URL prevista não deve ser tratada como ativa até uma execução posterior concluir com sucesso.
+
+---
+
+## 47. Handoff de continuidade — expansão da Bundesliga de 1973/74 até 2026/27 — 6 de novembro de 2026
+
+> **Esta seção é a instrução operacional mais recente para a próxima IA.** Ela complementa — não apaga nem substitui — os registros anteriores. O próximo responsável será Claude, que deverá conferir o repositório antes de implantar qualquer dado.
+
+### Identificação do trabalho
+
+- **Projeto:** Alexandria da Bola — biblioteca/arquivo histórico do futebol.
+- **Competição em foco:** Bundesliga masculina da Alemanha.
+- **Objetivo de cobertura:** continuar a partir da última temporada já coberta, 1972/73, até 2026/27.
+- **Escopo desta frente:** Fase 1 de cobertura histórica básica, isto é, garantir que todas as temporadas tenham seus clubes participantes, rodadas, datas, mandantes, visitantes e placares, com fontes rastreáveis. Não confundir esta Fase 1 com o enriquecimento editorial detalhado da Fase 2.
+- **Branch de trabalho criada:** `feat/bundesliga-fase-1-1973-2027`.
+- **Branch de referência do bloco anterior:** `feat/bundesliga-first-five-seasons`.
+- **Branch principal:** `main`; não alterar nem mesclar sem autorização expressa do usuário.
+
+### Estado conhecido do acervo antes da retomada
+
+A cobertura básica registrada nos dois blocos anteriores abrange dez temporadas:
+
+| Temporada | Clubes | Rodadas | Partidas | Gols |
+|---|---:|---:|---:|---:|
+| 1963/64 | 16 | 30 | 240 | 857 |
+| 1964/65 | 16 | 30 | 240 | 796 |
+| 1965/66 | 18 | 34 | 306 | 987 |
+| 1966/67 | 18 | 34 | 306 | 895 |
+| 1967/68 | 18 | 34 | 306 | 993 |
+| 1968/69 | 18 | 34 | 306 | 873 |
+| 1969/70 | 18 | 34 | 306 | 951 |
+| 1970/71 | 18 | 34 | 306 | 926 |
+| 1971/72 | 18 | 34 | 306 | 1.006 |
+| 1972/73 | 18 | 34 | 306 | 1.045 |
+| **Total** | — | — | **2.928** | **9.329** |
+
+Esses totais foram registrados como cálculos feitos a partir dos placares importados. A cobertura básica não significa auditoria individual de cada partida em ficha oficial, nem significa que todos os detalhes editoriais estejam completos.
+
+**Ponto de retomada:** 1973/74. A branch `feat/bundesliga-fase-1-1973-2027` foi inspecionada em 06/11/2026 e seu snapshot contém arquivos de partidas somente até `src/data/bundesliga/matches/1972-73.ts`, além dos dez conjuntos anteriores. Não foi localizado arquivo `1973-74` nesse snapshot. Portanto, apesar do nome da branch, **não considerar 1973/74–2026/27 já pesquisadas, cadastradas ou implantadas**. O próximo trabalho efetivo começa pelo levantamento e importação da temporada 1973/74.
+
+### O que foi pesquisado e decidido nos blocos anteriores
+
+1. **Fonte estruturada principal para cobertura básica:** arquivos CSV de temporada do projeto `footballcsv/deutschland`, descrito no histórico como espelho 1:1 de `openfootball/deutschland`, com licença CC0 1.0 declarada. A IA deve verificar a licença e a procedência no momento de reutilizar/baixar os dados, registrar URL exata e versão/commit consultado e não presumir que um espelho continua idêntico.
+2. **Conferência independente:** páginas da RSSSF com tabelas finais e matrizes de resultados de cada temporada. As URLs específicas das temporadas anteriores estão registradas em `src/data/bundesliga/sources.ts`; seguir o mesmo padrão para as novas temporadas.
+3. **Fonte oficial preferencial para enriquecimento e auditoria individual:** DFB Datencenter, fichas de partidas e páginas oficiais da Bundesliga/DFL, clubes e federações. A cobertura básica importada não deve receber autores/minutos de gols, escalações, arbitragem, estádio ou público sem fonte específica.
+4. **Modelo de cadastro:** uma partida básica deve ter identificador estável, temporada/competição, rodada, data, IDs dos clubes mandante e visitante e placar. Usar entidades de clubes já existentes; para clube novo, criar cadastro mínimo de identidade com fonte, sem inventar biografia.
+5. **Separação editorial:** resultado básico importado deve continuar identificado como tal (por exemplo, `resultado-base-importado`). Não converter ausência de evento em evento presumido. Dados ausentes devem permanecer ausentes ou marcados como pendentes.
+6. **Organização técnica existente:** partidas são mantidas em arquivos separados por temporada, sob `src/data/bundesliga/matches/`; `matches.ts` agrega os arquivos; `match-clubs.ts` concentra identificadores/cadastros mínimos de clubes; `sources.ts` contém referências; `validate.ts` e `validate.test.ts` fazem validações estruturais. Conferir os nomes e interfaces reais antes de alterar.
+7. **Regras históricas:** respeitar mudanças de nome dos clubes ao longo do tempo sem criar entidades duplicadas quando a continuidade institucional estiver documentada. Registrar fusões, renomeações, retiradas de pontos e sanções separadamente dos resultados das partidas. Datas conflitantes devem ser anotadas com fontes e critério adotado.
+8. **Padrão de lotes:** manter a importação em blocos controláveis, por temporada ou grupo pequeno de temporadas, validar cada bloco e registrar o resultado antes de avançar. Não despejar todas as temporadas de uma vez sem auditoria.
+
+### Decisões e divergências históricas já documentadas — preservar
+
+- **1963/64:** 16 clubes, 30 rodadas, 240 jogos e 857 gols. A classificação adotada segue o DFB Datencenter; o desempate histórico era quociente de gols, não saldo de gols moderno. DFB e RSSSF divergem na ordem de Werder Bremen e Eintracht Braunschweig; o quociente confirma a ordem adotada pelo DFB.
+- **1963/64 — média de público:** o DFB publica 6.057.335 espectadores e média de 25.134; a divisão simples do total por 240 jogos dá aproximadamente 25.239. A divergência foi preservada, sem “corrigir” a fonte por conta própria.
+- **1963/64 — artilharia:** 50 linhas nominais capturadas da tabela pública do DFB até o corte de seis gols; isso não representa necessariamente todos os jogadores que marcaram. Para Timo Konietzka, DFB e Sportschau indicam 20 gols, enquanto a linha-resumo da RSSSF indica 22; a base adota 20 e registra a divergência.
+- **1963/64 — Helmut Rahn:** a expulsão de 14/09/1963 deve ser descrita como primeira expulsão, não como primeiro cartão vermelho; cartões amarelos/vermelhos ainda não eram usados.
+- **1963/64 — recorde de público:** Hertha BSC 0–3 1. FC Köln, 21/09/1963, 5ª rodada, Olympiastadion, 85.411 espectadores. A partida está documentada individualmente.
+- **1969/70:** a soma de gols da tabela final da RSSSF dá 949, enquanto sua matriz de resultados e os 306 placares importados totalizam 951. Manter 951 como total calculado da matriz e registrar a inconsistência da tabela.
+- **1971/72:** Arminia Bielefeld sofreu retirada de todos os pontos por tentativa de suborno, sem concessão de W.O. aos adversários. A sanção deve ser aplicada à classificação separadamente dos placares.
+- **Duisburg:** manter continuidade do identificador institucional `meidericher-sv`; a denominação histórica muda de Meidericher SV para MSV Duisburg. A data de mudança apresenta divergência documental (DFL 07/01/1967; cronologia DSFS 09/01/1967); a exibição adotada no histórico segue provisoriamente DSFS, com a divergência anotada.
+- **Datas divergentes:** em 1963/64, Eintracht Braunschweig 1–1 1. FC Köln tem 09/11/1963 no DFB e 08/11/1963 em Sportschau, Transfermarkt e footballcsv; o cadastro preserva provisoriamente 09/11, conforme ficha individual DFB.
+
+### Próxima execução solicitada ao Claude
+
+1. Identificar-se conforme a regra da seção 1 (IA, modelo exato se visível, função e escopo).
+2. Ler integralmente esta diretriz e o README.
+3. Conferir o HEAD das branches `feat/bundesliga-fase-1-1973-2027`, `feat/bundesliga-first-five-seasons` e `main`; verificar diferenças entre elas e identificar qual branch contém o estado mais completo. Não sobrescrever nem mesclar branches por suposição.
+4. Inspecionar `package.json`, `src/data/bundesliga/types.ts`, `matches.ts`, `match-clubs.ts`, `sources.ts`, `seasons/index.ts`, `validate.ts`, `validate.test.ts` e os arquivos das temporadas 1963/64–1972/73.
+5. Começar a temporada **1973/74**: confirmar os 18 participantes, 34 rodadas, 306 partidas e resultados a partir de fonte estruturada identificada; confrontar a matriz com RSSSF e, quando possível, com fontes oficiais. Esses números são a estrutura esperada da edição e precisam ser confirmados durante a pesquisa, não simplesmente presumidos.
+6. Cadastrar clubes que ainda não existam, mantendo identificadores estáveis e nomes históricos corretos; registrar fontes por clube e por temporada.
+7. Criar o arquivo da temporada conforme o padrão existente, atualizar agregadores/índice de temporadas e incluir fontes individualizadas.
+8. Rodar validações: 306 partidas; 18 participantes; 34 rodadas; 17 jogos em casa e 17 fora por clube; IDs únicos; datas/rodadas; placares; total de gols calculado; referências de clubes e fontes. Conferir também a classificação derivada dos resultados e eventuais sanções.
+9. Não preencher escalações, autores/minutos de gols, árbitros, estádios ou públicos sem fonte específica. Isso pertence ao enriquecimento da Fase 2.
+10. Antes de seguir para 1974/75, apresentar relatório de cobertura, divergências, lacunas e testes executados. Só avançar após a temporada atual passar nas validações estruturais e o registro documental ser atualizado.
+11. Repetir o procedimento por blocos, avançando cronologicamente de 1973/74 até 2026/27. Para temporadas ainda não concluídas, identificar claramente que são parciais e atualizar apenas quando os jogos forem disputados; não inventar resultados futuros.
+
+### Como interpretar a meta até 2026/27
+
+A meta é um índice contínuo da Bundesliga masculina desde 1963/64 até 2026/27. Para temporadas concluídas, a Fase 1 deve cobrir a temporada inteira. Para 2026/27, que está em andamento na data desta diretriz (06/11/2026), cadastrar somente partidas efetivamente disputadas até a data de corte, identificando a temporada como parcial/em andamento. Não fabricar a temporada completa nem incluir resultados futuros.
+
+### Estado de validação e publicação no momento deste handoff
+
+- Os registros anteriores dizem que os blocos 1963/64–1967/68 e 1968/69–1972/73 foram adicionados à branch `feat/bundesliga-first-five-seasons`.
+- Para o segundo bloco, a tentativa de preview Vercel foi recusada com HTTP 402 por limite diário de deployments. O preview anterior READY não valida o estado final de dez temporadas.
+- A documentação anterior registra que GitHub Actions compilou um snapshot anterior (commit `b8ff3d413c563899a31397fea34acf479ceb59e2`) com sucesso, mas o deploy do GitHub Pages falhou porque Pages não estava habilitado. Isso não comprova a validação do estado mais recente.
+- O snapshot da branch `feat/bundesliga-fase-1-1973-2027` foi inspecionado em 06/11/2026; o tree SHA consultado foi `cdb1f4d061d48320b978fb143cf358c6581019e0`. Ele contém os dez arquivos de partidas até 1972/73 e não contém ainda arquivo 1973/74.
+- Portanto, **não afirmar que o terceiro bloco foi implantado, testado ou publicado**. Primeiro verificar HEAD, commits e diferenças das branches. Executar typecheck, testes e build no estado final da branch escolhida antes de declarar validação.
+- Nenhuma alteração desta seção autoriza merge para `main`, mudança de produção ou alteração da identidade visual do produto.
+
+### Fontes e referências para continuar a pesquisa
+
+- DFB Datencenter: https://datencenter.dfb.de/
+- Bundesliga/DFL: https://www.bundesliga.com/
+- RSSSF — Germany archive: https://www.rsssf.org/tablesd/duit.html
+- OpenFootball — Germany: https://github.com/openfootball/deutschland
+- Football CSV — Germany: https://github.com/footballcsv/deutschland
+- Sportschau: https://www.sportschau.de/fussball
+- Fontes específicas já usadas em 1963/64–1972/73: consultar os registros em `src/data/bundesliga/sources.ts`; não substituir URLs específicas por páginas genéricas quando a fonte individual estiver disponível.
+
+### Histórico da atualização deste handoff
+
+- **Data:** 06/11/2026.
+- **Responsável pela redação:** ChatGPT, modelo GPT-6.
+- **Motivo:** preparar a transferência do trabalho para Claude, preservando o ponto exato de retomada, a diferença entre Fase 1 e Fase 2, os dez anos já cobertos, as fontes, divergências, validações pendentes e a próxima temporada.
+- **Base da atualização:** leitura da diretriz existente na branch de trabalho, inspeção do tree Git da branch `feat/bundesliga-fase-1-1973-2027` e recuperação do histórico das pesquisas e decisões anteriores.
+- **Arquivos alterados por esta atualização:** somente `DIRETRIZ_DO_PROJETO.md`.
+- **Validação:** atualização documental; não executa nem valida código ou dados históricos novos.
+- **Deploy:** não se aplica; nenhuma publicação foi solicitada.
