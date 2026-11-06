@@ -1067,8 +1067,927 @@ export const bundesligaSources: BundesligaSource[] = [
     url: "https://www.rsssf.org/tablesd/duit73.html",
     type: "base-independente",
     notes: "Tabela final e matriz de resultados da temporada; referência independente usada para conferência agregada, não como alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1973-74",
+    title: "Bundesliga 1973/74 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1973-74/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1973-74",
+    title: "Germany 1973/74",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit74.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1974-75",
+    title: "Bundesliga 1974/75 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1974-75/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1974-75",
+    title: "Germany 1974/75",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit75.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1975-76",
+    title: "Bundesliga 1975/76 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1975-76/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1975-76",
+    title: "Germany 1975/76",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit76.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1976-77",
+    title: "Bundesliga 1976/77 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1976-77/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1976-77",
+    title: "Germany 1976/77",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit77.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1977-78",
+    title: "Bundesliga 1977/78 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1977-78/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1977-78",
+    title: "Germany 1977/78",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit78.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1978-79",
+    title: "Bundesliga 1978/79 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1978-79/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1978-79",
+    title: "Germany 1978/79",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit79.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1979-80",
+    title: "Bundesliga 1979/80 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1970s/1979-80/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1979-80",
+    title: "Germany 1979/80",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit80.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1980-81",
+    title: "Bundesliga 1980/81 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1980-81/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1980-81",
+    title: "Germany 1980/81",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit81.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1981-82",
+    title: "Bundesliga 1981/82 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1981-82/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1981-82",
+    title: "Germany 1981/82",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit82.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1982-83",
+    title: "Bundesliga 1982/83 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1982-83/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1982-83",
+    title: "Germany 1982/83",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit83.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1983-84",
+    title: "Bundesliga 1983/84 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1983-84/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1983-84",
+    title: "Germany 1983/84",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit84.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1984-85",
+    title: "Bundesliga 1984/85 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1984-85/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1984-85",
+    title: "Germany 1984/85",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit85.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1985-86",
+    title: "Bundesliga 1985/86 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1985-86/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1985-86",
+    title: "Germany 1985/86",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit86.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1986-87",
+    title: "Bundesliga 1986/87 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1986-87/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1986-87",
+    title: "Germany 1986/87",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit87.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1987-88",
+    title: "Bundesliga 1987/88 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1987-88/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1987-88",
+    title: "Germany 1987/88",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit88.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1988-89",
+    title: "Bundesliga 1988/89 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1988-89/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1988-89",
+    title: "Germany 1988/89",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit89.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1989-90",
+    title: "Bundesliga 1989/90 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1980s/1989-90/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1989-90",
+    title: "Germany 1989/90",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit90.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1990-91",
+    title: "Bundesliga 1990/91 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1990-91/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1990-91",
+    title: "Germany 1990/91",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit91.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1991-92",
+    title: "Bundesliga 1991/92 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1991-92/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1991-92",
+    title: "Germany 1991/92",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit92.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1992-93",
+    title: "Bundesliga 1992/93 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1992-93/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1992-93",
+    title: "Germany 1992/93",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit93.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1993-94",
+    title: "Bundesliga 1993/94 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1993-94/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1993-94",
+    title: "Germany 1993/94",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit94.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1994-95",
+    title: "Bundesliga 1994/95 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1994-95/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1994-95",
+    title: "Germany 1994/95",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit95.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1995-96",
+    title: "Bundesliga 1995/96 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1995-96/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1995-96",
+    title: "Germany 1995/96",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit96.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1996-97",
+    title: "Bundesliga 1996/97 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1996-97/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1996-97",
+    title: "Germany 1996/97",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit97.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1997-98",
+    title: "Bundesliga 1997/98 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1997-98/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1997-98",
+    title: "Germany 1997/98",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit98.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1998-99",
+    title: "Bundesliga 1998/99 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1998-99/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1998-99",
+    title: "Germany 1998/99",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit99.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-1999-00",
+    title: "Bundesliga 1999/00 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/1990s/1999-00/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-1999-00",
+    title: "Germany 1999/00",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit00.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2000-01",
+    title: "Bundesliga 2000/01 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2000-01/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2000-01",
+    title: "Germany 2000/01",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit01.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2001-02",
+    title: "Bundesliga 2001/02 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2001-02/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2001-02",
+    title: "Germany 2001/02",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit02.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2002-03",
+    title: "Bundesliga 2002/03 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2002-03/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2002-03",
+    title: "Germany 2002/03",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit03.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2003-04",
+    title: "Bundesliga 2003/04 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2003-04/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2003-04",
+    title: "Germany 2003/04",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit04.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2004-05",
+    title: "Bundesliga 2004/05 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2004-05/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2004-05",
+    title: "Germany 2004/05",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit05.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2005-06",
+    title: "Bundesliga 2005/06 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2005-06/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2005-06",
+    title: "Germany 2005/06",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit06.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2006-07",
+    title: "Bundesliga 2006/07 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2006-07/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2006-07",
+    title: "Germany 2006/07",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit07.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2007-08",
+    title: "Bundesliga 2007/08 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2007-08/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2007-08",
+    title: "Germany 2007/08",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit08.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2008-09",
+    title: "Bundesliga 2008/09 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2008-09/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2008-09",
+    title: "Germany 2008/09",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit09.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2009-10",
+    title: "Bundesliga 2009/10 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2000s/2009-10/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2009-10",
+    title: "Germany 2009/10",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2010.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2010-11",
+    title: "Bundesliga 2010/11 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2010-11/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2010-11",
+    title: "Germany 2010/11",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2011.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2011-12",
+    title: "Bundesliga 2011/12 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2011-12/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2011-12",
+    title: "Germany 2011/12",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2012.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2012-13",
+    title: "Bundesliga 2012/13 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2012-13/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2012-13",
+    title: "Germany 2012/13",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2013.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2013-14",
+    title: "Bundesliga 2013/14 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2013-14/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2013-14",
+    title: "Germany 2013/14",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2014.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2014-15",
+    title: "Bundesliga 2014/15 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2014-15/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2014-15",
+    title: "Germany 2014/15",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2015.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2015-16",
+    title: "Bundesliga 2015/16 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2015-16/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2015-16",
+    title: "Germany 2015/16",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2016.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2016-17",
+    title: "Bundesliga 2016/17 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2016-17/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2016-17",
+    title: "Germany 2016/17",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2017.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2017-18",
+    title: "Bundesliga 2017/18 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2017-18/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2017-18",
+    title: "Germany 2017/18",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2018.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2018-19",
+    title: "Bundesliga 2018/19 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2018-19/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2018-19",
+    title: "Germany 2018/19",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2019.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "footballcsv-2019-20",
+    title: "Bundesliga 2019/20 — resultados completos",
+    publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+    url: "https://github.com/footballcsv/deutschland/blob/master/2010s/2019-20/de.1.csv",
+    type: "base-de-dados-aberta-CC0",
+    notes: "CSV com rodada, data, mandante, placar e visitante, consultado em 06/11/2026 (commit 178324626681a9e4c42b81463f59f9c4500dbd53 do ramo master). O README do conjunto declara espelhamento 1:1 de openfootball/deutschland e a licença CC0 1.0. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "rsssf-germany-2019-20",
+    title: "Germany 2019/20",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2020.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2020-21",
+    title: "Bundesliga 2020/21 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2020-21/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2020-21",
+    title: "Bundesliga 2020/21 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2020",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2020-21",
+    title: "Germany 2020/21",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2021.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2021-22",
+    title: "Bundesliga 2021/22 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2021-22/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2021-22",
+    title: "Bundesliga 2021/22 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2021",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2021-22",
+    title: "Germany 2021/22",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2022.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2022-23",
+    title: "Bundesliga 2022/23 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2022-23/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2022-23",
+    title: "Bundesliga 2022/23 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2022",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2022-23",
+    title: "Germany 2022/23",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2023.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2023-24",
+    title: "Bundesliga 2023/24 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2023-24/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2023-24",
+    title: "Bundesliga 2023/24 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2023",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2023-24",
+    title: "Germany 2023/24",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2024.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2024-25",
+    title: "Bundesliga 2024/25 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2024-25/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2024-25",
+    title: "Bundesliga 2024/25 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2024",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2024-25",
+    title: "Germany 2024/25",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2025.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2025-26",
+    title: "Bundesliga 2025/26 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2025-26/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2025-26",
+    title: "Bundesliga 2025/26 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2025",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "rsssf-germany-2025-26",
+    title: "Germany 2025/26",
+    publisher: "RSSSF",
+    url: "https://www.rsssf.org/tablesd/duit2026.html",
+    type: "base-independente",
+    notes: "Tabela final da temporada; a classificação calculada a partir dos placares importados foi comparada linha a linha (jogos, vitórias, empates, derrotas, gols e pontos). Referência independente para conferência agregada, não alegação de auditoria individual de cada ficha."
+  },
+  {
+    id: "openfootball-2026-27",
+    title: "Bundesliga 2026/27 — calendário e resultados (openfootball)",
+    publisher: "openfootball/deutschland",
+    url: "https://github.com/openfootball/deutschland/blob/master/2026-27/1-bundesliga.txt",
+    type: "base-de-dados-aberta",
+    notes: "Arquivo Football.TXT com rodada, data, mandante, visitante e placar, consultado em 06/11/2026 (commit c34532ab6950aa0089ef1c736ffdb8c818c3356f do ramo master). O README do repositório descreve os dados como de domínio público. A importação registra apenas cobertura básica e não substitui fichas individuais."
+  },
+  {
+    id: "openligadb-2026-27",
+    title: "Bundesliga 2026/27 — resultados (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2026",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. O resultado final (tipo 2, fim da partida) de cada partida encerrada foi comparado com o openfootball por rodada, mandante e visitante, incluindo a data."
+  },
+  {
+    id: "hessenschau-bundesliga-2026-27",
+    title: "Bundesliga 2026/27 — tabela e 8º Spieltag (hessenschau.de)",
+    publisher: "hessenschau.de (Hessischer Rundfunk)",
+    url: "https://www.hessenschau.de/sport/ergebnisse-tabellen/fussball-1bl100~_matchday-8.html",
+    type: "conferencia-agregada",
+    notes: "Página consultada em 06/11/2026 com tabela marcada como 'Stand 05.11.26, 13:21' e os nove resultados da 8ª rodada. Usada para conferir a classificação calculada após a rodada 8 e os resultados dessa rodada; não substitui conferência partida a partida das rodadas 5 a 7."
   }
-
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
@@ -1166,6 +2085,47 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
   subject: "Arminia Bielefeld — sanção de pontos na Bundesliga 1971/72",
   adoptedSourceId: "rsssf-germany-1971-72",
   note: "A RSSSF registra que o Arminia Bielefeld perdeu todos os pontos por tentativa de suborno; os adversários não receberam vitórias por W.O. A posição final não mudou. Na futura reconstrução da classificação 1971/72, a sanção deve ser representada separadamente dos resultados em campo, sem criar W.O. fictício."
-}
-
+},
+  {
+    id: "third-to-current-basic-coverage",
+    severity: "escopo-editorial",
+    subject: "Cobertura básica de resultados — Bundesliga 1973/74 a 2026/27 (Fase 1)",
+    adoptedSourceId: "footballcsv-1973-74",
+    note: "Fase 1 (cobertura básica) das 53 temporadas completas de 1973/74 a 2025/26 e da temporada 2026/27 em andamento: 16.364 partidas e 49.906 gols calculados a partir dos placares importados. o que eleva o acervo básico a 19.292 partidas e 59.235 gols (1963/64 a 2026/27). Para 1973/74 a 2019/20 a base é footballcsv/deutschland (commit 17832462), com conferência da tabela final da RSSSF; para 2020/21 a 2026/27 a base é openfootball/deutschland (commit c34532ab), com conferência partida a partida contra o OpenLigaDB e, até 2025/26, com a tabela final da RSSSF. Foram importados rodada, data, mandante, visitante e placar; não foram preenchidos autores de gols, escalações, árbitros, estádios ou públicos. A conferência foi estrutural e agregada (partidas, rodadas, mando, gols e classificação) e não equivale à auditoria individual de cada ficha. A cobertura contém apenas os jogos da tabela da liga; eventuais desempates, play-offs de promoção ou rebaixamento e partidas fora da tabela não estão incluídos. A temporada 1991/92 teve 20 clubes, 38 rodadas e 380 partidas."
+  },
+  {
+    id: "footballcsv-2020-21-incomplete",
+    severity: "divergencia-de-fonte",
+    subject: "footballcsv/deutschland — temporada 2020/21 incompleta",
+    adoptedSourceId: "openfootball-2020-21",
+    note: "O arquivo footballcsv de 2020/21 (commit 17832462) lista 306 jogos, mas só os 63 primeiros (rodadas 1 a 7) têm placar; os 243 restantes estão sem resultado, e as temporadas posteriores não existem nesse conjunto. Por isso 2020/21 em diante foi importada do openfootball/deutschland e conferida com o OpenLigaDB e com a RSSSF."
+  },
+  {
+    id: "eintracht-frankfurt-points-deduction-1999-00",
+    severity: "nota-historica",
+    subject: "Eintracht Frankfurt — dedução de pontos na Bundesliga 1999/2000",
+    adoptedSourceId: "rsssf-germany-1999-00",
+    note: "A tabela final da RSSSF para 1999/2000 registra o Eintracht Frankfurt com 39 pontos e a nota de 2 pontos deduzidos por violações das condições de licença. Os resultados em campo somam 41 pontos (12 vitórias e 5 empates); a diferença é a dedução, não um placar divergente. Na reconstrução da classificação, representar a sanção separadamente dos resultados, sem criar W.O. fictício."
+  },
+  {
+    id: "kaiserslautern-points-deduction-2003-04",
+    severity: "nota-historica",
+    subject: "1. FC Kaiserslautern — dedução de pontos na Bundesliga 2003/04",
+    adoptedSourceId: "rsssf-germany-2003-04",
+    note: "A tabela final da RSSSF para 2003/04 registra o 1. FC Kaiserslautern com 36 pontos e a anotação [-3], com a observação de que três pontos foram deduzidos. Os resultados em campo somam 39 pontos (11 vitórias e 6 empates). A RSSSF não informa o motivo na tabela e a Alexandria não o presume. Na reconstrução da classificação, representar a sanção separadamente dos resultados."
+  },
+  {
+    id: "union-berlin-bochum-awarded-2024-25",
+    severity: "nota-historica",
+    subject: "Union Berlin x VfL Bochum — resultado atribuído em 14/12/2024",
+    adoptedSourceId: "rsssf-germany-2024-25",
+    note: "Na 14ª rodada de 2024/25, o openfootball marca o placar de 0–2 como atribuído e a RSSSF registra 'awarded 0-2; originally 1-1', com o goleiro do Bochum atingido por um isqueiro arremessado da torcida. O OpenLigaDB registra 0–2 como resultado final. A Alexandria registra 0–2 como resultado atribuído, anota o placar original e não cria ficha da partida sem fonte primária."
+  },
+  {
+    id: "bundesliga-2026-27-partial-coverage",
+    severity: "escopo-editorial",
+    subject: "Bundesliga 2026/27 — cobertura parcial até a rodada 8 (corte em 06/11/2026)",
+    adoptedSourceId: "openligadb-2026-27",
+    note: "Temporada em andamento. Foram cadastradas as 72 partidas encerradas das rodadas 1 a 8 (a mais recente em 01/11/2026), com 252 gols. As rodadas 1 a 4 (36 partidas) coincidem entre openfootball e OpenLigaDB; as rodadas 5 a 8 (36 partidas) constam apenas no OpenLigaDB, pois o arquivo openfootball consultado ainda não trazia esses placares. Para essas rodadas a conferência é agregada: a classificação calculada após a rodada 8 coincide linha a linha (jogos, vitórias, empates, derrotas, gols e pontos) com a tabela da hessenschau.de (Stand 05.11.2026, 13:21) e os nove resultados da rodada 8 coincidem com a página. A partida Hamburger SV x Borussia Mönchengladbach (06/11/2026, 20:30) ainda não estava encerrada na consulta e não foi cadastrada. Resultados futuros não são inventados; a temporada deve ser atualizada em novos lotes."
+  }
 ]

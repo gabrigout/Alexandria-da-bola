@@ -8,6 +8,7 @@ import {
   bundesligaSeasonIndex,
   bundesligaPlayers,
   bundesligaSources,
+  bundesligaSourceNotes,
   inauguralSeason,
   validateBundesligaData,
 } from './index'
@@ -29,7 +30,7 @@ describe('validação do acervo Bundesliga', () => {
     const result = validateBundesligaData(dataset)
     expect(result.valid).toBe(true)
     expect(result.errors).toEqual([])
-    expect(result.totals.clubs).toBe(29)
+    expect(result.totals.clubs).toBe(59)
     expect(result.totals.seasons).toBe(1)
   })
 
@@ -346,7 +347,7 @@ describe('validação do acervo Bundesliga', () => {
   it('resolve todos os clubes e fontes das partidas importadas', () => {
     const clubIds = new Set([...bundesligaClubs, ...bundesligaMatchClubs].map((club) => club.id))
     const sourceIds = new Set(bundesligaSources.map((source) => source.id))
-    expect(bundesligaMatchClubs).toHaveLength(13)
+    expect(bundesligaMatchClubs).toHaveLength(43)
     expect(bundesligaMatches.every((match) =>
       clubIds.has(match.homeClubId) && clubIds.has(match.awayClubId) &&
       match.sourceIds.length >= 2 && match.sourceIds.every((sourceId) => sourceIds.has(sourceId)),
@@ -368,8 +369,8 @@ describe('validação do acervo Bundesliga', () => {
 
     expect(secondFiveMatches).toHaveLength(1530)
     expect(new Set(secondFiveMatches.map((match) => match.id)).size).toBe(1530)
-    expect(bundesligaMatches).toHaveLength(2928)
-    expect(new Set(bundesligaMatches.map((match) => match.id)).size).toBe(2928)
+    expect(bundesligaMatches).toHaveLength(19292)
+    expect(new Set(bundesligaMatches.map((match) => match.id)).size).toBe(19292)
 
     for (const item of expected) {
       const seasonMatches = secondFiveMatches.filter((match) => match.seasonId === item.seasonId)
@@ -386,6 +387,138 @@ describe('validação do acervo Bundesliga', () => {
         expect(seasonMatches.filter((match) => match.homeClubId === clubId)).toHaveLength(17)
         expect(seasonMatches.filter((match) => match.awayClubId === clubId)).toHaveLength(17)
       }
+    }
+  })
+
+  it('indexa a cobertura básica completa de 1973/74 a 2025/26', () => {
+    const expected = [
+      { seasonId: '1973-74', matches: 306, teams: 18, rounds: 34, goals: 1085 },
+      { seasonId: '1974-75', matches: 306, teams: 18, rounds: 34, goals: 1056 },
+      { seasonId: '1975-76', matches: 306, teams: 18, rounds: 34, goals: 1009 },
+      { seasonId: '1976-77', matches: 306, teams: 18, rounds: 34, goals: 1084 },
+      { seasonId: '1977-78', matches: 306, teams: 18, rounds: 34, goals: 1014 },
+      { seasonId: '1978-79', matches: 306, teams: 18, rounds: 34, goals: 963 },
+      { seasonId: '1979-80', matches: 306, teams: 18, rounds: 34, goals: 1023 },
+      { seasonId: '1980-81', matches: 306, teams: 18, rounds: 34, goals: 1039 },
+      { seasonId: '1981-82', matches: 306, teams: 18, rounds: 34, goals: 1081 },
+      { seasonId: '1982-83', matches: 306, teams: 18, rounds: 34, goals: 1036 },
+      { seasonId: '1983-84', matches: 306, teams: 18, rounds: 34, goals: 1097 },
+      { seasonId: '1984-85', matches: 306, teams: 18, rounds: 34, goals: 1074 },
+      { seasonId: '1985-86', matches: 306, teams: 18, rounds: 34, goals: 992 },
+      { seasonId: '1986-87', matches: 306, teams: 18, rounds: 34, goals: 990 },
+      { seasonId: '1987-88', matches: 306, teams: 18, rounds: 34, goals: 962 },
+      { seasonId: '1988-89', matches: 306, teams: 18, rounds: 34, goals: 852 },
+      { seasonId: '1989-90', matches: 306, teams: 18, rounds: 34, goals: 790 },
+      { seasonId: '1990-91', matches: 306, teams: 18, rounds: 34, goals: 886 },
+      { seasonId: '1991-92', matches: 380, teams: 20, rounds: 38, goals: 994 },
+      { seasonId: '1992-93', matches: 306, teams: 18, rounds: 34, goals: 893 },
+      { seasonId: '1993-94', matches: 306, teams: 18, rounds: 34, goals: 895 },
+      { seasonId: '1994-95', matches: 306, teams: 18, rounds: 34, goals: 918 },
+      { seasonId: '1995-96', matches: 306, teams: 18, rounds: 34, goals: 831 },
+      { seasonId: '1996-97', matches: 306, teams: 18, rounds: 34, goals: 911 },
+      { seasonId: '1997-98', matches: 306, teams: 18, rounds: 34, goals: 883 },
+      { seasonId: '1998-99', matches: 306, teams: 18, rounds: 34, goals: 866 },
+      { seasonId: '1999-00', matches: 306, teams: 18, rounds: 34, goals: 885 },
+      { seasonId: '2000-01', matches: 306, teams: 18, rounds: 34, goals: 897 },
+      { seasonId: '2001-02', matches: 306, teams: 18, rounds: 34, goals: 893 },
+      { seasonId: '2002-03', matches: 306, teams: 18, rounds: 34, goals: 821 },
+      { seasonId: '2003-04', matches: 306, teams: 18, rounds: 34, goals: 909 },
+      { seasonId: '2004-05', matches: 306, teams: 18, rounds: 34, goals: 890 },
+      { seasonId: '2005-06', matches: 306, teams: 18, rounds: 34, goals: 861 },
+      { seasonId: '2006-07', matches: 306, teams: 18, rounds: 34, goals: 837 },
+      { seasonId: '2007-08', matches: 306, teams: 18, rounds: 34, goals: 860 },
+      { seasonId: '2008-09', matches: 306, teams: 18, rounds: 34, goals: 894 },
+      { seasonId: '2009-10', matches: 306, teams: 18, rounds: 34, goals: 866 },
+      { seasonId: '2010-11', matches: 306, teams: 18, rounds: 34, goals: 894 },
+      { seasonId: '2011-12', matches: 306, teams: 18, rounds: 34, goals: 875 },
+      { seasonId: '2012-13', matches: 306, teams: 18, rounds: 34, goals: 898 },
+      { seasonId: '2013-14', matches: 306, teams: 18, rounds: 34, goals: 967 },
+      { seasonId: '2014-15', matches: 306, teams: 18, rounds: 34, goals: 843 },
+      { seasonId: '2015-16', matches: 306, teams: 18, rounds: 34, goals: 866 },
+      { seasonId: '2016-17', matches: 306, teams: 18, rounds: 34, goals: 877 },
+      { seasonId: '2017-18', matches: 306, teams: 18, rounds: 34, goals: 855 },
+      { seasonId: '2018-19', matches: 306, teams: 18, rounds: 34, goals: 973 },
+      { seasonId: '2019-20', matches: 306, teams: 18, rounds: 34, goals: 982 },
+      { seasonId: '2020-21', matches: 306, teams: 18, rounds: 34, goals: 928 },
+      { seasonId: '2021-22', matches: 306, teams: 18, rounds: 34, goals: 954 },
+      { seasonId: '2022-23', matches: 306, teams: 18, rounds: 34, goals: 971 },
+      { seasonId: '2023-24', matches: 306, teams: 18, rounds: 34, goals: 985 },
+      { seasonId: '2024-25', matches: 306, teams: 18, rounds: 34, goals: 959 },
+      { seasonId: '2025-26', matches: 306, teams: 18, rounds: 34, goals: 990 },
+    ]
+    for (const item of expected) {
+      const seasonMatches = bundesligaMatches.filter((match) => match.seasonId === item.seasonId)
+      const teamIds = new Set(seasonMatches.flatMap((match) => [match.homeClubId, match.awayClubId]))
+      const roundIds = new Set(seasonMatches.map((match) => match.round))
+      const goals = seasonMatches.reduce((total, match) => total + match.homeGoals + match.awayGoals, 0)
+      expect(seasonMatches, `partidas ${item.seasonId}`).toHaveLength(item.matches)
+      expect(teamIds.size, `clubes ${item.seasonId}`).toBe(item.teams)
+      expect(roundIds.size, `rodadas ${item.seasonId}`).toBe(item.rounds)
+      expect(item.matches).toBe(item.teams * (item.teams - 1))
+      expect(item.rounds).toBe(2 * (item.teams - 1))
+      expect(goals, `gols ${item.seasonId}`).toBe(item.goals)
+      for (const clubId of teamIds) {
+        expect(seasonMatches.filter((match) => match.homeClubId === clubId), `casa ${item.seasonId} ${clubId}`).toHaveLength(item.teams - 1)
+        expect(seasonMatches.filter((match) => match.awayClubId === clubId), `fora ${item.seasonId} ${clubId}`).toHaveLength(item.teams - 1)
+      }
+      const perRound = new Map<number, number>()
+      for (const match of seasonMatches) perRound.set(match.round, (perRound.get(match.round) ?? 0) + 1)
+      expect([...perRound.values()].every((count) => count === item.teams / 2), `jogos por rodada ${item.seasonId}`).toBe(true)
+    }
+  })
+
+  it('cobre 1963/64 a 2025/26 sem lacunas e com 19.292 partidas contando a temporada em andamento', () => {
+    const seasons = new Set(bundesligaMatches.map((match) => match.seasonId))
+    for (let year = 1963; year <= 2026; year += 1) {
+      expect(seasons.has(`${year}-${String((year + 1) % 100).padStart(2, '0')}`), `temporada ausente: ${year}`).toBe(true)
+    }
+    expect(bundesligaMatches.reduce((total, match) => total + match.homeGoals + match.awayGoals, 0)).toBe(59235)
+  })
+
+  it('mantém dedução de pontos separada dos resultados em campo (1999/2000 e 2003/04)', () => {
+    const points = (seasonId: string, clubId: string) => {
+      let total = 0
+      for (const match of bundesligaMatches.filter((entry) => entry.seasonId === seasonId)) {
+        if (match.homeClubId === clubId) total += match.homeGoals > match.awayGoals ? 3 : match.homeGoals === match.awayGoals ? 1 : 0
+        if (match.awayClubId === clubId) total += match.awayGoals > match.homeGoals ? 3 : match.homeGoals === match.awayGoals ? 1 : 0
+      }
+      return total
+    }
+    expect(points('1999-00', 'eintracht-frankfurt')).toBe(41)
+    expect(points('2003-04', 'fc-kaiserslautern')).toBe(39)
+    const ids = bundesligaSourceNotes.map((note) => note.id)
+    expect(ids).toContain('eintracht-frankfurt-points-deduction-1999-00')
+    expect(ids).toContain('kaiserslautern-points-deduction-2003-04')
+    expect(ids).toContain('union-berlin-bochum-awarded-2024-25')
+  })
+
+  it('registra a temporada 2026/27 como parcial: rodadas 1 a 8 e classificação igual à tabela independente de 05/11/2026', () => {
+    const season = bundesligaMatches.filter((match) => match.seasonId === '2026-27')
+    expect(season).toHaveLength(72)
+    expect(new Set(season.map((match) => match.round))).toEqual(new Set([1, 2, 3, 4, 5, 6, 7, 8]))
+    for (let round = 1; round <= 8; round += 1) expect(season.filter((match) => match.round === round)).toHaveLength(9)
+    expect(season.every((match) => match.date <= '2026-11-06')).toBe(true)
+    expect(season.reduce((total, match) => total + match.homeGoals + match.awayGoals, 0)).toBe(252)
+    const table = new Map<string, { w: number; d: number; l: number; gf: number; ga: number }>()
+    for (const match of season) {
+      for (const [clubId, gf, ga] of [[match.homeClubId, match.homeGoals, match.awayGoals], [match.awayClubId, match.awayGoals, match.homeGoals]] as const) {
+        const row = table.get(clubId) ?? { w: 0, d: 0, l: 0, gf: 0, ga: 0 }
+        row.gf += gf; row.ga += ga
+        if (gf > ga) row.w += 1; else if (gf === ga) row.d += 1; else row.l += 1
+        table.set(clubId, row)
+      }
+    }
+    const expected: Array<[string, number, number, number, number, number]> = [
+      ['bayern-munich', 5, 3, 0, 27, 8], ['borussia-dortmund', 5, 3, 0, 14, 6], ['sc-freiburg', 5, 1, 2, 18, 10],
+      ['rb-leipzig', 5, 0, 3, 22, 11], ['werder-bremen', 4, 3, 1, 17, 14], ['bayer-leverkusen', 4, 1, 3, 18, 16],
+      ['sv-elversberg', 4, 1, 3, 16, 16], ['eintracht-frankfurt', 3, 2, 3, 13, 18], ['fsv-mainz-05', 3, 1, 4, 17, 17],
+      ['fc-augsburg', 2, 3, 3, 18, 15], ['vfb-stuttgart', 3, 0, 5, 14, 15], ['tsg-hoffenheim', 3, 0, 5, 14, 16],
+      ['fc-koln', 2, 3, 3, 9, 12], ['sc-paderborn-07', 2, 3, 3, 6, 9], ['hamburger-sv', 3, 0, 5, 7, 19],
+      ['union-berlin', 1, 4, 3, 7, 19], ['schalke-04', 1, 3, 4, 4, 9], ['borussia-monchengladbach', 1, 1, 6, 11, 22],
+    ]
+    expect(table.size).toBe(18)
+    for (const [clubId, w, d, l, gf, ga] of expected) {
+      expect(table.get(clubId), `classificação 2026/27: ${clubId}`).toEqual({ w, d, l, gf, ga })
     }
   })
 
