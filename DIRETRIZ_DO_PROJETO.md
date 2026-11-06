@@ -1205,3 +1205,29 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 18 partidas individuais cadastradas de 240; 222 pendentes. Rodadas 1 e 2 completas. A 3ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** mudanças gravadas na branch de trabalho em commits sequenciais. Não houve merge para `main`, deploy ou publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 3ª rodada (07/09/1963), mantendo o método de fontes individuais e validação por lote.
+
+
+---
+
+## 37. Registro de execução — Etapa 5, lote 3 — conclusão da 3ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Branch:** `phase-4-bundesliga-matches-batch-1`.
+- **Escopo executado:** adicionadas as oito partidas da 3ª rodada, em 07/09/1963.
+- **Partidas adicionadas:**
+  1. TSV 1860 München 1–3 1. FC Köln.
+  2. Karlsruher SC 0–4 Hamburger SV.
+  3. Eintracht Frankfurt 2–3 1. FC Nürnberg.
+  4. FC Schalke 04 3–1 Borussia Dortmund.
+  5. SV Werder Bremen 2–2 VfB Stuttgart.
+  6. Hertha BSC 2–2 1. FC Kaiserslautern.
+  7. SC Preußen Münster 4–2 Meidericher SV.
+  8. 1. FC Saarbrücken 2–2 Eintracht Braunschweig.
+- **Fontes:** oito fichas individuais do DFB Datencenter. Eventos de gols, estádios, públicos e árbitros foram transcritos somente quando presentes nas fichas oficiais. Nos casos em que o DFB exibe a denominação comercial atual do estádio, o nome do estádio foi omitido para evitar anacronismo.
+- **Observação editorial:** o gol contra de Lothar Geisler aos 55 minutos no Schalke 3–1 Dortmund foi atribuído ao Schalke como equipe beneficiada, com o jogador identificado no texto do evento como autor do gol contra. A regra de contagem do teste usa o clube ao qual o gol foi creditado.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito partidas na 3ª rodada; dados e eventos conferidos com as fichas oficiais. Teste automatizado da cobertura da rodada e coerência dos gols adicionado.
+- **Testes e build:** não executados neste ambiente remoto; aguardam execução em ambiente com dependências do projeto.
+- **Contagem após o lote:** 26 partidas individuais cadastradas de 240; 214 pendentes. Rodadas 1, 2 e 3 completas. A 4ª rodada tem uma partida existente (Meidericher SV 1–3 Hertha BSC), portanto sete jogos faltantes.
+- **Git/deploy:** commits gravados na branch de trabalho. Sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** completar os sete jogos faltantes da 4ª rodada (14/09/1963), sem duplicar Meidericher SV 1–3 Hertha BSC.
