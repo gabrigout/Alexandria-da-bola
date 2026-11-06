@@ -29,7 +29,7 @@ describe('validação do acervo Bundesliga', () => {
     const result = validateBundesligaData(dataset)
     expect(result.valid).toBe(true)
     expect(result.errors).toEqual([])
-    expect(result.totals.clubs).toBe(24)
+    expect(result.totals.clubs).toBe(29)
     expect(result.totals.seasons).toBe(1)
   })
 
