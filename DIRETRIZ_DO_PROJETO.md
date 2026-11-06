@@ -1155,3 +1155,29 @@ Prompt de continuidade para o agente do VS Code:
 - **Validação:** conferência textual da diretriz e dos arquivos de dados; nenhuma execução de testes ou build, pois não houve mudança na aplicação.
 - **Commit de inclusão do plano:** `5cefc07948023de48567aa15263f8fcd153e3246`.
 - **Deploy:** não se aplica; atualização exclusivamente documental.
+
+
+---
+
+## 35. Registro de execução — Etapa 5, lote 1 — 1ª rodada da Bundesliga 1963/64
+
+- **Responsável:** ChatGPT, modelo GPT-6; função de pesquisa histórica, curadoria de dados e manutenção do repositório.
+- **Branch verificada:** `phase-4-bundesliga-matches-batch-1`.
+- **Base verificada antes da alteração:** commit `6efa89c8db16be2d23d74d0dc9311a4be8c17314`; branch 14 commits à frente de `main`, sem commits atrás. Nenhuma alteração na `main`.
+- **Diagnóstico remoto:** antes deste lote havia 5 registros individuais em `matches.ts`; a primeira rodada tinha somente a partida de abertura cadastrada.
+- **Escopo executado:** completados os outros sete jogos da 1ª rodada, todos em 24/08/1963. A rodada agora possui oito registros individuais.
+- **Partidas adicionadas:**
+  1. 1. FC Saarbrücken 0–2 1. FC Köln.
+  2. TSV 1860 München 1–1 Eintracht Braunschweig.
+  3. Eintracht Frankfurt 1–1 1. FC Kaiserslautern.
+  4. FC Schalke 04 2–0 VfB Stuttgart.
+  5. SC Preußen Münster 1–1 Hamburger SV.
+  6. Karlsruher SC 1–4 Meidericher SV.
+  7. Hertha BSC 1–1 1. FC Nürnberg.
+- **Fontes:** fichas individuais do DFB Datencenter para os sete jogos. A RSSSF foi usada como conferência independente dos resultados da rodada. Para o jogo Karlsruher SC–Meidericher SV, o DFB exibe a denominação comercial atual BBBank Wildpark; o estádio foi omitido do registro para não projetar um nome moderno sobre 1963.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 1ª rodada; placares, clubes, data, rodada e eventos dos sete novos registros conferidos contra as fichas oficiais do DFB. Os eventos cadastrados correspondem aos placares.
+- **Testes automatizados e build:** não executados neste ambiente de edição remota; não declarar aprovação técnica até execução no ambiente de desenvolvimento.
+- **Contagem após o lote:** 12 partidas individuais cadastradas de 240; 228 pendentes. A 1ª rodada está completa; a 2ª rodada tem dois jogos já cadastrados e seis faltantes.
+- **Git/deploy:** alterações gravadas na branch de trabalho por commits de conteúdo; não houve merge para `main`, deploy ou publicação em produção. A situação de preview não foi alterada nem verificada nesta execução.
+- **Próxima ação:** continuar pela 2ª rodada, pesquisando os seis jogos faltantes sem duplicar Borussia Dortmund 3–3 TSV 1860 München e Hamburger SV 4–2 1. FC Saarbrücken. Antes de novo lote, recontar os dados e verificar os hashes atuais.
