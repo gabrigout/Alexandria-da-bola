@@ -1231,3 +1231,26 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 26 partidas individuais cadastradas de 240; 214 pendentes. Rodadas 1, 2 e 3 completas. A 4ª rodada tem uma partida existente (Meidericher SV 1–3 Hertha BSC), portanto sete jogos faltantes.
 - **Git/deploy:** commits gravados na branch de trabalho. Sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** completar os sete jogos faltantes da 4ª rodada (14/09/1963), sem duplicar Meidericher SV 1–3 Hertha BSC.
+
+
+---
+
+## 38. Registro de execução — Etapa 5, lote 4 — conclusão da 4ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas sete partidas faltantes da 4ª rodada (14/09/1963), preservando o registro já existente de Meidericher SV 1–3 Hertha BSC.
+- **Partidas adicionadas:**
+  1. 1. FC Köln 2–2 FC Schalke 04.
+  2. 1. FC Nürnberg 2–2 SC Preußen Münster.
+  3. Borussia Dortmund 2–1 1. FC Saarbrücken.
+  4. Hamburger SV 3–0 Eintracht Frankfurt.
+  5. VfB Stuttgart 1–1 TSV 1860 München.
+  6. 1. FC Kaiserslautern 3–0 SV Werder Bremen.
+  7. Eintracht Braunschweig 2–0 Karlsruher SC.
+- **Fontes:** sete fichas individuais do DFB Datencenter; a partida já cadastrada possui fonte oficial registrada anteriormente. Dados de cronologia, estádios, públicos e árbitros foram incluídos conforme as fichas consultadas.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 4ª rodada, sem duplicar Meidericher SV–Hertha BSC; teste automatizado de cobertura e coerência dos gols adicionado.
+- **Testes e build:** não executados neste ambiente; não há declaração de aprovação técnica.
+- **Contagem após o lote:** 33 partidas individuais cadastradas de 240; 207 pendentes. Rodadas 1 a 4 completas. A 5ª rodada possui um registro existente (Hertha BSC 0–3 1. FC Köln), portanto sete jogos faltantes.
+- **Git/deploy:** alterações registradas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** completar os sete jogos faltantes da 5ª rodada (21/09/1963), sem duplicar Hertha BSC 0–3 1. FC Köln.
