@@ -16,10 +16,15 @@ export const bundesligaSeasonIndex: BundesligaSeasonIndexEntry[] = Array.from(
         : current
           ? 'Temporada em andamento. Cobertura básica parcial: 72 partidas encerradas (rodadas 1 a 8, até 01/11/2026), data de corte 06/11/2026; consolidar ficha completa ao fim da edição.'
           : 'Temporada ainda não pesquisada e validada.'
+    const phase2 = inaugural
+      ? ' Fase 2: só as fichas documentadas à mão; nas demais partidas, registro de gols, estádio e público não encontrado.'
+      : startYear <= 2008
+        ? ' Fase 2: registro de gols, estádio e público não encontrado nas fontes abertas consultadas.'
+        : ' Fase 2: gols com autor e minuto, estádio e público registrados quando a fonte informa; o restante consta como registro não encontrado.'
     return {
       id, label: startYear + '/' + String(endYear).slice(-2), startYear, endYear,
       status: inaugural ? 'documentada' : current ? 'em-andamento' : 'pendente',
-      hasDetailedRecord: inaugural, updatePolicy: 'revisao-ao-final-da-temporada', note,
+      hasDetailedRecord: inaugural, updatePolicy: 'revisao-ao-final-da-temporada', note: note + phase2,
     }
   },
 )

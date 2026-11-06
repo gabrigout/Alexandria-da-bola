@@ -1987,6 +1987,150 @@ export const bundesligaSources: BundesligaSource[] = [
     url: "https://www.hessenschau.de/sport/ergebnisse-tabellen/fussball-1bl100~_matchday-8.html",
     type: "conferencia-agregada",
     notes: "Página consultada em 06/11/2026 com tabela marcada como 'Stand 05.11.26, 13:21' e os nove resultados da 8ª rodada. Usada para conferir a classificação calculada após a rodada 8 e os resultados dessa rodada; não substitui conferência partida a partida das rodadas 5 a 7."
+  },
+  {
+    id: "openligadb-detalhes-2009-10",
+    title: "Bundesliga 2009/10 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2009",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2010-11",
+    title: "Bundesliga 2010/11 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2010",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2011-12",
+    title: "Bundesliga 2011/12 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2011",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2012-13",
+    title: "Bundesliga 2012/13 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2012",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2013-14",
+    title: "Bundesliga 2013/14 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2013",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2014-15",
+    title: "Bundesliga 2014/15 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2014",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2015-16",
+    title: "Bundesliga 2015/16 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2015",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2016-17",
+    title: "Bundesliga 2016/17 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2016",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2017-18",
+    title: "Bundesliga 2017/18 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2017",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2018-19",
+    title: "Bundesliga 2018/19 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2018",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2019-20",
+    title: "Bundesliga 2019/20 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2019",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2020-21",
+    title: "Bundesliga 2020/21 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2020",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2021-22",
+    title: "Bundesliga 2021/22 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2021",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2022-23",
+    title: "Bundesliga 2022/23 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2022",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2023-24",
+    title: "Bundesliga 2023/24 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2023",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2024-25",
+    title: "Bundesliga 2024/25 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2024",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2025-26",
+    title: "Bundesliga 2025/26 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2025",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
+  },
+  {
+    id: "openligadb-detalhes-2026-27",
+    title: "Bundesliga 2026/27 — gols, estádio e público (OpenLigaDB)",
+    publisher: "OpenLigaDB",
+    url: "https://api.openligadb.de/getmatchdata/bl1/2026",
+    type: "base-independente-comunitaria",
+    notes: "API comunitária consultada em 06/11/2026. Usados: autor, minuto, pênalti e gol contra de cada gol; estádio e cidade; público. Cada partida foi ligada à base de resultados por mandante e visitante, com placar e data conferidos. Os termos de reutilização da API não foram verificados nesta consulta."
   }
 ]
 
@@ -2127,5 +2271,19 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
     subject: "Bundesliga 2026/27 — cobertura parcial até a rodada 8 (corte em 06/11/2026)",
     adoptedSourceId: "openligadb-2026-27",
     note: "Temporada em andamento. Foram cadastradas as 72 partidas encerradas das rodadas 1 a 8 (a mais recente em 01/11/2026), com 252 gols. As rodadas 1 a 4 (36 partidas) coincidem entre openfootball e OpenLigaDB; as rodadas 5 a 8 (36 partidas) constam apenas no OpenLigaDB, pois o arquivo openfootball consultado ainda não trazia esses placares. Para essas rodadas a conferência é agregada: a classificação calculada após a rodada 8 coincide linha a linha (jogos, vitórias, empates, derrotas, gols e pontos) com a tabela da hessenschau.de (Stand 05.11.2026, 13:21) e os nove resultados da rodada 8 coincidem com a página. A partida Hamburger SV x Borussia Mönchengladbach (06/11/2026, 20:30) ainda não estava encerrada na consulta e não foi cadastrada. Resultados futuros não são inventados; a temporada deve ser atualizada em novos lotes."
+  },
+  {
+    id: "phase-2-layer-1-details-2009-2027",
+    severity: "escopo-editorial",
+    subject: "Fase 2 — camada 1: gols, estádio e público de 2009/10 a 2026/27",
+    adoptedSourceId: "openligadb-detalhes-2009-10",
+    note: "Os detalhes ficam em arquivos separados por temporada (src/data/bundesliga/details/), carregados sob demanda, e ligados às partidas pelo identificador. Cada partida tem um status por campo: registrado, registro-nao-encontrado ou dados-incompletos-ou-inconsistentes. Um gol só é aceito quando todos os gols da partida têm autor e minuto e a sequência de placares avança um gol por vez e fecha com o resultado final; caso contrário nenhum gol da partida é importado. Nada foi preenchido por estimativa. Árbitro e escalações não existem na fonte e permanecem como registro não encontrado."
+  },
+  {
+    id: "phase-2-no-open-records-1964-2008",
+    severity: "lacuna-de-fonte",
+    subject: "Fase 2 — 1964/65 a 2008/09: registro não encontrado nas fontes abertas consultadas",
+    adoptedSourceId: "openligadb-detalhes-2009-10",
+    note: "O OpenLigaDB não traz gols, estádio nem público para as temporadas anteriores a 2009/10 (2004/05 a 2007/08 têm placares, sem esses campos). Transfermarkt, worldfootball.net e fussballdaten.de responderam com bloqueio ao acesso automatizado e não foram usados. O DFB Datencenter respondeu, mas não foi varrido partida a partida. As partidas dessas temporadas constam como registro não encontrado, o que não significa que os dados não existam, e sim que não foram obtidos por fonte rastreável aberta."
   }
 ]

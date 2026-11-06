@@ -1675,3 +1675,25 @@ A cobertura histórica básica registrada permanece em **2.928 partidas e 9.329 
 - **Commit de código e dados:** `de916131603920d708262ec184abb7bbaaed2c77`. **Registro documental:** commit seguinte na mesma branch.
 - **Deploy:** não publicado em produção. A `main` não foi alterada. Preview da branch na Vercel não foi consultado.
 - **Próximos passos propostos:** (1) decidir o carregamento sob demanda dos dados de partidas; (2) revisão visual; (3) atualizar 2026/27 conforme as rodadas forem disputadas, incluindo a partida de 06/11/2026; (4) decidir o merge para a `main`; (5) iniciar a Fase 2 para todo o acervo, com fonte específica por dado.
+
+---
+
+## 51. Fase 2 da Bundesliga — camada 1 de detalhes e marcação de lacunas — 06 de novembro de 2026
+
+- **IA/assistente:** Claude. **Modelo:** levantamento e geração com Claude Sonnet 5.5; testes, build e registro concluídos com Claude Opus 5.5, na mesma sessão.
+- **Responsabilidade:** curadoria de dados e código da Bundesliga.
+- **Pedido do usuário:** fazer a Fase 2 do início ao fim. Diante da falta de fontes abertas para as épocas antigas, o usuário decidiu: **onde não houver fonte, registrar que não foram encontrados registros**, sem preencher nada.
+- **Levantamento de fontes:** o OpenLigaDB não tem dados antes de 2002/03, tem só placares de 2004/05 a 2008/09 e traz gols, estádio e público a partir de 2009/10, com lacunas. Transfermarkt, worldfootball.net e fussballdaten.de bloquearam o acesso automatizado. O DFB Datencenter respondeu, mas **não foi varrido**; é o caminho para as épocas antigas numa próxima etapa.
+- **O que entrou (2009/10 a 2026/27, 5.274 partidas):**
+  - gols com autor e minuto (e marcação de pênalti e gol contra) em 5.050 partidas, com 15.243 gols;
+  - 158 partidas marcadas como dados incompletos ou inconsistentes (gol sem minuto ou autor, ou sequência de placar que não fecha) e 66 como registro não encontrado;
+  - estádio em 1.976 partidas e público em 1.646; o restante consta como registro não encontrado.
+- **Regra de aceitação dos gols:** todos os gols da partida precisam ter autor e minuto, a sequência de placares precisa avançar um gol por vez e fechar com o resultado final. Se qualquer gol falha, nenhum gol da partida é importado. Público só é aceito entre 100 e 100.000.
+- **1963/64 a 2008/09:** sem camada nova. Cada temporada consta no quadro de cobertura como registro não encontrado nas fontes abertas consultadas; 1963/64 mantém as fichas feitas à mão nas etapas anteriores. A nota também aparece no seletor de temporadas do site.
+- **Não entrou em nenhuma época:** árbitros e escalações (a fonte usada não tem) e cartões.
+- **Organização técnica:** `src/data/bundesliga/details/<temporada>.ts` (um registro por partida, com status por campo), `details/coverage.ts` (quadro de 1963/64 a 2026/27) e `details/index.ts` com `loadSeasonDetails`, que carrega cada temporada sob demanda. Novos tipos em `types.ts`. Fontes `openligadb-detalhes-<temporada>` e notas `phase-2-layer-1-details-2009-2027` e `phase-2-no-open-records-1964-2008` em `sources.ts`.
+- **Efeito no site:** a interface ainda não exibe os gols, estádio e público; por isso os arquivos de detalhes ainda não entram no pacote publicado (o tamanho continua em 9,55 MB, como na seção 50). Mostrar esses dados exige uma tela por temporada e depende de aprovação.
+- **Validação executada (06/11/2026):** `npm run build` concluído, com typecheck sem diagnósticos e 29 testes aprovados. Os testes conferem, para cada partida de 2009/10 em diante, se há um registro de detalhe, se os gols por clube batem com o placar, se o status corresponde aos campos e se as fontes existem, e se o quadro de cobertura soma corretamente em todas as 64 temporadas. Sem inspeção visual.
+- **Deploy:** não publicado. A `main` não foi alterada.
+- **Próximos passos propostos:** (1) testar o DFB Datencenter partida a partida para 1963/64 a 2008/09 e substituir "não encontrado" quando houver dado oficial; (2) tela da temporada com resultados e detalhes, carregados sob demanda; (3) decidir o merge para a `main`.
+

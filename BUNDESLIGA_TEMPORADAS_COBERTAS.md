@@ -95,3 +95,14 @@ A Fase 1 está concluída até a rodada 8 de 2026/27. Próximas ações: atualiz
 ## Verificação
 
 Typecheck, testes (Vitest) e build de produção foram executados localmente em 06/11/2026 sobre este estado; ver o registro na seção 50 da diretriz para o que foi e o que não foi verificado.
+
+## Fase 2 — detalhes por partida (06/11/2026)
+
+| Época | Gols com autor e minuto | Estádio | Público | Situação |
+|---|---:|---:|---:|---|
+| 1963/64 | fichas feitas à mão | idem | idem | demais partidas: registro não encontrado |
+| 1964/65–2008/09 | 0 | 0 | 0 | registro não encontrado nas fontes abertas consultadas |
+| 2009/10–2026/27 | 5.050 de 5.274 partidas (15.243 gols) | 1.976 | 1.646 | OpenLigaDB; o restante consta como não encontrado ou incompleto |
+
+Quadro completo por temporada em `src/data/bundesliga/details/coverage.ts`; detalhes em `src/data/bundesliga/details/`. Ver seção 51 da diretriz.
+

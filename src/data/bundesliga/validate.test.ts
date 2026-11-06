@@ -11,6 +11,9 @@ import {
   bundesligaSourceNotes,
   inauguralSeason,
   validateBundesligaData,
+  bundesligaDetailCoverage,
+  loadSeasonDetails,
+  detailSeasonIds,
 } from './index'
 
 const dataset = {
@@ -520,6 +523,52 @@ describe('validação do acervo Bundesliga', () => {
     for (const [clubId, w, d, l, gf, ga] of expected) {
       expect(table.get(clubId), `classificação 2026/27: ${clubId}`).toEqual({ w, d, l, gf, ga })
     }
+  })
+
+  it('Fase 2: cada temporada de 2009/10 em diante tem um detalhe por partida, coerente com o placar e as fontes', async () => {
+    const sourceIds = new Set(bundesligaSources.map((source) => source.id))
+    const byId = new Map(bundesligaMatches.map((match) => [match.id, match]))
+    expect(detailSeasonIds).toHaveLength(18)
+    for (const seasonId of detailSeasonIds) {
+      const details = await loadSeasonDetails(seasonId)
+      const seasonMatches = bundesligaMatches.filter((match) => match.seasonId === seasonId)
+      expect(details, `detalhes ${seasonId}`).toHaveLength(seasonMatches.length)
+      expect(new Set(details.map((detail) => detail.matchId)).size).toBe(seasonMatches.length)
+      const coverage = bundesligaDetailCoverage.find((entry) => entry.seasonId === seasonId)
+      expect(coverage?.goals.registrado).toBe(details.filter((detail) => detail.status.goals === 'registrado').length)
+      expect(coverage?.venue.registrado).toBe(details.filter((detail) => detail.stadium).length)
+      expect(coverage?.attendance.registrado).toBe(details.filter((detail) => detail.attendance !== undefined).length)
+      for (const detail of details) {
+        const match = byId.get(detail.matchId)
+        expect(match, `partida inexistente: ${detail.matchId}`).toBeDefined()
+        if (!match) continue
+        expect(detail.sourceIds.every((id) => sourceIds.has(id))).toBe(true)
+        expect(detail.status.venue === 'registrado').toBe(Boolean(detail.stadium))
+        expect(detail.status.attendance === 'registrado').toBe(detail.attendance !== undefined)
+        if (detail.status.goals === 'registrado') {
+          const goals = detail.goals ?? []
+          expect(goals.filter((goal) => goal.clubId === match.homeClubId), `gols mandante ${detail.matchId}`).toHaveLength(match.homeGoals)
+          expect(goals.filter((goal) => goal.clubId === match.awayClubId), `gols visitante ${detail.matchId}`).toHaveLength(match.awayGoals)
+          expect(goals.every((goal) => goal.player.length > 0 && goal.minute >= 0 && goal.minute <= 130)).toBe(true)
+        } else {
+          expect(detail.goals, `gols não deveriam existir: ${detail.matchId}`).toBeUndefined()
+        }
+        if (detail.attendance !== undefined) expect(detail.attendance).toBeGreaterThanOrEqual(100)
+      }
+    }
+  })
+
+  it('Fase 2: o quadro de cobertura cobre 1963/64 a 2026/27 e marca as épocas sem registro', () => {
+    expect(bundesligaDetailCoverage).toHaveLength(64)
+    for (const entry of bundesligaDetailCoverage) {
+      expect(entry.goals.registrado + entry.goals.naoEncontrado + entry.goals.incompleto).toBe(entry.matches)
+      expect(entry.venue.registrado + entry.venue.naoEncontrado).toBe(entry.matches)
+      expect(entry.attendance.registrado + entry.attendance.naoEncontrado).toBe(entry.matches)
+      expect(entry.matches).toBe(bundesligaMatches.filter((match) => match.seasonId === entry.seasonId).length)
+    }
+    const gap = bundesligaDetailCoverage.filter((entry) => Number(entry.seasonId.slice(0, 4)) >= 1964 && Number(entry.seasonId.slice(0, 4)) <= 2008)
+    expect(gap).toHaveLength(45)
+    expect(gap.every((entry) => entry.goals.registrado === 0 && entry.layer === 'nenhuma')).toBe(true)
   })
 
 })
