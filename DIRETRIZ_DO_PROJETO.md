@@ -1436,3 +1436,9 @@ Prompt de continuidade para o agente do VS Code:
 - **Testes/build/deploy:** testes e build do segundo bloco ainda precisam ser executados pelo preview automatizado da Vercel. Não declarar aprovação até a leitura do status e dos logs.
 - **Próximo passo:** validar o bloco completo de dez temporadas e, depois, trabalhar no terceiro bloco (1973/74 a 1977/78), mantendo o mesmo padrão de cobertura e rastreabilidade.
 
+
+
+### Divergências e sanção histórica registradas durante a validação do segundo bloco
+
+- **Bundesliga 1969/70 — gols da tabela RSSSF:** a soma dos gols pró nas 18 linhas da tabela final RSSSF é 949; a matriz da própria RSSSF totaliza 951 gols. A matriz foi conferida contra os 306 registros CSV e todos os 306 placares coincidem. A Alexandria mantém 951 gols calculados dos placares e registra a soma 949 da tabela como inconsistência interna da fonte. Nota cadastrada: `rsssf-1969-70-final-table-goals-discrepancy`.
+- **Bundesliga 1971/72 — Arminia Bielefeld:** a RSSSF registra a retirada de todos os pontos do clube por tentativa de suborno, sem concessão de W.O. aos adversários; a posição final não foi alterada. A futura tabela histórica deve aplicar a sanção separadamente dos resultados. Nota cadastrada: `arminia-bielefeld-points-sanction-1971-72`.
