@@ -1598,3 +1598,48 @@ Esta atualização apenas melhora a localização/documentação do acervo; não
 - **Arquivos:** criado `BUNDESLIGA_TEMPORADAS_COBERTAS.md`; atualizado este documento.
 - **Commit do inventário:** `a396ad21af1b618ef4cb42b76868656dffd810bb`.
 - **Validação:** links e arquivos das dez temporadas conferidos na branch de trabalho; sem validação de build/testes.
+
+
+## 49. Publicação de produção — 06/11/2026
+
+Em 06/11/2026, a versão mais recente disponível na branch `feat/bundesliga-fase-1-1973-2027` foi publicada no ambiente **Production** da Vercel.
+
+### O que foi publicado
+
+- **Repositório:** `gabrigout/Alexandria-da-bola`.
+- **Branch de origem:** `feat/bundesliga-fase-1-1973-2027`.
+- **Commit publicado:** `1ffbaaa7e5a5b86cac9ac230b97afadf0f5a8ab7` — “Esclarece localização das temporadas cobertas para continuidade Claude”.
+- **Deployment Vercel:** `dpl_DXCiizadAWoCVfvjq6sjKzCGmC6C`.
+- **Estado confirmado:** `READY`.
+- **Target:** `production`.
+- **Domínio principal atribuído:** https://alexandria-da-bola.vercel.app
+- **URL do deployment:** https://alexandria-da-bola-66c7zmhrf-gabriel3-1b9a.vercel.app
+- **Alias Git da branch:** https://alexandria-da-bola-git-feat-bundesliga-fas-3007c9-gabriel3-1b9a.vercel.app
+
+### Conteúdo e limites da publicação
+
+A publicação contém o estado de código e dados presente no commit acima, incluindo o módulo da Bundesliga com as dez temporadas já cadastradas de 1963/64 a 1972/73, o índice/integração do módulo e os documentos de continuidade e inventário existentes nesse commit.
+
+A cobertura histórica básica registrada permanece em **2.928 partidas e 9.329 gols**. Isso não significa que a temporada 1973/74 em diante tenha sido pesquisada ou incluída: a próxima temporada pendente continua sendo 1973/74. A Fase 2 (autores/minutos de gols, escalações, árbitros, estádios, público e demais metadados) também não foi concluída por esta publicação.
+
+### Procedimento e integridade do repositório
+
+- A publicação foi feita diretamente da branch de trabalho para o target Production da Vercel.
+- **Não foi feito merge para `main`** e a branch principal não foi alterada.
+- A diferença entre `main` e a branch de trabalho foi preservada para revisão posterior. Ela contém 97 commits à frente e uma remoção de `ANDAMENTO_DO_PROJETO_ALEXANDRIA.md`, substituído na branch pela nova estrutura documental; essa mudança não foi mesclada silenciosamente.
+- O deployment anterior da mesma branch era um preview. O deployment registrado nesta seção é o que recebeu explicitamente o target `production` e foi consultado depois até retornar `READY`.
+
+### Validação e ressalvas
+
+- **Confirmado:** a Vercel aceitou a origem Git indicada, construiu o deployment e retornou estado `READY`, com alias de produção e sem erro de alias.
+- **Não confirmado nesta operação:** execução local de `npm test`, `npm run typecheck` ou auditoria partida a partida; inspeção visual/manual de todas as telas após a publicação.
+- A disponibilidade do deployment em `READY` comprova a conclusão do build/deploy da Vercel, mas não substitui testes funcionais completos nem valida a exatidão histórica de todos os registros.
+- A configuração do projeto indica proteção SSO para deployments em domínios `vercel.app` (exceto domínios customizados). Se o endereço principal pedir autenticação, verificar a configuração de proteção/domínio na Vercel; isso não altera o estado `READY` do deployment.
+
+### Registro da operação
+
+- **Data:** 06/11/2026.
+- **Responsável pela operação:** ChatGPT, GPT-6, a pedido do usuário.
+- **Ação:** publicação direta da branch de trabalho no ambiente Production da Vercel.
+- **Resultado:** deployment `READY`; domínio principal atribuído.
+- **Próximo passo recomendado:** executar typecheck/testes e revisão visual no site; depois decidir separadamente se os 97 commits da branch devem ser integrados à `main`.
