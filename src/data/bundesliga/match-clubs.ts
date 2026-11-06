@@ -64,5 +64,45 @@ export const bundesligaMatchClubs: BundesligaMatchClub[] = [
       "footballcsv-1967-68",
       "rsssf-germany-1967-68"
     ]
+  },
+  {
+    "id": "kickers-offenbach",
+    "name": "Kickers Offenbach",
+    "sourceIds": [
+      "footballcsv-1968-69",
+      "rsssf-germany-1968-69"
+    ]
+  },
+  {
+    "id": "rot-weiss-oberhausen",
+    "name": "Rot-Weiß Oberhausen",
+    "sourceIds": [
+      "footballcsv-1969-70",
+      "rsssf-germany-1969-70"
+    ]
+  },
+  {
+    "id": "arminia-bielefeld",
+    "name": "Arminia Bielefeld",
+    "sourceIds": [
+      "footballcsv-1970-71",
+      "rsssf-germany-1970-71"
+    ]
+  },
+  {
+    "id": "vfl-bochum",
+    "name": "VfL Bochum",
+    "sourceIds": [
+      "footballcsv-1971-72",
+      "rsssf-germany-1971-72"
+    ]
+  },
+  {
+    "id": "wuppertaler-sv",
+    "name": "Wuppertaler SV",
+    "sourceIds": [
+      "footballcsv-1972-73",
+      "rsssf-germany-1972-73"
+    ]
   }
 ]
