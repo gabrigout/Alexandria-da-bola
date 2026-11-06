@@ -219,6 +219,20 @@ describe('validação do acervo Bundesliga', () => {
     }
   })
 
+
+  it('completa a sexta rodada com oito partidas e cronologias coerentes', () => {
+    const roundSix = bundesligaMatches.filter((match) => match.round === 6)
+    expect(roundSix).toHaveLength(8)
+    expect(roundSix.every((match) => match.date === '1963-10-05')).toBe(true)
+    expect(new Set(roundSix.map((match) => match.id)).size).toBe(8)
+    for (const match of roundSix.filter((entry) => entry.events?.length)) {
+      const homeGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.homeClubId).length ?? 0
+      const awayGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.awayClubId).length ?? 0
+      expect(homeGoals, `gols do mandante incompatíveis: ${match.id}`).toBe(match.homeGoals)
+      expect(awayGoals, `gols do visitante incompatíveis: ${match.id}`).toBe(match.awayGoals)
+    }
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
