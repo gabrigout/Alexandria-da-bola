@@ -884,6 +884,110 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Weserstadion, 16.000, árbitro Willi Thier; Klaus Hänel (22'), Uwe Klimaschefski (64'), gol contra de Hans-Günter Schimmöller (76') e Harald Beyer (85'). A ficha também registra pênalti desperdiçado por Arnold Schütz aos 50'."
   },
+  {
+  id: "footballcsv-1963-64",
+  title: "Bundesliga 1963/64 — resultados completos",
+  publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+  url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1963-64/de.1.csv",
+  type: "base-de-dados-aberta-CC0",
+  notes: "CSV com rodada, data, mandante, placar e visitante. O README declara que o conjunto é espelho 1:1 de openfootball/deutschland; o repositório declara licença CC0 1.0. Não contém, por si só, autores de gols, escalações, público ou arbitragem."
+},
+  {
+  id: "footballcsv-1964-65",
+  title: "Bundesliga 1964/65 — resultados completos",
+  publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+  url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1964-65/de.1.csv",
+  type: "base-de-dados-aberta-CC0",
+  notes: "CSV com rodada, data, mandante, placar e visitante. O README declara que o conjunto é espelho 1:1 de openfootball/deutschland; o repositório declara licença CC0 1.0. Não contém, por si só, autores de gols, escalações, público ou arbitragem."
+},
+  {
+  id: "rsssf-germany-1964-65",
+  title: "Germany 1964/65",
+  publisher: "RSSSF",
+  url: "https://www.rsssf.org/tablesd/duit65.html",
+  type: "base-independente",
+  notes: "Resultados, tabela final e contexto da temporada; usado como fonte independente de conferência do conjunto de resultados."
+},
+  {
+  id: "footballcsv-1965-66",
+  title: "Bundesliga 1965/66 — resultados completos",
+  publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+  url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1965-66/de.1.csv",
+  type: "base-de-dados-aberta-CC0",
+  notes: "CSV com rodada, data, mandante, placar e visitante. O README declara que o conjunto é espelho 1:1 de openfootball/deutschland; o repositório declara licença CC0 1.0. Não contém, por si só, autores de gols, escalações, público ou arbitragem."
+},
+  {
+  id: "rsssf-germany-1965-66",
+  title: "Germany 1965/66",
+  publisher: "RSSSF",
+  url: "https://www.rsssf.org/tablesd/duit66.html",
+  type: "base-independente",
+  notes: "Resultados, tabela final e contexto da temporada; usado como fonte independente de conferência do conjunto de resultados."
+},
+  {
+  id: "footballcsv-1966-67",
+  title: "Bundesliga 1966/67 — resultados completos",
+  publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+  url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1966-67/de.1.csv",
+  type: "base-de-dados-aberta-CC0",
+  notes: "CSV com rodada, data, mandante, placar e visitante. O README declara que o conjunto é espelho 1:1 de openfootball/deutschland; o repositório declara licença CC0 1.0. Não contém, por si só, autores de gols, escalações, público ou arbitragem."
+},
+  {
+  id: "rsssf-germany-1966-67",
+  title: "Germany 1966/67",
+  publisher: "RSSSF",
+  url: "https://www.rsssf.org/tablesd/duit67.html",
+  type: "base-independente",
+  notes: "Resultados, tabela final e contexto da temporada; usado como fonte independente de conferência do conjunto de resultados."
+},
+  {
+  id: "footballcsv-1967-68",
+  title: "Bundesliga 1967/68 — resultados completos",
+  publisher: "footballcsv/deutschland (espelho de openfootball/deutschland)",
+  url: "https://github.com/footballcsv/deutschland/blob/master/1960s/1967-68/de.1.csv",
+  type: "base-de-dados-aberta-CC0",
+  notes: "CSV com rodada, data, mandante, placar e visitante. O README declara que o conjunto é espelho 1:1 de openfootball/deutschland; o repositório declara licença CC0 1.0. Não contém, por si só, autores de gols, escalações, público ou arbitragem."
+},
+  {
+  id: "rsssf-germany-1967-68",
+  title: "Germany 1967/68",
+  publisher: "RSSSF",
+  url: "https://www.rsssf.org/tablesd/duit68.html",
+  type: "base-independente",
+  notes: "Resultados, tabela final e contexto da temporada; usado como fonte independente de conferência do conjunto de resultados."
+},
+  {
+  id: "sportschau-match-braunschweig-koeln-1963-11-08",
+  title: "Eintracht Braunschweig — 1. FC Köln, 1:1, 10. Spieltag",
+  publisher: "Sportschau (ARD)",
+  url: "https://www.sportschau.de/live-und-ergebnisse/fussball/deutschland-bundesliga/ma188045/eintracht-braunschweig_1-fc-koeln/spiel-spiele-und-ergebnisse",
+  type: "ficha-de-partida",
+  notes: "A página de resultados registra 08/11/1963, em conflito com a data de 09/11 exibida na ficha individual do DFB."
+},
+  {
+  id: "transfermarkt-match-braunschweig-koeln-1963-11-08",
+  title: "Eintracht Braunschweig — 1. FC Köln, 08/11/1963",
+  publisher: "Transfermarkt",
+  url: "https://www.transfermarkt.at/eintracht-braunschweig_1-fc-koln/index/spielbericht/924999",
+  type: "ficha-de-partida-independente",
+  notes: "Registra a partida em 08/11/1963, corroborando Sportschau e a base footballcsv."
+},
+  {
+  id: "bundesliga-msv-name-change-1967",
+  title: "MSV Duisburg — mudança de nome em janeiro de 1967",
+  publisher: "Bundesliga (DFL)",
+  url: "https://www.bundesliga.com/en/bundesliga/news/msv-duisburg-club-by-club-historical-guide-meiderich-helmut-rahn-24166",
+  type: "historia-oficial-de-clube",
+  notes: "A história oficial da Bundesliga informa que a denominação MSV Duisburg apareceu em 07/01/1967; antes disso o clube era conhecido como Meidericher SV."
+},
+  {
+  id: "dsfs-msv-name-change-1967",
+  title: "Bundesliga-Chronik 1966/67 — Meidericher SpV / MSV Duisburg",
+  publisher: "Deutscher Sportclub für Fußball-Statistiken (DSFS)",
+  url: "https://www.dsfs.de/wp-content/uploads/2024/01/BL-Chronik_1966-67.pdf",
+  type: "cronica-estatistica-independente",
+  notes: "A cronologia informa a alteração do nome do clube para MSV Duisburg em 09/01/1967."
+}
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
@@ -940,4 +1044,25 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
     "note": "A ficha individual do DFB registra gol contra de Hartmut Heidemann aos 21'; a RSSSF atribui o gol contra a Rainer Schönwälder. O cadastro adota provisoriamente a ficha individual do DFB."
   },
 
+  {
+  id: "first-five-seasons-basic-coverage",
+  severity: "escopo-editorial",
+  subject: "Cobertura básica de resultados — Bundesliga 1963/64 a 1967/68",
+  adoptedSourceId: "footballcsv-1963-64",
+  note: "A base reúne 1.398 partidas: 240 em 1963/64, 240 em 1964/65 e 306 em cada uma das temporadas 1965/66, 1966/67 e 1967/68. Foram importados rodada, data, mandante, visitante e placar. A base CSV é CC0 1.0 e espelha o conjunto openfootball/deutschland; RSSSF foi usado como referência independente. A importação não equivale a auditoria individual de cada partida e não preenche autores de gols, escalações, árbitros, estádios ou públicos sem fontes específicas."
+},
+  {
+  id: "braunschweig-koeln-date-conflict-1963-11",
+  severity: "divergencia",
+  subject: "Eintracht Braunschweig 1–1 1. FC Köln — data da 10ª rodada",
+  adoptedSourceId: "dfb-match-braunschweig-koeln-1963-11-09",
+  note: "A ficha individual do DFB Datencenter indica sábado, 09/11/1963. Sportschau, Transfermarkt e a base footballcsv indicam sexta-feira, 08/11/1963. O registro preserva provisoriamente 09/11/1963 por seguir a ficha individual oficial do DFB; a divergência permanece aberta e não deve ser apagada."
+},
+  {
+  id: "meidericher-name-change-1967",
+  severity: "divergencia",
+  subject: "Denominação histórica do Meidericher SV / MSV Duisburg",
+  adoptedSourceId: "dsfs-msv-name-change-1967",
+  note: "Há divergência de um dia na data da mudança: a história oficial da Bundesliga informa que o nome MSV Duisburg apareceu em 07/01/1967; a cronologia DSFS registra a mudança em 09/01/1967. A Alexandria adota provisoriamente 09/01/1967 para exibição do nome, seguindo a cronologia DSFS, e mantém a divergência aberta."
+}
 ]
