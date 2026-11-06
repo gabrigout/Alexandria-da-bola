@@ -191,6 +191,20 @@ describe('validação do acervo Bundesliga', () => {
     }
   })
 
+
+  it('completa a quarta rodada com oito partidas e cronologias coerentes', () => {
+    const roundFour = bundesligaMatches.filter((match) => match.round === 4)
+    expect(roundFour).toHaveLength(8)
+    expect(roundFour.every((match) => match.date === '1963-09-14')).toBe(true)
+    expect(new Set(roundFour.map((match) => match.id)).size).toBe(8)
+    for (const match of roundFour.filter((entry) => entry.events?.length)) {
+      const homeGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.homeClubId).length ?? 0
+      const awayGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.awayClubId).length ?? 0
+      expect(homeGoals, `gols do mandante incompatíveis: ${match.id}`).toBe(match.homeGoals)
+      expect(awayGoals, `gols do visitante incompatíveis: ${match.id}`).toBe(match.awayGoals)
+    }
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
