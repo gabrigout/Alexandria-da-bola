@@ -1181,3 +1181,27 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 12 partidas individuais cadastradas de 240; 228 pendentes. A 1ª rodada está completa; a 2ª rodada tem dois jogos já cadastrados e seis faltantes.
 - **Git/deploy:** alterações gravadas na branch de trabalho por commits de conteúdo; não houve merge para `main`, deploy ou publicação em produção. A situação de preview não foi alterada nem verificada nesta execução.
 - **Próxima ação:** continuar pela 2ª rodada, pesquisando os seis jogos faltantes sem duplicar Borussia Dortmund 3–3 TSV 1860 München e Hamburger SV 4–2 1. FC Saarbrücken. Antes de novo lote, recontar os dados e verificar os hashes atuais.
+
+
+---
+
+## 36. Registro de execução — Etapa 5, lote 2 — conclusão da 2ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Branch:** `phase-4-bundesliga-matches-batch-1`.
+- **Base do lote:** commit remoto verificado após o lote 1; sem alterações na `main`.
+- **Escopo executado:** adicionadas as seis partidas faltantes da 2ª rodada, todas em 31/08/1963. Os jogos Borussia Dortmund 3–3 TSV 1860 München e Hamburger SV 4–2 1. FC Saarbrücken foram preservados, sem duplicação.
+- **Partidas adicionadas:**
+  1. 1. FC Nürnberg 3–0 SV Werder Bremen.
+  2. 1. FC Kaiserslautern 2–3 FC Schalke 04.
+  3. 1. FC Köln 4–0 Karlsruher SC.
+  4. Meidericher SV 3–1 Eintracht Frankfurt.
+  5. Eintracht Braunschweig 1–0 SC Preußen Münster.
+  6. VfB Stuttgart 2–0 Hertha BSC.
+- **Fontes:** seis fichas individuais oficiais do DFB Datencenter. A cronologia e os dados contextuais foram transcritos das fichas individuais. O gol contra de Willi Schulz aos 28 minutos foi preservado como gol atribuído ao Schalke, identificado editorialmente como gol contra; não foi tratado como gol do Kaiserslautern.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** a 2ª rodada contém oito partidas; placares, datas, participantes, estádios, públicos, árbitros e cronologias dos seis novos jogos conferidos nas fichas do DFB. O teste de cobertura da segunda rodada foi adicionado.
+- **Testes e build:** não executados neste ambiente; aguardam execução no ambiente de desenvolvimento.
+- **Contagem após o lote:** 18 partidas individuais cadastradas de 240; 222 pendentes. Rodadas 1 e 2 completas. A 3ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** mudanças gravadas na branch de trabalho em commits sequenciais. Não houve merge para `main`, deploy ou publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 3ª rodada (07/09/1963), mantendo o método de fontes individuais e validação por lote.
