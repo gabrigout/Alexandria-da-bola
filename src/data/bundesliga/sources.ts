@@ -689,6 +689,71 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Data, rodada, Ludwigsparkstadion, público de 28.000, árbitro Alfred Ott, placar e gols de Werner Rinas (11'), Willy Reitgaßl (38' e 62'), Heinz Vollmar (42'), Winfried Richter (66') e Co Prins (69')."
   },
+
+  {
+    "id": "dfb-match-hamburg-tsv-1963-10-19",
+    "title": "Hamburger SV — TSV 1860 München, 5:0, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8-spieltag/hamburger-sv-tsv-1860-muenchen-188029",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Volksparkstadion, 57.000, árbitro Horst Mathieu; gols de Uwe Seeler (19', 22' e 76'), Charly Dörfel (38') e Willi Giesemann (72')."
+  },
+  {
+    "id": "dfb-match-koeln-muenster-1963-10-19",
+    "title": "1. FC Köln — SC Preußen Münster, 3:0, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8-spieltag/1-fc-koeln-preussen-muenster-188030",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Müngersdorfer Stadion, 25.000, árbitro Hans-Joachim Weyland; gol contra de Dagmar Drewes (22'), Wolfgang Overath (80') e Christian Müller (90'). A RSSSF atribui o gol de abertura a Overath; Alexandria adota provisoriamente a ficha DFB."
+  },
+  {
+    "id": "dfb-match-nuernberg-schalke-1963-10-19",
+    "title": "1. FC Nürnberg — FC Schalke 04, 0:2, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8/1-fc-nuernberg-fc-schalke-04-188031",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Städtisches Stadion, 36.000, árbitro Alfred Ott; dois gols de Klaus Matischak (25' e 64')."
+  },
+  {
+    "id": "dfb-match-stuttgart-frankfurt-1963-10-19",
+    "title": "VfB Stuttgart — Eintracht Frankfurt, 0:0, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/matches/vfb-stuttgart-eintracht-frankfurt-188032/liveticker",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Neckarstadion, Stuttgart, 50.000, árbitro Karl Niemeyer e placar sem gols."
+  },
+  {
+    "id": "dfb-match-dortmund-hertha-1963-10-19",
+    "title": "Borussia Dortmund — Hertha BSC, 7:2, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8-spieltag/borussia-dortmund-hertha-bsc-188033",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Stadion Rote Erde, 28.000, árbitro Werner Spiewak e cronologia dos nove gols."
+  },
+  {
+    "id": "dfb-match-meidericher-saarbruecken-1963-10-19",
+    "title": "Meidericher SV — 1. FC Saarbrücken, 3:1, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8-spieltag/msv-duisburg-1-fc-saarbruecken-188034",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Wedaustadion, 25.000, árbitro Kurt Handwerker; gol contra de Hartmut Heidemann (21'), Werner Krämer (33' e 50') e Heinz Versteeg (72'). RSSSF atribui o gol contra a Rainer Schönwälder; Alexandria adota provisoriamente a ficha DFB."
+  },
+  {
+    "id": "dfb-match-kaiserslautern-karlsruhe-1963-10-19",
+    "title": "1. FC Kaiserslautern — Karlsruher SC, 1:0, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8/1-fc-kaiserslautern-karlsruher-sc-188035",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Betzenbergstadion, 15.000, árbitro Fritz Schörnich; gol de Walter Gawletta (16')."
+  },
+  {
+    "id": "dfb-match-braunschweig-werder-1963-10-19",
+    "title": "Eintracht Braunschweig — SV Werder Bremen, 1:1, 8. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/8-spieltag/eintracht-braunschweig-sv-werder-bremen-188036",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Eintracht-Stadion, 28.000, árbitro Gerhard Pooch; gols de Manfred Wuttich (31') e Arnold Schütz (44')."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
@@ -727,6 +792,22 @@ export const bundesligaSourceNotes: BundesligaSourceNote[] = [
     "subject": "1. FC Saarbrücken 3–5 1. FC Nürnberg — minuto do gol de Dieter Krafczyk",
     "adoptedSourceId": "rsssf-germany-1963-64",
     "note": "A RSSSF registra o gol de Dieter Krafczyk aos 35 minutos; a página histórica do 1. FC Nürnberg na Wikipedia italiana reproduz 20 minutos. Como não foi localizada ficha individual DFB com a cronologia, a Alexandria adota provisoriamente 35' da RSSSF e mantém a divergência explícita para revisão futura."
+  },
+
+
+  {
+    "id": "koeln-muenster-own-goal-1963-10-19",
+    "severity": "divergencia",
+    "subject": "1. FC Köln 3–0 SC Preußen Münster — autoria do gol aos 22 minutos",
+    "adoptedSourceId": "dfb-match-koeln-muenster-1963-10-19",
+    "note": "A ficha individual do DFB registra gol contra de Dagmar Drewes aos 22'; a RSSSF atribui o gol a Wolfgang Overath. O cadastro adota provisoriamente a ficha individual do DFB."
+  },
+  {
+    "id": "meidericher-saarbruecken-own-goal-1963-10-19",
+    "severity": "divergencia",
+    "subject": "Meidericher SV 3–1 1. FC Saarbrücken — autoria do gol aos 21 minutos",
+    "adoptedSourceId": "dfb-match-meidericher-saarbruecken-1963-10-19",
+    "note": "A ficha individual do DFB registra gol contra de Hartmut Heidemann aos 21'; a RSSSF atribui o gol contra a Rainer Schönwälder. O cadastro adota provisoriamente a ficha individual do DFB."
   },
 
 ]
