@@ -1697,3 +1697,23 @@ A cobertura histórica básica registrada permanece em **2.928 partidas e 9.329 
 - **Deploy:** não publicado. A `main` não foi alterada.
 - **Próximos passos propostos:** (1) testar o DFB Datencenter partida a partida para 1963/64 a 2008/09 e substituir "não encontrado" quando houver dado oficial; (2) tela da temporada com resultados e detalhes, carregados sob demanda; (3) decidir o merge para a `main`.
 
+---
+
+## 52. Nova entrada: sala da biblioteca, globo de mesa e Corredor das Ligas — 06 de novembro de 2026
+
+- **IA/assistente:** Claude. **Modelo:** Claude Opus 5.5.
+- **Responsabilidade:** design de interface, desenvolvimento frontend e catálogo de ligas.
+- **Decisão de produto aprovada pelo usuário (06/11/2026):** a entrada do site passa a ser uma sala de biblioteca. Uma estante tem um livro para cada seção (Ligas, Copas, Clubes, Lendas, Seleções, Linha do tempo, Atlas). Um globo girando sobre uma mesa leva ao atlas. A cena acompanha o mouse. Cada livro abre um corredor; o primeiro protótipo é o **Corredor das Ligas**, com um livro por liga, na cor da liga e com o nome na lombada, ainda sem conteúdo (exceto a Bundesliga). Paleta preto e dourado mantida. Referência de clima indicada pelo usuário: "Interaction Library" (Awwwards), usada só como inspiração; a sala e a estante são desenho próprio, sem cópia.
+- **O que foi feito:**
+  - `src/components/LibraryHall.tsx`: sala (parede, janela, luminária com luz, estante com os sete livros de seção e lombadas decorativas, mesa) com paralaxe pelo ponteiro; Corredor das Ligas com estantes por confederação, rolagem horizontal (roda do mouse, arrasto, setas do teclado), busca por liga ou país e painel do livro aberto. No livro da Bundesliga, "Abrir o volume" leva ao acervo existente. Os demais livros de seção ainda não têm corredor: Copas, Clubes e Lendas abrem o acervo filtrado, Linha do tempo e Atlas levam às seções existentes.
+  - `src/components/DeskGlobe.tsx`: globo em canvas (projeção ortográfica, contornos dourados, Natural Earth 1:110m, mesmo arquivo do atlas), giro lento, arrasto para girar e toque num país, que abre esse país no atlas plano.
+  - `src/data/leagues.ts`: 90 ligas, sendo 85 primeiras divisões masculinas em atividade (UEFA 36, CONMEBOL 10, CONCACAF 9, AFC 15, CAF 13, OFC 2) e 5 ligas extintas (DDR-Oberliga, Campeonato Soviético, Primeira Liga Iugoslava, Primeira Liga Tchecoslovaca, NASL). Não é a lista de todas as ligas do mundo. Faltam várias federações e as ligas femininas; a lista pode crescer.
+  - **Cores das lombadas:** aproximadas e **não conferidas** em manuais de marca. O campo `colorBasis` indica se é um tom aproximado da identidade da liga ou se foram usadas as cores nacionais até a conferência. Nenhum logotipo é reproduzido. Os nomes das ligas evitam nomes de patrocinadores.
+  - `src/App.tsx`: a sala entra como primeira seção. A antiga entrada com o atlas plano continua logo abaixo (âncora `#atlas`), com o título rebaixado de h1 para h2. Nenhuma seção existente foi removida.
+  - `src/components/BundesligaArchive.tsx`: passou a importar só os módulos que usa. Antes, a página carregava as 19.292 partidas sem exibi-las. **O pacote JavaScript caiu de 9,55 MB para 0,67 MB (144 kB compactado)**, menor que o da `main` (1,87 MB). Isso resolve a pendência de tamanho das seções 50 e 51.
+  - `src/index.css`: estilos da sala, globo, corredor e livros, com versões para tablet e celular e respeito a "reduzir movimento".
+- **Validação executada:** `npm run build` (typecheck sem diagnósticos, 29 testes aprovados, build concluído). Capturas automatizadas com Chromium (Playwright) em 1440×900 e 390×844: sala, corredor e livro aberto renderizam sem erros no console. Isso não substitui o teste em um iPhone real.
+- **Limites conhecidos:** os corredores de Copas, Clubes, Lendas e Seleções ainda não existem; as ligas além da Bundesliga são volumes em branco; as cores precisam de conferência; a paralaxe no celular depende do toque, não da inclinação do aparelho.
+- **Branch e deploy:** `feat/bundesliga-fase-1-1973-2027`. Não houve merge para a `main` nem publicação em produção; a publicação depende da confirmação do usuário.
+- **Próximos passos propostos:** (1) usuário revisar no preview e aprovar a publicação; (2) corredores de Lendas e Seleções; (3) conferir as cores das ligas; (4) escrever os volumes das ligas, uma a uma.
+

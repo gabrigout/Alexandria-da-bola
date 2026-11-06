@@ -7,6 +7,8 @@ import {
 import { archiveEntries, categoryLabels } from './data/archive'
 import type { ArchiveEntry, ArchiveFilter } from './data/types'
 import BundesligaArchive from './components/BundesligaArchive'
+import LibraryHall from './components/LibraryHall'
+import type { GlobeCountry } from './components/DeskGlobe'
 
 
 type Continent = { id: string; name: string; subtitle: string; countries: string[] }
@@ -249,6 +251,11 @@ export default function App() {
     setArchiveCategory(category)
     document.getElementById('archive-catalog')?.scrollIntoView({ behavior: 'smooth' })
   }
+  const openAtlas = () => document.getElementById('atlas')?.scrollIntoView({ behavior: 'smooth' })
+  const handleGlobeCountry = (country: GlobeCountry) => {
+    const properties = country.properties as CountryProperties
+    handleCountrySelect({ name: countryNameInPortuguese(properties), continent: continentName(String(properties.CONTINENT ?? '')), code: '', flagCode: '', d: '', bounds: [0, 0, 0, 0], center: [0, 0] })
+  }
   const relatedEntries = (entry: ArchiveEntry) => archiveEntries.filter((item) => entry.relatedIds.includes(item.id))
 
   return (
@@ -272,7 +279,15 @@ export default function App() {
         </button>
       </header>
 
-      <section className="hero" aria-labelledby="hero-title">
+      <LibraryHall
+        onOpenBundesliga={openBundesliga}
+        onOpenArchive={openArchive}
+        onOpenTimeline={openTimeline}
+        onOpenAtlas={openAtlas}
+        onGlobeCountry={handleGlobeCountry}
+      />
+
+      <section className="hero" id="atlas" aria-labelledby="hero-title">
         <div className="hall-atmosphere" aria-hidden="true">
           <div className="hall-dome" />
           <div className="hall-arch hall-arch-one" />
@@ -287,7 +302,7 @@ export default function App() {
 
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-line" /> A BIBLIOTECA DO FUTEBOL</div>
-          <h1 id="hero-title">O futebol tem<br />um mundo de<br /><em>histórias.</em></h1>
+          <h2 id="hero-title" className="hero-title">O futebol tem<br />um mundo de<br /><em>histórias.</em></h2>
           <p className="hero-description">Cada continente guarda partidas, personagens e conquistas que ajudaram a construir o jogo. Explore o mapa e descubra onde cada história começa.</p>
           <button className="discover-button" onClick={openCollection}>
             <span>Começar a explorar</span><ArrowDown size={16} />
