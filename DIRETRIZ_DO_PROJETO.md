@@ -1254,3 +1254,27 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 33 partidas individuais cadastradas de 240; 207 pendentes. Rodadas 1 a 4 completas. A 5ª rodada possui um registro existente (Hertha BSC 0–3 1. FC Köln), portanto sete jogos faltantes.
 - **Git/deploy:** alterações registradas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** completar os sete jogos faltantes da 5ª rodada (21/09/1963), sem duplicar Hertha BSC 0–3 1. FC Köln.
+
+
+---
+
+## 39. Registro de execução — Etapa 5, lote 5 — conclusão da 5ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas sete partidas faltantes da 5ª rodada (21/09/1963), preservando o registro já existente de Hertha BSC 0–3 1. FC Köln.
+- **Partidas adicionadas:**
+  1. SV Werder Bremen 1–1 Meidericher SV.
+  2. SC Preußen Münster 4–2 VfB Stuttgart.
+  3. TSV 1860 München 3–0 1. FC Kaiserslautern.
+  4. Eintracht Frankfurt 3–0 Eintracht Braunschweig.
+  5. Karlsruher SC 1–3 Borussia Dortmund.
+  6. 1. FC Saarbrücken 3–5 1. FC Nürnberg.
+  7. FC Schalke 04 1–0 Hamburger SV.
+- **Fontes:** cinco fichas individuais do DFB Datencenter. Para Saarbrücken–Nürnberg e Schalke–Hamburger SV, as páginas de calendário dos clubes no DFB confirmam data e resultado; BDFutbol confirma estádio e árbitro; RSSSF confirma a cronologia dos gols. Esses dois registros ficam identificados como documentados com fontes complementares, sem alegar ficha individual DFB.
+- **Observação editorial:** o DFB exibe a denominação comercial atual BBBank Wildpark para Karlsruher SC–Borussia Dortmund; o campo de estádio foi omitido para evitar anacronismo. A cronologia de Münster–Stuttgart foi cruzada com RSSSF, inclusive o último gol do Münster aos 68 minutos.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito partidas na 5ª rodada, sem duplicar Hertha BSC–1. FC Köln; teste automatizado de cobertura e coerência dos gols adicionado.
+- **Testes e build:** não executados neste ambiente; não há declaração de aprovação técnica.
+- **Contagem após o lote:** 40 partidas individuais cadastradas de 240; 200 pendentes. Rodadas 1 a 5 completas. A 6ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 6ª rodada (05/10/1963).
