@@ -819,6 +819,71 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Ludwigsparkstadion, 15.000, árbitro Werner Treichel; Otto Geisert (42'), Siegfried Stark (51' e 86') e Dieter Krafczyk (87'). A ficha registra pênalti desperdiçado por Krafczyk aos 16'."
   },
+
+  {
+    "id": "dfb-match-braunschweig-koeln-1963-11-09",
+    "title": "Eintracht Braunschweig — 1. FC Köln, 1:1, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/eintracht-braunschweig-1-fc-koeln-188045",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Eintracht-Stadion, 32.000, árbitro Kurt Tschenscher; Jürgen Moll (2') e Karl-Heinz Thielen (45')."
+  },
+  {
+    "id": "dfb-match-kaiserslautern-stuttgart-1963-11-09",
+    "title": "1. FC Kaiserslautern — VfB Stuttgart, 1:3, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/1-fc-kaiserslautern-vfb-stuttgart-188046",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Betzenbergstadion, 30.000, árbitro Johannes Malka; três gols contra: Rudi Entenmann (19') a favor do Kaiserslautern e Dieter Pulter (20' e 31') a favor do Stuttgart; Theodor Hoffmann (80')."
+  },
+  {
+    "id": "dfb-match-meidericher-hamburg-1963-11-09",
+    "title": "Meidericher SV — Hamburger SV, 4:0, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/msv-duisburg-hamburger-sv-188047",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Wedaustadion, 40.000, árbitro Heinz Fischer; Gustav Walenciak (58' e 70'), Ludwig Nolden (61') e Johann Sabath (67')."
+  },
+  {
+    "id": "dfb-match-frankfurt-schalke-1963-11-09",
+    "title": "Eintracht Frankfurt — FC Schalke 04, 4:2, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/eintracht-frankfurt-fc-schalke-04-188048",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Waldstadion, 41.000, árbitro Horst Mathieu; Manfred Berz (7'), Richard Kreß (45'), Wolfgang Solz (55'), Horst Trimhold (58'), Willi Huberts (73', pênalti) e Günter Herrmann (74')."
+  },
+  {
+    "id": "dfb-match-tsv-saarbruecken-1963-11-09",
+    "title": "TSV 1860 München — 1. FC Saarbrücken, 7:1, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/tsv-1860-muenchen-1-fc-saarbruecken-188049",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Stadion an der Grünwalder Straße, 34.000, árbitro Gerhard Schulenburg; Werner Rinas (37'), Berti Kraus (42', 72' e 84'), Hans Küppers (65'), Peter Grosser (66'), Alfred Heiß (75') e Rudi Brunnenmeier (78')."
+  },
+  {
+    "id": "dfb-match-karlsruhe-muenster-1963-11-09",
+    "title": "Karlsruher SC — SC Preußen Münster, 4:2, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/10-matchday/karlsruher-sc-preussen-munster-188050",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Público de 15.000, árbitro Alfred Ott; Gerhard Kentschke (8'), Josef Marx (9'), Manfred Rummel (12' e 56'), Siegfried Stark (41') e Gustav Witlatschil (44', pênalti). O DFB exibe a denominação comercial atual BBBank Wildpark; o nome histórico do estádio foi omitido."
+  },
+  {
+    "id": "dfb-match-dortmund-nuernberg-1963-11-09",
+    "title": "Borussia Dortmund — 1. FC Nürnberg, 3:1, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/10-matchday/borussia-dortmund-1-fc-nuremberg-188051",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Stadion Rote Erde, 27.000, árbitro Erwin Sturm; Richard Albrecht (6'), Lothar Emmerich (26' e 86') e gol contra de Ferdinand Wenauer (81')."
+  },
+  {
+    "id": "dfb-match-werder-hertha-1963-11-09",
+    "title": "SV Werder Bremen — Hertha BSC, 2:2, 10. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/10-spieltag/sv-werder-bremen-hertha-bsc-188052",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Weserstadion, 16.000, árbitro Willi Thier; Klaus Hänel (22'), Uwe Klimaschefski (64'), gol contra de Hans-Günter Schimmöller (76') e Harald Beyer (85'). A ficha também registra pênalti desperdiçado por Arnold Schütz aos 50'."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
