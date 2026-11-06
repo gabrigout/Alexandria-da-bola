@@ -1406,3 +1406,33 @@ Prompt de continuidade para o agente do VS Code:
 - **Testes/build/deploy:** não foram executados neste ambiente de edição remota. Não declarar typecheck, testes Vitest ou build aprovados até sua execução. Não houve merge para `main` nem publicação em produção.
 - **Próximo passo:** validar o conjunto no ambiente de desenvolvimento e, depois, iniciar o bloco seguinte (1968/69 a 1972/73) usando o mesmo método, sem ampliar o escopo para eventos detalhados antes da cobertura básica.
 
+
+
+---
+
+## 46. Segundo bloco de cinco temporadas — cobertura básica da Bundesliga 1968/69 a 1972/73 — 5 de novembro de 2026
+
+- **IA/assistente:** ChatGPT.
+- **Modelo:** GPT-6.
+- **Responsabilidade:** pesquisa histórica, curadoria de dados, modelagem e manutenção do repositório.
+- **Escopo:** ampliar a cobertura básica da Bundesliga por cinco temporadas completas, preservando os dados do primeiro bloco.
+- **Fonte estruturada:** arquivos de temporada de `footballcsv/deutschland`, conjunto que declara ser espelho 1:1 de `openfootball/deutschland` e licença CC0 1.0.
+- **Conferência independente:** tabelas finais e matrizes de resultados da RSSSF para 1968/69, 1969/70, 1970/71, 1971/72 e 1972/73. As fontes estão cadastradas individualmente em `src/data/bundesliga/sources.ts`.
+- **Temporadas incluídas:**
+  - 1968/69: 18 clubes, 34 rodadas, 306 partidas e 873 gols.
+  - 1969/70: 18 clubes, 34 rodadas, 306 partidas e 951 gols.
+  - 1970/71: 18 clubes, 34 rodadas, 306 partidas e 926 gols.
+  - 1971/72: 18 clubes, 34 rodadas, 306 partidas e 1.006 gols.
+  - 1972/73: 18 clubes, 34 rodadas, 306 partidas e 1.045 gols.
+- **Total do segundo bloco:** 1.530 partidas e 4.801 gols calculados a partir dos placares importados.
+- **Total acumulado (1963/64–1972/73):** 2.928 partidas e 9.329 gols.
+- **Clubes adicionais no cadastro de partidas:** Kickers Offenbach, Rot-Weiß Oberhausen, Arminia Bielefeld, VfL Bochum e Wuppertaler SV. Foram adicionadas apenas fichas mínimas de identificação e fontes, sem biografias ou estatísticas individuais inventadas.
+- **Critério de denominação:** o clube de Duisburg mantém o identificador institucional `meidericher-sv`; neste bloco, a denominação apresentada é MSV Duisburg, correspondente ao período histórico.
+- **Validação estrutural realizada durante a importação:** 306 jogos por temporada; 18 clubes; 34 rodadas; 17 partidas como mandante e 17 como visitante por clube; totais de gols conferidos contra os números calculados a partir das partidas. IDs de partida são gerados de forma estável a partir de data e participantes.
+- **Limite da auditoria:** a importação de uma fonte estruturada e a conferência agregada com a RSSSF não equivalem à confirmação individual de cada um dos 1.530 resultados em ficha oficial. As partidas permanecem marcadas como `resultado-base-importado`; autores e minutos dos gols, escalações, estádios, públicos e árbitros não foram preenchidos sem documentação específica.
+- **Organização técnica:** criados arquivos de partidas por temporada; o agregador principal passa a reunir dez temporadas. O índice das temporadas agora informa cobertura básica até 1972/73, sem declarar os dossiês editoriais completos.
+- **Arquivos alterados/criados:** `matches/1968-69.ts`, `matches/1969-70.ts`, `matches/1970-71.ts`, `matches/1971-72.ts`, `matches/1972-73.ts`, `matches.ts`, `match-clubs.ts`, `sources.ts`, `seasons/index.ts`, `validate.test.ts` e esta diretriz.
+- **Branch:** `feat/bundesliga-first-five-seasons`. A branch `main` permanece sem alterações; não houve merge nem publicação em produção nesta etapa.
+- **Testes/build/deploy:** testes e build do segundo bloco ainda precisam ser executados pelo preview automatizado da Vercel. Não declarar aprovação até a leitura do status e dos logs.
+- **Próximo passo:** validar o bloco completo de dez temporadas e, depois, trabalhar no terceiro bloco (1973/74 a 1977/78), mantendo o mesmo padrão de cobertura e rastreabilidade.
+
