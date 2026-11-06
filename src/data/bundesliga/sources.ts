@@ -421,6 +421,63 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Data, rodada, Ludwigsparkstadion, público de 17.000, árbitro Josef Kandlbinder, placar e gols de Klaus Gerwien (43'), Rainer Schönwälder (48' e 57') e Jürgen Moll (72', pênalti)."
   },
+
+  {
+    "id": "dfb-match-koeln-schalke-1963-09-14",
+    "title": "1. FC Köln — FC Schalke 04, 2:2, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/1-fc-koeln-fc-schalke-04-187997",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Müngersdorfer Stadion, público de 58.000, árbitro Fritz Schörnich, placar e gols de Heinz Hornig (1'), Waldemar Gerhardt (5'), Stan Libuda (32') e Hans Sturm (68')."
+  },
+  {
+    "id": "dfb-match-nuernberg-muenster-1963-09-14",
+    "title": "1. FC Nürnberg — SC Preußen Münster, 2:2, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/1-fc-nuernberg-preussen-muenster-187998",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Städtisches Stadion, público de 33.000, árbitro Gerhard Schulenburg, placar e gols de pênalti de Stefan Reisch (2'), Hermann Lulka (32'), Manfred Rummel (37') e Max Morlock (54')."
+  },
+  {
+    "id": "dfb-match-dortmund-saarbruecken-1963-09-14",
+    "title": "Borussia Dortmund — 1. FC Saarbrücken, 2:1, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/borussia-dortmund-1-fc-saarbruecken-187999",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Stadion Rote Erde, público de 18.000, árbitro Günther Sparing, placar e gols de Dieter Krafczyk (18'), Reinhold Wosab (78') e Timo Konietzka (82')."
+  },
+  {
+    "id": "dfb-match-hamburg-frankfurt-1963-09-14",
+    "title": "Hamburger SV — Eintracht Frankfurt, 3:0, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/hamburger-sv-eintracht-frankfurt-188000",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Volksparkstadion, público de 65.000, árbitro Hans-Joachim Weyland, placar e gols de Uwe Seeler (3' e 53') e Charly Dörfel (57')."
+  },
+  {
+    "id": "dfb-match-stuttgart-tsv-1963-09-14",
+    "title": "VfB Stuttgart — TSV 1860 München, 1:1, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/vfb-stuttgart-tsv-1860-muenchen-188001",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Neckarstadion, público de 45.000, árbitro Kurt Tschenscher, placar e gols de Hans Küppers (17') e Hans Arnold (24')."
+  },
+  {
+    "id": "dfb-match-kaiserslautern-werder-1963-09-14",
+    "title": "1. FC Kaiserslautern — SV Werder Bremen, 3:0, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/1-fc-kaiserslautern-sv-werder-bremen-188002",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Betzenbergstadion, público de 22.000, árbitro Rudolf Kreitlein, placar e gols de Willy Reitgaßl (27' e 84') e Winfried Richter (63')."
+  },
+  {
+    "id": "dfb-match-braunschweig-karlsruhe-1963-09-14",
+    "title": "Eintracht Braunschweig — Karlsruher SC, 2:0, 4. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/4-spieltag/eintracht-braunschweig-karlsruher-sc-188004",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Data, rodada, Eintracht-Stadion, público de 22.000, árbitro Willi Thier, placar e gols de Hans-Georg Dulz (37') e Klaus Gerwien (68')."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
