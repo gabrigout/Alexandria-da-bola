@@ -8,10 +8,10 @@ export const bundesligaSeasonIndex: BundesligaSeasonIndexEntry[] = Array.from(
     const id = String(startYear) + '-' + String(endYear).slice(-2)
     const inaugural = id === '1963-64'
     const current = id === '2026-27'
-    const firstFiveBlock = startYear >= 1963 && startYear <= 1967
+    const firstTenBlock = startYear >= 1963 && startYear <= 1972
     const note = inaugural
       ? 'Classificação e artilharia documentadas; resultados básicos das 240 partidas indexados. Fichas individuais e enriquecimento de eventos ainda são parciais.'
-      : firstFiveBlock
+      : firstTenBlock
         ? 'Resultados básicos de todas as partidas indexados; classificação, artilharia e dossiê editorial ainda aguardam auditoria.'
         : current
           ? 'Temporada em andamento; consolidar ficha completa ao fim da edição.'
