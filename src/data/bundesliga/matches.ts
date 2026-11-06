@@ -262,7 +262,7 @@ export const bundesligaMatches: BundesligaMatch[] = [
     keyEvent: 'O Schalke venceu fora de casa por 3 a 2; a partida teve um gol contra de Willi Schulz.',
     events: [
       { minute: 4, type: 'goal', player: 'Manfred Berz', clubId: 'schalke-04' },
-      { minute: 28, type: 'goal', player: 'Willi Schulz (gol contra)', clubId: 'schalke-04' },
+      { minute: 28, type: 'goal', player: 'Willi Schulz (gol contra)', clubId: 'fc-kaiserslautern' },
       { minute: 58, type: 'goal', player: 'Günter Herrmann', clubId: 'schalke-04' },
       { minute: 69, type: 'goal', player: 'Manfred Berz', clubId: 'schalke-04' },
       { minute: 87, type: 'goal', player: 'Willy Reitgaßl', clubId: 'fc-kaiserslautern' },
