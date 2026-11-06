@@ -177,6 +177,20 @@ describe('validação do acervo Bundesliga', () => {
     }
   })
 
+
+  it('completa a terceira rodada com oito partidas e cronologias coerentes', () => {
+    const roundThree = bundesligaMatches.filter((match) => match.round === 3)
+    expect(roundThree).toHaveLength(8)
+    expect(roundThree.every((match) => match.date === '1963-09-07')).toBe(true)
+    expect(new Set(roundThree.map((match) => match.id)).size).toBe(8)
+    for (const match of roundThree.filter((entry) => entry.events?.length)) {
+      const homeGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.homeClubId).length ?? 0
+      const awayGoals = match.events?.filter((event) => event.type === 'goal' && event.clubId === match.awayClubId).length ?? 0
+      expect(homeGoals, `gols do mandante incompatíveis: ${match.id}`).toBe(match.homeGoals)
+      expect(awayGoals, `gols do visitante incompatíveis: ${match.id}`).toBe(match.awayGoals)
+    }
+  })
+
   it('detecta identificador de clube duplicado', () => {
     const result = validateBundesligaData({
       ...dataset,
