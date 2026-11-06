@@ -754,6 +754,71 @@ export const bundesligaSources: BundesligaSource[] = [
     "type": "ficha-oficial-de-partida",
     "notes": "Eintracht-Stadion, 28.000, árbitro Gerhard Pooch; gols de Manfred Wuttich (31') e Arnold Schütz (44')."
   },
+
+  {
+    "id": "dfb-match-stuttgart-dortmund-1963-10-26",
+    "title": "VfB Stuttgart — Borussia Dortmund, 2:1, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/vfb-stuttgart-borussia-dortmund-188037",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Neckarstadion, 60.000, árbitro Oswald Fritz; Rolf Geiger (12' e 80') e Willi Sturm (61')."
+  },
+  {
+    "id": "dfb-match-schalke-werder-1963-10-26",
+    "title": "FC Schalke 04 — SV Werder Bremen, 2:3, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/fc-schalke-04-sv-werder-bremen-188038",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Glückauf-Kampfbahn, 30.000, árbitro Kurt Tschenscher; Klaus Matischak (20' e 54'), Diethelm Ferner (31' e 87') e Arnold Schütz (79')."
+  },
+  {
+    "id": "dfb-match-hamburg-braunschweig-1963-10-26",
+    "title": "Hamburger SV — Eintracht Braunschweig, 2:1, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/9-matchday/hamburger-sv-eintracht-braunschweig-188039",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Volksparkstadion, 45.000, árbitro Herbert Lutz; Willi Giesemann (21' e 72') e Manfred Wuttich (33')."
+  },
+  {
+    "id": "dfb-match-koeln-meidericher-1963-10-26",
+    "title": "1. FC Köln — Meidericher SV, 3:3, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/1-fc-koeln-msv-duisburg-188040",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Müngersdorfer Stadion, 42.000, árbitro Günther Baumgärtel; gols de Wolfgang Overath (8' e 88'), Werner Krämer (30'), Gustav Walenciak (32'), Christian Müller (68') e Heinz Versteeg (80')."
+  },
+  {
+    "id": "dfb-match-nuernberg-kaiserslautern-1963-10-26",
+    "title": "1. FC Nürnberg — 1. FC Kaiserslautern, 0:5, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/1-fc-nuernberg-1-fc-kaiserslautern-188041",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Städtisches Stadion, 20.000, árbitro Willi Thier; gols de Winfried Richter (13'), Co Prins (32'), Erich Meier (36' e 50') e Gerd Schneider (47'). A ficha também registra pênalti desperdiçado por Peter von Kummant aos 50'."
+  },
+  {
+    "id": "dfb-match-muenster-tsv-1963-10-26",
+    "title": "SC Preußen Münster — TSV 1860 München, 0:0, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/preussen-muenster-tsv-1860-muenchen-188042",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Preußenstadion, 25.000, árbitro Helmut Fritz e placar sem gols."
+  },
+  {
+    "id": "dfb-match-hertha-frankfurt-1963-10-26",
+    "title": "Hertha BSC — Eintracht Frankfurt, 1:3, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/en/data-center/bundesliga/1963-1964/9-matchday/hertha-bsc-eintracht-frankfurt-188043",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Olympiastadion, 22.000, árbitro Gerhard Schulenburg; Helmut Faeder (36'), Willi Huberts (53' e 60') e Wolfgang Solz (85'). A ficha registra pênalti desperdiçado por Hans-Günter Schimmöller aos 88'."
+  },
+  {
+    "id": "dfb-match-saarbruecken-karlsruhe-1963-10-26",
+    "title": "1. FC Saarbrücken — Karlsruher SC, 1:3, 9. Spieltag",
+    "publisher": "DFB Datencenter",
+    "url": "https://datencenter.dfb.de/datencenter/bundesliga/1963-1964/9-spieltag/1-fc-saarbruecken-karlsruher-sc-188044",
+    "type": "ficha-oficial-de-partida",
+    "notes": "Ludwigsparkstadion, 15.000, árbitro Werner Treichel; Otto Geisert (42'), Siegfried Stark (51' e 86') e Dieter Krafczyk (87'). A ficha registra pênalti desperdiçado por Krafczyk aos 16'."
+  },
 ]
 
 export const bundesligaSourceNotes: BundesligaSourceNote[] = [
