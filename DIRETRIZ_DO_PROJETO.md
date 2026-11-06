@@ -1376,3 +1376,33 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 80 partidas individuais cadastradas de 240; 160 pendentes. Rodadas 1 a 10 completas. A 11ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 11ª rodada.
+
+
+---
+
+## 45. Primeiro bloco de cinco temporadas — cobertura básica da Bundesliga 1963/64 a 1967/68 — 5 de novembro de 2026
+
+- **IA/assistente:** ChatGPT.
+- **Modelo:** GPT-6.
+- **Responsabilidade:** pesquisa histórica, curadoria de dados, modelagem e manutenção do repositório.
+- **Escopo:** substituir o cadastro manual de oito partidas por lote por uma estratégia de cobertura básica em blocos de cinco temporadas, preservando o enriquecimento individual para uma etapa posterior.
+- **Decisão operacional:** trabalhar cinco temporadas por bloco. A cobertura básica registra temporada, rodada, data, mandante, visitante e placar. Autores e minutos dos gols, escalações, arbitragem, estádio, público e contexto só serão adicionados quando houver fonte específica.
+- **Fontes de dados:** os arquivos CSV de `footballcsv/deutschland`, espelho 1:1 de `openfootball/deutschland`, declarados sob CC0 1.0; páginas de temporada da RSSSF usadas como referência independente. As referências específicas estão em `src/data/bundesliga/sources.ts`.
+- **Temporadas incluídas:**
+  - 1963/64: 16 clubes, 30 rodadas, 240 partidas e 857 gols.
+  - 1964/65: 16 clubes, 30 rodadas, 240 partidas e 796 gols.
+  - 1965/66: 18 clubes, 34 rodadas, 306 partidas e 987 gols.
+  - 1966/67: 18 clubes, 34 rodadas, 306 partidas e 895 gols.
+  - 1967/68: 18 clubes, 34 rodadas, 306 partidas e 993 gols.
+- **Total do bloco:** 1.398 partidas e 4.528 gols calculados a partir dos resultados importados.
+- **Temporada inaugural preservada:** os 80 registros existentes foram mantidos com seus eventos e metadados. A comparação com a base CSV localizou os 80 jogos por rodada, participantes e placar; 160 resultados básicos foram adicionados para completar os 240. Foi identificada uma divergência de data em Eintracht Braunschweig 1–1 1. FC Köln: DFB registra 09/11/1963, enquanto Sportschau, Transfermarkt e footballcsv registram 08/11/1963. O código mantém provisoriamente 09/11/1963, conforme a ficha individual do DFB, e a divergência está documentada.
+- **Clubes adicionais:** criado um cadastro mínimo separado para oito clubes que aparecem a partir de 1964/65: Hannover 96, Borussia Neunkirchen, Bayern München, Borussia Mönchengladbach, Tasmania Berlin, Rot-Weiss Essen, Fortuna Düsseldorf e Alemannia Aachen. Esse registro resolve as referências das partidas sem inventar biografias ou estatísticas inaugurais.
+- **Identidade histórica do Duisburg:** o mesmo identificador institucional é mantido; o nome exibido é Meidericher SV até 08/01/1967 e MSV Duisburg a partir de 09/01/1967. A DFL indica 07/01 e a cronologia DSFS 09/01; a data adotada para exibição segue provisoriamente a DSFS e a divergência está registrada.
+- **Organização técnica:** os dados foram separados por temporada em arquivos próprios; `matches.ts` reúne e ordena cronologicamente os cinco conjuntos. O validador passou a reconhecer clubes de partidas sem ficha biográfica e temporadas presentes no índice mesmo quando ainda não possuem dossiê estatístico completo.
+- **Validações estruturais previstas nos testes:** quantidade de partidas e clubes por temporada, gols totais, 30 ou 34 jogos por clube, equilíbrio entre mandos, IDs únicos, referências de clubes e referências de fontes.
+- **Limite da auditoria:** a importação e as verificações agregadas não significam que cada um dos 1.398 resultados foi comparado individualmente com uma ficha oficial. As partidas importadas estão marcadas como resultado básico, sem eventos inventados. A auditoria jogo a jogo e o enriquecimento editorial continuam pendentes.
+- **Arquivos alterados/criados:** `matches-1963-64.ts`, `matches/1964-65.ts`, `matches/1965-66.ts`, `matches/1966-67.ts`, `matches/1967-68.ts`, `matches.ts`, `match-clubs.ts`, `types.ts`, `validate.ts`, `validate.test.ts`, `index.ts`, `seasons/index.ts`, `sources.ts` e esta diretriz.
+- **Branch:** `feat/bundesliga-first-five-seasons`, criada a partir de `phase-4-bundesliga-matches-batch-1`. A branch principal `main` não foi alterada.
+- **Testes/build/deploy:** não foram executados neste ambiente de edição remota. Não declarar typecheck, testes Vitest ou build aprovados até sua execução. Não houve merge para `main` nem publicação em produção.
+- **Próximo passo:** validar o conjunto no ambiente de desenvolvimento e, depois, iniciar o bloco seguinte (1968/69 a 1972/73) usando o mesmo método, sem ampliar o escopo para eventos detalhados antes da cobertura básica.
+
