@@ -1344,3 +1344,19 @@ Prompt de continuidade para o agente do VS Code:
 - **Contagem após o lote:** 64 partidas individuais cadastradas de 240; 176 pendentes. Rodadas 1 a 8 completas. A 9ª rodada é a próxima rodada integralmente faltante.
 - **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
 - **Próxima ação:** pesquisar e cadastrar as oito partidas da 9ª rodada (26/10/1963).
+
+
+---
+
+## 43. Registro de execução — Etapa 5, lote 9 — conclusão da 9ª rodada
+
+- **Responsável:** ChatGPT, modelo GPT-6; pesquisa histórica, curadoria e manutenção do repositório.
+- **Escopo executado:** adicionadas as oito partidas da 9ª rodada, disputadas em 26/10/1963.
+- **Partidas adicionadas:** VfB Stuttgart 2–1 Borussia Dortmund; FC Schalke 04 2–3 SV Werder Bremen; Hamburger SV 2–1 Eintracht Braunschweig; 1. FC Köln 3–3 Meidericher SV; 1. FC Nürnberg 0–5 1. FC Kaiserslautern; SC Preußen Münster 0–0 TSV 1860 München; Hertha BSC 1–3 Eintracht Frankfurt; 1. FC Saarbrücken 1–3 Karlsruher SC.
+- **Fontes:** oito fichas individuais do DFB Datencenter. Foram registrados também pênaltis desperdiçados como observações editoriais quando a ficha os apresenta; eles não foram convertidos em gols.
+- **Arquivos alterados:** `src/data/bundesliga/matches.ts`, `src/data/bundesliga/sources.ts`, `src/data/bundesliga/validate.test.ts` e esta diretriz.
+- **Validação de conteúdo:** oito jogos na 9ª rodada, IDs únicos e eventos de gols compatíveis com os placares; teste automatizado de cobertura e coerência adicionado.
+- **Testes e build:** não executados neste ambiente remoto; não declarar aprovação técnica.
+- **Contagem após o lote:** 72 partidas individuais cadastradas de 240; 168 pendentes. Rodadas 1 a 9 completas. A 10ª rodada é a próxima rodada integralmente faltante.
+- **Git/deploy:** alterações gravadas na branch de trabalho; sem merge para `main`, sem deploy e sem publicação em produção.
+- **Próxima ação:** pesquisar e cadastrar as oito partidas da 10ª rodada (09/11/1963).
